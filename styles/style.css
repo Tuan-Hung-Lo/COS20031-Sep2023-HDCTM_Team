@@ -51,6 +51,7 @@ header .navbar a::before {
     left: 0;
     height: 2px;
     width: 0;
+    border-radius: 50% 50% 50% 50%;
 }
 
 header .navbar a:hover::before {
@@ -84,4 +85,26 @@ header .icons a {
 
 header .icons li:hover {
     background-color: #eee;
+<<<<<<< HEAD
 }
+=======
+}
+
+#gotopbtn{
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    background: #231278;
+    bottom: 40px;
+    right: 50px;
+    border-radius: 50%;
+
+    text-decoration: none;
+    text-align: center;
+    line-height: 3.75rem;
+    color: rgb(215, 77, 13);
+    font-size: 2rem;
+}
+
+
+>>>>>>> 49f0a2e04e75a2300e32712e5f491d63bc5f0066
