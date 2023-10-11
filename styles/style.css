@@ -17,6 +17,8 @@ html {
     scroll-behavior: smooth;
 }
 
+/* HEADER */
+
 header {
     position: fixed;
     top: 0;
@@ -87,7 +89,7 @@ header .icons li:hover {
     background-color: #eee;
 }
 
-#gotopbtn{
+#gotopbtn {
     position: fixed;
     width: 4rem;
     height: 4rem;
@@ -99,8 +101,76 @@ header .icons li:hover {
     text-decoration: none;
     text-align: center;
     line-height: 3.75rem;
-    color: rgb(215, 77, 13);
+    color: whitesmoke;
     font-size: 2rem;
 }
 
+/* FOOTER */
+footer {
+    margin-top: 10rem;
+}
 
+footer .container {
+    background-color: #231278;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 10rem;
+}
+
+.footer_col ul {
+    list-style-type: none;
+}
+
+.footer_col h4 {
+    color: white;
+    position: relative;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer_col h4::before {
+    content: '';
+    width: 8rem;
+    height: 2px;
+    position: absolute;
+    background-color: #d74d0d;
+    bottom: -0.5rem;
+}
+
+.footer_col ul li {
+    padding: 1rem 0;
+    color: white;
+}
+
+.footer_col ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footer_col ul li a:hover {
+    opacity: 1;
+}
+
+.footer_col input,
+textarea {
+    width: 400px;
+    height: 40px;
+    display: block;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer_col .inputSubmit {
+    padding: 0;
+}
+
+.footer_col textarea {
+    padding-top: 0.75rem;
+    height: 135px;
+}
