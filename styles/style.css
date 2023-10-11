@@ -168,6 +168,14 @@ textarea {
 
 .footer_col .inputSubmit {
     padding: 0;
+    background-color: #d74d0d;
+    color: whitesmoke;
+    cursor: pointer
+}
+
+.footer_col .inputSubmit:hover {
+    background-color: whitesmoke;
+    color: #060606;
 }
 
 .footer_col textarea {
