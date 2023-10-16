@@ -1,0 +1,26 @@
+3. Courses
+
+CourseID (PK)
+Title
+Price
+Length
+Outline
+Provider
+Benefits
+Category
+
+4. BankAccount
+
+BankAccountID (PK)
+UserID (FK)
+BankType
+BankNumber
+AccountName
+
+
+8. RegisteredCourse
+
+RegisteredCourseID (PK)
+UserID (FK)
+CourseID (FK)
+BankAccountID (FK)
