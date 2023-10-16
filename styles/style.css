@@ -188,6 +188,149 @@ textarea {
     height: 135px;
 }
 
+/* SIGN IN */
+.si-content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+
+.si-image {
+    float: right;
+    width: 40em;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.si-content .logo {
+    padding-bottom: 5em;
+}
+
+.si-form-box {
+    float: left;
+    width: 50em;
+    height: 100%;
+    position: relative;
+    background: #fff;
+    padding: 50px 30px;
+    box-shadow: 0 .5rem .8rem rgba(0, 0, 0, .1);
+}
+
+.si-button-box {
+    width: 20em;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: 0 0 10px 2px #dc9d9dd2;
+    border-radius: 30px;
+}
+
+.si-toggle-btn {
+    padding: 10px 4em;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    position: relative;
+    color: #eee;
+}
+
+#si-btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #b52f2fd2, #3721a8);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#su-btn {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #b52f2fd2, #3721a8);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.inputgr {
+    padding-top: 50px;
+    margin-left: 10.5em;
+    width: 25em;
+    transition: .5s;
+}
+
+.si-input-box {
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    margin: 15px;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.si-input-box span {
+    margin-right: .4em;
+}
+
+.si-input-box input {
+    padding-left: 10px;
+}
+
+.si-input {
+    width: 85%;
+    padding: 10px 0;
+    outline: none;
+    background: transparent;
+    border-left: 1px solid;
+}
+
+.si-submit-box {
+    border: 1px solid #eee;
+    margin: 15px;
+    padding: 10px;
+    font-size: 1.5rem;
+    background: #eee;
+}
+
+.si-submit-btn {
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+}
+
+#su-inputgr {
+    left: 450px;
+}
+
+.su-box {
+    display: flex;
+}
+
+.su-input-box {
+    margin: 20px auto;
+    position: relative;
+    outline: none;
+}
+
+.su-input-box i {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.su-btn {
+    background: transparent;
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    width: 10em;
+    height: 10em;
+}
+
+.su-btn p {
+    font-size: 1rem;
+}
+
 /* Courses Page */
 section {
     padding: 2rem 9%;
