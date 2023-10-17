@@ -3,13 +3,17 @@
 3.
 *Courses
 CourseID (PK)
+CoursesCategoryID (FK)
 Title
 Price
 Length
 Outline
 Provider
 Benefits
-Category
+
+*CoursesCategory:
+CoursesCategoryID (PK)
+CoursesCategoryName
 
 4.
 *BankAccount
@@ -27,8 +31,8 @@ RecruiterID (FK)
 JobTitle
 JobDeadline
 Salary
-JobLocation
 JobDescription
+WorkLocation
 ExperienceRequirement (cái nì là exper level lun)
 JobBenefits
 
@@ -40,38 +44,38 @@ UserID (FK)
 7.
 *Application
 ApplicationID (PK)
-RegularUserID (FK) ?
+CandidateID (FK)
 JobID (FK)
 CV
 StatementofPurpose
-SupportExpectation (tách được nữa không?)
-Questions (tách được nữa không?)
+SupportExpectation
+Questions
 
 8.
 *Users
 UserID (PK)
+UserAuthenticationID (FK)
 UserRoleID (FK)
 FirstName
 LastName
 Address
 UserPhone
-UserEmail
 Gender
 Age
 LivingLocation
 
 *UserRole
 UserRoleID (PK)
-UserRole
-=> Link thế nào với bảng Recruiter vs Candidate thì hợp lí đây? Candidate ở đây đang tính là Users r hsy :::)
+UserID (FK)
+UserRoleName
 
-*Candidate / RegularUser
+*Candidate
 CandidateID (PK)
 UserID (FK)
 
 *WorkingExperience
 WExperienceID (PK)
-RegularUserID (FK) ?
+CandidateID (FK)
 WCompanyName
 WJobRole
 WTimeRange
@@ -79,19 +83,19 @@ WDescription
 
 *Skill
 SkillID (PK)
-RegularUserID (FK) ?
+CandidateID (FK)
 SkillName
 
 *ExtracurricularActivity
 ActivityID (PK)
-RegularUserID (FK) ?
+CandidateID (FK)
 OrganizationName
 EAJobRole
 EATimeRange
 EADescription
 
-*RegisteredCourse
-RegisteredCourseID (PK)
+*CourseReceipt
+ReceiptID (PK)
 UserID (FK)
 CourseID (FK)
 BankAccountID (FK)
@@ -123,7 +127,7 @@ Website
 
 *Recruiter
 RecruiterID (PK)
-UserID (FK) - thế còn userrole có phải link vô đây kkk
+UserID (FK)
 CompanyID (FK)
 
 *CandidateApplicationApproval??????????????????????
@@ -141,4 +145,8 @@ AvailableDateEnd
 LinkMeeting
 
 15.
-*
+*UserAuthentication
+UserAuthenticationID (PK)
+UserID (FK)
+Email
+Password (hashed)
