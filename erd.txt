@@ -1,3 +1,4 @@
+1, 2. Pass
 
 3.
 *Courses
@@ -41,7 +42,7 @@ UserID (FK)
 ApplicationID (PK)
 RegularUserID (FK) ?
 JobID (FK)
-CV (cho upload file hay autofilled từ dữ liệu người dùng?)
+CV
 StatementofPurpose
 SupportExpectation (tách được nữa không?)
 Questions (tách được nữa không?)
@@ -95,11 +96,12 @@ UserID (FK)
 CourseID (FK)
 BankAccountID (FK)
 
-*ApplicationStatus
+*ApplicationStatus??????????????????
 AStatusID (PK)
+Application ID (FK)
 AStatus
 
-9.
+9, 10.
 *CandidateInterviewSchedule
 CIScheduleID (PK)
 ApplicationID (FK)
@@ -107,8 +109,7 @@ JobID (FK)
 RIScheduleID (FK)
 ISchedule
 
-10.
-*
+11. Pass
 
 12.
 *Company
@@ -125,19 +126,19 @@ RecruiterID (PK)
 UserID (FK) - thế còn userrole có phải link vô đây kkk
 CompanyID (FK)
 
+*CandidateApplicationApproval??????????????????????
+Action (PK)
+AStatus (FK)
+Action
+
+13, 14.
 *RecruiterInterviewSchedule
 RIScheduleID (PK)
 JobID (FK)
+ApplicationID (FK)
 AvailableDateStart
 AvailableDateEnd
-CandidateProfile (Link nhu the nao???)
 LinkMeeting
-
-13.
-*
-
-14.
-*
 
 15.
 *
