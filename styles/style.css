@@ -332,12 +332,14 @@ textarea {
 }
 
 /* Courses Page */
-section {
-    padding: 2rem 9%;
+
+.cp-contents {
+    min-height: 100vh; 
+    text-align: center;
 }
 
-.cp_contents {
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
+.cp-contents h1 {
+    padding-top: 10rem;
+    font-size: 2rem;
 }
+
