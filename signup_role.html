@@ -15,9 +15,7 @@
 
 <body>
     <div class="si-content">
-        <div class="si-image">
-            <img alt="Background.png" src="styles/sign_background.jpg">
-        </div>
+
         <div class="si-form-box">
             <img alt="Logo" src="styles/Logo.png" class="logo">
             <h1>Welcome!</h1>
@@ -26,24 +24,30 @@
                 <button type="button" class="si-toggle-btn" onclick="location.href='signin.html'">Sign In</button>
                 <button type="button" class="si-toggle-btn">Sign Up</button>
             </div>
-            <form class="inputgr" id="su-inputgr">
+            <form class="inputgr" id="su-inputgr" action="">
                 <p>I'm a ...</p>
                 <div class="su-box">
                     <div class="su-input-box">
                         <button type="button" class="su-btn" onclick="location.href='signup_user.html'">
-                            <i class="fa-solid fa-user"></i>
+                            <img src="icons/Person.svg"></i>
                             <p>Normal User</p>
                         </button>
-                    </div>
+                    </div>  
+
                     <div class="su-input-box">
                         <button type="button" class="su-btn" onclick="location.href='signup_bus.html'">
-                            <i class="fa-solid fa-users"></i>
+                            <img src="icons/PeopleGroup.svg">
                             <p>Business</p>
                         </button>
                     </div>
                 </div>
             </form>
         </div>
+
+        <div class="si-image">
+            <img alt="Background.png" src="styles/sign_background.jpg">
+        </div>
+
     </div>
 </body>
 
