@@ -232,7 +232,7 @@ textarea {
     background: transparent;
     border: 0;
     position: relative;
-    color: #eee;
+    color: #fff;
 }
 
 #si-btn {
@@ -258,7 +258,7 @@ textarea {
 }
 
 .inputgr {
-    padding-top: 50px;
+    padding-top: 20px;
     margin-left: 10.5em;
     width: 25em;
     transition: .5s;
