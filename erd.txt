@@ -1,5 +1,5 @@
-3. Courses
-
+3.
+*Courses
 CourseID (PK)
 Title
 Price
@@ -9,18 +9,68 @@ Provider
 Benefits
 Category
 
-4. BankAccount
-
+4.
+*BankAccount
 BankAccountID (PK)
 UserID (FK)
 BankType
 BankNumber
 AccountName
 
+5, 6.
+*Job
+JobID (PK)
+CompanyID (FK)
+EmployerID (FK)
+JobTitle
+JobDeadline
+Salary
+JobLocation
+JobDescription
+ExperienceRequirement (cái nì là exper level lun)
+JobBenefits
 
-8. RegisteredCourse
+*Employer
+EmployerID (PK)
+CompanyID (FK)
+UserID (FK)
 
+7.
+*Application
+ApplicationID (PK)
+RegularUserID? (FK)
+JobID (FK)
+CV (cho upload file hay autofilled từ dữ liệu người dùng?)
+StatementofPurpose
+SupportExpectation (tách được nữa không?)
+Questions (tách được nữa không?)
+
+8.
+*Users
+UserID (PK)
+FirstName
+LastName
+Address
+UserPhone
+UserEmail
+Gender
+Age
+LivingLocation
+
+*
+
+*RegisteredCourse
 RegisteredCourseID (PK)
 UserID (FK)
 CourseID (FK)
 BankAccountID (FK)
+
+12.
+*Company
+CompanyID (PK)
+CompanyName
+Size
+Introduction
+CompanyPhone
+CompanyEmail
+Website
