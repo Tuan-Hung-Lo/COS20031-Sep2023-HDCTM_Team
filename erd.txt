@@ -1,3 +1,4 @@
+
 3.
 *Courses
 CourseID (PK)
@@ -21,7 +22,7 @@ AccountName
 *Job
 JobID (PK)
 CompanyID (FK)
-EmployerID (FK)
+RecruiterID (FK)
 JobTitle
 JobDeadline
 Salary
@@ -30,15 +31,15 @@ JobDescription
 ExperienceRequirement (cái nì là exper level lun)
 JobBenefits
 
-*Employer
-EmployerID (PK)
+*Recruiter
+RecruiterID (PK)
 CompanyID (FK)
 UserID (FK)
 
 7.
 *Application
 ApplicationID (PK)
-RegularUserID? (FK)
+RegularUserID (FK) ?
 JobID (FK)
 CV (cho upload file hay autofilled từ dữ liệu người dùng?)
 StatementofPurpose
@@ -48,6 +49,7 @@ Questions (tách được nữa không?)
 8.
 *Users
 UserID (PK)
+UserRoleID (FK)
 FirstName
 LastName
 Address
@@ -57,13 +59,56 @@ Gender
 Age
 LivingLocation
 
-*
+*UserRole
+UserRoleID (PK)
+UserRole
+=> Link thế nào với bảng Recruiter vs Candidate thì hợp lí đây? Candidate ở đây đang tính là Users r hsy :::)
+
+*Candidate / RegularUser
+CandidateID (PK)
+UserID (FK)
+
+*WorkingExperience
+WExperienceID (PK)
+RegularUserID (FK) ?
+WCompanyName
+WJobRole
+WTimeRange
+WDescription
+
+*Skill
+SkillID (PK)
+RegularUserID (FK) ?
+SkillName
+
+*ExtracurricularActivity
+ActivityID (PK)
+RegularUserID (FK) ?
+OrganizationName
+EAJobRole
+EATimeRange
+EADescription
 
 *RegisteredCourse
 RegisteredCourseID (PK)
 UserID (FK)
 CourseID (FK)
 BankAccountID (FK)
+
+*ApplicationStatus
+AStatusID (PK)
+AStatus
+
+9.
+*CandidateInterviewSchedule
+CIScheduleID (PK)
+ApplicationID (FK)
+JobID (FK)
+RIScheduleID (FK)
+ISchedule
+
+10.
+*
 
 12.
 *Company
@@ -74,3 +119,25 @@ Introduction
 CompanyPhone
 CompanyEmail
 Website
+
+*Recruiter
+RecruiterID (PK)
+UserID (FK) - thế còn userrole có phải link vô đây kkk
+CompanyID (FK)
+
+*RecruiterInterviewSchedule
+RIScheduleID (PK)
+JobID (FK)
+AvailableDateStart
+AvailableDateEnd
+CandidateProfile (Link nhu the nao???)
+LinkMeeting
+
+13.
+*
+
+14.
+*
+
+15.
+*
