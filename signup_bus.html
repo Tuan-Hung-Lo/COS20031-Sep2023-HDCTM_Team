@@ -15,9 +15,7 @@
 
 <body>
     <div class="si-content">
-        <div class="si-image">
-            <img alt="Background.png" src="styles/sign_background.jpg">
-        </div>
+
         <div class="si-form-box">
             <img alt="Logo" src="styles/Logo.png" class="logo">
             <h1>Welcome!</h1>
@@ -26,25 +24,25 @@
                 <button type="button" class="si-toggle-btn" onclick="location.href='signin.html'">Sign In</button>
                 <button type="button" class="si-toggle-btn">Sign Up</button>
             </div>
-            <form class="inputgr" id="si-inputgr">
+            <form class="inputgr" id="si-inputgr" action="">
                 <div class="si-input-box">
-                    <span class="si-input-icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="si-input-icon"><img src="icons/PersonSmall.svg"></span>
                     <input type="text" class="si-input" placeholder="Company Name" required> 
                 </div>
                 <div class="si-input-box">
-                    <span class="si-input-icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="si-input-icon"><img src="icons/Location.svg"></span>
                     <input type="text" class="si-input" placeholder="Address" required> 
                 </div>
                 <div class="si-input-box">
-                    <span class="si-input-icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="si-input-icon"><img src="icons/Phone.svg"></span>
                     <input type="text" class="si-input" placeholder="Contact Number" required> 
                 </div>
                 <div class="si-input-box">
-                    <span class="si-input-icon"><i class="fa-regular fa-envelope"></i></span>
+                    <span class="si-input-icon"><img src="icons/Industry.svg"></span>
                     <input type="text" class="si-input" placeholder="Industry" required> 
                 </div>
                 <div class="si-input-box">
-                    <span class="si-input-icon"><i class="fa-solid fa-lock"></i></span>
+                    <span class="si-input-icon"><img src="icons/Link.svg"></span>
                     <input type="text" class="si-input" placeholder="Website URL (Optional)"> 
                 </div>
                 <div class="si-submit-box">
@@ -52,6 +50,11 @@
                 </div>
             </form>
         </div>
+
+        <div class="si-image">
+            <img alt="Background.png" src="styles/sign_background.jpg">
+        </div>
+
     </div>
 </body>
 

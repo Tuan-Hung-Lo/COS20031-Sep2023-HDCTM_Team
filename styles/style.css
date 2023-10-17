@@ -6,7 +6,6 @@
     text-decoration: none;
     outline: none;
     border: none;
-    text-transform: capitalize;
     transition: all .2s linear;
 }
 
@@ -194,6 +193,8 @@ textarea {
     width: 100%;
     position: absolute;
     text-align: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .si-image {
@@ -202,6 +203,9 @@ textarea {
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    margin: auto;
 }
 
 .si-content .logo {
@@ -269,14 +273,22 @@ textarea {
     margin: 15px;
     padding: 10px;
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
 }
 
 .si-input-box span {
     margin-right: .4em;
 }
 
+.si-input-box img {
+    width: 60%;
+}
+
 .si-input-box input {
-    padding-left: 10px;
+    padding-left: 1.25rem;
 }
 
 .si-input {
@@ -290,9 +302,14 @@ textarea {
 .si-submit-box {
     border: 1px solid #eee;
     margin: 15px;
-    padding: 10px;
-    font-size: 1.5rem;
+    padding: 15px;
     background: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.si-submit-box:hover {
+    background: #c1c1c1;
 }
 
 .si-submit-btn {
@@ -307,12 +324,18 @@ textarea {
 
 .su-box {
     display: flex;
+    flex-direction: row;
 }
 
 .su-input-box {
     margin: 20px auto;
     position: relative;
     outline: none;
+}
+
+.su-input-box img {
+    width: 50%;
+    margin: 1rem;
 }
 
 .su-input-box i {
@@ -325,6 +348,9 @@ textarea {
     box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
     width: 10em;
     height: 10em;
+    border-radius: 4px;
+    padding: 1rem 1rem 1.5rem 1rem;
+    cursor: pointer;
 }
 
 .su-btn p {
