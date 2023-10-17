@@ -6,7 +6,6 @@
     text-decoration: none;
     outline: none;
     border: none;
-    text-transform: capitalize;
     transition: all .2s linear;
 }
 
@@ -188,13 +187,241 @@ textarea {
     height: 135px;
 }
 
-/* Courses Page */
-section {
-    padding: 2rem 9%;
+/* SIGN IN */
+.si-content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
 }
 
-.cp_contents {
+.si-image {
+    float: right;
+    width: 40em;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    margin: auto;
 }
+
+.si-content .logo {
+    padding-bottom: 5em;
+}
+
+.si-form-box {
+    float: left;
+    width: 50em;
+    height: 100%;
+    position: relative;
+    background: #fff;
+    padding: 50px 30px;
+    box-shadow: 0 .5rem .8rem rgba(0, 0, 0, .1);
+}
+
+.si-button-box {
+    width: 20em;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: 0 0 10px 2px #dc9d9dd2;
+    border-radius: 30px;
+}
+
+.si-toggle-btn {
+    padding: 10px 4em;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    position: relative;
+    color: #fff;
+}
+
+#si-btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #b52f2fd2, #3721a8);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#su-btn {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #b52f2fd2, #3721a8);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.inputgr {
+    padding-top: 20px;
+    margin-left: 10.5em;
+    width: 25em;
+    transition: .5s;
+}
+
+.si-input-box {
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    margin: 15px;
+    padding: 10px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.si-input-box span {
+    margin-right: .4em;
+}
+
+.si-input-box img {
+    width: 60%;
+}
+
+.si-input-box input {
+    padding-left: 1.25rem;
+}
+
+.si-input {
+    width: 85%;
+    padding: 10px 0;
+    outline: none;
+    background: transparent;
+    border-left: 1px solid;
+}
+
+.si-submit-box {
+    border: 1px solid #eee;
+    margin: 15px;
+    padding: 15px;
+    background: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.si-submit-box:hover {
+    background: #c1c1c1;
+}
+
+.si-submit-btn {
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+}
+
+#su-inputgr {
+    left: 450px;
+}
+
+.su-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.su-input-box {
+    margin: 20px auto;
+    position: relative;
+    outline: none;
+}
+
+.su-input-box img {
+    width: 50%;
+    margin: 1rem;
+}
+
+.su-input-box i {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.su-btn {
+    background: transparent;
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    width: 10em;
+    height: 10em;
+    border-radius: 4px;
+    padding: 1rem 1rem 1.5rem 1rem;
+    cursor: pointer;
+}
+
+.su-btn p {
+    font-size: 1rem;
+}
+
+/* Courses Page */
+
+.cp-contents {
+    min-height: 100vh; 
+}
+
+.cp-contents h1 {
+    padding-top: 10rem;
+    font-size: 2rem;
+    padding-left: 21em;
+}
+
+.cp-box-containe {
+    padding-left: 5em;
+}
+
+.cp-box-container h5 {
+    font-size: 1.5em;
+    margin-left: 3.5em;
+    padding-bottom: .5em;
+    padding-top: 3em;
+}
+
+.cp-box-container hr {
+    border: 0;
+    clear: both;
+    width: 90%;
+    background-color: #c5c5c5;
+    height: 1px;
+    margin-left: 5em;
+}
+
+#cp-search-buttons {
+    margin-left: 5em;
+}
+
+#cp-search-buttons button {
+    border: 2px solid #9e9e9e;
+    margin-top: 1em;
+    padding: 1em 2em;
+    background-color: transparent;
+    color: #9e9e9e;
+    cursor: pointer;
+}
+
+#cp-search-buttons button:hover {
+    background-color: #9e9e9e;
+    color: #eee;
+}
+
+.sp-product-container{
+    margin-left: 5em;
+    padding-top: 2em;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+}
+
+.sp-image-box {
+    height: 150px;
+}
+
+.sp-image-box img {
+    height: 100%;
+}
+
