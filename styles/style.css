@@ -437,6 +437,11 @@ textarea {
     text-decoration: underline;
 }
 
+/* SPAN */
+.cpp-span {
+    color: #777;
+}
+
 /* CPP HEADING */
 .cpp-heading {
     text-align: center;
@@ -495,15 +500,6 @@ textarea {
     width: 1rem;
 }
 
-.cpp-span {
-    color: #777;
-}
-
-.cpp-span ul li ul li {
-    color: #777;
-    padding-left: 1rem;
-}
-
 /* CPP BI PERSONAL INFORMATION */
 .cpp-title {
     display: flex;
@@ -511,7 +507,8 @@ textarea {
 }
 
 .cpp-bi-personalinfo-content-edubg {
-    padding-left: 1.75rem;
+    padding-left: 3rem;
+    color: #777;
 }
 
 hr {
@@ -541,6 +538,7 @@ hr {
 
 .cpp-e-workingexp-work-desc {
     padding-left: 2rem;
+    color: #777;
 }
 
 /* CPP COURSES */
