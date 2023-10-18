@@ -495,8 +495,13 @@ textarea {
     width: 1rem;
 }
 
-.cpp-bi-headline-headline-span {
+.cpp-span {
     color: #777;
+}
+
+.cpp-span ul li ul li {
+    color: #777;
+    padding-left: 1rem;
 }
 
 /* CPP BI PERSONAL INFORMATION */
@@ -527,4 +532,21 @@ hr {
     border-radius: 100px;
     border: 1px solid #777;
     color: #777;
+}
+
+/* CPP E WORKING EXPERIENCE */
+.cpp-e-workingexp-work h4, .cpp-e-workingexp-work h5 {
+    font-weight: bold;
+}
+
+.cpp-e-workingexp-work-desc {
+    padding-left: 2rem;
+}
+
+/* CPP COURSES */
+.cpp-course-container, .cpp-jobapp-container, .cpp-intsche-container {
+    margin: 0 3rem 3rem 3rem;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
 }
