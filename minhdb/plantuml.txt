@@ -1,0 +1,200 @@
+@startuml
+
+entity "Company" {
+  +CompanyID (PK)
+  Name
+  Size
+  Introduction
+  Phone
+  Email
+  Website
+}
+
+entity "Partner" {
+  +PartnerID (PK)
+  Name
+  Description
+}
+
+entity "Course" {
+  + CourseID (PK)
+  CoursesCategoryID (FK)
+  Title
+  Price
+  Length
+  Outline
+  Provider
+  Benefits
+}
+
+entity "CourseCategory" {
+  + CourseCategoryID (PK)
+  CourseCategoryName
+}
+
+entity "BankAccount" {
+  + BankAccountID (PK)
+  UserID (FK)
+  BankType
+  BankNumber
+  AccountName
+}
+
+entity "Job" {
+  + JobID (PK)
+  CompanyID (FK)
+  RecruiterID (FK)
+  JobTitle
+  JobDeadline
+  Salary
+  JobDescription
+  WorkLocation
+  ExperienceRequirement
+  JobBenefits
+}
+
+entity "Recruiter" {
+  + RecruiterID (PK)
+  CompanyID (FK)
+  UserID (FK)
+}
+
+entity "Application" {
+  + ApplicationID (PK)
+  CandidateID (FK)
+  JobID (FK)
+  CV
+  StatementofPurpose
+  SupportExpectation
+  Questions
+}
+
+entity "Users" {
+  + UserID (PK)
+  UserAuthenticationID (FK)
+  UserRoleID (FK)
+  FirstName
+  LastName
+  Address
+  UserPhone
+  Gender
+  Age
+  LivingLocation
+}
+
+entity "UserRole" {
+  + UserRoleID (PK)
+  UserID (FK)
+  UserRoleName
+}
+
+entity "UserAuthentication" {
+  + UserAuthenticationID (PK)
+  UserID (FK)
+  Email
+  Password (hashed)
+}
+
+entity "Candidate" {
+  + CandidateID (PK)
+  UserID (FK)
+}
+
+entity "WorkingExperience" {
+  + WExperienceID (PK)
+  CandidateID (FK)
+  WCompanyName
+  WJobRole
+  WTimeRange
+  WDescription
+}
+
+entity "Skill" {
+  + SkillID (PK)
+  CandidateID (FK)
+  SkillName
+}
+
+entity "ExtracurricularActivity" {
+  + ActivityID (PK)
+  CandidateID (FK)
+  OrganizationName
+  EAJobRole
+  EATimeRange
+  EADescription
+}
+
+entity "CourseReceipt" {
+  + ReceiptID (PK)
+  UserID (FK)
+  CourseID (FK)
+  BankAccountID (FK)
+}
+
+entity "Interview" {
+  +InterviewID (PK)
+  ApplicationID (FK)
+  InterviewDate
+  InterviewTime
+  InterviewLocation
+}
+
+entity "CandidateInterviewSchedule" {
+  + CIScheduleID (PK)
+  ApplicationID (FK)
+  JobID (FK)
+  RIScheduleID (FK)
+  ISchedule
+}
+
+entity "RecruiterInterviewSchedule" {
+  + RIScheduleID (PK)
+  JobID (FK)
+  ApplicationID (FK)
+  AvailableDateStart
+  AvailableDateEnd
+  LinkMeeting
+}
+
+entity "InterviewSlots" {
+  + SlotID (PK)
+  JobID (FK)
+  InterviewDate
+  InterviewTimeStart
+  InterviewTimeEnd
+  IsBooked
+}
+
+entity "CandidateInterview" {
+  + CandidateInterviewID (PK)
+  CandidateID (FK)
+  SlotID (FK)
+}
+
+Users --|{ Candidate
+Users --|{ Recruiter
+Users --|{ UserRole
+Users --|{ UserAuthentication
+Users --o{ BankAccount
+
+BankAccount --o{ CourseReceipt
+
+Candidate --o{ Application
+Candidate --o Interview
+Candidate --o WorkingExperience
+Candidate --o Skill
+Candidate --o ExtracurricularActivity
+
+Recruiter --o Company
+Recruiter --o Job
+
+Course --o{ CourseReceipt
+Course --o{ CourseCategory
+
+Job --o Application
+
+Application --o Interview
+
+Company --o Partner
+
+@enduml
