@@ -546,7 +546,4 @@ hr {
 /* CPP COURSES */
 .cpp-course-container, .cpp-jobapp-container, .cpp-intsche-container {
     margin: 0 3rem 3rem 3rem;
-    padding: 2rem;
-    border-radius: 4px;
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
 }
