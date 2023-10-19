@@ -16,6 +16,10 @@ html {
     scroll-behavior: smooth;
 }
 
+main {
+    margin-top: 10rem;
+}
+
 /* HEADER */
 
 header {
@@ -111,7 +115,8 @@ header .btn_active {
 
 /* FOOTER */
 footer {
-    margin-bottom: 0;
+    position: sticky;
+    top: 100%;
 }
 
 footer .container {
@@ -516,3 +521,118 @@ textarea {
     }  
 }
 
+/* CANDIDATE PROFILE PAGE */
+
+/* ALL LINK */
+.profilelink {
+    text-decoration: underline;
+}
+
+/* SPAN */
+.cpp-span {
+    color: #777;
+}
+
+/* CPP HEADING */
+.cpp-heading {
+    text-align: center;
+}
+
+/* CPP MAIN CONTENT */
+
+/* CPP BASIC INFORMATION */
+.cpp-bie-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.cpp-bi-container {
+    flex: 1;
+    border-radius: 4px;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.cpp-e-container {
+    flex: 2;
+    border-radius: 4px;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+}
+
+/* CPP BI HEADLINE */
+.cpp-bi-headline-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cpp-bi-headline-profileimg {
+    flex: 1;
+}
+
+.cpp-bi-headline-profileimg img {
+    width: 100%;
+}
+
+.cpp-bi-headline-headline {
+    flex: 2;
+}
+
+.cpp-bi-headline-headline img {
+    width: 1rem;
+}
+
+/* CPP BI PERSONAL INFORMATION */
+.cpp-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cpp-bi-personalinfo-content-edubg {
+    padding-left: 3rem;
+    color: #777;
+}
+
+hr {
+    border: solid 0.5px #777;
+}
+
+/* CPP E SKILLS */
+.cpp-bi-skills-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cpp-e-skills-content p {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem 0.25rem 0.25rem 0;
+    border-radius: 100px;
+    border: 1px solid #777;
+    color: #777;
+}
+
+/* CPP E WORKING EXPERIENCE */
+.cpp-e-workingexp-work h4, .cpp-e-workingexp-work h5 {
+    font-weight: bold;
+}
+
+.cpp-e-workingexp-work-desc {
+    padding-left: 2rem;
+    color: #777;
+}
+
+/* CPP COURSES */
+.cpp-course-container, .cpp-jobapp-container, .cpp-intsche-container {
+    margin: 0 3rem 3rem 3rem;
+}
