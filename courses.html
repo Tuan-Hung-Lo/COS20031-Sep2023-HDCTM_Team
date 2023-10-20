@@ -9,6 +9,7 @@
   <link rel="icon" href="images/Favicon-02.png" type="image/x-icon">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   <script src="https://kit.fontawesome.com/f73039f1ad.js" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
   <title>Courses Page</title>
 </head>
 
@@ -17,7 +18,7 @@
 
     <!-- Navigation Bar -->
 
-    <a href="#"><img alt="Logo" src="styles/Logo.png" class="logo"></a>
+    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
     <nav class="navbar">
       <a href="#">Home</a>
@@ -30,21 +31,142 @@
       <ul>
         <li><i class="uil uil-bars" id="bars"></i></li>
         <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="profile_page" class="uil uil-user"></a></li>
+        <li><a href="candidateprofile.html" class="uil uil-user"></a></li>
       </ul>
     </div>
 
   </header>
   <main>
     <section class="cp-contents">
-        <h1>Courses</h1>
+      <h1>Courses</h1>
 
-        <!-- First Course Group -->
+      <!-- First Course Group -->
 
-        <div class="cp-box-container">
+      <div class="cp-box-container">
         <h5>Suggested for you</h5>
         <hr>
-          
+
+        <!-- Suggest Button-->
+
+        <div id="cp-search-buttons">
+          <button class="cp-btn">All</button>
+          <button class="cp-btn">F&B</button>
+          <button class="cp-btn">Beauty & Spa</button>
+          <button class="cp-btn">Tourism & Hospitality</button>
+        </div>
+
+        <!-- Suggested Product -->
+
+        <div class="sp-product-container">
+          <div class="sp-slide-container" id="cp-box1">
+
+            <!--Slide button-->
+            <img alt="button.png" src="icons/Arrow.svg" class="arrow-btn" id="left">
+
+            <div class="sp-card-wrapper">
+              <!--First Column-->
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img alt="product.png" src="images/barista_int.png">
+                </div>
+                <div class="sp-product-details">
+                  <h6>Become a Professional International Barista</h6>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
+                      <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
+                      <li><img src="icons/Scholar.svg"> Up to 100%</li>
+                    </ul>
+                  </div>
+                  <button class="sp-product-btn">Register for this course</button>
+                </div>
+              </div>
+
+              <!--Second Column-->
+
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img alt="product.png" src="images/barista.png">
+                </div>
+                <div class="sp-product-details">
+                  <h6>Become a Professional International Barista</h6>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
+                      <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
+                      <li><img src="icons/Scholar.svg"> Up to 100%</li>
+                    </ul>
+                  </div>
+                  <button class="sp-product-btn">Register for this course</button>
+                </div>
+              </div>
+
+              <!--Third Column-->
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img alt="product.png" src="images/makeup.png">
+                </div>
+                <div class="sp-product-details">
+                  <h6>Become a Professional International Barista</h6>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
+                      <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
+                      <li><img src="icons/Scholar.svg"> Up to 100%</li>
+                    </ul>
+                  </div>
+                  <button class="sp-product-btn">Register for this course</button>
+                </div>
+              </div>
+
+              <!--Fourth Column-->
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img alt="product.png" src="images/nail.png">
+                </div>
+                <div class="sp-product-details">
+                  <h6>Become a Professional International Barista</h6>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
+                      <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
+                      <li><img src="icons/Scholar.svg"> Up to 100%</li>
+                    </ul>
+                  </div>
+                  <button class="sp-product-btn">Register for this course</button>
+                </div>
+              </div>
+
+              <!--Fifth Column-->
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img alt="product.png" src="images/spa.png">
+                </div>
+                <div class="sp-product-details">
+                  <h6>Become a Professional International Barista</h6>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
+                      <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
+                      <li><img src="icons/Scholar.svg"> Up to 100%</li>
+                    </ul>
+                  </div>
+                  <button class="sp-product-btn">Register for this course</button>
+                </div>
+              </div>
+
+
+              <!--Slide button-->
+              <img alt="button.png" src="icons/Arrow(1).svg" class="arrow-btn" id="right">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="cp-box-container">
+          <h5>Our Courses</h5>
+          <hr>
+
           <!-- Suggest Button-->
 
           <div id="cp-search-buttons">
@@ -57,16 +179,16 @@
           <!-- Suggested Product -->
 
           <div class="sp-product-container">
-            <div class="sp-slide-container"  id="cp-box1">
+            <div class="sp-slide-container" id="cp-box2">
 
               <!--Slide button-->
               <img alt="button.png" src="icons/Arrow.svg" class="arrow-btn" id="left">
 
-              <div class="sp-card-wrapper" >
+              <div class="sp-card-wrapper">
                 <!--First Column-->
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <img alt="product.png" src="styles/barista_int.png">
+                    <img alt="product.png" src="images/barista_int.png">
                   </div>
                   <div class="sp-product-details">
                     <h6>Become a Professional International Barista</h6>
@@ -85,7 +207,7 @@
 
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <img alt="product.png" src="styles/barista.png">
+                    <img alt="product.png" src="images/barista.png">
                   </div>
                   <div class="sp-product-details">
                     <h6>Become a Professional International Barista</h6>
@@ -103,7 +225,7 @@
                 <!--Third Column-->
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <img alt="product.png" src="styles/makeup.png">
+                    <img alt="product.png" src="images/makeup.png">
                   </div>
                   <div class="sp-product-details">
                     <h6>Become a Professional International Barista</h6>
@@ -121,7 +243,7 @@
                 <!--Fourth Column-->
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <img alt="product.png" src="styles/nail.png">
+                    <img alt="product.png" src="images/nail.png">
                   </div>
                   <div class="sp-product-details">
                     <h6>Become a Professional International Barista</h6>
@@ -139,7 +261,7 @@
                 <!--Fifth Column-->
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <img alt="product.png" src="styles/spa.png">
+                    <img alt="product.png" src="images/spa.png">
                   </div>
                   <div class="sp-product-details">
                     <h6>Become a Professional International Barista</h6>
@@ -153,127 +275,6 @@
                     <button class="sp-product-btn">Register for this course</button>
                   </div>
                 </div>
-
-
-              <!--Slide button-->
-              <img alt="button.png" src="icons/Arrow(1).svg" class="arrow-btn" id="right">
-            </div>
-
-          </div>
-        </div>
-
-        <div class="cp-box-container">
-          <h5>Our Courses</h5>
-          <hr>
-            
-            <!-- Suggest Button-->
-  
-            <div id="cp-search-buttons">
-              <button class="cp-btn">All</button>
-              <button class="cp-btn">F&B</button>
-              <button class="cp-btn">Beauty & Spa</button>
-              <button class="cp-btn">Tourism & Hospitality</button>
-            </div>
-  
-            <!-- Suggested Product -->
-  
-            <div class="sp-product-container">
-              <div class="sp-slide-container" id="cp-box2">
-  
-                <!--Slide button-->
-                <img alt="button.png" src="icons/Arrow.svg" class="arrow-btn" id="left">
-  
-                <div class="sp-card-wrapper" >
-                  <!--First Column-->
-                  <div class="sp-card">
-                    <div class="sp-image-box">
-                      <img alt="product.png" src="styles/barista_int.png">
-                    </div>
-                    <div class="sp-product-details">
-                      <h6>Become a Professional International Barista</h6>
-                      <div class="sp-product-require">
-                        <ul>
-                          <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
-                          <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
-                          <li><img src="icons/Scholar.svg"> Up to 100%</li>
-                        </ul>
-                      </div>
-                      <button class="sp-product-btn">Register for this course</button>
-                    </div>
-                  </div>
-  
-                  <!--Second Column-->
-  
-                  <div class="sp-card">
-                    <div class="sp-image-box">
-                      <img alt="product.png" src="styles/barista.png">
-                    </div>
-                    <div class="sp-product-details">
-                      <h6>Become a Professional International Barista</h6>
-                      <div class="sp-product-require">
-                        <ul>
-                          <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
-                          <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
-                          <li><img src="icons/Scholar.svg"> Up to 100%</li>
-                        </ul>
-                      </div>
-                      <button class="sp-product-btn">Register for this course</button>
-                    </div>
-                  </div>
-  
-                  <!--Third Column-->
-                  <div class="sp-card">
-                    <div class="sp-image-box">
-                      <img alt="product.png" src="styles/makeup.png">
-                    </div>
-                    <div class="sp-product-details">
-                      <h6>Become a Professional International Barista</h6>
-                      <div class="sp-product-require">
-                        <ul>
-                          <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
-                          <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
-                          <li><img src="icons/Scholar.svg"> Up to 100%</li>
-                        </ul>
-                      </div>
-                      <button class="sp-product-btn">Register for this course</button>
-                    </div>
-                  </div>
-  
-                  <!--Fourth Column-->
-                  <div class="sp-card">
-                    <div class="sp-image-box">
-                      <img alt="product.png" src="styles/nail.png">
-                    </div>
-                    <div class="sp-product-details">
-                      <h6>Become a Professional International Barista</h6>
-                      <div class="sp-product-require">
-                        <ul>
-                          <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
-                          <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
-                          <li><img src="icons/Scholar.svg"> Up to 100%</li>
-                        </ul>
-                      </div>
-                      <button class="sp-product-btn">Register for this course</button>
-                    </div>
-                  </div>
-  
-                  <!--Fifth Column-->
-                  <div class="sp-card">
-                    <div class="sp-image-box">
-                      <img alt="product.png" src="styles/spa.png">
-                    </div>
-                    <div class="sp-product-details">
-                      <h6>Become a Professional International Barista</h6>
-                      <div class="sp-product-require">
-                        <ul>
-                          <li><img src="icons/Time.svg"> 12 - 16 lessons</li>
-                          <li><img src="icons/Fee.svg"> 9,900,000 VND</li>
-                          <li><img src="icons/Scholar.svg"> Up to 100%</li>
-                        </ul>
-                      </div>
-                      <button class="sp-product-btn">Register for this course</button>
-                    </div>
-                  </div>
 
                 <!--Slide button-->
                 <img alt="button.png" src="icons/Arrow(1).svg" class="arrow-btn" id="right">
@@ -302,12 +303,13 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="styles/Logo_footer.png" class="logo"></a>
+          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Thông tin liên hệ</h4>
           <ul>
             <li>Cơ sở chính</li>
-            <li><i class="fa-solid fa-location-dot"></i> P2 – 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà Nội</li>
+            <li><i class="fa-solid fa-location-dot"></i> P2 – 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
+              Nội</li>
             <li><i class="fa-solid fa-phone"></i> (+84)98.499.65.98</li>
           </ul>
         </div>
