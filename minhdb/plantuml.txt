@@ -162,7 +162,6 @@ entity "InterviewSlots" {
   InterviewDate
   InterviewTimeStart
   InterviewTimeEnd
-  IsBooked
 }
 
 entity "CandidateInterview" {

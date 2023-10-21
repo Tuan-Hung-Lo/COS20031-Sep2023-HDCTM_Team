@@ -33,7 +33,7 @@ JobDeadline
 Salary
 JobDescription
 WorkLocation
-ExperienceRequirement (cái nì là exper level lun)
+ExperienceRequirement
 JobBenefits
 
 *Recruiter
@@ -72,6 +72,7 @@ UserRoleName
 *Candidate
 CandidateID (PK)
 UserID (FK)
+ApplicationStatusID (FK)
 
 *WorkingExperience
 WExperienceID (PK)
@@ -94,24 +95,24 @@ EAJobRole
 EATimeRange
 EADescription
 
-*CourseReceipt
-ReceiptID (PK)
+*RegisteredCourse
+RegistrationID (PK)
 UserID (FK)
 CourseID (FK)
 BankAccountID (FK)
 
-*ApplicationStatus??????????????????
-AStatusID (PK)
-Application ID (FK)
-AStatus
+*RecruiterAction
+ActionID (PK)
+ActionName
 
 9, 10.
-*CandidateInterviewSchedule
-CIScheduleID (PK)
+*CandidateInterview
+InterviewID (PK)
+SlotID (PK)
 ApplicationID (FK)
-JobID (FK)
-RIScheduleID (FK)
-ISchedule
+InterviewDate
+InterviewTime
+InterviewLocation
 
 11. Pass
 
@@ -130,18 +131,17 @@ RecruiterID (PK)
 UserID (FK)
 CompanyID (FK)
 
-*CandidateApplicationApproval??????????????????????
-Action (PK)
-AStatus (FK)
-Action
+*ApplicationStatus
+ApplicationStatusID (PK)
+ApplicationStatusName
 
 13, 14.
-*RecruiterInterviewSchedule
-RIScheduleID (PK)
+*InterviewSlots
+InterviewSlotID (PK)
 JobID (FK)
-ApplicationID (FK)
-AvailableDateStart
-AvailableDateEnd
+DateStart
+DateEnd
+TimeEnd
 LinkMeeting
 
 15.
