@@ -365,7 +365,7 @@ textarea {
 /* Courses Page */
 
 .cp-contents {
-    min-height: 100vh; 
+    min-height: 100vh;
     padding-bottom: 4em;
 }
 
@@ -429,7 +429,7 @@ textarea {
     color: #eee;
 }
 
-.sp-product-container{
+.sp-product-container {
     margin-left: 4.5em;
     margin-top: 2em;
     width: 100%;
@@ -529,19 +529,19 @@ textarea {
 @media screen and (max-width: 1300px) {
     .sp-card-wrapper {
         grid-auto-columns: calc((100%/3) - 30px);
-    }  
+    }
 }
 
 @media screen and (max-width: 1100px) {
     .sp-card-wrapper {
         grid-auto-columns: calc((100%/2) - 50px);
-    }  
+    }
 }
 
 @media screen and (max-width: 760px) {
     .sp-card-wrapper {
         grid-auto-columns: calc((100%) - 20px);
-    }  
+    }
 }
 
 /* CANDIDATE PROFILE PAGE */
@@ -646,7 +646,8 @@ hr {
 }
 
 /* CPP E WORKING EXPERIENCE */
-.cpp-e-workingexp-work h4, .cpp-e-workingexp-work h5 {
+.cpp-e-workingexp-work h4,
+.cpp-e-workingexp-work h5 {
     font-weight: bold;
 }
 
@@ -656,7 +657,9 @@ hr {
 }
 
 /* CPP COURSES */
-.cpp-course-container, .cpp-jobapp-container, .cpp-intsche-container {
+.cpp-course-container,
+.cpp-jobapp-container,
+.cpp-intsche-container {
     margin: 0 3rem 3rem 3rem;
 }
 
@@ -672,64 +675,179 @@ hr {
 }
 
 #slider-container .btn {
-   position: absolute;
-   top: calc(50% - 5px);
-   height: 15px;
-   width: 15px;
-   border-left: 8px solid #696969;
-   border-top: 8px solid #696969;
-   cursor: pointer;
+    position: absolute;
+    top: calc(50% - 5px);
+    height: 15px;
+    width: 15px;
+    border-left: 8px solid #696969;
+    border-top: 8px solid #696969;
+    cursor: pointer;
 }
 
 #slider-container .btn:hover {
-   transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 #slider-container .btn.inactive {
-   border-color: #282828
+    border-color: #282828
 }
 
 #slider-container .btn:first-of-type {
-   transform: rotate(-45deg);
-   left: 10px
+    transform: rotate(-45deg);
+    left: 10px
 }
 
 #slider-container .btn:last-of-type {
-   transform: rotate(135deg);
-   right: 10px;
+    transform: rotate(135deg);
+    right: 10px;
 }
 
 #slider-container #slider {
-   display: flex;
-   gap: 30%;
-   transition: all .5s;
+    display: flex;
+    gap: 30%;
+    transition: all .5s;
 }
 
 #slider-container #slider .slide {
-   margin: auto 10px;
-   border-radius: 5px;
-   box-shadow: 2px 2px 4px 2px white, -2px -2px 4px 2px white;
-   display: grid;
-   place-items: center;
+    margin: auto 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 2px white, -2px -2px 4px 2px white;
+    display: grid;
+    place-items: center;
 }
 
 @media only screen and (min-width: 1100px) {
-   #slider-container #slider .slide {
-       width: calc(2.5% - 20px);
-   }
+    #slider-container #slider .slide {
+        width: calc(2.5% - 20px);
+    }
 }
+
 @media only screen and (max-width: 1100px) {
-   #slider-container #slider .slide {
-       width: calc(3.3333333% - 20px);
-   }
+    #slider-container #slider .slide {
+        width: calc(3.3333333% - 20px);
+    }
 }
+
 @media only screen and (max-width: 900px) {
-   #slider-container #slider .slide {
-       width: calc(5% - 20px);
-   }
+    #slider-container #slider .slide {
+        width: calc(5% - 20px);
+    }
 }
+
 @media only screen and (max-width: 550px) {
-   #slider-container #slider .slide {
-       width: calc(10% - 20px);
-   }
+    #slider-container #slider .slide {
+        width: calc(10% - 20px);
+    }
 }
+
+/* JOB OPPORTUNITIES PAGE */
+.jop-header {
+    font-size: 1.5rem;
+}
+
+.jop-header,
+.jop-container {
+    margin: 0 3rem 2rem 3rem;
+}
+
+.jop-filter p {
+    font-weight: bold;
+}
+
+/* EXPECTED SALARY */
+.jopfilterinput {
+    border: #060606 1px solid;
+    border-radius: 4px;
+    height: 2em;
+    margin-top: 0.5em;
+    padding: 0.5em;
+}
+
+/* EXPERIENCE LEVEL */
+.jop-filter label span {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border: #231278 1px solid;
+    border-radius: 4px;
+    margin-top: 0.5em;
+    transition: 0.5s;
+}
+
+.jop-filter label span:hover {
+    background-color: #231278;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+.jopfilter[type="checkbox"] {
+    display: none;
+}
+
+.jopfilter[type="checkbox"]:checked~span {
+    padding: 0.25rem 0.5rem;
+    background-color: #231278;
+    color: #fafafa;
+    border-radius: 4px;
+}
+
+.jopsubmit {
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    background-color: #231278;
+    color: #fafafa;
+    height: 3rem;
+    width: 13rem;
+}
+
+.jopclear {
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    background-color: transparent;
+    border: #231278 solid 1px;
+    height: 3rem;
+}
+
+.jopsubmit:hover {
+    background-color: transparent;
+    border: #231278 solid 1px;
+    color: #231278;
+    cursor: pointer;
+}
+
+.jopclear:hover {
+    background-color: #eee;
+    border: #231278 solid 1px;
+    cursor: pointer;
+}
+
+/* 2 UNEQUAL COLUMN LAYOUT */
+.jop-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+
+
+.jop-filter {
+    flex: 1;
+}
+
+.jop-jobcards {
+    flex: 3;
+}
+
+/* JOB OPPORTUNITIES SLIDERS */
+/* SUGGESTED FOR YOU */
+.jop-jobcards-suggested .header,
+.jop-jobcards-all .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.jop-jobcards p {
+    text-decoration: underline;
+}
+
+/* ALL JOB OPPOTUNITIES */
