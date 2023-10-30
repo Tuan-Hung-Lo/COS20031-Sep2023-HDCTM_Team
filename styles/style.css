@@ -433,8 +433,8 @@ textarea {
     width: 45px;
     cursor: pointer;
     position: absolute;
-    top: 70%;
-    transform: translateY(-70%);
+    top: 22.5em;
+    transform: translateY(22.5em);
 }
 
 #cp-box2 .arrow-btn {
@@ -442,8 +442,8 @@ textarea {
     width: 45px;
     cursor: pointer;
     position: absolute;
-    top: 140%;
-    transform: translateY(-140%);
+    top: 40.5em;
+    transform: translateY(40.5em);
 }
 
 .sp-slide-container .arrow-btn:first-child {
