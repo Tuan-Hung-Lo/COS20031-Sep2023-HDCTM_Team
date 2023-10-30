@@ -370,7 +370,8 @@ textarea {
 }
 
 .cp-contents h1 {
-    padding-top: 10rem;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
     font-size: 2rem;
     padding-left: 21em;
 }
@@ -384,6 +385,20 @@ textarea {
     margin-left: 3.5em;
     padding-bottom: .5em;
     padding-top: 3em;
+    max-width: 15em;
+    float: left;
+
+}
+
+.cp-box-container a {
+    padding-top: 5em;
+    margin-right: 5em;
+    border-bottom: 1px solid;
+    font-size: 1em;
+    color: #060606;
+    text-align: right;
+    max-width: 5em;
+    float: right;
 }
 
 .cp-box-container hr {
@@ -400,16 +415,17 @@ textarea {
 }
 
 #cp-search-buttons button {
-    border: 2px solid #9e9e9e;
+    border: 2px solid #151d62;
     margin-top: 1em;
-    padding: 1em 2em;
+    padding: .5em 1em;
+    border-radius: 10px;
     background-color: transparent;
-    color: #9e9e9e;
+    color: #151d62;
     cursor: pointer;
 }
 
 #cp-search-buttons button:hover {
-    background-color: #9e9e9e;
+    background-color: #11185d;
     color: #eee;
 }
 
@@ -433,8 +449,8 @@ textarea {
     width: 45px;
     cursor: pointer;
     position: absolute;
-    top: 22.5em;
-    transform: translateY(22.5em);
+    top: 20.5em;
+    transform: translateY(20.5em);
 }
 
 #cp-box2 .arrow-btn {
@@ -442,8 +458,8 @@ textarea {
     width: 45px;
     cursor: pointer;
     position: absolute;
-    top: 40.5em;
-    transform: translateY(40.5em);
+    top: 38.5em;
+    transform: translateY(38.5em);
 }
 
 .sp-slide-container .arrow-btn:first-child {
@@ -493,7 +509,8 @@ textarea {
 }
 
 .sp-product-btn {
-    background: #e9e9e9;
+    background: #151d62;
+    color: #eee;
     width: 15em;
     margin-top: 1rem;
     height: 3em;
@@ -505,7 +522,8 @@ textarea {
 }
 
 .sp-product-btn:hover {
-    background-color: #c1c1c1;
+    background-color: #11185d;
+    color: #eee;
 }
 
 @media screen and (max-width: 1300px) {
