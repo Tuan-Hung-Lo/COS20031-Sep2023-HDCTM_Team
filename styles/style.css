@@ -365,53 +365,50 @@ textarea {
 /* Courses Page */
 
 .cp-contents {
-    min-height: 100vh;
-    padding-bottom: 4em;
+    /* min-height: 100vh; */
+    margin: 2rem;
+    /* padding-bottom: 4em; */
 }
 
 .cp-contents h1 {
-    padding-top: 5rem;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     font-size: 2rem;
-    padding-left: 21em;
+    text-align: center;
 }
 
-.cp-box-containe {
-    padding-left: 4.5em;
+.cp-box-container {
+    padding: 2rem 0;
 }
+
+.cp-box-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+}
+
 
 .cp-box-container h5 {
     font-size: 1.5em;
-    margin-left: 3.5em;
-    padding-bottom: .5em;
-    padding-top: 3em;
-    max-width: 15em;
-    float: left;
-
 }
 
 .cp-box-container a {
-    padding-top: 5em;
-    margin-right: 5em;
-    border-bottom: 1px solid;
-    font-size: 1em;
-    color: #060606;
-    text-align: right;
-    max-width: 5em;
-    float: right;
+    border-bottom: #060606 2px solid;
+    padding-bottom: 0.15rem;
 }
 
-.cp-box-container hr {
+*/ .cp-box-container hr {
     border: 0;
     clear: both;
-    width: 90%;
+    /* width: 90%; */
     background-color: #c5c5c5;
     height: 1px;
-    margin-left: 4.5em;
 }
 
 #cp-search-buttons {
-    margin-left: 4.5em;
+    /* margin-left: 4.5em; */
+    padding: 0.25rem 0;
 }
 
 #cp-search-buttons button {
@@ -663,82 +660,6 @@ hr {
     margin: 0 3rem 3rem 3rem;
 }
 
-/* SLIDER */
-#slider-container {
-    margin: 0 3rem;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: center;
-}
-
-#slider-container .btn {
-    position: absolute;
-    top: calc(50% - 5px);
-    height: 15px;
-    width: 15px;
-    border-left: 8px solid #696969;
-    border-top: 8px solid #696969;
-    cursor: pointer;
-}
-
-#slider-container .btn:hover {
-    transform: scale(1.2);
-}
-
-#slider-container .btn.inactive {
-    border-color: #282828
-}
-
-#slider-container .btn:first-of-type {
-    transform: rotate(-45deg);
-    left: 10px
-}
-
-#slider-container .btn:last-of-type {
-    transform: rotate(135deg);
-    right: 10px;
-}
-
-#slider-container #slider {
-    display: flex;
-    gap: 30%;
-    transition: all .5s;
-}
-
-#slider-container #slider .slide {
-    margin: auto 10px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 4px 2px white, -2px -2px 4px 2px white;
-    display: grid;
-    place-items: center;
-}
-
-@media only screen and (min-width: 1100px) {
-    #slider-container #slider .slide {
-        width: calc(2.5% - 20px);
-    }
-}
-
-@media only screen and (max-width: 1100px) {
-    #slider-container #slider .slide {
-        width: calc(3.3333333% - 20px);
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    #slider-container #slider .slide {
-        width: calc(5% - 20px);
-    }
-}
-
-@media only screen and (max-width: 550px) {
-    #slider-container #slider .slide {
-        width: calc(10% - 20px);
-    }
-}
 
 /* JOB OPPORTUNITIES PAGE */
 .jop-header {
