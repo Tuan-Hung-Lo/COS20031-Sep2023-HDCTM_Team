@@ -411,19 +411,48 @@ textarea {
     padding: 0.25rem 0;
 }
 
-#cp-search-buttons button {
+#form_check {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5em;
+}
+
+#cp-search-buttons label span {
     border: 2px solid #151d62;
+    display: inline-block;
     margin-top: 1em;
     padding: .5em 1em;
     border-radius: 10px;
     background-color: transparent;
     color: #151d62;
     cursor: pointer;
+    font-size: 1em;
 }
 
-#cp-search-buttons button:hover {
+#cp-search-buttons label input[type="checkbox"]{
+    display: none;
+}
+
+#cp-search-buttons label span:hover {
     background-color: #11185d;
     color: #eee;
+}
+
+#cp-search-buttons label input[type="checkbox"]:checked ~ span {
+    background-color: #11185d;
+    color: #eee;
+}
+
+.cp-submit-btn {
+    border: 2px solid #151d62;
+    display: inline-block;
+    margin-top: 1em;
+    padding: .5em 1em;
+    border-radius: 10px;
+    background-color: #11185d;
+    color: #eee;
+    cursor: pointer;
+    font-size: 1em;
 }
 
 .sp-product-container {
