@@ -365,9 +365,7 @@ textarea {
 /* Courses Page */
 
 .cp-contents {
-    /* min-height: 100vh; */
-    margin: 2rem;
-    /* padding-bottom: 4em; */
+    margin: 5rem;
 }
 
 .cp-contents h1 {
@@ -398,11 +396,10 @@ textarea {
     padding-bottom: 0.15rem;
 }
 
-*/ .cp-box-container hr {
+.cp-box-container hr {
     border: 0;
     clear: both;
-    /* width: 90%; */
-    background-color: #c5c5c5;
+    background-color: #060606;
     height: 1px;
 }
 
@@ -414,7 +411,6 @@ textarea {
 #form_check {
     display: flex;
     justify-content: space-between;
-    margin-right: 5em;
 }
 
 #cp-search-buttons label span {
@@ -501,6 +497,7 @@ textarea {
     border-radius: 5px;
     padding: 1em;
     width: 20em;
+    margin: 0.25rem;
 }
 
 .sp-image-box {
