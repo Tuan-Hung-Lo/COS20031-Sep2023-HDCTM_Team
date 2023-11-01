@@ -1,9 +1,9 @@
 CREATE TABLE Users (
-    UserID INT PRIMARY KEY,
-    UserRoleID INT,
-    UserAuthenticationID INT,
-    FirstName VARCHAR(50),
-    LastName VARCHAR(50),
+    UserID INT PRIMARY KEY AUTO_INCREMENT,
+    UserRoleID INT PRIMARY KEY AUTO_INCREMENT,
+    UserAuthenticationID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
     Address VARCHAR(255),
     UserPhone VARCHAR(15),
     Gender VARCHAR(10),
@@ -14,17 +14,17 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE UserRole (
-    UserRoleID INT PRIMARY KEY,
-    UserID INT,
-    UserRoleName VARCHAR(50),
+    UserRoleID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    UserRoleName VARCHAR(50) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE TABLE UserAuthentication (
-    UserAuthenticationID INT PRIMARY KEY,
-    UserID INT,
-    UserEmail VARCHAR(255),
-    UserPassword VARCHAR(255),
+    UserAuthenticationID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    UserEmail VARCHAR(255) NOT NULL,
+    UserPassword VARCHAR(255) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
