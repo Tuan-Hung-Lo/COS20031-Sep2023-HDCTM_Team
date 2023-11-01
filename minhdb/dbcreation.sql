@@ -1,7 +1,7 @@
 CREATE TABLE Users (
     UserID INT PRIMARY KEY AUTO_INCREMENT,
-    UserRoleID INT PRIMARY KEY AUTO_INCREMENT,
-    UserAuthenticationID INT PRIMARY KEY AUTO_INCREMENT,
+    UserRoleID INT,
+    UserAuthenticationID INT,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
     Address VARCHAR(255),
