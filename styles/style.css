@@ -369,7 +369,8 @@ textarea {
 }
 
 .cp-contents h1,
-.jop-contents h1, .cpp-heading h1 {
+.jop-contents h1,
+.cpp-heading h1 {
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 2rem;
@@ -741,7 +742,7 @@ hr {
     border: #231278 1px solid;
     border-radius: 4px;
     margin-top: 0.5em;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .jop-filter label span:hover {
@@ -768,6 +769,7 @@ hr {
     color: #fafafa;
     height: 3rem;
     width: 13rem;
+    font-size: 1rem;
 }
 
 .jopclear {
@@ -776,6 +778,7 @@ hr {
     background-color: transparent;
     border: #231278 solid 1px;
     height: 3rem;
+    font-size: 1rem;
 }
 
 .jopsubmit:hover {
