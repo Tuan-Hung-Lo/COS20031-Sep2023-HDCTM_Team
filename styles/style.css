@@ -395,7 +395,9 @@ textarea {
 .cp-box-container a {
     border-bottom: #060606 2px solid;
     padding-bottom: 0.15rem;
+    color: #060606;
 }
+
 
 .cp-box-container hr {
     border: 0;
