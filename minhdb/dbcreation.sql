@@ -1,9 +1,53 @@
+-- Drop tables if they exist
+
+DROP TABLE IF EXISTS ExtracurriculumActivity;
+DROP TABLE IF EXISTS WorkingExperience;
+DROP TABLE IF EXISTS Education;
+DROP TABLE IF EXISTS Skill;
+DROP TABLE IF EXISTS ApplicationStatus;
+DROP TABLE IF EXISTS Candidate;
+DROP TABLE IF EXISTS InterviewStatus;
+DROP TABLE IF EXISTS CandidateInterview;
+DROP TABLE IF EXISTS InterviewSlot;
+DROP TABLE IF EXISTS Application;
+DROP TABLE IF EXISTS JobSpecialization;
+DROP TABLE IF EXISTS WorkingFormat;
+DROP TABLE IF EXISTS ExperienceLevel;
+DROP TABLE IF EXISTS Job;
+DROP TABLE IF EXISTS Company;
+DROP TABLE IF EXISTS Recruiter;
+DROP TABLE IF EXISTS Course;
+DROP TABLE IF EXISTS CourseCategory;
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS UserAuthentication;
+DROP TABLE IF EXISTS UserRole;
+DROP TABLE IF EXISTS BankAccount;
+DROP TABLE IF EXISTS RegisteredCourse;
+DROP TABLE IF EXISTS Partner;
+
+-- Create tables
+
+CREATE TABLE UserRole (
+    UserRoleID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT,
+    UserRoleName VARCHAR(255),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+CREATE TABLE UserAuthentication (
+    UserAuthenticationID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT,
+    UserEmail VARCHAR(255),
+    UserPassword VARCHAR(255),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
 CREATE TABLE Users (
     UserID INT PRIMARY KEY AUTO_INCREMENT,
     UserRoleID INT,
     UserAuthenticationID INT,
-    FirstName VARCHAR(50) NOT NULL,
-    LastName VARCHAR(50) NOT NULL,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
     Address VARCHAR(255),
     UserPhone VARCHAR(15),
     Gender VARCHAR(10),
@@ -13,23 +57,8 @@ CREATE TABLE Users (
     FOREIGN KEY (UserAuthenticationID) REFERENCES UserAuthentication(UserAuthenticationID)
 );
 
-CREATE TABLE UserRole (
-    UserRoleID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT NOT NULL,
-    UserRoleName VARCHAR(50) NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
-);
-
-CREATE TABLE UserAuthentication (
-    UserAuthenticationID INT PRIMARY KEY AUTO_INCREMENT,
-    UserID INT NOT NULL,
-    UserEmail VARCHAR(255) NOT NULL,
-    UserPassword VARCHAR(255) NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
-);
-
 CREATE TABLE BankAccount (
-    BankAccountID INT PRIMARY KEY,
+    BankAccountID INT PRIMARY KEY AUTO_INCREMENT,
     UserID INT,
     BankType VARCHAR(255),
     BankNumber VARCHAR(255),
@@ -37,13 +66,18 @@ CREATE TABLE BankAccount (
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
-CREATE TABLE CourseCategory (
-    CourseCategoryID INT PRIMARY KEY,
-    CourseCategoryName VARCHAR(255)
+CREATE TABLE RegisteredCourse (
+    RegistrationID INT PRIMARY KEY AUTO_INCREMENT,
+    BankAccountID INT,
+    UserID INT,
+    CourseID INT,
+    FOREIGN KEY (BankAccountID) REFERENCES BankAccount(BankAccountID),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
 );
 
 CREATE TABLE Course (
-    CourseID INT PRIMARY KEY,
+    CourseID INT PRIMARY KEY AUTO_INCREMENT,
     CourseCategoryID INT,
     Title VARCHAR(255),
     Price DECIMAL(10, 2),
@@ -54,18 +88,21 @@ CREATE TABLE Course (
     FOREIGN KEY (CourseCategoryID) REFERENCES CourseCategory(CourseCategoryID)
 );
 
-CREATE TABLE RegisteredCourse (
-    RegistrationID INT PRIMARY KEY,
-    BankAccountID INT,
+CREATE TABLE CourseCategory (
+    CourseCategoryID INT PRIMARY KEY AUTO_INCREMENT,
+    CourseCategoryName VARCHAR(255)
+);
+
+CREATE TABLE Recruiter (
+    RecruiterID INT PRIMARY KEY AUTO_INCREMENT,
     UserID INT,
-    CourseID INT,
-    FOREIGN KEY (BankAccountID) REFERENCES BankAccount(BankAccountID),
+    CompanyID INT,
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
-    FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
+    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
 );
 
 CREATE TABLE Company (
-    CompanyID INT PRIMARY KEY,
+    CompanyID INT PRIMARY KEY AUTO_INCREMENT,
     CompanyName VARCHAR(255),
     Size INT,
     Introduction TEXT,
@@ -75,32 +112,20 @@ CREATE TABLE Company (
 );
 
 CREATE TABLE Partner (
-    PartnerID INT PRIMARY KEY,
+    PartnerID INT PRIMARY KEY AUTO_INCREMENT,
     CompanyID INT,
     Name VARCHAR(255),
     Description TEXT,
     FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
 );
 
-CREATE TABLE Recruiter (
-    RecruiterID INT PRIMARY KEY,
-    UserID INT,
-    CompanyID INT,
-    RecruiterActionID INT,
-    FOREIGN KEY (UserID) REFERENCES Users(UserID),
-    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID),
-    FOREIGN KEY (RecruiterActionID) REFERENCES RecruiterAction(RecruiterActionID)
-);
-
-CREATE TABLE RecruiterAction (
-    RecruiterActionID INT PRIMARY KEY,
-    RecruiterActionName VARCHAR(255)
-);
-
 CREATE TABLE Job (
-    JobID INT PRIMARY KEY,
+    JobID INT PRIMARY KEY AUTO_INCREMENT,
     CompanyID INT,
     RecruiterID INT,
+    ExperienceLevelID INT,
+    WorkingFormatID INT,
+    JobSpecializationID INT,
     JobTitle VARCHAR(255),
     JobDeadline DATE,
     Salary DECIMAL(10, 2),
@@ -109,11 +134,29 @@ CREATE TABLE Job (
     ExperienceRequirement TEXT,
     JobBenefits TEXT,
     FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID),
-    FOREIGN KEY (RecruiterID) REFERENCES Recruiter(RecruiterID)
+    FOREIGN KEY (RecruiterID) REFERENCES Recruiter(RecruiterID),
+    FOREIGN KEY (ExperienceLevelID) REFERENCES ExperienceLevel(ExperienceLevelID),
+    FOREIGN KEY (WorkingFormatID) REFERENCES WorkingFormat(WorkingFormatID),
+    FOREIGN KEY (JobSpecializationID) REFERENCES JobSpecialization(JobSpecializationID)
+);
+
+CREATE TABLE ExperienceLevel (
+    ExperienceLevelID INT PRIMARY KEY AUTO_INCREMENT,
+    ExperienceLevelName VARCHAR(255)
+);
+
+CREATE TABLE WorkingFormat (
+    WorkingFormatID INT PRIMARY KEY AUTO_INCREMENT,
+    WorkingFormatName VARCHAR(255)
+);
+
+CREATE TABLE JobSpecialization (
+    JobSpecializationID INT PRIMARY KEY AUTO_INCREMENT,
+    JobSpecializationName VARCHAR(255)
 );
 
 CREATE TABLE Application (
-    ApplicationID INT PRIMARY KEY,
+    ApplicationID INT PRIMARY KEY AUTO_INCREMENT,
     CandidateID INT,
     JobID INT,
     CV BLOB,
@@ -125,7 +168,7 @@ CREATE TABLE Application (
 );
 
 CREATE TABLE InterviewSlot (
-    InterviewSlotID INT PRIMARY KEY,
+    InterviewSlotID INT PRIMARY KEY AUTO_INCREMENT,
     JobID INT,
     DateStart DATE,
     DateEnd DATE,
@@ -135,7 +178,7 @@ CREATE TABLE InterviewSlot (
 );
 
 CREATE TABLE CandidateInterview (
-    InterviewID INT PRIMARY KEY,
+    InterviewID INT PRIMARY KEY AUTO_INCREMENT,
     InterviewSlotID INT,
     ApplicationID INT,
     InterviewDate DATE,
@@ -146,8 +189,13 @@ CREATE TABLE CandidateInterview (
     FOREIGN KEY (ApplicationID) REFERENCES Application(ApplicationID)
 );
 
+CREATE TABLE InterviewStatus (
+    InterviewStatusID INT PRIMARY KEY AUTO_INCREMENT,
+    InterviewStatusName VARCHAR(255)
+);
+
 CREATE TABLE Candidate (
-    CandidateID INT PRIMARY KEY,
+    CandidateID INT PRIMARY KEY AUTO_INCREMENT,
     UserID INT,
     ApplicationStatusID INT,
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
@@ -155,19 +203,19 @@ CREATE TABLE Candidate (
 );
 
 CREATE TABLE ApplicationStatus (
-    ApplicationStatusID INT PRIMARY KEY,
+    ApplicationStatusID INT PRIMARY KEY AUTO_INCREMENT,
     ApplicationStatusName VARCHAR(255)
 );
 
 CREATE TABLE Skill (
-    SkillID INT PRIMARY KEY,
+    SkillID INT PRIMARY KEY AUTO_INCREMENT,
     CandidateID INT,
     SkillName VARCHAR(255),
     FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID)
 );
 
 CREATE TABLE Education (
-    EducationID INT PRIMARY KEY,
+    EducationID INT PRIMARY KEY AUTO_INCREMENT,
     CandidateID INT,
     Degree VARCHAR(255),
     Institution VARCHAR(255),
@@ -177,7 +225,7 @@ CREATE TABLE Education (
 );
 
 CREATE TABLE WorkingExperience (
-    WExperienceID INT PRIMARY KEY,
+    WExperienceID INT PRIMARY KEY AUTO_INCREMENT,
     CandidateID INT,
     WJobRole VARCHAR(255),
     WCompanyName VARCHAR(255),
@@ -187,7 +235,7 @@ CREATE TABLE WorkingExperience (
 );
 
 CREATE TABLE ExtracurriculumActivity (
-    ActivityID INT PRIMARY KEY,
+    ActivityID INT PRIMARY KEY AUTO_INCREMENT,
     CandidateID INT,
     OrganizationName VARCHAR(255),
     EAJobRole VARCHAR(255),
