@@ -5,9 +5,9 @@ DROP TABLE IF EXISTS WorkingExperience;
 DROP TABLE IF EXISTS Education;
 DROP TABLE IF EXISTS Skill;
 DROP TABLE IF EXISTS ApplicationStatus;
-DROP TABLE IF EXISTS Candidate;
+DROP TABLE IF EXISTS JobSeeker;
 DROP TABLE IF EXISTS InterviewStatus;
-DROP TABLE IF EXISTS CandidateInterview;
+DROP TABLE IF EXISTS JobSeekerInterview;
 DROP TABLE IF EXISTS InterviewSlot;
 DROP TABLE IF EXISTS Application;
 DROP TABLE IF EXISTS JobSpecialization;
@@ -163,13 +163,13 @@ CREATE TABLE JobSpecialization (
 
 CREATE TABLE Application (
     ApplicationID INT PRIMARY KEY AUTO_INCREMENT,
-    CandidateID INT NOT NULL,
+    JobSeekerID INT NOT NULL,
     JobID INT NOT NULL,
     CV BLOB NOT NULL,
     StatementofPurpose TEXT NOT NULL,
     SupportExpectation TEXT NOT NULL,
     Questions TEXT NOT NULL,
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID),
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID),
     FOREIGN KEY (JobID) REFERENCES Job(JobID)
 );
 
@@ -183,7 +183,7 @@ CREATE TABLE InterviewSlot (
     FOREIGN KEY (JobID) REFERENCES Job(JobID)
 );
 
-CREATE TABLE CandidateInterview (
+CREATE TABLE JobSeekerInterview (
     InterviewID INT PRIMARY KEY AUTO_INCREMENT,
     InterviewSlotID INT NOT NULL,
     ApplicationID INT NOT NULL,
@@ -200,8 +200,8 @@ CREATE TABLE InterviewStatus (
     InterviewStatusName VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Candidate (
-    CandidateID INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE JobSeeker (
+    JobSeekerID INT PRIMARY KEY AUTO_INCREMENT,
     UserID INT NOT NULL,
     ApplicationStatusID INT NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
@@ -215,37 +215,37 @@ CREATE TABLE ApplicationStatus (
 
 CREATE TABLE Skill (
     SkillID INT PRIMARY KEY AUTO_INCREMENT,
-    CandidateID INT NOT NULL,
+    JobSeekerID INT NOT NULL,
     SkillName VARCHAR(255) NOT NULL,
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID)
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
 );
 
 CREATE TABLE Education (
     EducationID INT PRIMARY KEY AUTO_INCREMENT,
-    CandidateID INT NOT NULL,
+    JobSeekerID INT NOT NULL,
     Degree VARCHAR(255) NOT NULL,
     Institution VARCHAR(255) NOT NULL,
     GraduationYear INT NOT NULL CHECK (GraduationYear >= 1900),
     GPA DECIMAL(3, 2) NOT NULL CHECK (GPA >= 0 AND GPA <= 4),
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID)
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
 );
 
 CREATE TABLE WorkingExperience (
     WExperienceID INT PRIMARY KEY AUTO_INCREMENT,
-    CandidateID INT NOT NULL,
+    JobSeekerID INT NOT NULL,
     WJobRole VARCHAR(255) NOT NULL,
     WCompanyName VARCHAR(255) NOT NULL,
     WTimeRange VARCHAR(255) NOT NULL,
     WDescription TEXT NOT NULL,
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID)
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
 );
 
 CREATE TABLE ExtracurriculumActivity (
     ActivityID INT PRIMARY KEY AUTO_INCREMENT,
-    CandidateID INT NOT NULL,
+    JobSeekerID INT NOT NULL,
     OrganizationName VARCHAR(255) NOT NULL,
     EAJobRole VARCHAR(255) NOT NULL,
     EATimeRange VARCHAR(255) NOT NULL,
     EADescription TEXT NOT NULL,
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID)
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
 );
