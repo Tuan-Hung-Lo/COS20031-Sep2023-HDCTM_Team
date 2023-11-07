@@ -9,3 +9,13 @@ $(document).ready(function () {
     });
 });
 // ============= END MENU
+
+// JOP OPPORTUNITIES FILTER COLLAPSE AND EXPAND
+function toggle() {
+	$(this).parent().next().slideToggle(); 
+	if ($(this).html() == "Filter") {
+		$(this).html("FFilter");
+	} else {
+		$(this).html("Filter");
+	}
+}

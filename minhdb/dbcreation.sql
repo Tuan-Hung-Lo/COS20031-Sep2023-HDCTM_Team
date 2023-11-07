@@ -1,197 +1,251 @@
-CREATE TABLE Users (
-    UserID INT PRIMARY KEY AUTO_INCREMENT,
-    UserRoleID INT PRIMARY KEY AUTO_INCREMENT,
-    UserAuthenticationID INT PRIMARY KEY AUTO_INCREMENT,
-    FirstName VARCHAR(50) NOT NULL,
-    LastName VARCHAR(50) NOT NULL,
-    Address VARCHAR(255),
-    UserPhone VARCHAR(15),
-    Gender VARCHAR(10),
-    Age INT,
-    LivingLocation VARCHAR(255),
-    FOREIGN KEY (UserRoleID) REFERENCES UserRole(UserRoleID),
-    FOREIGN KEY (UserAuthenticationID) REFERENCES UserAuthentication(UserAuthenticationID)
-);
+-- Drop tables if they exist
+
+DROP TABLE IF EXISTS ExtracurriculumActivity;
+DROP TABLE IF EXISTS WorkingExperience;
+DROP TABLE IF EXISTS Education;
+DROP TABLE IF EXISTS Skill;
+DROP TABLE IF EXISTS ApplicationStatus;
+DROP TABLE IF EXISTS JobSeeker;
+DROP TABLE IF EXISTS InterviewStatus;
+DROP TABLE IF EXISTS JobSeekerInterview;
+DROP TABLE IF EXISTS InterviewSlot;
+DROP TABLE IF EXISTS Application;
+DROP TABLE IF EXISTS JobSpecialization;
+DROP TABLE IF EXISTS WorkingFormat;
+DROP TABLE IF EXISTS ExperienceLevel;
+DROP TABLE IF EXISTS Job;
+DROP TABLE IF EXISTS Company;
+DROP TABLE IF EXISTS Recruiter;
+DROP TABLE IF EXISTS Course;
+DROP TABLE IF EXISTS CourseCategory;
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS UserAuthentication;
+DROP TABLE IF EXISTS UserRole;
+DROP TABLE IF EXISTS BankAccount;
+DROP TABLE IF EXISTS RegisteredCourse;
+DROP TABLE IF EXISTS Partner;
+
+-- Create tables
 
 CREATE TABLE UserRole (
     UserRoleID INT PRIMARY KEY AUTO_INCREMENT,
     UserID INT NOT NULL,
-    UserRoleName VARCHAR(50) NOT NULL,
+    UserRoleName VARCHAR(255) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE TABLE UserAuthentication (
     UserAuthenticationID INT PRIMARY KEY AUTO_INCREMENT,
     UserID INT NOT NULL,
-    UserEmail VARCHAR(255) NOT NULL,
+    UserEmail VARCHAR(255) UNIQUE NOT NULL,
     UserPassword VARCHAR(255) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY AUTO_INCREMENT,
+    UserRoleID INT NOT NULL,
+    UserAuthenticationID INT NOT NULL,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    UserPhone VARCHAR(15) NOT NULL,
+    Gender VARCHAR(10) NOT NULL,
+    DateOfBirth DATE NOT NULL CHECK (
+        DateOfBirth <= CURRENT_DATE() 
+        AND DateOfBirth >= '1900-01-01'
+    ),
+    LivingLocation VARCHAR(255) NOT NULL,
+    FOREIGN KEY (UserRoleID) REFERENCES UserRole(UserRoleID),
+    FOREIGN KEY (UserAuthenticationID) REFERENCES UserAuthentication(UserAuthenticationID)
+);
+
 CREATE TABLE BankAccount (
-    BankAccountID INT PRIMARY KEY,
-    UserID INT,
-    BankType VARCHAR(255),
-    BankNumber VARCHAR(255),
-    AccountName VARCHAR(255),
+    BankAccountID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    BankType VARCHAR(255) NOT NULL,
+    BankNumber VARCHAR(255) NOT NULL,
+    AccountName VARCHAR(255) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
-CREATE TABLE CourseCategory (
-    CourseCategoryID INT PRIMARY KEY,
-    CourseCategoryName VARCHAR(255)
-);
-
-CREATE TABLE Course (
-    CourseID INT PRIMARY KEY,
-    CourseCategoryID INT,
-    Title VARCHAR(255),
-    Price DECIMAL(10, 2),
-    Length INT,
-    Outline TEXT,
-    Provider VARCHAR(255),
-    Benefits TEXT,
-    FOREIGN KEY (CourseCategoryID) REFERENCES CourseCategory(CourseCategoryID)
-);
-
 CREATE TABLE RegisteredCourse (
-    RegistrationID INT PRIMARY KEY,
-    BankAccountID INT,
-    UserID INT,
-    CourseID INT,
+    RegistrationID INT PRIMARY KEY AUTO_INCREMENT,
+    BankAccountID INT NOT NULL,
+    UserID INT NOT NULL,
+    CourseID INT NOT NULL,
     FOREIGN KEY (BankAccountID) REFERENCES BankAccount(BankAccountID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
     FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
 );
 
-CREATE TABLE Company (
-    CompanyID INT PRIMARY KEY,
-    CompanyName VARCHAR(255),
-    Size INT,
-    Introduction TEXT,
-    CompanyPhone VARCHAR(15),
-    CompanyEmail VARCHAR(255),
-    Website VARCHAR(255)
+CREATE TABLE Course (
+    CourseID INT PRIMARY KEY AUTO_INCREMENT,
+    CourseCategoryID INT NOT NULL,
+    Title VARCHAR(255) NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+    Length INT NOT NULL,
+    Outline TEXT NOT NULL,
+    Provider VARCHAR(255) NOT NULL,
+    Benefits TEXT NOT NULL,
+    FOREIGN KEY (CourseCategoryID) REFERENCES CourseCategory(CourseCategoryID)
 );
 
-CREATE TABLE Partner (
-    PartnerID INT PRIMARY KEY,
-    CompanyID INT,
-    Name VARCHAR(255),
-    Description TEXT,
-    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
+CREATE TABLE CourseCategory (
+    CourseCategoryID INT PRIMARY KEY AUTO_INCREMENT,
+    CourseCategoryName VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Recruiter (
-    RecruiterID INT PRIMARY KEY,
-    UserID INT,
-    CompanyID INT,
-    RecruiterActionID INT,
+    RecruiterID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    CompanyID INT NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
-    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID),
-    FOREIGN KEY (RecruiterActionID) REFERENCES RecruiterAction(RecruiterActionID)
+    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
 );
 
-CREATE TABLE RecruiterAction (
-    RecruiterActionID INT PRIMARY KEY,
-    RecruiterActionName VARCHAR(255)
+CREATE TABLE Company (
+    CompanyID INT PRIMARY KEY AUTO_INCREMENT,
+    CompanyName VARCHAR(255) NOT NULL,
+    Size INT NOT NULL,
+    Introduction TEXT NOT NULL,
+    CompanyPhone VARCHAR(15) NOT NULL,
+    CompanyEmail VARCHAR(255) NOT NULL,
+    Website VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Partner (
+    PartnerID INT PRIMARY KEY AUTO_INCREMENT,
+    CompanyID INT NOT NULL,
+    Name VARCHAR(255) NOT NULL,
+    Description TEXT NOT NULL,
+    FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID)
 );
 
 CREATE TABLE Job (
-    JobID INT PRIMARY KEY,
-    CompanyID INT,
-    RecruiterID INT,
-    JobTitle VARCHAR(255),
-    JobDeadline DATE,
-    Salary DECIMAL(10, 2),
-    JobDescription TEXT,
-    WorkLocation VARCHAR(255),
-    ExperienceRequirement TEXT,
-    JobBenefits TEXT,
+    JobID INT PRIMARY KEY AUTO_INCREMENT,
+    CompanyID INT NOT NULL,
+    RecruiterID INT NOT NULL,
+    ExperienceLevelID INT NOT NULL,
+    WorkingFormatID INT NOT NULL,
+    JobSpecializationID INT NOT NULL,
+    JobTitle VARCHAR(255) NOT NULL,
+    JobDeadline DATE NOT NULL,
+    Salary DECIMAL(10, 2) NOT NULL CHECK (Salary >= 0),
+    JobDescription TEXT NOT NULL,
+    WorkLocation VARCHAR(255) NOT NULL,
+    ExperienceRequirement TEXT NOT NULL,
+    JobBenefits TEXT NOT NULL,
     FOREIGN KEY (CompanyID) REFERENCES Company(CompanyID),
-    FOREIGN KEY (RecruiterID) REFERENCES Recruiter(RecruiterID)
+    FOREIGN KEY (RecruiterID) REFERENCES Recruiter(RecruiterID),
+    FOREIGN KEY (ExperienceLevelID) REFERENCES ExperienceLevel(ExperienceLevelID),
+    FOREIGN KEY (WorkingFormatID) REFERENCES WorkingFormat(WorkingFormatID),
+    FOREIGN KEY (JobSpecializationID) REFERENCES JobSpecialization(JobSpecializationID)
+);
+
+CREATE TABLE ExperienceLevel (
+    ExperienceLevelID INT PRIMARY KEY AUTO_INCREMENT,
+    ExperienceLevelName VARCHAR(255) NOT NULL
+        CHECK (ExperienceLevelName IN ('Internship', 'Entry', 'Junior', 'Senior'))
+);
+
+CREATE TABLE WorkingFormat (
+    WorkingFormatID INT PRIMARY KEY AUTO_INCREMENT,
+    WorkingFormatName VARCHAR(255) NOT NULL
+        CHECK (WorkingFormatName IN ('Remote', 'Hybrid', 'Online', 'Offline'))
+);
+
+CREATE TABLE JobSpecialization (
+    JobSpecializationID INT PRIMARY KEY AUTO_INCREMENT,
+    JobSpecializationName VARCHAR(255) NOT NULL
+		CHECK (JobSpecializationName IN ('Beauty & Spa', 'F&B', 'Tourism & Hospitality', 'Event'))
 );
 
 CREATE TABLE Application (
-    ApplicationID INT PRIMARY KEY,
-    CandidateID INT,
-    JobID INT,
-    CV BLOB,
-    StatementofPurpose TEXT,
-    SupportExpectation TEXT,
-    Questions TEXT,
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID),
+    ApplicationID INT PRIMARY KEY AUTO_INCREMENT,
+    JobSeekerID INT NOT NULL,
+    JobID INT NOT NULL,
+    CV BLOB NOT NULL,
+    StatementofPurpose TEXT NOT NULL,
+    SupportExpectation TEXT NOT NULL,
+    Questions TEXT NOT NULL,
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID),
     FOREIGN KEY (JobID) REFERENCES Job(JobID)
 );
 
 CREATE TABLE InterviewSlot (
-    InterviewSlotID INT PRIMARY KEY,
-    JobID INT,
-    DateStart DATE,
-    DateEnd DATE,
-    TimeStart TIME,
-    TimeEnd TIME,
+    InterviewSlotID INT PRIMARY KEY AUTO_INCREMENT,
+    JobID INT NOT NULL,
+    DateStart DATE NOT NULL,
+    DateEnd DATE NOT NULL,
+    TimeStart TIME NOT NULL,
+    TimeEnd TIME NOT NULL,
     FOREIGN KEY (JobID) REFERENCES Job(JobID)
 );
 
-CREATE TABLE CandidateInterview (
-    InterviewID INT PRIMARY KEY,
-    InterviewSlotID INT,
-    ApplicationID INT,
-    InterviewDate DATE,
-    InterviewTime TIME,
-    InterviewLocation VARCHAR(255),
-    LinkMeeting VARCHAR(255),
+CREATE TABLE JobSeekerInterview (
+    InterviewID INT PRIMARY KEY AUTO_INCREMENT,
+    InterviewSlotID INT NOT NULL,
+    ApplicationID INT NOT NULL,
+    InterviewDate DATE NOT NULL,
+    InterviewTime TIME NOT NULL,
+    InterviewLocation VARCHAR(255) NOT NULL,
+    LinkMeeting VARCHAR(255) NOT NULL,
     FOREIGN KEY (InterviewSlotID) REFERENCES InterviewSlot(InterviewSlotID),
     FOREIGN KEY (ApplicationID) REFERENCES Application(ApplicationID)
 );
 
-CREATE TABLE Candidate (
-    CandidateID INT PRIMARY KEY,
-    UserID INT,
-    ApplicationStatusID INT,
+CREATE TABLE InterviewStatus (
+    InterviewStatusID INT PRIMARY KEY AUTO_INCREMENT,
+    InterviewStatusName VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE JobSeeker (
+    JobSeekerID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    ApplicationStatusID INT NOT NULL,
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
     FOREIGN KEY (ApplicationStatusID) REFERENCES ApplicationStatus(ApplicationStatusID)
 );
 
 CREATE TABLE ApplicationStatus (
-    ApplicationStatusID INT PRIMARY KEY,
-    ApplicationStatusName VARCHAR(255)
+    ApplicationStatusID INT PRIMARY KEY AUTO_INCREMENT,
+    ApplicationStatusName VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Skill (
-    SkillID INT PRIMARY KEY,
-    CandidateID INT,
-    SkillName VARCHAR(255),
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID)
+    SkillID INT PRIMARY KEY AUTO_INCREMENT,
+    JobSeekerID INT NOT NULL,
+    SkillName VARCHAR(255) NOT NULL,
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
 );
 
 CREATE TABLE Education (
-    EducationID INT PRIMARY KEY,
-    CandidateID INT,
-    Degree VARCHAR(255),
-    Institution VARCHAR(255),
-    GraduationYear INT,
-    GPA DECIMAL(3, 2),
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID)
+    EducationID INT PRIMARY KEY AUTO_INCREMENT,
+    JobSeekerID INT NOT NULL,
+    Degree VARCHAR(255) NOT NULL,
+    Institution VARCHAR(255) NOT NULL,
+    GraduationYear INT NOT NULL CHECK (GraduationYear >= 1900),
+    GPA DECIMAL(3, 2) NOT NULL CHECK (GPA >= 0 AND GPA <= 4),
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
 );
 
 CREATE TABLE WorkingExperience (
-    WExperienceID INT PRIMARY KEY,
-    CandidateID INT,
-    WJobRole VARCHAR(255),
-    WCompanyName VARCHAR(255),
-    WTimeRange VARCHAR(255),
-    WDescription TEXT,
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID)
+    WExperienceID INT PRIMARY KEY AUTO_INCREMENT,
+    JobSeekerID INT NOT NULL,
+    WJobRole VARCHAR(255) NOT NULL,
+    WCompanyName VARCHAR(255) NOT NULL,
+    WTimeRange VARCHAR(255) NOT NULL,
+    WDescription TEXT NOT NULL,
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
 );
 
 CREATE TABLE ExtracurriculumActivity (
-    ActivityID INT PRIMARY KEY,
-    CandidateID INT,
-    OrganizationName VARCHAR(255),
-    EAJobRole VARCHAR(255),
-    EATimeRange VARCHAR(255),
-    EADescription TEXT,
-    FOREIGN KEY (CandidateID) REFERENCES Candidate(CandidateID)
+    ActivityID INT PRIMARY KEY AUTO_INCREMENT,
+    JobSeekerID INT NOT NULL,
+    OrganizationName VARCHAR(255) NOT NULL,
+    EAJobRole VARCHAR(255) NOT NULL,
+    EATimeRange VARCHAR(255) NOT NULL,
+    EADescription TEXT NOT NULL,
+    FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
 );

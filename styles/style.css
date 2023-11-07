@@ -17,7 +17,7 @@ html {
 }
 
 main {
-    margin-top: 10rem;
+    margin-top: 6rem;
 }
 
 /* HEADER */
@@ -38,7 +38,7 @@ header {
 
 header .logo {
     position: relative;
-    max-width: 15em;
+    max-width: 10em;
 }
 
 header .navbar a {
@@ -368,7 +368,9 @@ textarea {
     margin: 5rem;
 }
 
-.cp-contents h1 {
+.cp-contents h1,
+.jop-contents h1,
+.cpp-heading h1 {
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 2rem;
@@ -394,7 +396,9 @@ textarea {
 .cp-box-container a {
     border-bottom: #060606 2px solid;
     padding-bottom: 0.15rem;
+    color: #060606;
 }
+
 
 .cp-box-container hr {
     border: 0;
@@ -418,14 +422,14 @@ textarea {
     display: inline-block;
     margin-top: 1em;
     padding: .5em 1em;
-    border-radius: 10px;
+    border-radius: 4px;
     background-color: transparent;
     color: #151d62;
     cursor: pointer;
     font-size: 1em;
 }
 
-#cp-search-buttons label input[type="checkbox"]{
+#cp-search-buttons label input[type="checkbox"] {
     display: none;
 }
 
@@ -434,7 +438,7 @@ textarea {
     color: #eee;
 }
 
-#cp-search-buttons label input[type="checkbox"]:checked ~ span {
+#cp-search-buttons label input[type="checkbox"]:checked~span {
     background-color: #11185d;
     color: #eee;
 }
@@ -444,7 +448,7 @@ textarea {
     display: inline-block;
     margin-top: 1em;
     padding: .5em 1em;
-    border-radius: 10px;
+    border-radius: 4px;
     background-color: #11185d;
     color: #eee;
     cursor: pointer;
@@ -536,7 +540,7 @@ textarea {
     color: #eee;
     width: 15em;
     margin-top: 1rem;
-    height: 3em;
+    height: 2.5rem;
     border-radius: 4px;
     cursor: pointer;
     font-size: .7em;
@@ -582,6 +586,7 @@ textarea {
 /* CPP HEADING */
 .cpp-heading {
     text-align: center;
+    margin-top: 8rem;
 }
 
 /* CPP MAIN CONTENT */
@@ -592,7 +597,7 @@ textarea {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 3rem;
+    padding: 2rem 5rem;
 }
 
 .cpp-bi-container {
@@ -603,6 +608,7 @@ textarea {
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
+    height: 100%;
 }
 
 .cpp-e-container {
@@ -679,22 +685,40 @@ hr {
     color: #777;
 }
 
+.cpp-e-workingexp-work-desc ul li ul {
+    padding-left: 3rem;
+}
+
 /* CPP COURSES */
 .cpp-course-container,
 .cpp-jobapp-container,
 .cpp-intsche-container {
-    margin: 0 3rem 3rem 3rem;
+    margin: 0 5rem 3rem 5rem;
 }
 
+/* CPP TAG */
+.buttonntag {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.tag {
+    border: #d74d0d 1px solid;
+    color: #d74d0d;
+    border-radius: 100px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
 
 /* JOB OPPORTUNITIES PAGE */
-.jop-header {
-    font-size: 1.5rem;
+.jop-contents {
+    margin: 5rem;
 }
 
-.jop-header,
-.jop-container {
-    margin: 0 3rem 2rem 3rem;
+.jop-header {
+    font-size: 1.5rem;
 }
 
 .jop-filter p {
@@ -705,7 +729,8 @@ hr {
 .jopfilterinput {
     border: #060606 1px solid;
     border-radius: 4px;
-    height: 2em;
+    height: 2rem;
+    width: 13rem;
     margin-top: 0.5em;
     padding: 0.5em;
 }
@@ -717,7 +742,7 @@ hr {
     border: #231278 1px solid;
     border-radius: 4px;
     margin-top: 0.5em;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .jop-filter label span:hover {
@@ -744,6 +769,7 @@ hr {
     color: #fafafa;
     height: 3rem;
     width: 13rem;
+    font-size: 1rem;
 }
 
 .jopclear {
@@ -752,6 +778,7 @@ hr {
     background-color: transparent;
     border: #231278 solid 1px;
     height: 3rem;
+    font-size: 1rem;
 }
 
 .jopsubmit:hover {
@@ -767,34 +794,35 @@ hr {
     cursor: pointer;
 }
 
-/* 2 UNEQUAL COLUMN LAYOUT */
-.jop-container {
-    display: flex;
-    flex-direction: row;
-    gap: 5rem;
-    flex-wrap: wrap;
+.accordion .contentBx .label {
+    margin-bottom: 0.75rem;
 }
 
-
-.jop-filter {
-    flex: 1;
+.accordion .contentBx .label::before {
+    content: 'Expand';
+    position: absolute;
+    right: 5rem;
+    border-bottom: #060606 2px solid;
+    padding-bottom: 0.15rem;
+    cursor: pointer;
 }
 
-.jop-jobcards {
-    flex: 3;
+.accordion .contentBx.active {
+    margin-bottom: 2rem;
 }
 
-/* JOB OPPORTUNITIES SLIDERS */
-/* SUGGESTED FOR YOU */
-.jop-jobcards-suggested .header,
-.jop-jobcards-all .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+.accordion .contentBx.active .label::before {
+    content: 'Collapse';
 }
 
-.jop-jobcards p {
-    text-decoration: underline;
+.accordion .contentBx .content {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: 2s;
+    overflow-y: auto;
 }
 
-/* ALL JOB OPPOTUNITIES */
+.accordion .contentBx.active .content {
+    height: 100%;
+}
