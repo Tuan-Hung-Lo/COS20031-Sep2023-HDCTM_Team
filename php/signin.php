@@ -14,9 +14,6 @@
     // Check the connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    } else {
-        echo('Connected');
-        return $conn;
     }
 
     $email = $_POST["email"];
@@ -29,11 +26,15 @@
         WHERE UserEmail = '$email' AND UserPassword = '$hashed_password';";
     $result = $conn->query($user_query);
 
-    echo('Connected');
-
     if ($result->num_rows == 0) {
-        header("Location: ../signup_role.html");
+        header("Location: ../signin.html");
     } else {
-        header("Location: ../page.html");
+        $user = $result->fetch_assoc();
+        // Verify the hashed password
+        if (password_verify($pwd, $user['UserPassword'])) {
+            header("Location: ../page.html");
+        } else {
+            header("Location: ../signin.html");
+        }
     }
 ?>
