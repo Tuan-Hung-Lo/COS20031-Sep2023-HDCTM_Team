@@ -24,14 +24,14 @@
                 <button type="button" class="si-toggle-btn">Sign In</button>
                 <button type="button" class="si-toggle-btn" onclick="location.href='signup_role.html'">Sign Up</button>
             </div>
-            <form class="inputgr" id="si-inputgr" action="">
+            <form class="inputgr" id="si-inputgr" action="php/signin.php">
                 <div class="si-input-box">
                     <span class="si-input-icon"><img src="icons/MessageL.svg"/></span>
-                    <input type="text" class="si-input" placeholder="Email address" required>
+                    <input name="email" type="text" class="si-input" placeholder="Email address" required>
                 </div>
                 <div class="si-input-box">
                     <span class="si-input-icon"><img src="icons/Check&Security.svg"></span>
-                    <input type="password" class="si-input" placeholder="Password" required>
+                    <input name="password" type="password" class="si-input" placeholder="Password" required>
                 </div>
                 <div class="si-submit-box">
                     <button type="submit" class="si-submit-btn">Log in</button>

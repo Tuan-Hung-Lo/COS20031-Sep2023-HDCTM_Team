@@ -1,6 +1,6 @@
 <?php
-    $host = "feenix-mariadb.swin.edu.au";
-    $user = "s104222248";
-    $pwd = "031104";
-    $sql_db = "s104222248_db";
+    $host = "feenix-mariadb-web.swin.edu.au";
+    $username = "s104222248";
+    $password = "031104";
+    $database = "s104222248_db";
 ?>
