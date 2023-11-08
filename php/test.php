@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the credentials match
     if ($username === $valid_username && $password === $valid_password) {
         // Authentication successful
-        header("Location: page.php"); // Redirect to the welcome page
+        header("Location: page.html"); // Redirect to the welcome page
         exit();
     } else {
         $error_message = "Invalid username or password";
