@@ -5,7 +5,7 @@ $valid_password = "password123";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve the submitted username and password
-    $username = $_POST["username"];
+    $username = $_POST["email"];
     $password = $_POST["password"];
 
     // Check if the credentials match
