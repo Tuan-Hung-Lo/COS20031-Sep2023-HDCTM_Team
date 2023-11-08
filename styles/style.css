@@ -680,7 +680,7 @@ textarea {
 }
 
 .cpp-bi-personalinfo-content-edubg {
-    padding-left: 3rem;
+    padding-left: 1rem;
     color: #777;
 }
 
@@ -727,21 +727,6 @@ hr {
 }
 
 /* CPP TAG */
-.buttonntag {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 0.5rem;
-}
-
-.tag {
-    border: #d74d0d 1px solid;
-    color: #d74d0d;
-    border-radius: 100px;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
-}
-
 /* JOB OPPORTUNITIES PAGE */
 .jop-contents {
     margin: 5rem;
@@ -849,7 +834,6 @@ hr {
     position: relative;
     height: 0;
     overflow: hidden;
-    transition: 2s;
     overflow-y: auto;
 }
 
