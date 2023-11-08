@@ -2,39 +2,43 @@
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
 
-    // Database connection parameters
-    $host = "feenix-mariadb-web.swin.edu.au";
-    $username = "s104222248";
-    $password = "031104";
-    $database = "s104222248_db";
+    require_once("./settings.php");
 
     // Create a database connection
-    $conn = new mysqli($host, $username, $password, $database);
+    $conn = @mysqli_connect($host, $username, $password, $database);
 
     // Check the connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $email = $_POST["email"];
-    $pwd = $_POST["password"];
+        // Retrieve the submitted email and password
+        $email = $_POST["email"];
+        $pwd = $_POST["password"];
 
-    // Hash the password using the password_hash function
-    $hashed_password = password_hash($pwd, PASSWORD_DEFAULT);
+        // Prepare a SQL statement with a parameterized query
+        $user_query = "SELECT * FROM UserAuthentication WHERE UserEmail = ? LIMIT 1";
+        $stmt = $conn->prepare($user_query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows == 0) {
+            header("Location: ../signin.html");
+            exit();
+        }
 
-    $user_query= "SELECT * FROM s104222248_db.UserAuthentication
-        WHERE UserEmail = '$email' AND UserPassword = '$hashed_password';";
-    $result = $conn->query($user_query);
-
-    if ($result->num_rows == 0) {
-        header("Location: ../signin.html");
-    } else {
         $user = $result->fetch_assoc();
+
         // Verify the hashed password
-        if (password_verify($pwd, $user['UserPassword'])) {
+        if (password_verify($password, $user['UserPassword'])) {
             header("Location: ../page.html");
+            exit();
         } else {
             header("Location: ../signin.html");
+            exit();
         }
     }
 ?>
