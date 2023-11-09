@@ -228,12 +228,40 @@ textarea {
 }
 
 .si-button-box {
+    width: 20.5em;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.si-toggle-btn {
+    padding: 10px 4em;
+    height: 3em;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    position: relative;
+    color: #b8b8b8;
+}
+
+#si-btn-selected {
+    background-color: rgb(186, 22, 22);
+    border-radius: 5px;
+    margin: .3em 0;
+    color: #fff;
+}
+
+/*
+
+.si-button-box {
     width: 20em;
     margin: 20px auto;
     position: relative;
     box-shadow: 0 0 10px 2px #dc9d9dd2;
     border-radius: 30px;
 }
+
 
 .si-toggle-btn {
     padding: 10px 4em;
@@ -255,6 +283,7 @@ textarea {
     transition: .5s;
 }
 
+/*
 #su-btn {
     top: 0;
     right: 0;
@@ -265,7 +294,7 @@ textarea {
     border-radius: 30px;
     transition: .5s;
 }
-
+*/
 .inputgr {
     padding-top: 20px;
     margin-left: 10.5em;
@@ -308,21 +337,22 @@ textarea {
     border: 1px solid #eee;
     margin: 15px;
     padding: 15px;
-    background: #eee;
+    background: #11185d;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .si-submit-box:hover {
-    background: #c1c1c1;
+    background: #161e66;
 }
 
 .si-submit-btn {
     outline: none;
     background: transparent;
     font-size: 1rem;
+    color: #fff;
 }
-
+/*
 #su-inputgr {
     left: 450px;
 }
@@ -361,7 +391,7 @@ textarea {
 .su-btn p {
     font-size: 1rem;
 }
-
+*/
 /* Courses Page */
 
 .cp-contents {
@@ -650,7 +680,7 @@ textarea {
 }
 
 .cpp-bi-personalinfo-content-edubg {
-    padding-left: 3rem;
+    padding-left: 1rem;
     color: #777;
 }
 
@@ -697,21 +727,6 @@ hr {
 }
 
 /* CPP TAG */
-.buttonntag {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 0.5rem;
-}
-
-.tag {
-    border: #d74d0d 1px solid;
-    color: #d74d0d;
-    border-radius: 100px;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
-}
-
 /* JOB OPPORTUNITIES PAGE */
 .jop-contents {
     margin: 5rem;
@@ -819,7 +834,6 @@ hr {
     position: relative;
     height: 0;
     overflow: hidden;
-    transition: 2s;
     overflow-y: auto;
 }
 

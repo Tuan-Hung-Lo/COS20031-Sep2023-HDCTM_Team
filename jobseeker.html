@@ -30,7 +30,7 @@
     <nav class="navbar">
       <a href="#">Home</a>
       <a href="#">About</a>
-      <a href="courses.html" class="btn_active">Courses</a>
+      <a href="courses.html">Courses</a>
       <a href="jobopportunities.html">Job Opportunities</a>
     </nav>
 
@@ -38,7 +38,7 @@
       <ul>
         <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
         <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="candidateprofile.html" class="uil uil-user"></a></li>
+        <li><a href="#" class="uil uil-user"></a></li>
       </ul>
     </div>
 
@@ -125,38 +125,18 @@
               Address:
               <span class="cpp-span">District, Hanoi</span>
             </p>
-            <p>
-              <img src="icons/Study.svg" />
-              Education background:
-            </p>
-
-            <br>
-
-            <div class="cpp-bi-personalinfo-content-edubg">
-              <ul>
-                <li>2019-2022: Foreign Trade University
-                  <br>
-                  <i>(Master of Business Administration)</i>
-                </li>
-                <li>2015 - 2019: University of Melbourne
-                  <br>
-                  <i>(Bachelor of Information Technolgy - Software
-                    Technology)</i>
-                </li>
-              </ul>
-            </div>
 
           </div>
         </div>
         <br>
 
-        <!-- CAREER INTRODUCTION -->
-        <div class="cpp-bi-careerintro-container">
+        <!-- EDUCATION BACKGROUND -->
+        <div class="cpp-bi-edubg-container">
 
           <!-- TITLE -->
           <div class="cpp-title">
 
-            <h3>Career goal introduction</h3>
+            <h3>Education background</h3>
 
             <a class="profilelink" href="#">
               <img src="icons/Edit.svg" />Edit
@@ -172,16 +152,20 @@
 
             <p>
               <span class="cpp-span">
-                Lorem ipsum dolor sit amet consectetur. Aliquam tempus leo cras volutpat integer
-                sagittis
-                diam aenean. Auctor lectus aliquet magna convallis adipiscing malesuada rhoncus ac sit.
-                <br>
-                A eu cum et aenean. Cras pretium ultrices feugiat fermentum amet neque nisi.
-                <br>
-                Quis ultrices tincidunt quis quis. Nulla lorem mauris nibh sed vitae sed.
-                <br>
-                Blandit tincidunt et sit tellus tellus donec magna hac sed. Tristique sit integer nec a
-                etiam quis tellus congue sodales. Tincidunt leo porta amet a mi tellus.
+                <div class="cpp-bi-personalinfo-content-edubg">
+                  <ul>
+                    <li>2019 - 2022: Foreign Trade University
+                      <br>
+                      <i>(Master of Business Administration)</i>
+                    </li>
+                    <br>
+                    <li>2015 - 2019: University of Melbourne
+                      <br>
+                      <i>(Bachelor of Information Technolgy - Software
+                        Technology)</i>
+                    </li>
+                  </ul>
+                </div>
               </span>
             </p>
 
@@ -403,7 +387,6 @@
       <div class="cp-box-container">
         <div class="header">
           <h5>Registered courses</h5>
-          <a href="#">See all</a>
         </div>
         <hr>
 
@@ -551,35 +534,8 @@
       <div class="cp-box-container">
         <div class="header">
           <h5>Job applications</h5>
-          <a href="#">See all</a>
         </div>
         <hr>
-
-        <!-- Suggest Button-->
-        <form method="post" action="#" id="cp-search-buttons">
-          <div id="form_check">
-            <!-- Suggest Input-->
-            <div>
-              <label><input class="cp-suggested-btn" type="checkbox" name="All" id="All" value="All">
-                <span>All</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="Applying" id="Applying" value="Applying">
-                <span>Applying</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="Reviewing" id="Reviewing" value="Reviewing">
-                <span>Reviewing</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="Failed" id="Failed" value="Failed">
-                <span>Failed</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="Succeeded" id="Succeeded" value="Succeeded">
-                <span>Succeeded</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="Interviewing" id="Interviewing" value="Interviewing">
-                <span>Interviewing</span></label>
-            </div>
-
-            <!--Submit button-->
-            <div>
-              <input class="cp-submit-btn" type="submit" value="Apply filter">
-            </div>
-          </div>
-        </form>
 
         <ul class="autoWidth" class="cs-hidden">
           <!-- Card 1 -->
@@ -601,12 +557,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  Applying
-                </div>
-              </div>            </div>
+              <button class="sp-product-btn">See job details</button>
+            </div>
           </li>
 
 
@@ -629,12 +581,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  Applying
-                </div>
-              </div>            </div>
+              <button class="sp-product-btn">See job details</button>
+            </div>
           </li>
 
           <!-- Card 3 -->
@@ -656,12 +604,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  Reviewing
-                </div>
-              </div>            </div>
+              <button class="sp-product-btn">See job details</button>
+            </div>
           </li>
 
           <!-- Card 4 -->
@@ -683,12 +627,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  Failed
-                </div>
-              </div>            </div>
+              <button class="sp-product-btn">See job details</button>
+            </div>
           </li>
 
           <!-- Card 5 -->
@@ -710,12 +650,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  Succeeded
-                </div>
-              </div>            </div>
+              <button class="sp-product-btn">See job details</button>
+            </div>
           </li>
 
           <!-- Card 6 -->
@@ -737,12 +673,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  Interviewing
-                </div>
-              </div>            </div>
+              <button class="sp-product-btn">See job details</button>
+            </div>
           </li>
 
         </ul>
@@ -755,29 +687,8 @@
       <div class="cp-box-container">
         <div class="header">
           <h5>Interview schedule</h5>
-          <a href="#">See all</a>
         </div>
         <hr>
-
-        <!-- Suggest Button-->
-        <form method="post" action="#" id="cp-search-buttons">
-          <div id="form_check">
-            <!-- Suggest Input-->
-            <div>
-              <label><input class="cp-suggested-btn" type="checkbox" name="All" id="All" value="All">
-                <span>All</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="Waitlist" id="Waitlist" value="Waitlist">
-                <span>Waitlist</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="Onthego" id="Onthego" value="Onthego">
-                <span>On the go</span></label>
-            </div>
-
-            <!--Submit button-->
-            <div>
-              <input class="cp-submit-btn" type="submit" value="Apply filter">
-            </div>
-          </div>
-        </form>
 
         <ul class="autoWidth" class="cs-hidden">
           <!-- Card 1 -->
@@ -799,12 +710,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  Waitlist
-                </div>
-              </div>
+              <button class="sp-product-btn">See interview details</button>
+
             </div>
           </li>
 
@@ -828,12 +735,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  On the go
-                </div>
-              </div>
+              <button class="sp-product-btn">See interview details</button>
+
             </div>
           </li>
 
@@ -856,12 +759,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  On the go
-                </div>
-              </div>
+              <button class="sp-product-btn">See interview details</button>
+
             </div>
           </li>
 
@@ -884,12 +783,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  Waitlist
-                </div>
-              </div>
+              <button class="sp-product-btn">See interview details</button>
+
             </div>
           </li>
 
@@ -912,12 +807,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  On the go
-                </div>
-              </div>
+              <button class="sp-product-btn">See interview details</button>
+
             </div>
           </li>
 
@@ -940,12 +831,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="buttonntag">
-                <button class="sp-product-btn">See interview details</button>
-                <div class="tag">
-                  Waitlist
-                </div>
-              </div>
+              <button class="sp-product-btn">See interview details</button>
+
             </div>
           </li>
 
@@ -973,9 +860,9 @@
         <div class="footer_col">
           <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
-          <h4>Thông tin liên hệ</h4>
+          <h4>Contact information</h4>
           <ul>
-            <li>Cơ sở chính</li>
+            <li>Main branch</li>
             <li><i class="fa-solid fa-location-dot"></i> P2 – 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
               Nội</li>
             <li><i class="fa-solid fa-phone"></i> (+84)98.499.65.98</li>
@@ -989,8 +876,8 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">Job Opportunities</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="jobopportunities.html">Job Opportunities</a></li>
           </ul>
         </div>
 
@@ -998,17 +885,18 @@
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form method="post" action="#">
+          <form action="">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">
             <textarea placeholder="Message" class="textareaMessage"></textarea>
-            <input type="submit" value="Submit" class="inputSubmit">  
+            <input type="submit" value="Submit" class="inputSubmit">
           </form>
         </div>
       </div>
     </div>
   </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 

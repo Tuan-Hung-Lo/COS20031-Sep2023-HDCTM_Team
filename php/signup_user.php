@@ -11,44 +11,29 @@
     // Check the connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
+    } else {
+        return $conn;
     }
 
     // Get form data
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $pwd = $_POST['password'];
 
-    // Insert data into the Users table
-    $sql1 = "INSERT INTO Users (FirstName, LastName) VALUES ('$first_name', '$last_name')";
+    // Hash the password using the password_hash function
+    $hashed_password = password_hash($pwd, PASSWORD_DEFAULT);
 
-    if ($conn->query($sql1) === TRUE) {
-        echo "Record in Users table inserted successfully.";
-    } else {
-        echo "Error: " . $sql1 . "<br>" . $conn->error;
-    }
+    // Insert data into tables
+    $sql1 = "INSERT INTO s104222248_db.Users (FirstName, LastName)
+        VALUES ('$first_name', '$first_name')";
+    $conn->query($sql1);
 
-    // Hash the password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $sql2 = "INSERT INTO s104222248_db.UserAuthentication (UserEmail, UserPassword)
+        VALUES ('$email', '$hashed_password')";
+    $conn->query($sql2);
 
-    // Insert data into the UserAuthentication table (assuming unique email)
-    $sql2 = "INSERT INTO UserAuthentication (UserEmail, UserPassword) VALUES ('$email', '$hashed_password')";
-
-    if ($conn->query($sql2) === TRUE) {
-        echo "Record in UserAuthentication table inserted successfully.";
-    } else {
-        echo "Error: " . $sql2 . "<br>" . $conn->error;
-    }
-
-    // Insert data into the UserRole table
-    $sql3 = "INSERT INTO UserRole (UserRoleName) VALUES ('user')";
-
-    if ($conn->query($sql3) === TRUE) {
-        echo "Record in UserRole table inserted successfully.";
-    } else {
-        echo "Error: " . $sql3 . "<br>" . $conn->error;
-    }
-
-    // Close the database connection
-    $conn->close();
+    $sql3 = "INSERT INTO s104222248_db.UserRole (UserRoleName)
+        VALUES ('User')";
+    $conn->query($sql3);
 ?>
