@@ -853,6 +853,10 @@ hr {
 }
 
 /* JOB SEEKER EDIT PAGE */
+.jsep-container img {
+    width: 50%;
+}
+
 .jsep-container {
     display: flex;
     flex-direction: row;
@@ -895,11 +899,11 @@ hr {
 .jsep-addmore-edu,
 .jsep-remove-edu,
 .jsep-addmore-skills,
+.jsep-remove-skills,
 .jsep-addmore-wexp,
 .jsep-remove-wexp,
 .jsep-addmore-extraa,
 .jsep-remove-extraa {
-    margin: 1rem 1rem 0 0;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
     padding: 1rem;
     color: #777;
@@ -911,6 +915,7 @@ hr {
 .jsep-addmore-edu:hover,
 .jsep-remove-edu:hover,
 .jsep-addmore-skills:hover,
+.jsep-remove-skills:hover,
 .jsep-addmore-wexp:hover,
 .jsep-remove-wexp:hover,
 .jsep-addmore-extraa:hover,
@@ -923,12 +928,13 @@ hr {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .jsep-skill {
     flex: 1;
-    margin: 1rem 1rem 0 0;
     width: 100%;
+    height: 100%;
     padding: 1rem;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
 }
