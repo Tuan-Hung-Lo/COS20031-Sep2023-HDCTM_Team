@@ -111,7 +111,7 @@
           <!-- DOB -->
           <label class="jsep-label">
             <img src="icons/Calendar_B.svg">
-            <input name="jsep-dob" type="text" class="jsep-input" placeholder="DOB">
+            <input name="jsep-dob" type="text" class="jsep-input" placeholder="DOB (dd/mm/yyyy)">
           </label>
 
           <!-- PHONE NUMBER -->
@@ -150,12 +150,12 @@
 
             <label class="jsep-label">
               <img src="icons/Calendar_B.svg">
-              <input name="jsep-period" type="text" class="jsep-input" placeholder="Period">
+              <input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)">
             </label>
 
             <label class="jsep-label">
               <img src="icons/GPA_B.svg">
-              <input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA">
+              <input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)">
             </label>
             <br>
 
@@ -356,7 +356,7 @@
         if (x < max_fields) {
           x++;
 
-          $(wrapper).append('<div class="jsep-addmore-edu-p"><label class="jsep-label"><img src="icons/Degree_B.svg"><input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree"></label><label class="jsep-label"><img src="icons/Institute_B.svg"><input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute"></label><label class="jsep-label"><img src="icons/Calendar_B.svg"><input name="jsep-period" type="text" class="jsep-input" placeholder="Period"></label><label class="jsep-label"><img src="icons/GPA_B.svg"><input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA"></label><br><label class="jsep-remove-edu">- Remove&nbsp;</label><br><br></div>')
+          $(wrapper).append('<div class="jsep-addmore-edu-p"><label class="jsep-label"><img src="icons/Degree_B.svg"><input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree"></label><label class="jsep-label"><img src="icons/Institute_B.svg"><input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute"></label><label class="jsep-label"><img src="icons/Calendar_B.svg"><input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)"></label><label class="jsep-label"><img src="icons/GPA_B.svg"><input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)"></label><br><label class="jsep-remove-edu">- Remove&nbsp;</label><br><br><br></div>')
 
         }
       });
@@ -398,7 +398,7 @@
         if (x < max_fields) {
           x++;
 
-          $(wrapper).append('<div class="jsep-addmore-wexp-p"><div class="jsep-addmore-wexp-np"><div class="jsep-addmore-wexp-npcol"><input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name"></div><div class="jsep-addmore-wexp-npcol"><input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period"></div></div><div><input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position"></div><div><textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br></div>')
+          $(wrapper).append('<div class="jsep-addmore-wexp-p"><div class="jsep-addmore-wexp-np"><div class="jsep-addmore-wexp-npcol"><input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name"></div><div class="jsep-addmore-wexp-npcol"><input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period"></div></div><div><input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position"></div><div><textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br><br><br></div>')
 
         }
       });
@@ -422,7 +422,7 @@
         if (x < max_fields) {
           x++;
 
-          $(wrapper).append('<div class="jsep-addmore-extraa-p"><div class="jsep-addmore-extraa-np"><div class="jsep-addmore-extraa-npcol"><input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name"></div><div class="jsep-addmore-extraa-npcol"><input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period"></div></div><div><input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role"></div><div><textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br></div>')
+          $(wrapper).append('<div class="jsep-addmore-extraa-p"><div class="jsep-addmore-extraa-np"><div class="jsep-addmore-extraa-npcol"><input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name"></div><div class="jsep-addmore-extraa-npcol"><input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period"></div></div><div><input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role"></div><div><textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br><br><br></div>')
 
         }
       });
