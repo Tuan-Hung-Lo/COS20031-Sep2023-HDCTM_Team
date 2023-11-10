@@ -177,16 +177,9 @@
 
           <!-- SKILLS -->
           <h3>Skills</h3>
+          <br>
 
           <div class="jsep-addmore-skills-p">
-
-            <div class="jsep-skill">
-              <input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills">
-            </div>
-
-            <div class="jsep-skill">
-              <input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills">
-            </div>
 
             <div class="jsep-skill">
               <input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills">
@@ -284,7 +277,7 @@
       <div class="jsep-submit-btn">
         <input type="submit" value="Save changes">
       </div>
-      
+
     </form>
 
 
@@ -371,18 +364,20 @@
 
     // SKILLS
     $(document).ready(function () {
-      var max_fields = 10;
       var wrapper = $('.jsep-addmore-skills-p');
       var add_button = $('.jsep-addmore-skills');
       var x = 1;
       $(add_button).click(function (e) {
         e.preventDefault();
-        if (x < max_fields) {
-          x++;
 
-          $(wrapper).append('<div class="jsep-skill"><input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills"></div>')
+        $(wrapper).append('<div class="jsep-addmore-skills-p"><div class="jsep-skill"><input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills"></div><label class="jsep-remove-skills">- Remove&nbsp;</label><br></div>')
 
-        }
+      });
+
+      $(wrapper).on('click', '.jsep-remove-skills', function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x--;
       });
 
     });
