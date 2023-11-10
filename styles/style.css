@@ -352,6 +352,7 @@ textarea {
     font-size: 1rem;
     color: #fff;
 }
+
 /*
 #su-inputgr {
     left: 450px;
@@ -400,7 +401,8 @@ textarea {
 
 .cp-contents h1,
 .jop-contents h1,
-.cpp-heading h1 {
+.cpp-heading h1,
+.jsep-heading {
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 2rem;
@@ -622,7 +624,8 @@ textarea {
 /* CPP MAIN CONTENT */
 
 /* CPP BASIC INFORMATION */
-.cpp-bie-container {
+.cpp-bie-container,
+.jsep-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -680,8 +683,11 @@ textarea {
 }
 
 .cpp-bi-personalinfo-content-edubg {
-    padding-left: 1rem;
     color: #777;
+}
+
+.cpp-bi-personalinfo-content-edubg ul {
+    list-style: none;
 }
 
 hr {
@@ -839,4 +845,145 @@ hr {
 
 .accordion .contentBx.active .content {
     height: 100%;
+}
+
+/* JOB SEEKER EDIT PAGE */
+.jsep-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.jsep-container .left-col {
+    flex: 1;
+}
+
+.jsep-container .right-col {
+    flex: 2;
+}
+
+.jsep-container .jsep-label {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+}
+
+.jsep-container .jsep-label .jsep-input {
+    padding-left: 1rem;
+    border-left: #c1c1c1 solid 1px;
+}
+
+.jsep-container .jsep-label img {
+    width: 13%;
+    padding: 1rem;
+}
+
+.gender {
+    color: #777;
+}
+
+.gender label {
+    margin-left: 1rem;
+}
+
+.jsep-addmore-edu,
+.jsep-remove-edu,
+.jsep-addmore-skills,
+.jsep-addmore-wexp,
+.jsep-remove-wexp,
+.jsep-addmore-extraa,
+.jsep-remove-extraa {
+    margin: 1rem 1rem 0 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    color: #777;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.jsep-addmore-edu:hover,
+.jsep-remove-edu:hover,
+.jsep-addmore-skills:hover,
+.jsep-addmore-wexp:hover,
+.jsep-remove-wexp:hover,
+.jsep-addmore-extraa:hover,
+.jsep-remove-extraa:hover {
+    background-color: #d9d9d9;
+    color: #060606;
+}
+
+.jsep-addmore-skills-p {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.jsep-skill {
+    flex: 1;
+    margin: 1rem 1rem 0 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+}
+
+.jsep-input-np {
+    margin: 1rem 1rem 0 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    color: #777;
+    width: 100%;
+}
+
+.jsep-input-wea {
+    margin: 1rem 1rem 0 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    color: #777;
+    width: 100%;
+}
+
+.jsep-addmore-wexp-np,
+.jsep-addmore-extraa-np {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.jsep-addmore-wexp-npcol,
+.jsep-addmore-extraa-npcol {
+    flex: 1;
+}
+
+.jsep-desc {
+    margin: 1rem 1rem 0 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    width: 100%;
+    height: 20rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.jsep-submit-btn {
+    margin: 0 5rem 8rem 5rem;
+    text-align: center;
+}
+
+.jsep-submit-btn input {
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #231278;
+    width: 100%;
+    cursor: pointer;
+    color: #fafafa;
+}
+
+.jsep-submit-btn input:hover {
+    background-color: #d9d9d9;
+    color: #060606;
 }
