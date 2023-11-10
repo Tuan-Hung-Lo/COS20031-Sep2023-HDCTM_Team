@@ -14,7 +14,6 @@ DROP TABLE IF EXISTS Course;
 DROP TABLE IF EXISTS JobSeeker;
 DROP TABLE IF EXISTS UserAuthentication;
 
-
 -- Create tables
 
 -- Create UserAuthentication table
@@ -33,7 +32,7 @@ CREATE TABLE JobSeeker (
     LastName VARCHAR(50) NOT NULL,
     Address VARCHAR(255) NOT NULL,
     Phone VARCHAR(20) NOT NULL,
-    Gender VARCHAR(10) NOT NULL,
+    Gender VARCHAR(100) NOT NULL,
     DOB DATE NOT NULL CHECK (
         DOB <= CURRENT_DATE() AND DOB >= '1900-01-01'
     ),
@@ -41,6 +40,7 @@ CREATE TABLE JobSeeker (
     ExperienceLevel VARCHAR(50) NOT NULL CHECK (
         ExperienceLevel IN ('Internship', 'Entry', 'Junior', 'Senior')
     ),
+    JSImage VARCHAR(255) NOT NULL,
     FOREIGN KEY (UserAuthenticationID) REFERENCES UserAuthentication(UserAuthenticationID)
 );
 
@@ -52,14 +52,15 @@ CREATE TABLE Course (
     ),
     Title VARCHAR(100) NOT NULL,
     Price DECIMAL(10, 2) NOT NULL CHECK (Price >= 0),
-    Length INT NOT NULL
+    Length INT NOT NULL,
+    CourseImage VARCHAR(255) NOT NULL
 );
 
 -- Create CourseRegistration table
 CREATE TABLE CourseRegistration (
     CourseRegistrationID INT PRIMARY KEY,
-    JobSeekerID INT NOT NULL,
     CourseID INT NOT NULL,
+    JobSeekerID INT NOT NULL,
     FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID),
     FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
 );
@@ -68,7 +69,7 @@ CREATE TABLE CourseRegistration (
 CREATE TABLE Skill (
     SkillID INT PRIMARY KEY,
     JobSeekerID INT NOT NULL,
-    SkillName VARCHAR(100) NOT NULL,
+    SkillName VARCHAR(255) NOT NULL,
     FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
 );
 
@@ -124,13 +125,14 @@ CREATE TABLE Recruiter (
     Introduction TEXT NOT NULL,
     CompanyPhone VARCHAR(20) NOT NULL,
     CompanyEmail VARCHAR(255) NOT NULL,
+    CompanyImage VARCHAR(255) NOT NULL,
     FOREIGN KEY (UserAuthenticationID) REFERENCES UserAuthentication(UserAuthenticationID)
 );
 
 -- Create Job table
 CREATE TABLE Job (
     JobID INT PRIMARY KEY,
-    CompanyID INT NOT NULL,
+    RecruiterID INT NOT NULL,
     JobTitle VARCHAR(100) NOT NULL,
     Salary DECIMAL(10, 2) NOT NULL CHECK (Salary >= 0),
     JobDescription TEXT NOT NULL,
@@ -138,13 +140,14 @@ CREATE TABLE Job (
     ExperienceLevelName VARCHAR(255) NOT NULL CHECK (
         ExperienceLevelName IN ('Internship', 'Entry', 'Junior', 'Senior')
     ),
-    WorkingFormatName VARCHAR(255) NOT NULL CHECK (
-        WorkingFormatName IN ('Remote', 'Hybrid', 'Online', 'Offline')
+    WorkingFormat VARCHAR(255) NOT NULL CHECK (
+        WorkingFormat IN ('Remote', 'Hybrid', 'Online', 'Offline')
     ),
-    JobSpecializationName VARCHAR(255) NOT NULL CHECK (
-        JobSpecializationName IN ('Beauty & Spa', 'F&B', 'Tourism & Hospitality', 'Event')
+    JobSpecialization VARCHAR(255) NOT NULL CHECK (
+        JobSpecialization IN ('Beauty & Spa', 'F&B', 'Tourism & Hospitality', 'Event')
     ),
-    FOREIGN KEY (CompanyID) REFERENCES Recruiter(RecruiterID)
+    JobImage VARCHAR(255) NOT NULL,
+    FOREIGN KEY (RecruiterID) REFERENCES Recruiter(RecruiterID)
 );
 
 -- Create RecruiterInterview table
