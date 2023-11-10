@@ -562,6 +562,11 @@ textarea {
     height: 2em;
 }
 
+.sp-product-require ul li a {
+    color: #060606;
+    border-bottom: 1px solid;
+}
+
 .sp-product-require ul li img {
     width: 1rem;
     margin-bottom: -.2em;
@@ -986,4 +991,179 @@ textarea {
 .jsep-submit-btn input:hover {
     background-color: #d9d9d9;
     color: #060606;
+}
+
+/*Job Seeker - Book Interview Schedule Page*/
+
+.bwp-contents {
+    margin: 0 2em;
+    padding-top: 3rem;
+    min-height: 80vh;
+}
+
+.bwp-nav, .bwp-interview-button, .bgp-interview-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.bwp-nav h1 {
+    padding-left: .5em;
+    font-size: 2rem;
+}
+
+.bwp-card {
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    border-radius: 5px;
+    padding: 1em;
+    width: 20em;
+    margin: 0.25rem;
+}
+
+.bwp-interview-details {
+    margin-top: 1.5em;
+    display: flex;
+}
+
+.bwp-interview-setup {
+    overflow: hidden;
+    margin-left: 3em;
+}
+
+.bwp-interview-setup {
+    margin-left: 3em;
+}
+
+.bwp-interview-setup h5{
+    font-size: 1.5rem;
+    padding-bottom: .5em;
+}
+
+.bwp-interview-setup h2 {
+    font-size: 2rem;
+    padding-bottom: .5em;
+}
+
+.bwp-interview-available ul {
+    color: #a5a5a5;
+    padding-bottom: .5em;
+}
+
+.bwp-interview-available ul li{
+    margin-left: 4em;
+    padding: .2em 0;
+}
+
+.bwp-interview-available ul li::marker {
+    font-size: 90%;
+}
+
+.bwp-interview-picktime {
+    min-height: 10em;
+}
+
+.bwp-interview-button, .bgp-interview-button {
+    padding-left: .5em;
+}
+
+.bwp-interview-picked {
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    margin-right: 1em;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    height: 4em;
+    width: 15em;
+}
+
+.bwp-interview-picked input {
+    padding-left: 1em;
+}
+
+.bwp-interview-picked span {
+    margin-right: .2em;
+    font-size: 1.5em;
+}
+
+.bwp-interview-picked img {
+    width: 1.5em;
+}
+
+.bwp-input {
+    width: 85%;
+    padding: 10px 0;
+    outline: none;
+    background: transparent;
+    border-left: 1px solid;
+}
+
+.bwp-submit-box {
+    margin-left: .5em;
+    margin-top: 1em;
+}
+
+.bwp-submit-btn {
+    padding: 1em 2em;
+    height: 3em;
+    border-radius: 4px;
+    background-color: #11185d;
+    color: #eee;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.interview-link {
+    text-decoration: none;
+    padding: 1em;
+    font-size: .8em;
+    font-style: italic;
+}
+
+.interview-link a {
+    color: #060606;
+    border-bottom: 1px solid;
+}
+
+
+/*Recruiter Book Interview Time Page*/
+
+.bgp-interview-picktime {
+    min-height: 10em;
+    margin-top: 1em;
+}
+
+.bgp-link-point {
+    font-size: 2em;
+    margin: 0 1.5em 0 1em;
+}
+
+.bgp-interview-button {
+    margin-bottom: 1em;
+}
+
+.bgp-interview-picked {
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    margin-right: 1em;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    height: 4em;
+    width: 37em;
+}
+
+.bgp-interview-picked input {
+    padding-left: 1em;
+}
+
+.bgp-interview-picked span {
+    margin-right: .2em;
+    font-size: 1.5em;
+}
+
+.bgp-interview-picked img {
+    width: 1.5em;
 }
