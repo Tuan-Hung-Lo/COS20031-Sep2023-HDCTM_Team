@@ -352,6 +352,7 @@ textarea {
     font-size: 1rem;
     color: #fff;
 }
+
 /*
 #su-inputgr {
     left: 450px;
@@ -400,7 +401,8 @@ textarea {
 
 .cp-contents h1,
 .jop-contents h1,
-.cpp-heading h1 {
+.cpp-heading h1,
+.jsep-heading {
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 2rem;
@@ -560,6 +562,11 @@ textarea {
     height: 2em;
 }
 
+.sp-product-require ul li a {
+    color: #060606;
+    border-bottom: 1px solid;
+}
+
 .sp-product-require ul li img {
     width: 1rem;
     margin-bottom: -.2em;
@@ -622,7 +629,8 @@ textarea {
 /* CPP MAIN CONTENT */
 
 /* CPP BASIC INFORMATION */
-.cpp-bie-container {
+.cpp-bie-container,
+.jsep-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -680,8 +688,11 @@ textarea {
 }
 
 .cpp-bi-personalinfo-content-edubg {
-    padding-left: 1rem;
     color: #777;
+}
+
+.cpp-bi-personalinfo-content-edubg ul {
+    list-style: none;
 }
 
 hr {
@@ -839,4 +850,326 @@ hr {
 
 .accordion .contentBx.active .content {
     height: 100%;
+}
+
+/* JOB SEEKER EDIT PAGE */
+.jsep-container img {
+    width: 50%;
+}
+
+.jsep-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.jsep-container .left-col {
+    flex: 1;
+}
+
+.jsep-container .right-col {
+    flex: 2;
+}
+
+.jsep-container .jsep-label {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+}
+
+.jsep-container .jsep-label .jsep-input {
+    padding-left: 1rem;
+    border-left: #c1c1c1 solid 1px;
+}
+
+.jsep-container .jsep-label img {
+    width: 13%;
+    padding: 1rem;
+}
+
+.gender {
+    color: #777;
+}
+
+.gender label {
+    margin-left: 1rem;
+}
+
+.jsep-addmore-edu,
+.jsep-remove-edu,
+.jsep-addmore-skills,
+.jsep-remove-skills,
+.jsep-addmore-wexp,
+.jsep-remove-wexp,
+.jsep-addmore-extraa,
+.jsep-remove-extraa {
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    color: #777;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.jsep-addmore-edu:hover,
+.jsep-remove-edu:hover,
+.jsep-addmore-skills:hover,
+.jsep-remove-skills:hover,
+.jsep-addmore-wexp:hover,
+.jsep-remove-wexp:hover,
+.jsep-addmore-extraa:hover,
+.jsep-remove-extraa:hover {
+    background-color: #d9d9d9;
+    color: #060606;
+}
+
+.jsep-addmore-skills-p {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.jsep-skill {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+}
+
+.jsep-input-np {
+    margin: 1rem 1rem 0 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    color: #777;
+    width: 100%;
+}
+
+.jsep-input-wea {
+    margin: 1rem 1rem 0 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    color: #777;
+    width: 100%;
+}
+
+.jsep-addmore-wexp-np,
+.jsep-addmore-extraa-np {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.jsep-addmore-wexp-npcol,
+.jsep-addmore-extraa-npcol {
+    flex: 1;
+}
+
+.jsep-desc {
+    margin: 1rem 1rem 0 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    width: 100%;
+    height: 20rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.jsep-submit-btn {
+    margin: 0 5rem 8rem 5rem;
+    text-align: center;
+}
+
+.jsep-submit-btn input {
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #231278;
+    width: 100%;
+    cursor: pointer;
+    color: #fafafa;
+}
+
+.jsep-submit-btn input:hover {
+    background-color: #d9d9d9;
+    color: #060606;
+}
+
+/*Job Seeker - Book Interview Schedule Page*/
+
+.bwp-contents {
+    margin: 0 2em;
+    padding-top: 3rem;
+    min-height: 80vh;
+}
+
+.bwp-nav, .bwp-interview-button, .bgp-interview-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.bwp-nav h1 {
+    padding-left: .5em;
+    font-size: 2rem;
+}
+
+.bwp-card {
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    border-radius: 5px;
+    padding: 1em;
+    width: 20em;
+    margin: 0.25rem;
+}
+
+.bwp-interview-details {
+    margin-top: 1.5em;
+    display: flex;
+}
+
+.bwp-interview-setup {
+    overflow: hidden;
+    margin-left: 3em;
+}
+
+.bwp-interview-setup {
+    margin-left: 3em;
+}
+
+.bwp-interview-setup h5{
+    font-size: 1.5rem;
+    padding-bottom: .5em;
+}
+
+.bwp-interview-setup h2 {
+    font-size: 2rem;
+    padding-bottom: .5em;
+}
+
+.bwp-interview-available ul {
+    color: #a5a5a5;
+    padding-bottom: .5em;
+}
+
+.bwp-interview-available ul li{
+    margin-left: 4em;
+    padding: .2em 0;
+}
+
+.bwp-interview-available ul li::marker {
+    font-size: 90%;
+}
+
+.bwp-interview-picktime {
+    min-height: 10em;
+}
+
+.bwp-interview-button, .bgp-interview-button {
+    padding-left: .5em;
+}
+
+.bwp-interview-picked {
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    margin-right: 1em;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    height: 4em;
+    width: 15em;
+}
+
+.bwp-interview-picked input {
+    padding-left: 1em;
+}
+
+.bwp-interview-picked span {
+    margin-right: .2em;
+    font-size: 1.5em;
+}
+
+.bwp-interview-picked img {
+    width: 1.5em;
+}
+
+.bwp-input {
+    width: 85%;
+    padding: 10px 0;
+    outline: none;
+    background: transparent;
+    border-left: 1px solid;
+}
+
+.bwp-submit-box {
+    margin-left: .5em;
+    margin-top: 1em;
+}
+
+.bwp-submit-btn {
+    padding: 1em 2em;
+    height: 3em;
+    border-radius: 4px;
+    background-color: #11185d;
+    color: #eee;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.interview-link {
+    text-decoration: none;
+    padding: 1em;
+    font-size: .8em;
+    font-style: italic;
+}
+
+.interview-link a {
+    color: #060606;
+    border-bottom: 1px solid;
+}
+
+
+/*Recruiter Book Interview Time Page*/
+
+.bgp-interview-picktime {
+    min-height: 10em;
+    margin-top: 1em;
+}
+
+.bgp-link-point {
+    font-size: 2em;
+    margin: 0 1.5em 0 1em;
+}
+
+.bgp-interview-button {
+    margin-bottom: 1em;
+}
+
+.bgp-interview-picked {
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    margin-right: 1em;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 4px;
+    height: 4em;
+    width: 37em;
+}
+
+.bgp-interview-picked input {
+    padding-left: 1em;
+}
+
+.bgp-interview-picked span {
+    margin-right: .2em;
+    font-size: 1.5em;
+}
+
+.bgp-interview-picked img {
+    width: 1.5em;
 }
