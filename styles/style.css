@@ -1191,6 +1191,39 @@ textarea {
     width: 1.5em;
 }
 
+
+/* PAGE 404 */
+.container404 {
+    margin: auto;
+    text-align: center;
+}
+
+.container404 img {
+    margin: 3em 0;
+}
+
+.container404 h1 {
+    font-size: 7em;
+    color: #11185d;
+    margin-top: .5em;
+}
+
+.container404 h2 {
+    font-size: 3em;
+    color: rgb(186, 22, 22);
+}
+
+.container404 button {
+    font-size: 1em;
+    color: #eee;
+    background-color: #11185d;
+    border-radius: 3px;
+    margin-top: 1.5em;
+    padding: .5em 1em;
+}
+
+
+
 /* RECRUITER PROFILE PAGE */
 .rpp-intro {
     display: flex;
