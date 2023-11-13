@@ -422,7 +422,8 @@ textarea {
 }
 
 
-.cp-box-container h5 {
+.cp-box-container h5,
+.rpp-box-container h5 {
     font-size: 1.5em;
 }
 
@@ -532,13 +533,28 @@ textarea {
 .sp-card {
     box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
     border-radius: 5px;
-    padding: 1em;
+    padding: 1rem;
     width: 20em;
     margin: 0.25rem;
 }
 
 .sp-image-box {
     height: 150px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.sp-image-box img {
+    flex: 1;
+    width: 100%;
+}
+
+.sp-image-box h4 {
+    flex: 2;
+    padding: 1rem 1rem 1rem 0;
 }
 
 .sp-image-box img {
@@ -576,13 +592,13 @@ textarea {
 .sp-product-btn {
     background: #151d62;
     color: #eee;
-    width: 15em;
     margin-top: 1rem;
     height: 2.5rem;
     border-radius: 4px;
     cursor: pointer;
     font-size: .7em;
     font-weight: bold;
+    padding: 0 1rem;
     transition: 0.5s;
 }
 
@@ -1208,3 +1224,75 @@ textarea {
 }
 
 
+
+/* RECRUITER PROFILE PAGE */
+.rpp-intro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 0 5rem 3rem 5rem;
+}
+
+.rpp-intro-info {
+    flex: 1;
+    padding: 2rem;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08)
+}
+
+.rpp-intro-img {
+    flex: 2;
+}
+
+.rpp-intro-img img {
+    height: 100%;
+    width: 100%;
+}
+
+.rpp-img img {
+    width: 30%;
+}
+
+.rpp-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.rpp-intro-para {
+    margin-top: 0.5rem;
+    padding-left: 1.85rem;
+    color: #777;
+}
+
+.rpp-box-container {
+    margin: 0rem 5rem 3rem 5rem;
+}
+
+.job-posting {
+    font-style: italic;
+}
+
+.ca_span {
+    font-weight: bold;
+}
+
+.ca-product-btn {
+    border: 1.5px solid;
+    background-color: transparent;
+    margin-top: 1rem;
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: .7em;
+    font-weight: bold;
+    padding: 0 1rem;
+    transition: 0.5s;
+}
+
+.ca-product-btn:hover {
+    background-color: #11185d;
+    color: #eee;
+}
