@@ -1,5 +1,4 @@
 -- Drop tables if they exist
-
 DROP TABLE IF EXISTS Application;
 DROP TABLE IF EXISTS RecruiterInterview;
 DROP TABLE IF EXISTS Job;
@@ -14,12 +13,11 @@ DROP TABLE IF EXISTS Course;
 DROP TABLE IF EXISTS JobSeeker;
 DROP TABLE IF EXISTS UserAuthentication;
 
-
 -- Create tables
 
 -- Create UserAuthentication table
 CREATE TABLE UserAuthentication (
-    UserAuthenticationID INT PRIMARY KEY,
+    UserAuthenticationID INT PRIMARY KEY AUTO_INCREMENT,
     UserEmail VARCHAR(255) UNIQUE NOT NULL,
     UserPassword VARCHAR(255) NOT NULL,
     UserRole VARCHAR(50) NOT NULL
@@ -27,7 +25,7 @@ CREATE TABLE UserAuthentication (
 
 -- Create JobSeeker table
 CREATE TABLE JobSeeker (
-    JobSeekerID INT PRIMARY KEY,
+    JobSeekerID INT PRIMARY KEY AUTO_INCREMENT,
     UserAuthenticationID INT NOT NULL,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
@@ -46,7 +44,7 @@ CREATE TABLE JobSeeker (
 
 -- Create Course table
 CREATE TABLE Course (
-    CourseID INT PRIMARY KEY,
+    CourseID INT PRIMARY KEY AUTO_INCREMENT,
     CourseCategory VARCHAR(255) NOT NULL CHECK (
         CourseCategory IN ('F&B', 'Beauty & Spa', 'Tourism & Hospitality')
     ),
@@ -57,7 +55,7 @@ CREATE TABLE Course (
 
 -- Create CourseRegistration table
 CREATE TABLE CourseRegistration (
-    CourseRegistrationID INT PRIMARY KEY,
+    CourseRegistrationID INT PRIMARY KEY AUTO_INCREMENT,
     JobSeekerID INT NOT NULL,
     CourseID INT NOT NULL,
     FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID),
@@ -66,7 +64,7 @@ CREATE TABLE CourseRegistration (
 
 -- Create Skill table
 CREATE TABLE Skill (
-    SkillID INT PRIMARY KEY,
+    SkillID INT PRIMARY KEY AUTO_INCREMENT,
     JobSeekerID INT NOT NULL,
     SkillName VARCHAR(100) NOT NULL,
     FOREIGN KEY (JobSeekerID) REFERENCES JobSeeker(JobSeekerID)
@@ -74,7 +72,7 @@ CREATE TABLE Skill (
 
 -- Create Education table
 CREATE TABLE Education (
-    EducationID INT PRIMARY KEY,
+    EducationID INT PRIMARY KEY AUTO_INCREMENT,
     JobSeekerID INT NOT NULL,
     Degree VARCHAR(100) NOT NULL,
     Institution VARCHAR(255) NOT NULL,
@@ -85,7 +83,7 @@ CREATE TABLE Education (
 
 -- Create WorkingExperience table
 CREATE TABLE WorkingExperience (
-    WExperienceID INT PRIMARY KEY,
+    WExperienceID INT PRIMARY KEY AUTO_INCREMENT,
     JobSeekerID INT NOT NULL,
     WJobRole VARCHAR(100) NOT NULL,
     WCompanyName VARCHAR(255) NOT NULL,
@@ -96,7 +94,7 @@ CREATE TABLE WorkingExperience (
 
 -- Create ExtracurriculumActivity table
 CREATE TABLE ExtracurriculumActivity (
-    ActivityID INT PRIMARY KEY,
+    ActivityID INT PRIMARY KEY AUTO_INCREMENT,
     JobSeekerID INT NOT NULL,
     OrganizationName VARCHAR(255) NOT NULL,
     EAJobRole VARCHAR(100) NOT NULL,
@@ -107,7 +105,7 @@ CREATE TABLE ExtracurriculumActivity (
 
 -- Create JobSeekerInterview table
 CREATE TABLE JobSeekerInterview (
-    JSInterviewID INT PRIMARY KEY,
+    JSInterviewID INT PRIMARY KEY AUTO_INCREMENT,
     JobSeekerID INT NOT NULL,
     InterviewDate DATE,
     InterviewTime TIME,
@@ -117,7 +115,7 @@ CREATE TABLE JobSeekerInterview (
 
 -- Create Recruiter table
 CREATE TABLE Recruiter (
-    RecruiterID INT PRIMARY KEY,
+    RecruiterID INT PRIMARY KEY AUTO_INCREMENT,
     UserAuthenticationID INT NOT NULL,
     CompanyName VARCHAR(255) NOT NULL,
     Size INT NOT NULL,
@@ -129,7 +127,7 @@ CREATE TABLE Recruiter (
 
 -- Create Job table
 CREATE TABLE Job (
-    JobID INT PRIMARY KEY,
+    JobID INT PRIMARY KEY AUTO_INCREMENT,
     CompanyID INT NOT NULL,
     JobTitle VARCHAR(100) NOT NULL,
     Salary DECIMAL(10, 2) NOT NULL CHECK (Salary >= 0),
@@ -149,7 +147,7 @@ CREATE TABLE Job (
 
 -- Create RecruiterInterview table
 CREATE TABLE RecruiterInterview (
-    RecruiterInterviewID INT PRIMARY KEY,
+    RecruiterInterviewID INT PRIMARY KEY AUTO_INCREMENT,
     JobID INT NOT NULL,
     DateStart DATE,
     DateEnd DATE,
@@ -160,7 +158,7 @@ CREATE TABLE RecruiterInterview (
 
 -- Create Application table
 CREATE TABLE Application (
-    ApplicationID INT PRIMARY KEY,
+    ApplicationID INT PRIMARY KEY AUTO_INCREMENT,
     JobID INT NOT NULL,
     JobSeekerID INT NOT NULL,
     FOREIGN KEY (JobID) REFERENCES Job(JobID),
