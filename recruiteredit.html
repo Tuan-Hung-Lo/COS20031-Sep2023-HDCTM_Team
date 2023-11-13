@@ -47,240 +47,43 @@
   <!-- MAIN CONTENT -->
   <main>
 
-    <h1 class="jsep-heading">
-      Profile
-    </h1>
+    <h1 class="rep-heading">Profile</h1>
 
+    <!--EDITING FORM-->
+    <form method="post" action="#" class="rep-form">
 
-    <form method="post" action="#" class="jsep-form">
+      <!--LEFT COLUMN-->
+      <div class="rep-content-left">
 
-      <div class="jsep-container">
+        <!--COMPANY NAME-->
+        <label class="rep-label">
+          <img src="icons/PeopleGroup.svg">
+          <input name="rep-com-name" type="text" class="rep-btn" placeholder="Company name">
+        </label>
 
-        <!-- LEFT COLUMN -->
-        <div class="left-col">
-
-          <img src="images/profilepic.png" alt="Upload profile picture link">
-
-          <!-- INSERT PROFILE IMAGE LINK -->
-          <label class="jsep-label">
-            <img src="icons/Link_B.svg">
-            <input name="jsep-profileimg-link" type="text" class="jsep-input" placeholder="Insert profile image link">
-          </label>
-
-          <!-- NAME -->
-          <label class="jsep-label">
-            <img src="icons/Name_B.svg">
-            <input name="jsep-name" type="text" class="jsep-input" placeholder="Name">
-          </label>
-
-          <!-- EXPERIENCE LEVEL -->
-          <label class="jsep-label">
-            <img src="icons/ExperienceLevel_B.svg">
-            <input name="jsep-experience-level" type="text" class="jsep-input" placeholder="Experience level">
-          </label>
-
-          <!-- JOB TITLE -->
-          <label class="jsep-label">
-            <img src="icons/JobTitle_B.svg">
-            <input name="jsep-job-title" type="text" class="jsep-input" placeholder="Job title">
-          </label>
-          <br>
-
-          <!--  -->
-          <!-- PERSONAL INFORMATION -->
-          <h3>Personal information</h3>
-
-          <!-- GENDER -->
-          <div class="gender">
-            <br>
-            <p>Gender:</p>
-
-            <label><input type="radio" name="jsep-gender" value="Female">
-              Female</label>
-            <br>
-            <label><input type="radio" name="jsep-gender" value="Male">
-              Male</label>
-            <br>
-            <label><input type="radio" name="jsep-gender" value="Others">
-              Others</label>
-            <br>
-            <label><input type="radio" name="jsep-gender" value="Prefernottosay">
-              Prefer not to say</label>
-          </div>
-
-          <!-- DOB -->
-          <label class="jsep-label">
-            <img src="icons/Calendar_B.svg">
-            <input name="jsep-dob" type="text" class="jsep-input" placeholder="DOB (dd/mm/yyyy)">
-          </label>
-
-          <!-- PHONE NUMBER -->
-          <label class="jsep-label">
-            <img src="icons/Phone_B.svg">
-            <input name="jsep-phone" type="text" class="jsep-input" placeholder="Phone number">
-          </label>
-
-          <!-- EMAIL -->
-          <label class="jsep-label">
-            <img src="icons/Message_B.svg">
-            <input name="jsep-email" type="text" class="jsep-input" placeholder="Email">
-          </label>
-
-          <!-- ADDRESS -->
-          <label class="jsep-label">
-            <img src="icons/Location_B.svg">
-            <input name="jsep-address" type="text" class="jsep-input" placeholder="Address">
-          </label>
-          <br>
-
-          <!--  -->
-          <!-- EDUCATION BACKGROUND -->
-          <h3>Education background</h3>
-
-          <div class="jsep-addmore-edu-p">
-            <label class="jsep-label">
-              <img src="icons/Degree_B.svg">
-              <input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree">
-            </label>
-
-            <label class="jsep-label">
-              <img src="icons/Institute_B.svg">
-              <input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute">
-            </label>
-
-            <label class="jsep-label">
-              <img src="icons/Calendar_B.svg">
-              <input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)">
-            </label>
-
-            <label class="jsep-label">
-              <img src="icons/GPA_B.svg">
-              <input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)">
-            </label>
-            <br>
-
-            <label class="jsep-addmore-edu">
-              + Add more&nbsp;
-            </label>
-            <br>
-            <br>
-
-          </div>
-
-          <br>
-          <br>
-
-        </div>
-
-        <!-- RIGHT COLUMN -->
-        <div class="right-col">
-
-          <!-- SKILLS -->
-          <h3>Skills</h3>
-          <br>
-
-          <div class="jsep-addmore-skills-p">
-
-            <div class="jsep-skill">
-              <input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills">
-            </div>
-
-            <label class="jsep-addmore-skills">
-              + Add more&nbsp;
-            </label>
-            <br>
-
-          </div>
-          <br>
-          <br>
-
-          <!-- WORKING EXPERIENCE -->
-          <h3>Working experience</h3>
-
-          <div class="jsep-addmore-wexp-p">
-
-            <div class="jsep-addmore-wexp-np">
-
-              <div class="jsep-addmore-wexp-npcol">
-                <input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name">
-              </div>
-
-              <div class="jsep-addmore-wexp-npcol">
-                <input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period">
-              </div>
-
-            </div>
-
-            <div>
-              <input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position">
-            </div>
-
-            <div>
-              <textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"></textarea>
-            </div>
-
-            <br>
-            <br>
-
-            <label class="jsep-addmore-wexp">
-              + Add more&nbsp;
-            </label>
-            <br>
-
-            <br>
-
-          </div>
-          <br>
-          <br>
-
-          <!-- EXTRACURRICULAR ACTIVITIES -->
-          <h3>Extracurricular activities</h3>
-
-          <div class="jsep-addmore-extraa-p">
-
-            <div class="jsep-addmore-extraa-np">
-
-              <div class="jsep-addmore-extraa-npcol">
-                <input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name">
-              </div>
-
-              <div class="jsep-addmore-extraa-npcol">
-                <input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period">
-              </div>
-
-            </div>
-
-            <div>
-              <input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role">
-            </div>
-
-            <div>
-              <textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"></textarea>
-            </div>
-
-            <br>
-            <br>
-
-            <label class="jsep-addmore-extraa">
-              + Add more&nbsp;
-            </label>
-            <br>
-            <br>
-
-          </div>
-
-
-        </div>
-
+        <!--COMPANY SIZE-->
+        <label class="rep-label">
+          <img src="icons/Comsize.svg">
+          <input name="rep-com-size" type="text" class="rep-btn" placeholder="Company size">
+        </label>
+        
+        <!--PHONE NUMBER-->
+        <label class="rep-label">
+          <img src="icons/Phone.svg">
+          <input name="rep-com-phone" type="text" class="rep-btn" placeholder="Phone number">
+        </label>
+        
+        <!--EMAIL-->
+        <label class="rep-label">
+          <img src="icons/Message.svg">
+          <input name="rep-com-email" type="text" class="rep-btn" placeholder="Email">
+        </label>
       </div>
 
-      <div class="jsep-submit-btn">
-        <input type="submit" value="Save changes">
+      <!--LEFT COLUMN-->
+      <div class="rep-content-right">
       </div>
-
     </form>
-
-
   </main>
 
   <!--Back to top button-->
@@ -324,7 +127,7 @@
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form action="#">
+          <form action="">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">
@@ -336,101 +139,31 @@
     </div>
   </footer>
 
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
   <script>
+    const swiper = new Swiper('.swiper', {
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      loop: true,
 
-    // EDUCATION BACKGROUND
-    $(document).ready(function () {
-      var max_fields = 10;
-      var wrapper = $('.jsep-addmore-edu-p');
-      var add_button = $('.jsep-addmore-edu');
-      var x = 1;
-      $(add_button).click(function (e) {
-        e.preventDefault();
-        if (x < max_fields) {
-          x++;
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
 
-          $(wrapper).append('<div class="jsep-addmore-edu-p"><label class="jsep-label"><img src="icons/Degree_B.svg"><input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree"></label><label class="jsep-label"><img src="icons/Institute_B.svg"><input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute"></label><label class="jsep-label"><img src="icons/Calendar_B.svg"><input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)"></label><label class="jsep-label"><img src="icons/GPA_B.svg"><input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)"></label><br><label class="jsep-remove-edu">- Remove&nbsp;</label><br><br><br></div>')
-
-        }
-      });
-
-      $(wrapper).on('click', '.jsep-remove-edu', function (e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-      });
-
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
     });
 
-    // SKILLS
-    $(document).ready(function () {
-      var wrapper = $('.jsep-addmore-skills-p');
-      var add_button = $('.jsep-addmore-skills');
-      var x = 1;
-      $(add_button).click(function (e) {
-        e.preventDefault();
-
-        $(wrapper).append('<div class="jsep-addmore-skills-p"><div class="jsep-skill"><input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills"></div><label class="jsep-remove-skills">- Remove&nbsp;</label><br></div>')
-
-      });
-
-      $(wrapper).on('click', '.jsep-remove-skills', function (e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-      });
-
-    });
-
-    // WORKING EXPERIENCE
-    $(document).ready(function () {
-      var max_fields = 10;
-      var wrapper = $('.jsep-addmore-wexp-p');
-      var add_button = $('.jsep-addmore-wexp');
-      var x = 1;
-      $(add_button).click(function (e) {
-        e.preventDefault();
-        if (x < max_fields) {
-          x++;
-
-          $(wrapper).append('<div class="jsep-addmore-wexp-p"><div class="jsep-addmore-wexp-np"><div class="jsep-addmore-wexp-npcol"><input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name"></div><div class="jsep-addmore-wexp-npcol"><input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period"></div></div><div><input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position"></div><div><textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br><br><br></div>')
-
-        }
-      });
-
-      $(wrapper).on('click', '.jsep-remove-extraa', function (e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-      });
-
-    });
-
-    // EXTRACURRICULAR ACTIVITIES
-    $(document).ready(function () {
-      var max_fields = 10;
-      var wrapper = $('.jsep-addmore-extraa-p');
-      var add_button = $('.jsep-addmore-extraa');
-      var x = 1;
-      $(add_button).click(function (e) {
-        e.preventDefault();
-        if (x < max_fields) {
-          x++;
-
-          $(wrapper).append('<div class="jsep-addmore-extraa-p"><div class="jsep-addmore-extraa-np"><div class="jsep-addmore-extraa-npcol"><input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name"></div><div class="jsep-addmore-extraa-npcol"><input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period"></div></div><div><input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role"></div><div><textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br><br><br></div>')
-
-        }
-      });
-
-      $(wrapper).on('click', '.jsep-remove-extraa', function (e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-      });
-
-    });
-
+    AOS.init();
   </script>
+
 
 </body>
 

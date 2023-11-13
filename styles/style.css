@@ -401,9 +401,9 @@ textarea {
 
 .cp-contents h1,
 .jop-contents h1,
-.cpp-heading,
-.rpp-heading,
-.jsep-heading {
+.cpp-heading h1,
+.jsep-heading,
+.rep-heading {
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 2rem;
@@ -1219,7 +1219,8 @@ textarea {
     background-color: #11185d;
     border-radius: 3px;
     margin-top: 1.5em;
-    padding: .5em 1em;
+    padding: .7em 1.3em;
+    cursor: pointer;
 }
 
 
