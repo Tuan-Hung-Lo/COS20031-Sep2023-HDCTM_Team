@@ -26,21 +26,25 @@
         
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-
+    
             // Verify the hashed password
             if (password_verify($password, $user['UserPassword'])) {
-                // Now $user['user_id'] contains the user ID
+                // Regenerate the session ID
                 session_start();
+                session_regenerate_id(true);
+    
                 $_SESSION['user_id'] = $user['UserAuthenticationID'];
                 $_SESSION['user_email'] = $user['UserEmail'];
-
-                header("Location: ../page.html");
+    
+                // Redirect to a different page based on user role or application logic
+                header("Location: ./page.php");
                 exit();
             }
         }
-
+    
         // Handle the case where the user ID couldn't be retrieved or password doesn't match
-        header("Location: ../signin.html");
+        header("Location: ./login.html?error=1");
         exit();
     }
-?>
+    ?>
+    

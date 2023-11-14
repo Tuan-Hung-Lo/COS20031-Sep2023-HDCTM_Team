@@ -1,3 +1,39 @@
+<?php
+session_start();
+
+require_once("./settings.php");
+
+// Create a database connection
+$conn = @mysqli_connect($host, $username, $password, $database);
+
+// Check the connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// Assuming your form is submitted using POST method
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Retrieve data from the form
+    $name = $_POST["jsep-name"];
+    $experienceLevel = $_POST["jsep-experience-level"];
+    $jobTitle = $_POST["jsep-job-title"];
+    // Add other fields as needed
+
+    // Assuming you have a table called 'job_seeker' in your database
+    $sql = "UPDATE job_seeker SET name='$name', experience_level='$experienceLevel', job_title='$jobTitle' WHERE id=1"; 
+    // Replace 'id=1' with the actual condition to identify the specific job seeker record
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Record updated successfully";
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

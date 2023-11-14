@@ -21,29 +21,29 @@
             <h1>Welcome!</h1>
             <div class="si-button-box">
                 <div id="su-btn"></div>
-                <button type="button" class="si-toggle-btn" onclick="location.href='signin.html'">Sign In</button>
-                <button type="button" class="si-toggle-btn">Sign Up</button>
+                <button type="button" class="si-toggle-btn" onclick="location.href='login.html'">Sign In</button>
+                <button type="button" class="si-toggle-btn" onclick="location.href='signup_role.html'">Sign Up</button>
             </div>
-            <form class="inputgr" id="si-inputgr" action="">
+            <form class="inputgr" id="si-inputgr" action="signup_bus.php" method="post">
                 <div class="si-input-box">
                     <span class="si-input-icon"><img src="icons/PersonSmall.svg"></span>
-                    <input type="text" class="si-input" placeholder="Company Name" required> 
+                    <input name="company_name" type="text" class="si-input" placeholder="Company Name" required> 
                 </div>
                 <div class="si-input-box">
                     <span class="si-input-icon"><img src="icons/LocationL.svg"></span>
-                    <input type="text" class="si-input" placeholder="Address" required> 
+                    <input name="address" type="text" class="si-input" placeholder="Address" required> 
                 </div>
                 <div class="si-input-box">
                     <span class="si-input-icon"><img src="icons/PhoneL.svg"></span>
-                    <input type="text" class="si-input" placeholder="Contact Number" required> 
+                    <input name="contact_number" type="text" class="si-input" placeholder="Contact Number" required> 
                 </div>
                 <div class="si-input-box">
                     <span class="si-input-icon"><img src="icons/Industry.svg"></span>
-                    <input type="text" class="si-input" placeholder="Industry" required> 
+                    <input name="industry" type="text" class="si-input" placeholder="Industry" required> 
                 </div>
                 <div class="si-input-box">
                     <span class="si-input-icon"><img src="icons/Link.svg"></span>
-                    <input type="text" class="si-input" placeholder="Website URL (Optional)"> 
+                    <input name="website_url" type="text" class="si-input" placeholder="Website URL (Optional)"> 
                 </div>
                 <div class="si-submit-box">
                     <button type="submit" class="si-submit-btn">Log in</button>
