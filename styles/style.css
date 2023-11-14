@@ -403,7 +403,9 @@ textarea {
 .jop-contents h1,
 .cpp-heading h1,
 .jsep-heading,
-.rep-heading {
+.rep-heading,
+.rpp-heading,
+.rp-cap-heading {
     padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 2rem;
@@ -1296,3 +1298,5 @@ textarea {
     background-color: #11185d;
     color: #eee;
 }
+
+/*RECRUITER PROFILE PAGE*/

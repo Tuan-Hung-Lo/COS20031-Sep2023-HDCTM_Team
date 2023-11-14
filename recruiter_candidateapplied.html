@@ -17,7 +17,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <title>Recruiter Edit Page</title>
+  <title>Recruiter Profile - Candidate Applied List Page</title>
 </head>
 
 <body>
@@ -46,53 +46,54 @@
 
   <!-- MAIN CONTENT -->
   <main>
+    <h1 class="rp-cap-heading">Profile</h1>
 
-    <h1 class="rep-heading">Profile</h1>
+    <!-- CANDIDATES APPLIED -->
 
-    <!--EDITING FORM-->
-    <form method="post" action="#" class="rep-form">
-
-      <!--LEFT COLUMN-->
-      <div class="rep-content-left">
-
-        <!--COMPANY NAME-->
-        <label class="rep-label">
-          <img src="icons/PeopleGroup.svg">
-          <input name="rep-com-name" type="text" class="rep-btn" placeholder="Company name">
-        </label>
-
-        <!--COMPANY SIZE-->
-        <label class="rep-label">
-          <img src="icons/Comsize.svg">
-          <input name="rep-com-size" type="text" class="rep-btn" placeholder="Company size">
-        </label>
-        
-        <!--PHONE NUMBER-->
-        <label class="rep-label">
-          <img src="icons/Phone.svg">
-          <input name="rep-com-phone" type="text" class="rep-btn" placeholder="Phone number">
-        </label>
-        
-        <!--EMAIL-->
-        <label class="rep-label">
-          <img src="icons/Message.svg">
-          <input name="rep-com-email" type="text" class="rep-btn" placeholder="Email">
-        </label>
-
-        <!--COMPANY INTRODUCTION-->
-        <div class="rep-input-box">
-          <input name="rep-com-intro" type="text" class="rep-btn" placeholder="Introduction">
-        </div>
+    <div class="rpp-box-container">
+      <div class="header">
+        <h5>Candidates applied</h5>
       </div>
+      <br>
+      <hr>
+      <br>
 
-      <!--LEFT COLUMN-->
-      <div class="rep-content-right">
+      <ul class="autoWidth" class="cs-hidden">
 
-        <div class="rep-img-box">
-          <img src="icons/"> 
-        </div>
-      </div>
-    </form>
+        <!-- Card 1 -->
+        <li class="slide">
+          <div class="sp-card">
+
+            <div class="sp-image-box">
+
+              <img src="images/CA_img1.png" alt="product.png">
+
+              <h4>Lorem Ipsum Chalamet</h4>
+
+            </div>
+
+            <div class="sp-product-details">
+              <div class="sp-product-require">
+                <ul>
+                  <li><img src="icons/JobApplied.svg"> Job applied:
+                    <span class="ca_span">
+                      UI-UX Designer/Researcher - Melbourne
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <br>
+
+            <button class="ca-product-btn">View job seeker profile</button>
+
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+
   </main>
 
   <!--Back to top button-->
