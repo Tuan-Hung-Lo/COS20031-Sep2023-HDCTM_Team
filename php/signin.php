@@ -13,32 +13,34 @@
     }
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
         // Retrieve the submitted email and password
         $email = $_POST["email"];
-        $pwd = $_POST["password"];
+        $password = $_POST["password"];
 
         // Prepare a SQL statement with a parameterized query
-        $user_query = "SELECT * FROM UserAuthentication WHERE UserEmail = ? LIMIT 1";
+        $user_query = "SELECT UserID, UserPassword FROM UserAuthentication WHERE UserEmail = ? LIMIT 1";
         $stmt = $conn->prepare($user_query);
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
         
-        if ($result->num_rows == 0) {
-            header("Location: ../signin.html");
-            exit();
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+
+            // Verify the hashed password
+            if (password_verify($password, $user['UserPassword'])) {
+                // Now $user['user_id'] contains the user ID
+                session_start();
+                $_SESSION['user_id'] = $user['UserAuthenticationID'];
+                $_SESSION['user_email'] = $user['UserEmail'];
+
+                header("Location: ../page.html");
+                exit();
+            }
         }
 
-        $user = $result->fetch_assoc();
-
-        // Verify the hashed password
-        if (password_verify($password, $user['UserPassword'])) {
-            header("Location: ../page.html");
-            exit();
-        } else {
-            header("Location: ../signin.html");
-            exit();
-        }
+        // Handle the case where the user ID couldn't be retrieved or password doesn't match
+        header("Location: ../signin.html");
+        exit();
     }
 ?>
