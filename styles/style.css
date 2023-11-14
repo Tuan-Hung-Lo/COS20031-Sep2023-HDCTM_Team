@@ -1207,7 +1207,7 @@ textarea {
 .container404 h1 {
     font-size: 7em;
     color: #11185d;
-    margin-top: 1.5em;
+    margin-top: .5em;
 }
 
 .container404 h2 {
@@ -1301,20 +1301,74 @@ textarea {
 
 /*RECRUITER PROFILE PAGE*/
 
-
-
-/* RECRUITER - CANDIDATES APPLIED */
-.rcap-card {
-    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
-    border-radius: 5px;
-    padding: 1rem;
-    width: 20em;
-}
-
-.rcap-grid {
+.rep-form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 3.5rem;
+    margin: 0 2em;
+    min-height: 80vh;
+}
+
+.rep-content-left {
+    width: 35%;
+    margin-right: 4em;
+}
+
+.rep-label, .rep-img-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
+}
+
+.rep-btn, .rep-link {
+    padding: .5rem 1rem;
+    border-left: #c1c1c1 solid 1px;
+}
+
+.rep-input-box input {
+    border: none;
+}
+
+.rep-label img, .rep-img-link img {
+    width: 3em;
+    padding: .6em;
+}
+
+.rep-input-box {
+    margin: 1rem 0;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.08);
+    height: 10em;
+    padding: .5rem .3rem;
+}
+
+.rep-content-right {
+    width: 60%;
+}
+
+.rep-img-box {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.rep-img-box img{
+    width: 100%;    
+    height: 100%;
+    border: 1px solid;
+}
+
+.rep-submit-btn {
+    text-align: center;
+    width: 100%;
+}
+
+.rep-submit-btn input {
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #231278;
+    width: 100%;
+    cursor: pointer;
+    color: #fafafa;
 }
