@@ -1207,7 +1207,7 @@ textarea {
 .container404 h1 {
     font-size: 7em;
     color: #11185d;
-    margin-top: .5em;
+    margin-top: 1.5em;
 }
 
 .container404 h2 {
@@ -1300,3 +1300,21 @@ textarea {
 }
 
 /*RECRUITER PROFILE PAGE*/
+
+
+
+/* RECRUITER - CANDIDATES APPLIED */
+.rcap-card {
+    box-shadow: 0rem 0rem .5rem .2rem rgba(8, 8, 8, 0.1);
+    border-radius: 5px;
+    padding: 1rem;
+    width: 20em;
+}
+
+.rcap-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 3.5rem;
+}
