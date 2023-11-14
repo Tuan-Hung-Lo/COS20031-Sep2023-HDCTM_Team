@@ -323,7 +323,7 @@ $course = $conn->query("select * from s104222248_db.Course");
               <li class="slide">
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <!-- Image data type ? -->
+                    <!-- Image data type ? Link url -->
                     <img src="images/nail.png" alt="product.png">
                   </div>
                   <div class="sp-product-details">
