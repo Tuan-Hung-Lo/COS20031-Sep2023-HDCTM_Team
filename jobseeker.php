@@ -351,14 +351,14 @@ $course = $conn->query("select * from s104222248_db.Course");
             <h5>Job applications</h5>
           </div>
           <hr>
-          <!-- WTF is this ? -->
+          <!-- Design y hệt mấy thẻ course -->
           <?php while ($row = mysqli_fetch_assoc($course)) { ?>
             <ul class="autoWidth" class="cs-hidden">
               <!-- Card 1 -->
               <li class="slide">
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <img src="images/nail.png" alt="product.png">
+                    <img src="images/nail.png" alt="product.png"> <!-- link url -->
                   </div>
                   <div class="sp-product-details">
                     <div class="type">
