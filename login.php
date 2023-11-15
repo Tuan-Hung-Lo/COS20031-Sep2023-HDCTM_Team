@@ -9,9 +9,6 @@
         $email = sanitize_input($_POST["email"]);
         $password = sanitize_input($_POST["password"]);
 
-        // Hash the password
-        // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
         $user_query= "SELECT * FROM s104181721_db.UserAuthentication WHERE UserEmail = '$email' AND UserPassword = '$password';";
         $result = $conn->query($user_query);
 
