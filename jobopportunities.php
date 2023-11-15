@@ -1,65 +1,58 @@
 <?php
-session_start();
+  session_start();
 
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-// Create a database connection
-$conn = @mysqli_connect($host, $username, $password, $database);
+  // Initialize the WHERE clause for filtering
+  $whereClause = "1"; // Default condition to select all jobs
 
-// Check the connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+  // Check if filter form is submitted
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check and apply filter conditions based on user input
 
-// Initialize the WHERE clause for filtering
-$whereClause = "1"; // Default condition to select all jobs
+    // EXPECTED SALARY
+    $esalaryfrom = isset($_POST['esalaryfrom']) ? intval($_POST['esalaryfrom']) : 0;
+    $esalaryto = isset($_POST['esalaryto']) ? intval($_POST['esalaryto']) : PHP_INT_MAX;
 
-// Check if filter form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Check and apply filter conditions based on user input
+    $whereClause .= " AND Salary BETWEEN $esalaryfrom AND $esalaryto";
 
-  // EXPECTED SALARY
-  $esalaryfrom = isset($_POST['esalaryfrom']) ? intval($_POST['esalaryfrom']) : 0;
-  $esalaryto = isset($_POST['esalaryto']) ? intval($_POST['esalaryto']) : PHP_INT_MAX;
+    // EXPERIENCE LEVEL
+    $experienceLevels = isset($_POST['experienceLevels']) ? $_POST['experienceLevels'] : [];
+    if (!empty($experienceLevels)) {
+      $experienceLevels = array_map('mysqli_real_escape_string', $experienceLevels);
+      $experienceLevelsStr = "'" . implode("', '", $experienceLevels) . "'";
+      $whereClause .= " AND ExperienceLevel IN ($experienceLevelsStr)";
+    }
 
-  $whereClause .= " AND Salary BETWEEN $esalaryfrom AND $esalaryto";
+    // WORKING FORMAT
+    $workingFormats = isset($_POST['workingFormats']) ? $_POST['workingFormats'] : [];
+    if (!empty($workingFormats)) {
+      $workingFormats = array_map('mysqli_real_escape_string', $workingFormats);
+      $workingFormatsStr = "'" . implode("', '", $workingFormats) . "'";
+      $whereClause .= " AND WorkingFormat IN ($workingFormatsStr)";
+    }
 
-  // EXPERIENCE LEVEL
-  $experienceLevels = isset($_POST['experienceLevels']) ? $_POST['experienceLevels'] : [];
-  if (!empty($experienceLevels)) {
-    $experienceLevels = array_map('mysqli_real_escape_string', $experienceLevels);
-    $experienceLevelsStr = "'" . implode("', '", $experienceLevels) . "'";
-    $whereClause .= " AND ExperienceLevel IN ($experienceLevelsStr)";
+    // SPECIALISATION
+    $specialisations = isset($_POST['specialisations']) ? $_POST['specialisations'] : [];
+    if (!empty($specialisations)) {
+      $specialisations = array_map('mysqli_real_escape_string', $specialisations);
+      $specialisationsStr = "'" . implode("', '", $specialisations) . "'";
+      $whereClause .= " AND Specialisation IN ($specialisationsStr)";
+    }
   }
 
-  // WORKING FORMAT
-  $workingFormats = isset($_POST['workingFormats']) ? $_POST['workingFormats'] : [];
-  if (!empty($workingFormats)) {
-    $workingFormats = array_map('mysqli_real_escape_string', $workingFormats);
-    $workingFormatsStr = "'" . implode("', '", $workingFormats) . "'";
-    $whereClause .= " AND WorkingFormat IN ($workingFormatsStr)";
+  // Query to fetch jobs based on filter conditions
+  $result = mysqli_query($conn, "SELECT * FROM Job WHERE $whereClause");
+
+  // Fetch all rows into an associative array
+  $jobs = [];
+  while ($row = mysqli_fetch_assoc($result)) {
+    $jobs[] = $row;
   }
 
-  // SPECIALISATION
-  $specialisations = isset($_POST['specialisations']) ? $_POST['specialisations'] : [];
-  if (!empty($specialisations)) {
-    $specialisations = array_map('mysqli_real_escape_string', $specialisations);
-    $specialisationsStr = "'" . implode("', '", $specialisations) . "'";
-    $whereClause .= " AND Specialisation IN ($specialisationsStr)";
-  }
-}
-
-// Query to fetch jobs based on filter conditions
-$result = mysqli_query($conn, "SELECT * FROM Job WHERE $whereClause");
-
-// Fetch all rows into an associative array
-$jobs = [];
-while ($row = mysqli_fetch_assoc($result)) {
-  $jobs[] = $row;
-}
-
-// Close the database connection
-mysqli_close($conn);
+  // Close the database connection
+  mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>

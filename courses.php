@@ -1,38 +1,28 @@
 <?php
-session_start();
+  session_start();
 
-// Include settings and database connection
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-// Create a database connection
-$conn = @mysqli_connect($host, $username, $password, $database);
+  // Initialize the WHERE clause for filtering
+  $whereClause = "1"; // Default condition to select all courses
 
-// Check the connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-// Initialize the WHERE clause for filtering
-$whereClause = "1"; // Default condition to select all courses
-
-// Check if the filter form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Check and apply filter conditions based on user input
-
-  // SUGGESTED FILTERS
-  $filters = ['All', 'FnB', 'BeautynSpa', 'TourismHospitality'];
-  foreach ($filters as $filter) {
-    if (isset($_POST[$filter])) {
-      $whereClause .= " AND CourseCategory = '$filter'";
+  // Check if the filter form is submitted
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check and apply filter conditions based on user input
+    $filters = ['All', 'FnB', 'BeautynSpa', 'TourismHospitality'];
+    foreach ($filters as $filter) {
+      if (isset($_POST[$filter])) {
+        $whereClause .= " AND CourseCategory = '$filter'";
+      }
     }
   }
-}
 
-// Query to fetch courses based on filter conditions
-$course = $conn->query("SELECT * FROM Course WHERE $whereClause");
+  // Query to fetch courses based on filter conditions
+  $course = $conn->query("SELECT * FROM Course WHERE $whereClause");
 
-// Close the database connection
-mysqli_close($conn);
+  // Close the database connection
+  mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -151,7 +141,7 @@ mysqli_close($conn);
         <hr>
 
         <!-- Suggest Button-->
-        <form method="post" id="cp-search-buttons">
+        <form method="post" action="courses.php" id="cp-search-buttons">
           <div id="form_check">
             <!-- Suggest Input-->
             <div>

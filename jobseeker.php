@@ -1,16 +1,19 @@
 <?php
-session_start();
+  session_start();
 
-if (isset($_SESSION['user_id'])) {
-  $user_id = $_SESSION['user_id'];
-  $user_email = $_SESSION['user_email'];
-}
+  // Include settings and database connection
+  require_once("./settings.php");
+  
+  if (isset($_SESSION['user_id'])) {
+    $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+    $user_email = $_SESSION['user_email'];
+  }
 
-$job_seeker = $conn->query("select * from s104222248_db.JobSeeker where UserAuthenticationID = $user_id");
-$education = $conn->query("select * from s104222248_db.Education where JobSeekerID = EducationID");
-$skill = $conn->query("select * from s104222248_db.Skill where JobSeekerID = SkillID");
-$working_experience = $conn->query("select * from s104222248_db.WorkingExperience where JobSeekerID = WExperienceID");
-$course = $conn->query("select * from s104222248_db.Course");
+  $job_seeker = $conn->query("select * from s104222248_db.JobSeeker where UserAuthenticationID = $user_id");
+  $education = $conn->query("select * from s104222248_db.Education where JobSeekerID = EducationID");
+  $skill = $conn->query("select * from s104222248_db.Skill where JobSeekerID = SkillID");
+  $working_experience = $conn->query("select * from s104222248_db.WorkingExperience where JobSeekerID = WExperienceID");
+  $course = $conn->query("select * from s104222248_db.Course");
 ?>
 
 <!DOCTYPE html>

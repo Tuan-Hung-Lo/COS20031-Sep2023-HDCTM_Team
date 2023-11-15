@@ -1,19 +1,6 @@
 <?php
-    // Database connection parameters
-    $host = "feenix-mariadb-web.swin.edu.au";
-    $username = "s104222248";
-    $password = "031104";
-    $database = "s104222248_db";
-
-    // Create a database connection
-    $conn = new mysqli($host, $username, $password, $database);
-
-    // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } else {
-        return $conn;
-    }
+    // Include settings and database connection
+    require_once("./settings.php");
 
     // Get form data
     $first_name = $_POST['first_name'];
@@ -36,4 +23,14 @@
     $sql3 = "INSERT INTO s104222248_db.UserRole (UserRoleName)
         VALUES ('User')";
     $conn->query($sql3);
+
+    // Get the UserAuthenticationID after inserting data into UserAuthentication table
+    $UserAuthenticationID = $conn->insert_id;
+
+    // Store data in the session
+    $_SESSION['user_data'] = array(
+        'UserAuthenticationID' => $UserAuthenticationID,
+        'UserEmail' => $email,
+        'UserPassword' => $hashed_password
+    );
 ?>

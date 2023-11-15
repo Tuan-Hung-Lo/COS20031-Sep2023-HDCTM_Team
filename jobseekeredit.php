@@ -1,37 +1,93 @@
 <?php
-session_start();
+  session_start();
+  
+  // Assuming your form is submitted using POST method
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve user_id from the session
+    $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
 
-require_once("./settings.php");
-
-// Create a database connection
-$conn = @mysqli_connect($host, $username, $password, $database);
-
-// Check the connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-// Assuming your form is submitted using POST method
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Include settings and database connection
+    require_once("./settings.php");
 
     // Retrieve data from the form
-    $name = $_POST["jsep-name"];
-    $experienceLevel = $_POST["jsep-experience-level"];
-    $jobTitle = $_POST["jsep-job-title"];
-    // Add other fields as needed
+    $JSImage = $_POST["jsep-name"];
+    $ExperienceLevel = $_POST["jsep-experience-level"];
+    $JSJobTitle = $_POST["jsep-job-title"];
+    $Gender = $_POST["jsep-gender"];
+    $DOB = $_POST["jsep-dob"];
+    $Phone = $_POST["jsep-phone"];
+    $Address = $_POST["jsep-address"];
+    
+    $Degree = $_POST["jsep-degree"];
+    $Institution = $_POST["jsep-institute"];
+    $GraduationYear = $_POST["jsep-period"];
+    $GPA = $_POST["jsep-gpa"];
+    
+    $SkillName = $_POST["jsep-skill"];
 
-    // Assuming you have a table called 'job_seeker' in your database
-    $sql = "UPDATE job_seeker SET name='$name', experience_level='$experienceLevel', job_title='$jobTitle' WHERE id=1"; 
-    // Replace 'id=1' with the actual condition to identify the specific job seeker record
+    $WCompanyName = $_POST["jsep-companyname"];
+    $WTimeRange = $_POST["jsep-wperiod"];
+    $WJobRole = $_POST["jsep-wposition"];
+    $WDescription = $_POST["jsep-wdesc"];
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully";
+    $OrganizationName = $_POST["jsep-organisationname"];
+    $EATimeRange = $_POST["jsep-eaperiod"];
+    $EAJobRole = $_POST["jsep-earole"];
+    $EADescription = $_POST["jsep-eadesc"];
+
+    // Update JobSeeker table
+    $sql1 = "UPDATE JobSeeker SET
+      JSImage = '$JSImage',
+      ExperienceLevel = '$ExperienceLevel',
+      JSJobTitle = '$JSJobTitle'
+      Gender = '$Gender',
+      DOB = '$DOB',
+      Phone = '$Phone',
+      Address = '$Address'
+      WHERE JobSeekerID='$UserAuthenticationID'";
+
+    // Update Education table
+    $sql2 = "UPDATE Education SET
+      Degree = '$Degree',
+      Institution = '$Institution',
+      GraduationYear = '$GraduationYear',
+      GPA = '$GPA'
+      WHERE JobSeekerID=EducationID";
+
+    // Update Skill table
+    $sql3 = "UPDATE Skill SET
+      SkillName = '$SkillName'
+      WHERE JobSeekerID=SkillID";
+
+    // Update WorkingExperience table
+    $sql4 = "UPDATE WorkingExperience SET
+      WCompanyName = '$WCompanyName',
+      WTimeRange = '$WTimeRange',
+      WJobRole = '$WJobRole',
+      WDescription = '$WDescription'
+      WHERE JobSeekerID=WorkingExperience";
+
+    // Update ExtracurriculumActivity table
+    $sql5 = "UPDATE ExtracurriculumActivity SET
+      OrganizationName = '$OrganizationName',
+      EATimeRange = '$EATimeRange',
+      EAJobRole = '$EAJobRole',
+      EADescription = '$EADescription'
+      WHERE JobSeekerID=ActivityID";
+
+    // Execute the queries
+    if ($conn->query($sql1) === TRUE &&
+      $conn->query($sql2) === TRUE &&
+      $conn->query($sql3) === TRUE &&
+      $conn->query($sql4) === TRUE &&
+      $conn->query($sql5) === TRUE) {
+      echo "Record updated successfully";
     } else {
-        echo "Error updating record: " . $conn->error;
+      echo "Error updating record: " . $conn->error;
     }
-}
 
-$conn->close();
+    $conn->close();
+  }
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +144,7 @@ $conn->close();
     </h1>
 
 
-    <form method="post" action="#" class="jsep-form">
+    <form method="post" action="jobseekeredit.php" class="jsep-form">
 
       <div class="jsep-container">
 
@@ -122,7 +178,6 @@ $conn->close();
           </label>
           <br>
 
-          <!--  -->
           <!-- PERSONAL INFORMATION -->
           <h3>Personal information</h3>
 
@@ -169,7 +224,6 @@ $conn->close();
           </label>
           <br>
 
-          <!--  -->
           <!-- EDUCATION BACKGROUND -->
           <h3>Education background</h3>
 

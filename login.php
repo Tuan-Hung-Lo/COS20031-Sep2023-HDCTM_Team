@@ -1,17 +1,7 @@
 <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors', '1');
-
+    // Include settings and database connection
     require_once("./settings.php");
 
-    // Create a database connection
-    $conn = @mysqli_connect($host, $username, $password, $database);
-
-    // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve the submitted email and password
         $email = $_POST["email"];
@@ -33,8 +23,8 @@
                 session_start();
                 session_regenerate_id(true);
     
-                $_SESSION['user_id'] = $user['UserAuthenticationID'];
-                $_SESSION['user_email'] = $user['UserEmail'];
+                $_SESSION['UserAuthenticationID'] = $user['UserAuthenticationID'];
+                $_SESSION['UserEmail'] = $user['UserEmail'];
     
                 // Redirect to a different page based on user role or application logic
                 header("Location: ./page.php");
@@ -46,5 +36,4 @@
         header("Location: ./login.html?error=1");
         exit();
     }
-    ?>
-    
+?>
