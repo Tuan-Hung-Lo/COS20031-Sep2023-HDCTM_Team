@@ -2,47 +2,43 @@
     // Include settings and database connection
     require_once("./settings.php");
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Retrieve the submitted email and password
-        $email = $_POST["email"];
-        $password = $_POST["password"];
+    // Checking if the manager log in name and password match one in the user table
+    if (isset($_POST["email"]) && isset($_POST['password'])) {
+        $email = sanitize_input($_POST["email"]);
+        $password = sanitize_input($_POST["password"]);
 
-        // Prepare a SQL statement with a parameterized query
-        $user_query = "SELECT * FROM s104181721_db.UserAuthentication WHERE UserEmail = ?";
-        $stmt = $conn->prepare($user_query);
+        // Hash the password
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        // Check if the statement is prepared successfully
-        if ($stmt) {
-            // Bind the parameter and execute the statement
-            $stmt->bind_param("s", $email);
-            $stmt->execute();
-            $result = $stmt->get_result();
+        $user_query= "SELECT * FROM s104181721_db.UserAuthentication WHERE UserEmail = '$email' AND UserPassword = '$hashed_password';";
+        $result = $conn->query($user_query);
 
-            if ($result->num_rows > 0) {
-                $user = $result->fetch_assoc();
+        // The system will return to the log in page if there is no user
+        if ($result->num_rows == 0) {
+            header("Location: ./login.php?error_msg=AccessDenied");
+        } else {
+            // Fetch user details
+            $user = $result->fetch_assoc();
 
-                // Verify the hashed password
-                if (password_verify($password, $user['UserPassword'])) {
-                    // Regenerate the session ID
-                    session_start();
-                    session_regenerate_id(true);
+            // Check UserRole
+            $userRole = $user['UserRole'];
 
-                    $_SESSION['UserAuthenticationID'] = $user['UserAuthenticationID'];
-                    $_SESSION['UserEmail'] = $user['UserEmail'];
-
-                    // Redirect to a different page based on user role or application logic
-                    header("Location: ./page.html");
-                    exit();
-                }
+            // Redirect based on UserRole
+            switch ($userRole) {
+                case 'Job Seeker':
+                    $redirectPage = "jobseeker.php";
+                    break;
+                case 'Recruiter':
+                    $redirectPage = "recruiter.php";
+                    break;
             }
 
-            // Handle the case where the user ID couldn't be retrieved or password doesn't match
-            header("Location: ./login.html?error=1");
-            exit();
-        } else {
-            // Handle the case where the statement preparation failed
-            header("Location: ./login.html?error=2");
-            exit();
+            // Set session variables
+            $_SESSION['UserAuthenticationID'] = $user['UserAuthenticationID'];
+            $_SESSION['user_email'] = $email;
+
+            // Redirect to the appropriate page
+            header("Location: ./$redirectPage");
         }
     }
 ?>

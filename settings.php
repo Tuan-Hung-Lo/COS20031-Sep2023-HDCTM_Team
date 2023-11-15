@@ -11,4 +11,16 @@
     if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     }
+
+    // Sanitizing data
+    function sanitize_input($data)
+    {
+        // remove leading and trailing spaces
+        $data = trim($data);
+        // remove backslashes
+        $data = stripcslashes($data);
+        // remove HTML control characters
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 ?>
