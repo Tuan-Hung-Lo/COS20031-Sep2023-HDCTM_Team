@@ -1,5 +1,7 @@
 <?php
     // Include settings and database connection
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     require_once("./settings.php");
 
     // Checking if the manager log in name and password match one in the user table
@@ -8,9 +10,9 @@
         $password = sanitize_input($_POST["password"]);
 
         // Hash the password
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        $user_query= "SELECT * FROM s104181721_db.UserAuthentication WHERE UserEmail = '$email' AND UserPassword = '$hashed_password';";
+        $user_query= "SELECT * FROM s104181721_db.UserAuthentication WHERE UserEmail = '$email' AND UserPassword = '$password';";
         $result = $conn->query($user_query);
 
         // The system will return to the log in page if there is no user
