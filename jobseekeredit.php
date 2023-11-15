@@ -36,7 +36,7 @@
     $EADescription = $_POST["jsep-eadesc"];
 
     // Update JobSeeker table
-    $sql1 = "UPDATE JobSeeker SET
+    $sql1 = "UPDATE s104181721_db.JobSeeker SET
       JSImage = '$JSImage',
       ExperienceLevel = '$ExperienceLevel',
       JSJobTitle = '$JSJobTitle'
@@ -47,7 +47,7 @@
       WHERE JobSeekerID='$UserAuthenticationID'";
 
     // Update Education table
-    $sql2 = "UPDATE Education SET
+    $sql2 = "UPDATE s104181721_db.Education SET
       Degree = '$Degree',
       Institution = '$Institution',
       GraduationYear = '$GraduationYear',
@@ -55,12 +55,12 @@
       WHERE JobSeekerID=EducationID";
 
     // Update Skill table
-    $sql3 = "UPDATE Skill SET
+    $sql3 = "UPDATE s104181721_db.Skill SET
       SkillName = '$SkillName'
       WHERE JobSeekerID=SkillID";
 
     // Update WorkingExperience table
-    $sql4 = "UPDATE WorkingExperience SET
+    $sql4 = "UPDATE s104181721_db.WorkingExperience SET
       WCompanyName = '$WCompanyName',
       WTimeRange = '$WTimeRange',
       WJobRole = '$WJobRole',
@@ -68,7 +68,7 @@
       WHERE JobSeekerID=WorkingExperience";
 
     // Update ExtracurriculumActivity table
-    $sql5 = "UPDATE ExtracurriculumActivity SET
+    $sql5 = "UPDATE s104181721_db.ExtracurriculumActivity SET
       OrganizationName = '$OrganizationName',
       EATimeRange = '$EATimeRange',
       EAJobRole = '$EAJobRole',

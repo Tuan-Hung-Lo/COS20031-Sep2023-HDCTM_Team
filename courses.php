@@ -19,7 +19,7 @@
   }
 
   // Query to fetch courses based on filter conditions
-  $course = $conn->query("SELECT * FROM Course WHERE $whereClause");
+  $course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause");
 
   // Close the database connection
   mysqli_close($conn);
