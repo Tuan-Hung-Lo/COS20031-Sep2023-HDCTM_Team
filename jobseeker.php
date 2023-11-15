@@ -18,8 +18,7 @@
       JOIN s104181721_db.JobSeeker ON WorkingExperience.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
     $course = $conn->query("SELECT * FROM s104181721_db.CourseRegistration
       JOIN s104181721_db.Course ON CourseRegistration.CourseID = Course.CourseID
-      JOIN s104181721_db.JobSeeker ON CourseRegistration.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';
-    ");
+      JOIN s104181721_db.JobSeeker ON CourseRegistration.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
   }
 ?>
 
