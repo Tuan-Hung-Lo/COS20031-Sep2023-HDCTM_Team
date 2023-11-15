@@ -13,15 +13,15 @@
     $hashed_password = password_hash($pwd, PASSWORD_DEFAULT);
 
     // Insert data into tables
-    $sql1 = "INSERT INTO s104222248_db.Users (FirstName, LastName)
+    $sql1 = "INSERT INTO s104181721_db.Users (FirstName, LastName)
         VALUES ('$first_name', '$first_name')";
     $conn->query($sql1);
 
-    $sql2 = "INSERT INTO s104222248_db.UserAuthentication (UserEmail, UserPassword)
+    $sql2 = "INSERT INTO s104181721_db.UserAuthentication (UserEmail, UserPassword)
         VALUES ('$email', '$hashed_password')";
     $conn->query($sql2);
 
-    $sql3 = "INSERT INTO s104222248_db.UserRole (UserRoleName)
+    $sql3 = "INSERT INTO s104181721_db.UserRole (UserRoleName)
         VALUES ('Bus')";
     $conn->query($sql3);
 

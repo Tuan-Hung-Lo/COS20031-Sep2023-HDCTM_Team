@@ -9,11 +9,12 @@
     $user_email = $_SESSION['user_email'];
   }
 
-  $job_seeker = $conn->query("select * from s104222248_db.JobSeeker where UserAuthenticationID = $user_id");
-  $education = $conn->query("select * from s104222248_db.Education where JobSeekerID = EducationID");
-  $skill = $conn->query("select * from s104222248_db.Skill where JobSeekerID = SkillID");
-  $working_experience = $conn->query("select * from s104222248_db.WorkingExperience where JobSeekerID = WExperienceID");
-  $course = $conn->query("select * from s104222248_db.Course");
+  $job_seeker = $conn->query("select * from s104181721_db.JobSeeker where UserAuthenticationID = $UserAuthenticationID");
+  $JobSeekerID = $conn->query("select JobSeekerID from s104181721_db.JobSeeker where UserAuthenticationID = $UserAuthenticationID");
+  $education = $conn->query("select * from s104181721_db.Education where JobSeekerID = $JobSeekerID");
+  $skill = $conn->query("select * from s104181721_db.Skill where JobSeekerID = $JobSeekerID");
+  $working_experience = $conn->query("select * from s104181721_db.WorkingExperience where JobSeekerID = $JobSeekerID");
+  $course = $conn->query("select * from s104181721_db.Course");
 ?>
 
 <!DOCTYPE html>

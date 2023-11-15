@@ -43,7 +43,7 @@
   }
 
   // Query to fetch jobs based on filter conditions
-  $result = mysqli_query($conn, "SELECT * FROM Job WHERE $whereClause");
+  $result = mysqli_query($conn, "SELECT * FROM s104181721_db.Job WHERE $whereClause");
 
   // Fetch all rows into an associative array
   $jobs = [];

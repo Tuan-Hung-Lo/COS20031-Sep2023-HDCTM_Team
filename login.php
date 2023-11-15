@@ -8,7 +8,7 @@
         $password = $_POST["password"];
 
         // Prepare a SQL statement with a parameterized query
-        $user_query = "SELECT UserID, UserPassword FROM UserAuthentication WHERE UserEmail = ? LIMIT 1";
+        $user_query = "SELECT * FROM s104181721_db.UserAuthentication WHERE UserEmail = $email";
         $stmt = $conn->prepare($user_query);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -27,7 +27,7 @@
                 $_SESSION['UserEmail'] = $user['UserEmail'];
     
                 // Redirect to a different page based on user role or application logic
-                header("Location: ./page.php");
+                header("Location: ./page.html");
                 exit();
             }
         }
