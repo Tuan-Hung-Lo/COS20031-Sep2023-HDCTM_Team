@@ -6,15 +6,22 @@
   
   if (isset($_SESSION['UserAuthenticationID'])) {
     $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+    echo $UserAuthenticationID;
     $user_email = $_SESSION['user_email'];
 
     $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
     $JobSeekerID = $conn->query("SELECT JobSeekerID FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
-    $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
-    $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
+    $education = $conn->query("SELECT *
+    FROM s104181721_db.Education
+    JOIN s104181721_db.JobSeeker ON Education.JobSeekerID = $JobSeekerID;");
+    $skill = $conn->query("SELECT * FROM s104181721_db.Skill
+    JOIN s104181721_db.JobSeeker ON Skill.JobSeekerID = JobSeeker.JobSeekerID;");
+    $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience
+    JOIN s104181721_db.JobSeeker ON WorkingExperience.JobSeekerID = JobSeeker.JobSeekerID;");
     $course = $conn->query("SELECT * FROM s104181721_db.Course;");
   }
+
+
 ?>
 
 <!DOCTYPE html>
