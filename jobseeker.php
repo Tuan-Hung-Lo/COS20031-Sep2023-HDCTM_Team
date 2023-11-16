@@ -461,7 +461,7 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
+            <li><a href="courses.php">Courses</a></li>
             <li><a href="jobopportunities.html">Job Opportunities</a></li>
           </ul>
         </div>
