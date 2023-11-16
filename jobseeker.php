@@ -9,9 +9,9 @@
     $user_email = $_SESSION['user_email'];
 
     $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    $JobSeekerID = $conn->query("SELECT JobSeekerID FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    $education = $conn->query("SELECT * FROM s104181721_db.Education
-      JOIN s104181721_db.JobSeeker ON Education.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
+    $id = $job_seeker->fetch_assoc();
+    $JobSeekerID = $id['JobSeekerID'];
+    $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID  = '$JobSeekerID ';");
     $skill = $conn->query("SELECT * FROM s104181721_db.Skill
       JOIN s104181721_db.JobSeeker ON Skill.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
     $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience
@@ -461,8 +461,8 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 
