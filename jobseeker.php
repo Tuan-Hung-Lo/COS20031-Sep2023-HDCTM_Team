@@ -74,8 +74,8 @@
     <nav class="navbar">
       <a href="#">Home</a>
       <a href="#">About</a>
-      <a href="courses.html">Courses</a>
-      <a href="jobopportunities.html">Job Opportunities</a>
+      <a href="courses.php">Courses</a>
+      <a href="jobopportunities.php">Job Opportunities</a>
     </nav>
 
     <div class="icons">
@@ -478,8 +478,8 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 
