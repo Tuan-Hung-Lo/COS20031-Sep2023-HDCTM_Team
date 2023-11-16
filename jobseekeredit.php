@@ -1,28 +1,60 @@
 <?php
   session_start();
-  
-  // Assuming your form is submitted using POST method
+
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve user_id from the session
     $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
 
-    // Include settings and database connection
     require_once("./settings.php");
 
+    $fetchDataQuery = $conn->query("SELECT * FROM JobSeeker WHERE JobSeekerID = '$UserAuthenticationID';");
+
+    if ($fetchDataQuery) {
+        $existingData = $fetchDataQuery->fetch_assoc();
+  
+        // Assign existing data to variables
+        $existingFirstName = $existingData['FirstName'];
+        $existingLastName = $existingData['LastName'];
+        $existingExperienceLevel = $existingData['ExperienceLevel'];
+        // Assign other variables similarly for other fields
+    }
+
+    // Function to update or insert data into a table
+    function edit($conn, $table, $data, $conditionColumn, $conditionValue)
+    {
+      $columns = implode(", ", array_keys($data));
+      $values = "'" . implode("', '", array_map('sanitize_input', $data)) . "'";
+
+      $sql = "INSERT INTO $table ($columns) VALUES ($values) ON DUPLICATE KEY UPDATE ";
+
+      foreach ($data as $column => $value) {
+        $sql .= "$column = VALUES($column), ";
+      }
+
+      // Remove the trailing comma
+      $sql = rtrim($sql, ", ");
+
+      // Add the condition for the WHERE clause
+      $sql .= " WHERE $conditionColumn = '$conditionValue'";
+
+      return $conn->query($sql);
+    }
+
     // Retrieve data from the form
-    $JSImage = $_POST["jsep-name"];
+    $JSImage = $_POST["jsep-profileimg-link"];
+    $FirstName = $_POST["jsep-first-name"];
+    $LastName = $_POST["jsep-last-name"];
     $ExperienceLevel = $_POST["jsep-experience-level"];
     $JSJobTitle = $_POST["jsep-job-title"];
     $Gender = $_POST["jsep-gender"];
     $DOB = $_POST["jsep-dob"];
     $Phone = $_POST["jsep-phone"];
     $Address = $_POST["jsep-address"];
-    
+
     $Degree = $_POST["jsep-degree"];
     $Institution = $_POST["jsep-institute"];
     $GraduationYear = $_POST["jsep-period"];
     $GPA = $_POST["jsep-gpa"];
-    
+
     $SkillName = $_POST["jsep-skill"];
 
     $WCompanyName = $_POST["jsep-companyname"];
@@ -35,60 +67,62 @@
     $EAJobRole = $_POST["jsep-earole"];
     $EADescription = $_POST["jsep-eadesc"];
 
-    // Update JobSeeker table
-    $sql1 = "UPDATE s104181721_db.JobSeeker SET
-      JSImage = '$JSImage',
-      ExperienceLevel = '$ExperienceLevel',
-      JSJobTitle = '$JSJobTitle'
-      Gender = '$Gender',
-      DOB = '$DOB',
-      Phone = '$Phone',
-      Address = '$Address'
-      WHERE JobSeekerID='$UserAuthenticationID'";
+    // Update or insert data into JobSeeker table
+    $jobSeekerData = [
+      'JSImage' => $JSImage,
+      'FirstName' => $FirstName,
+      'LastName' => $LastName,
+      'ExperienceLevel' => $ExperienceLevel,
+      'JSJobTitle' => $JSJobTitle,
+      'Gender' => $Gender,
+      'DOB' => $DOB,
+      'Phone' => $Phone,
+      'Address' => $Address,
+    ];
 
-    // Update Education table
-    $sql2 = "UPDATE s104181721_db.Education SET
-      Degree = '$Degree',
-      Institution = '$Institution',
-      GraduationYear = '$GraduationYear',
-      GPA = '$GPA'
-      WHERE JobSeekerID=EducationID";
+    edit($conn, 'JobSeeker', $jobSeekerData, 'JobSeekerID', $UserAuthenticationID);
 
-    // Update Skill table
-    $sql3 = "UPDATE s104181721_db.Skill SET
-      SkillName = '$SkillName'
-      WHERE JobSeekerID=SkillID";
+    // Update or insert data into Education table
+    $educationData = [
+      'Degree' => $Degree,
+      'Institution' => $Institution,
+      'GraduationYear' => $GraduationYear,
+      'GPA' => $GPA,
+    ];
 
-    // Update WorkingExperience table
-    $sql4 = "UPDATE s104181721_db.WorkingExperience SET
-      WCompanyName = '$WCompanyName',
-      WTimeRange = '$WTimeRange',
-      WJobRole = '$WJobRole',
-      WDescription = '$WDescription'
-      WHERE JobSeekerID=WorkingExperience";
+    edit($conn, 'Education', $educationData, 'JobSeekerID', $UserAuthenticationID);
 
-    // Update ExtracurriculumActivity table
-    $sql5 = "UPDATE s104181721_db.ExtracurriculumActivity SET
-      OrganizationName = '$OrganizationName',
-      EATimeRange = '$EATimeRange',
-      EAJobRole = '$EAJobRole',
-      EADescription = '$EADescription'
-      WHERE JobSeekerID=ActivityID";
+    // Update or insert data into Skill table
+    $skillData = [
+      'SkillName' => $SkillName,
+    ];
 
-    // Execute the queries
-    if ($conn->query($sql1) === TRUE &&
-      $conn->query($sql2) === TRUE &&
-      $conn->query($sql3) === TRUE &&
-      $conn->query($sql4) === TRUE &&
-      $conn->query($sql5) === TRUE) {
-      echo "Record updated successfully";
-    } else {
-      echo "Error updating record: " . $conn->error;
-    }
+    edit($conn, 'Skill', $skillData, 'JobSeekerID', $UserAuthenticationID);
+
+    // Update or insert data into WorkingExperience table
+    $workExperienceData = [
+      'WCompanyName' => $WCompanyName,
+      'WTimeRange' => $WTimeRange,
+      'WJobRole' => $WJobRole,
+      'WDescription' => $WDescription,
+    ];
+
+    edit($conn, 'WorkingExperience', $workExperienceData, 'JobSeekerID', $UserAuthenticationID);
+
+    // Update or insert data into ExtracurriculumActivity table
+    $extracurricularData = [
+      'OrganizationName' => $OrganizationName,
+      'EATimeRange' => $EATimeRange,
+      'EAJobRole' => $EAJobRole,
+      'EADescription' => $EADescription,
+    ];
+
+    edit($conn, 'ExtracurriculumActivity', $extracurricularData, 'JobSeekerID', $UserAuthenticationID);
 
     $conn->close();
   }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -159,10 +193,16 @@
             <input name="jsep-profileimg-link" type="text" class="jsep-input" placeholder="Insert profile image link">
           </label>
 
-          <!-- NAME -->
+          <!-- FIRST NAME -->
           <label class="jsep-label">
             <img src="icons/Name_B.svg">
-            <input name="jsep-name" type="text" class="jsep-input" placeholder="Name">
+            <input name="jsep-first-name" type="text" class="jsep-input" placeholder="First Name" value="<?php echo $existingFirstName; ?>">
+          </label>
+
+          <!-- LAST NAME -->
+          <label class="jsep-label">
+            <img src="icons/Name_B.svg">
+            <input name="jsep-last-name" type="text" class="jsep-input" placeholder="Last Name">
           </label>
 
           <!-- EXPERIENCE LEVEL -->
@@ -427,14 +467,13 @@
   </footer>
 
   <script>
-
     // EDUCATION BACKGROUND
-    $(document).ready(function () {
+    $(document).ready(function() {
       var max_fields = 10;
       var wrapper = $('.jsep-addmore-edu-p');
       var add_button = $('.jsep-addmore-edu');
       var x = 1;
-      $(add_button).click(function (e) {
+      $(add_button).click(function(e) {
         e.preventDefault();
         if (x < max_fields) {
           x++;
@@ -444,7 +483,7 @@
         }
       });
 
-      $(wrapper).on('click', '.jsep-remove-edu', function (e) {
+      $(wrapper).on('click', '.jsep-remove-edu', function(e) {
         e.preventDefault();
         $(this).parent('div').remove();
         x--;
@@ -453,18 +492,18 @@
     });
 
     // SKILLS
-    $(document).ready(function () {
+    $(document).ready(function() {
       var wrapper = $('.jsep-addmore-skills-p');
       var add_button = $('.jsep-addmore-skills');
       var x = 1;
-      $(add_button).click(function (e) {
+      $(add_button).click(function(e) {
         e.preventDefault();
 
         $(wrapper).append('<div class="jsep-addmore-skills-p"><div class="jsep-skill"><input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills"></div><label class="jsep-remove-skills">- Remove&nbsp;</label><br></div>')
 
       });
 
-      $(wrapper).on('click', '.jsep-remove-skills', function (e) {
+      $(wrapper).on('click', '.jsep-remove-skills', function(e) {
         e.preventDefault();
         $(this).parent('div').remove();
         x--;
@@ -473,12 +512,12 @@
     });
 
     // WORKING EXPERIENCE
-    $(document).ready(function () {
+    $(document).ready(function() {
       var max_fields = 10;
       var wrapper = $('.jsep-addmore-wexp-p');
       var add_button = $('.jsep-addmore-wexp');
       var x = 1;
-      $(add_button).click(function (e) {
+      $(add_button).click(function(e) {
         e.preventDefault();
         if (x < max_fields) {
           x++;
@@ -488,7 +527,7 @@
         }
       });
 
-      $(wrapper).on('click', '.jsep-remove-extraa', function (e) {
+      $(wrapper).on('click', '.jsep-remove-extraa', function(e) {
         e.preventDefault();
         $(this).parent('div').remove();
         x--;
@@ -497,12 +536,12 @@
     });
 
     // EXTRACURRICULAR ACTIVITIES
-    $(document).ready(function () {
+    $(document).ready(function() {
       var max_fields = 10;
       var wrapper = $('.jsep-addmore-extraa-p');
       var add_button = $('.jsep-addmore-extraa');
       var x = 1;
-      $(add_button).click(function (e) {
+      $(add_button).click(function(e) {
         e.preventDefault();
         if (x < max_fields) {
           x++;
@@ -512,14 +551,13 @@
         }
       });
 
-      $(wrapper).on('click', '.jsep-remove-extraa', function (e) {
+      $(wrapper).on('click', '.jsep-remove-extraa', function(e) {
         e.preventDefault();
         $(this).parent('div').remove();
         x--;
       });
 
     });
-
   </script>
 
 </body>

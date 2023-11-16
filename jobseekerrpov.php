@@ -327,8 +327,7 @@
               <li class="slide">
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <!-- Image data type ? Link url -->
-                    <img src="images/nail.png" alt="product.png">
+                    <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
                   </div>
                   <div class="sp-product-details">
                     <div class="type">
@@ -336,8 +335,8 @@
                     </div>
                     <div class="sp-product-require">
                       <ul>
-                        <li><img src="icons/Time.svg"> <?php echo $row['Length']; ?></li>
-                        <li><img src="icons/Fee.svg"> <?php echo $row['Price']; ?></li>
+                        <li><img src="icons/Time.svg"> <?php echo $row['Length']; ?> weeks</li>
+                        <li><img src="icons/Fee.svg"> <?php echo $row['Price']; ?> AUD$</li>
                         <li><img src="icons/Scholar.svg"> Up to 100%</li>
                       </ul>
                     </div>
@@ -355,14 +354,13 @@
             <h5>Job applications</h5>
           </div>
           <hr>
-          <!-- Design y hệt mấy thẻ course -->
           <?php while ($row = mysqli_fetch_assoc($course)) { ?>
             <ul class="autoWidth" class="cs-hidden">
               <!-- Card 1 -->
               <li class="slide">
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <img src="images/nail.png" alt="product.png"> <!-- link url -->
+                    <img src="images/nail.png" alt="product.png">
                   </div>
                   <div class="sp-product-details">
                     <div class="type">

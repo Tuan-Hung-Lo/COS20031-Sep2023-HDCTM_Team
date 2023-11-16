@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+// Include settings and database connection
+require_once("./settings.php");
+
+if (isset($_SESSION['UserAuthenticationID'])) {
+  $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+  $user_email = $_SESSION['user_email'];
+
+  $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $RecruiterID = $conn->query("SELECT RecruiterID FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $job = $conn->query("SELECT * FROM s104181721_db.Job
+      JOIN s104181721_db.Recruiter ON Job.RecruiterID = Recruiter.RecruiterID WHERE Recruiter.UserAuthenticationID = '$UserAuthenticationID';");
+  $application = $conn->query("SELECT * FROM s104181721_db.Application
+      JOIN s104181721_db.Job ON Application.JobID = Job.JobID
+      JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID WHERE Recruiter.UserAuthenticationID = '$UserAuthenticationID';");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,61 +74,57 @@
     <!-- HEADING -->
 
     <div class="rpp-intro">
+      <?php if ($row = mysqli_fetch_assoc($recruiter)) { ?>
+        <!-- INFORMATION -->
+        <div class="rpp-intro-info">
 
-      <!-- INFORMATION -->
-      <div class="rpp-intro-info">
+          <div class="rpp-title">
 
-        <div class="rpp-title">
+            <h2><?php echo $row['CompanyName'] ?></h2>
 
-          <h2>Lorem Ipsum Inc.</h2>
+            <a class="profilelink" href="recruiteredit.html">
+              <img src="icons/Edit.svg" />Edit
+            </a>
 
-          <a class="profilelink" href="recruiteredit.html">
-            <img src="icons/Edit.svg" />Edit
-          </a>
+          </div>
+          <br>
+          <hr>
+          <br>
+
+          <p>
+            <img src="icons/Comsize.svg" />
+            Company size:
+            <span class="cpp-span"><?php echo $row['Size'] ?></span>
+          </p>
+
+          <p>
+            <img src="icons/Phone.svg" />
+            Phone number:
+            <span class="cpp-span"><?php echo $row['CompanyPhone'] ?></span>
+          </p>
+
+          <p>
+            <img src="icons/Message.svg" />
+            Email:
+            <span class="cpp-span"><?php echo $row['CompanyEmail'] ?></span>
+          </p>
+
+          <p>
+            <img src="icons/Home.svg" />
+            Introduction:
+          </p>
+
+          <p class="rpp-intro-para">
+            <?php echo $row['Introduction'] ?>
+          </p>
 
         </div>
-        <br>
-        <hr>
-        <br>
 
-        <p>
-          <img src="icons/Comsize.svg" />
-          Company size:
-          <span class="cpp-span">1,200 employees</span>
-        </p>
-
-        <p>
-          <img src="icons/Phone.svg" />
-          Phone number:
-          <span class="cpp-span">0969001881</span>
-        </p>
-
-        <p>
-          <img src="icons/Message.svg" />
-          Email:
-          <span class="cpp-span">loremipsum@gmail.com</span>
-        </p>
-
-        <p>
-          <img src="icons/Home.svg" />
-          Introduction:
-        </p>
-
-        <p class="rpp-intro-para">
-          Flavor Fusion Delights is a whimsical small-scale artisanal kitchen specializing in the creation of
-          tantalizing taste combinations that will transport your taste buds on a culinary adventure. Our dedicated
-          team of flavor wizards combines unexpected ingredients to produce mind-blowing culinary concoctions that are
-          as visually captivating as they are delicious. From our signature rainbow sushi rolls to whimsical dessert
-          tacos, Flavor Fusion Delights is where innovation meets indulgence in the food and beverage industry.
-        </p>
-
-      </div>
-
-      <!-- IMAGE -->
-      <div class="rpp-intro-img">
-        <img src="images/recruiterimg.png" alt="Company's image">
-      </div>
-
+        <!-- IMAGE -->
+        <div class="rpp-intro-img">
+          <img src="<?php echo $row['CompanyImage']; ?>" alt="Company's image">
+        </div>
+      <?php } ?>
     </div>
 
     <!-- JOB POSTING -->
@@ -122,32 +138,31 @@
       <br>
 
       <ul class="autoWidth" class="cs-hidden">
-
-        <!-- Card 1 -->
-        <li class="slide">
-          <div class="sp-card">
-            <div class="sp-image-box">
-              <img src="images/nail.png" alt="product.png">
-            </div>
-            <div class="sp-product-details">
-              <div class="type">
-                <h6>UI-UX Designer/Researcher - Melbourne</h6>
+        <?php while ($row = mysqli_fetch_assoc($job)) { ?>
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="<?php echo $row['CompanyImage']; ?>" alt="product.png">
               </div>
-              <div class="sp-product-require">
-                <ul>
-                  <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
-                  <li><img src="icons/Fee.svg"> 2,500 - 5,200 AUD$ </li>
-                  <li><img src="icons/ExperienceLevel.svg"> Junior, Fresher </li>
-                  <li><img src="icons/WorkingMode.svg"> Remote</li>
-                  <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiterjsapplied.html"> View
-                      candidates applied</a></li>
-                </ul>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6><?php echo $row['JobTitle']; ?></h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
+                    <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$ </li>
+                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
+                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
+                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiterjsapplied.html"> View candidates applied</a></li>
+                  </ul>
+                </div>
               </div>
+              <button class="sp-product-btn">See this job posting details</button>
             </div>
-            <button class="sp-product-btn">See this job posting details</button>
-          </div>
-        </li>
-
+          </li>
+        <?php } ?>
       </ul>
 
     </div>
@@ -164,36 +179,39 @@
       <br>
 
       <ul class="autoWidth" class="cs-hidden">
+        <?php while ($row = mysqli_fetch_assoc($application)) { ?>
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
 
-        <!-- Card 1 -->
-        <li class="slide">
-          <div class="sp-card">
 
-            <div class="sp-image-box">
+              <div class="sp-image-box">
 
-              <img src="images/CA_img1.png" alt="product.png">
+                <img src="images/CA_img1.png" alt="product.png">
+                <h4><?php echo $row['FirstName'], $row['LastName']; ?></h4>
 
-              <h4>Lorem Ipsum Chalamet</h4>
-
-            </div>
-
-            <div class="sp-product-details">
-              <div class="sp-product-require">
-                <ul>
-                  <li><img src="icons/JobApplied.svg"> Job applied:
-                    <span class="ca_span">
-                      UI-UX Designer/Researcher - Melbourne
-                    </span>
-                  </li>
-                </ul>
               </div>
+
+              <div class="sp-product-details">
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/JobApplied.svg"> Job applied:
+                      <span class="ca_span">
+                        <?php echo $row['JobTitle']; ?>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <br>
+
+              <button class="ca-product-btn">View job seeker profile</button>
+
             </div>
-            <br>
+          </li>
 
-            <button class="ca-product-btn">View job seeker profile</button>
-
-          </div>
-        </li>
+        <?php } ?>
 
       </ul>
 
@@ -216,7 +234,7 @@
           <div class="sp-card">
             <div class="sp-image-box">
               <img src="images/nail.png" alt="product.png">
-           </div>
+            </div>
             <div class="sp-product-details">
               <div class="type">
                 <h6>UI-UX Designer/Researcher - Melbourne</h6>

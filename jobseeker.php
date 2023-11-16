@@ -19,6 +19,9 @@
     $course = $conn->query("SELECT * FROM s104181721_db.CourseRegistration
       JOIN s104181721_db.Course ON CourseRegistration.CourseID = Course.CourseID
       JOIN s104181721_db.JobSeeker ON CourseRegistration.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
+    $application = $conn->query("SELECT * FROM s104181721_db.Application
+      JOIN s104181721_db.Job ON Application.JobID = Job.JobID
+      JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
   }
 ?>
 
@@ -117,7 +120,7 @@
 
               <h3>Personal information</h3>
 
-              <a class="profilelink" href="#">
+              <a class="profilelink" href="jobseekeredit.php">
                 <img src="icons/Edit.svg" />Edit
               </a>
 
@@ -164,7 +167,7 @@
 
             <h3>Education background</h3>
 
-            <a class="profilelink" href="#">
+            <a class="profilelink" href="jobseekeredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
 
@@ -205,7 +208,7 @@
 
             <h3>Skills</h3>
 
-            <a class="profilelink" href="#">
+            <a class="profilelink" href="jobseekeredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
 
@@ -233,7 +236,7 @@
 
             <h3>Working experience</h3>
 
-            <a class="profilelink" href="#">
+            <a class="profilelink" href="jobseekeredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
 
@@ -291,7 +294,7 @@
 
               <h3>Extracurricular activities</h3>
 
-              <a class="profilelink" href="#">
+              <a class="profilelink" href="jobseekeredit.php">
                 <img src="icons/Edit.svg" />Edit
               </a>
 
@@ -332,8 +335,7 @@
               <li class="slide">
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <!-- Image data type ? Link url -->
-                    <img src="images/nail.png" alt="product.png">
+                    <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
                   </div>
                   <div class="sp-product-details">
                     <div class="type">
@@ -341,8 +343,8 @@
                     </div>
                     <div class="sp-product-require">
                       <ul>
-                        <li><img src="icons/Time.svg"> <?php echo $row['Length']; ?></li>
-                        <li><img src="icons/Fee.svg"> <?php echo $row['Price']; ?></li>
+                        <li><img src="icons/Time.svg"> <?php echo $row['Length']; ?> weeks</li>
+                        <li><img src="icons/Fee.svg"> <?php echo $row['Price']; ?> AUD$</li>
                         <li><img src="icons/Scholar.svg"> Up to 100%</li>
                       </ul>
                     </div>
@@ -360,24 +362,23 @@
             <h5>Job applications</h5>
           </div>
           <hr>
-          <!-- Design y hệt mấy thẻ course -->
-          <?php while ($row = mysqli_fetch_assoc($course)) { ?>
+          <?php while ($row = mysqli_fetch_assoc($application)) { ?>
             <ul class="autoWidth" class="cs-hidden">
               <!-- Card 1 -->
               <li class="slide">
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <img src="images/nail.png" alt="product.png"> <!-- link url -->
+                    <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
                   </div>
                   <div class="sp-product-details">
                     <div class="type">
-                      <h6>UI-UX Designer/Researcher - Melbourne</h6>
+                      <h6><?php echo $row['JobTitle']; ?></h6>
                     </div>
                     <div class="sp-product-require">
                       <ul>
-                        <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
-                        <li><img src="icons/Fee.svg"> AUD$ 2,500 - 5,200 </li>
-                        <li><img src="icons/PeopleGroup.svg"> Remote</li>
+                        <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
+                        <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$</li>
+                        <li><img src="icons/PeopleGroup.svg"> <?php echo $row['WorkingFormat']; ?></li>
                         <li><img src="icons/Check.svg"> Your profile matches this job</li>
                       </ul>
                     </div>
