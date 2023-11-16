@@ -1,21 +1,21 @@
 <?php
-session_start();
+  session_start();
 
-// Include settings and database connection
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-if (isset($_SESSION['UserAuthenticationID'])) {
-  $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
-  $user_email = $_SESSION['user_email'];
+  if (isset($_SESSION['UserAuthenticationID'])) {
+    $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+    $user_email = $_SESSION['user_email'];
 
-  $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
-  $RecruiterID = $conn->query("SELECT RecruiterID FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
-  $job = $conn->query("SELECT * FROM s104181721_db.Job
-      JOIN s104181721_db.Recruiter ON Job.RecruiterID = Recruiter.RecruiterID WHERE Recruiter.UserAuthenticationID = '$UserAuthenticationID';");
-  $application = $conn->query("SELECT * FROM s104181721_db.Application
-      JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-      JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID WHERE Recruiter.UserAuthenticationID = '$UserAuthenticationID';");
-}
+    $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+    $RecruiterID = $conn->query("SELECT RecruiterID FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+    $job = $conn->query("SELECT * FROM s104181721_db.Job
+        JOIN s104181721_db.Recruiter ON Job.RecruiterID = Recruiter.RecruiterID WHERE Recruiter.UserAuthenticationID = '$UserAuthenticationID';");
+    $application = $conn->query("SELECT * FROM s104181721_db.Application
+        JOIN s104181721_db.Job ON Application.JobID = Job.JobID
+        JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID WHERE Recruiter.UserAuthenticationID = '$UserAuthenticationID';");
+  }
 ?>
 
 <!DOCTYPE html>

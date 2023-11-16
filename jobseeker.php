@@ -8,20 +8,37 @@
     $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
     $user_email = $_SESSION['user_email'];
 
+    // $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+    // $JobSeekerID = $conn->query("SELECT JobSeekerID FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+    
     $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    $id = $job_seeker->fetch_assoc();
-    $JobSeekerID = $id['JobSeekerID'];
-    $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID  = '$JobSeekerID ';");
-    $skill = $conn->query("SELECT * FROM s104181721_db.Skill
-      JOIN s104181721_db.JobSeeker ON Skill.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
-    $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience
-      JOIN s104181721_db.JobSeeker ON WorkingExperience.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
-    $course = $conn->query("SELECT * FROM s104181721_db.CourseRegistration
-      JOIN s104181721_db.Course ON CourseRegistration.CourseID = Course.CourseID
-      JOIN s104181721_db.JobSeeker ON CourseRegistration.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
-    $application = $conn->query("SELECT * FROM s104181721_db.Application
+    
+    $js_id = $job_seeker->fetch_assoc();
+    $JobSeekerID = $js_id['JobSeekerID'];
+
+    $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
+    $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
+    $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
+
+    $CourseRegistration = $conn->query("SELECT * FROM s104181721_db.CourseRegistration WHERE JobSeekerID = '$JobSeekerID';");
+
+    $courseID = $CourseRegistration->fetch_assoc();
+    $CourseID = $courseID['CourseID'];
+
+    $course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseID = '$CourseID';");
+
+    $application = $conn->query("SELECT * FROM s104181721_db.Application WHERE JobSeekerID = '$JobSeekerID';");
+
+    $jobID = $application->fetch_assoc();
+    $JobID = $jobID['JobID'];
+
+    $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+
+    $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
+      JOIN s104181721_db.JobSeeker ON JobSeekerInterview.JobSeekerID = JobSeeker.JobSeekerID
+      JOIN s104181721_db.Application ON JobSeeker.JobSeekerID = Application.JobSeekerID
       JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-      JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID WHERE JobSeeker.UserAuthenticationID = '$UserAuthenticationID';");
+      WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';");
   }
 ?>
 
@@ -50,24 +67,24 @@
 <body>
   <header>
 
-  <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
 
-  <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
-  <nav class="navbar">
-    <a href="pagenotfound.html">Home</a>
-    <a href="pagenotfound.html">About</a>
-    <a href="courses.html" class="btn_active">Courses</a>
-    <a href="jobopportunities.html">Job Opportunities</a>
-  </nav>
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="jobopportunities.html">Job Opportunities</a>
+    </nav>
 
-  <div class="icons">
-    <ul>
-      <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-      <li><i class="uil uil-search" id="search_box"></i></li>
-      <li><a href="#" class="uil uil-user"></a></li>
-    </ul>
-  </div>
+    <div class="icons">
+      <ul>
+        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
+        <li><i class="uil uil-search" id="search_box"></i></li>
+        <li><a href="#" class="uil uil-user"></a></li>
+      </ul>
+    </div>
 
   </header>
 
@@ -362,7 +379,7 @@
             <h5>Job applications</h5>
           </div>
           <hr>
-          <?php while ($row = mysqli_fetch_assoc($application)) { ?>
+          <?php while ($row = mysqli_fetch_assoc($job)) { ?>
             <ul class="autoWidth" class="cs-hidden">
               <!-- Card 1 -->
               <li class="slide">
@@ -397,23 +414,23 @@
           </div>
           <hr>
 
-          <?php while ($row = mysqli_fetch_assoc($course)) { ?>
+          <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
             <ul class="autoWidth" class="cs-hidden">
               <!-- Card 1 -->
               <li class="slide">
                 <div class="sp-card">
                   <div class="sp-image-box">
-                    <img src="images/nail.png" alt="product.png">
+                    <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
                   </div>
                   <div class="sp-product-details">
                     <div class="type">
-                      <h6>UI-UX Designer/Researcher - Melbourne</h6>
+                      <h6><?php echo $row['JobTitle']; ?></h6>
                     </div>
                     <div class="sp-product-require">
                       <ul>
-                        <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
-                        <li><img src="icons/Fee.svg"> AUD$ 2,500 - 5,200 </li>
-                        <li><img src="icons/PeopleGroup.svg"> Remote</li>
+                        <li><img src="icons/Location.svg"> <?php echo $row['InterviewDate']; ?></li>
+                        <li><img src="icons/Fee.svg"> <?php echo $row['InterviewTime']; ?></li>
+                        <li><img src="icons/PeopleGroup.svg"> <?php echo $row['LinkMeeting']; ?></li>
                         <li><img src="icons/Check.svg"> Your profile matches this job</li>
                       </ul>
                     </div>
@@ -461,8 +478,8 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="courses.php">Courses</a></li>
-            <li><a href="jobopportunities.php">Job Opportunities</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="jobopportunities.html">Job Opportunities</a></li>
           </ul>
         </div>
 
