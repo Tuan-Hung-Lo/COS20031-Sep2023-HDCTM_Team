@@ -43,24 +43,24 @@ if (isset($_SESSION['UserAuthenticationID'])) {
 <body>
   <header>
 
-    <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
 
-    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+  <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
-    <nav class="navbar">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="courses.html">Courses</a>
-      <a href="jobopportunities.html">Job Opportunities</a>
-    </nav>
+  <nav class="navbar">
+    <a href="pagenotfound.html">Home</a>
+    <a href="pagenotfound.html">About</a>
+    <a href="courses.html" class="btn_active">Courses</a>
+    <a href="jobopportunities.html">Job Opportunities</a>
+  </nav>
 
-    <div class="icons">
-      <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="" class="uil uil-user"></a></li>
-      </ul>
-    </div>
+  <div class="icons">
+    <ul>
+      <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
+      <li><i class="uil uil-search" id="search_box"></i></li>
+      <li><a href="#" class="uil uil-user"></a></li>
+    </ul>
+  </div>
 
   </header>
 
