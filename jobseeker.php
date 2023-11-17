@@ -19,6 +19,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
   $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
   $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
   $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
+  $extracurriculum_activity = $conn->query("SELECT * FROM s104181721_db.ExtracurriculumActivity WHERE JobSeekerID = '$JobSeekerID';");
 
   $CourseRegistration = $conn->query("SELECT * FROM s104181721_db.CourseRegistration WHERE JobSeekerID = '$JobSeekerID';");
 
@@ -247,6 +248,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           </div>
 
         </div>
+
         <br>
         <br>
 
@@ -314,35 +316,62 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           <br>
           <br>
 
-          <!-- EXTRACURRICULAR ACTIVITIES -->
-          <div class="cpp-e-extraact-container">
+          <!-- TITLE -->
+          <div class="cpp-title">
 
-            <!-- TITLE -->
-            <div class="cpp-title">
+            <h3>Extracurriculum Activity </h3>
 
-              <h3>Extracurricular activities</h3>
+            <a class="profilelink" href="jobseekeredit.php">
+              <img src="icons/Edit.svg" />Edit
+            </a>
 
-              <a class="profilelink" href="jobseekeredit.php">
-                <img src="icons/Edit.svg" />Edit
-              </a>
+          </div>
 
-            </div>
+          <br>
+          <hr>
+          <br>
 
-            <br>
-            <hr>
-            <br>
+          <!-- CONTENT -->
+          <div class="cpp-e-workingexp-content">
+            <?php while ($row = mysqli_fetch_assoc($extracurriculum_activity)) { ?>
 
-            <!-- CONTENT -->
-            <div class="cpp-e-extraact-content">
-              <?php while ($row = mysqli_fetch_assoc($education)) { ?>
-                <p>
-                  <span class="cpp-span">
-                    <?php echo $row['WDescription']; ?>
-                  </span>
-                </p>
-              <?php } ?>
-            </div>
+              <!-- WORKING EXPERIENCE 1 -->
+              <div class="cpp-e-workingexp-work">
 
+                <!-- Company -->
+                <h4>
+                  <?php echo $row['OrganizationName']; ?>
+                </h4>
+
+                <br>
+
+                <h4>
+                  <?php echo $row['EATimeRange']; ?> weeks
+                </h4>
+
+                <br>
+                
+                <!-- Position -->
+                <h5>
+                  <?php echo $row['EAJobRole']; ?>
+                </h5>
+
+                <br>
+
+                <!-- Description & Achievement -->
+                <div class="cpp-e-workingexp-work-desc">
+                  <ul>
+                    <li>
+                      <?php echo $row['EADescription']; ?>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <br>
+              <br>
+
+            <?php } ?>
           </div>
         </div>
       </div>
