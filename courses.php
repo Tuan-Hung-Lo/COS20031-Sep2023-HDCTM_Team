@@ -12,7 +12,7 @@
     if ($course_category === 'All') {
       $whereClause = '1';
     } else {
-      $whereClause = 'CourseCategory = $course_category';
+      $whereClause = "CourseCategory = '$course_category'";
     }
 
     // Query to fetch courses based on filter conditions
@@ -89,7 +89,7 @@
                 <span>All</span></label>
               <label><input name="course_category" class="cp-suggested-btn" type="radio" value="F&B" id="FnB">
                 <span>F&B</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="Beautyn & Spa" id="BeautynSpa">
+              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="Beauty & Spa" id="BeautynSpa">
                 <span>Beauty & Spa</span></label>
               <label><input name="course_category" class="cp-suggested-btn" type="radio" value="Tourism & Hospitality" id="TourismHospitality">
                 <span>Tourism & Hospitality</span></label>

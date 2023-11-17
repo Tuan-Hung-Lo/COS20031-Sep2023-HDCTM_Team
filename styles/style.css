@@ -465,7 +465,7 @@ textarea {
     font-size: 1em;
 }
 
-#cp-search-buttons label input[type="checkbox"] {
+#cp-search-buttons label input[type="radio"] {
     display: none;
 }
 
@@ -474,7 +474,7 @@ textarea {
     color: #eee;
 }
 
-#cp-search-buttons label input[type="checkbox"]:checked~span {
+#cp-search-buttons label input[type="radio"]:checked~span {
     background-color: #11185d;
     color: #eee;
 }
