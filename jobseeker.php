@@ -80,12 +80,10 @@ if (isset($_SESSION['UserAuthenticationID'])) {
 
     <div class="icons">
       <ul>
+        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
+        <li><i class="uil uil-search" id="search_box"></i></li>
         <?php if ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-
-          <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-          <li><i class="uil uil-search" id="search_box"></i></li>
-          <li><a href="<?php echo $row['JSImage'] ?>" class="uil uil-user"></a></li>
-          
+          <li><img src="<?php echo $row['JSImage'] ?>">AVA</img></li>
         <?php } ?>
       </ul>
     </div>
@@ -103,13 +101,14 @@ if (isset($_SESSION['UserAuthenticationID'])) {
       <!-- BASIC INFORMATION -->
       <div class="cpp-bi-container">
 
-        <?php if ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-          <!-- HEADLINE -->
-          <div class="cpp-bi-headline-container">
+        <!-- HEADLINE -->
+        <div class="cpp-bi-headline-container">
+
+          <?php if ($row = mysqli_fetch_assoc($job_seeker)) { ?>
 
             <!-- PROFILE PICTURE -->
             <div class="cpp-bi-headline-profileimg">
-              <img src="images/profilepic.webp" alt="Candidate Profile's Picture">
+              <img src="<?php echo $row['JSImage'] ?>" alt="Candidate Profile's Picture">
             </div>
 
             <!-- HEADLINE INFORMATION -->
@@ -130,30 +129,32 @@ if (isset($_SESSION['UserAuthenticationID'])) {
               </p>
             </div>
 
+          <?php } ?>
+        </div>
+        <br>
+
+        <!-- PERSONAL INFORMATION -->
+        <div class="cpp-bi-personalinfo-container">
+
+          <!-- TITLE -->
+          <div class="cpp-title">
+
+            <h3>Personal information</h3>
+
+            <a class="profilelink" href="jobseekeredit.php">
+              <img src="icons/Edit.svg" />Edit
+            </a>
+
           </div>
+
+          <br>
+          <hr>
           <br>
 
-          <!-- PERSONAL INFORMATION -->
-          <div class="cpp-bi-personalinfo-container">
+          <!-- CONTENT -->
+          <div class="cpp-bi-personalinfo-content">
 
-            <!-- TITLE -->
-            <div class="cpp-title">
-
-              <h3>Personal information</h3>
-
-              <a class="profilelink" href="jobseekeredit.php">
-                <img src="icons/Edit.svg" />Edit
-              </a>
-
-            </div>
-
-            <br>
-            <hr>
-            <br>
-
-            <!-- CONTENT -->
-            <div class="cpp-bi-personalinfo-content">
-
+            <?php if ($row = mysqli_fetch_assoc($job_seeker)) { ?>
               <p>
                 <img src="icons/Calendar.svg" />
                 DOB:
@@ -174,11 +175,11 @@ if (isset($_SESSION['UserAuthenticationID'])) {
                 Address:
                 <span class="cpp-span"><?php echo $row['Address'] ?></span>
               </p>
+            <?php } ?>
 
-            </div>
           </div>
-          <br>
-        <?php } ?>
+        </div>
+        <br>
 
         <!-- EDUCATION BACKGROUND -->
         <div class="cpp-bi-edubg-container">
