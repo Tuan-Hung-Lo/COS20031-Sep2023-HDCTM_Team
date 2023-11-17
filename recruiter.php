@@ -9,12 +9,20 @@
     $user_email = $_SESSION['user_email'];
 
     $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    $RecruiterID = $conn->query("SELECT RecruiterID FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    $job = $conn->query("SELECT * FROM s104181721_db.Job
-        JOIN s104181721_db.Recruiter ON Job.RecruiterID = Recruiter.RecruiterID WHERE Recruiter.UserAuthenticationID = '$UserAuthenticationID';");
+
+    $re_id = $recruiter->fetch_assoc();
+    $RecruiterID = $re_id['RecruiterID'];
+
+    $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
     $application = $conn->query("SELECT * FROM s104181721_db.Application
-        JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-        JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID WHERE Recruiter.UserAuthenticationID = '$UserAuthenticationID';");
+      JOIN s104181721_db.Job ON Application.JobID = Job.JobID
+      JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID
+      JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID WHERE Job.RecruiterID = '$RecruiterID';");
+    
+    $js_id = $application->fetch_assoc();
+    $JobSeekerID = $js_id['JobSeekerID'];
+    
+    $_SESSION['UserAuthenticationID'] = $JobSeekerID;
   }
 ?>
 
@@ -43,24 +51,24 @@
 <body>
   <header>
 
-  <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
 
-  <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
-  <nav class="navbar">
-    <a href="pagenotfound.html">Home</a>
-    <a href="pagenotfound.html">About</a>
-    <a href="courses.html" class="btn_active">Courses</a>
-    <a href="jobopportunities.html">Job Opportunities</a>
-  </nav>
+    <nav class="navbar">
+      <a href="pagenotfound.html">Home</a>
+      <a href="pagenotfound.html">About</a>
+      <a href="courses.html" class="btn_active">Courses</a>
+      <a href="jobopportunities.html">Job Opportunities</a>
+    </nav>
 
-  <div class="icons">
-    <ul>
-      <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-      <li><i class="uil uil-search" id="search_box"></i></li>
-      <li><a href="#" class="uil uil-user"></a></li>
-    </ul>
-  </div>
+    <div class="icons">
+      <ul>
+        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
+        <li><i class="uil uil-search" id="search_box"></i></li>
+        <li><a href="#" class="uil uil-user"></a></li>
+      </ul>
+    </div>
 
   </header>
 
@@ -184,7 +192,6 @@
           <li class="slide">
             <div class="sp-card">
 
-
               <div class="sp-image-box">
 
                 <img src="images/CA_img1.png" alt="product.png">
@@ -228,31 +235,32 @@
       <br>
 
       <ul class="autoWidth" class="cs-hidden">
-
-        <!-- Card 1 -->
-        <li class="slide">
-          <div class="sp-card">
-            <div class="sp-image-box">
-              <img src="images/nail.png" alt="product.png">
-            </div>
-            <div class="sp-product-details">
-              <div class="type">
-                <h6>UI-UX Designer/Researcher - Melbourne</h6>
+        <?php while ($row = mysqli_fetch_assoc($application)) { ?>
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
               </div>
-              <div class="sp-product-require">
-                <ul>
-                  <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
-                  <li><img src="icons/Fee.svg"> 2,500 - 5,200 AUD$ </li>
-                  <li><img src="icons/ExperienceLevel.svg"> Junior, Fresher </li>
-                  <li><img src="icons/WorkingMode.svg"> Remote</li>
-                  <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiterjsapplied.html"> View candidates applied</a></li>
-                </ul>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6><?php echo $row['JobTitle']; ?></h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Location.svg"> <?php echo $row['DateStart'] - $row['DateEnd']; ?></li>
+                    <li><img src="icons/Fee.svg"> <?php echo $row['TimeStart'] - $row['TimeEnd']; ?></li>
+                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['JobImage']; ?></li>
+                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['JobID']; ?></li>
+                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiter_candidateapplied.php"> View candidates applied</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <button class="sp-product-btn">See interview details</button>
+              <button class="sp-product-btn">See interview details</button>
 
-          </div>
-        </li>
+            </div>
+          </li>
+        <?php } ?>
 
       </ul>
 
