@@ -87,11 +87,11 @@
             <div>
               <label><input name="course_category" class="cp-suggested-btn" type="radio" value="All" id="All">
                 <span>All</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="FnB" id="FnB">
+              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="F&B" id="FnB">
                 <span>F&B</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="BeautynSpa" id="BeautynSpa">
+              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="Beautyn & Spa" id="BeautynSpa">
                 <span>Beauty & Spa</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="TourismHospitality" id="TourismHospitality">
+              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="Tourism & Hospitality" id="TourismHospitality">
                 <span>Tourism & Hospitality</span></label>
             </div>
 
