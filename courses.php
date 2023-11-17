@@ -10,13 +10,13 @@
     $course_category = sanitize_input($_POST["course_category"]);
 
     if ($course_category === 'All') {
-      $whereClause = '1';
+      $whereClause = "1";
     } else {
-      $whereClause = "CourseCategory = '$course_category'";
+      $whereClause = "CourseCategory = '$course_category';";
     }
 
     // Query to fetch courses based on filter conditions
-    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE '$whereClause';");
+    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause");
     } else {
     $filter_course = $conn->query("SELECT * FROM s104181721_db.Course;");
   }
