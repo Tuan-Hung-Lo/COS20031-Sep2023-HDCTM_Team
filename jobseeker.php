@@ -114,18 +114,18 @@ if (isset($_SESSION['UserAuthenticationID'])) {
             <!-- HEADLINE INFORMATION -->
             <div class="cpp-bi-headline-headline">
               <h2>
-                <?php echo $row['FirstName'], $row['LastName'] ?>
+                <?php echo $row['FirstName'], $row['LastName']; ?>
               </h2>
               <br>
               <p>
                 <img src="icons/Job Title.svg" />
                 Job title:
-                <span class="cpp-span"><?php echo $row['JSJobTitle'] ?></span>
+                <span class="cpp-span"><?php echo $row['JSJobTitle']; ?></span>
               </p>
               <p>
                 <img src="icons/Experience Level.svg" />
                 Experience level:
-                <span class="cpp-span"><?php echo $row['ExperienceLevel'] ?></span>
+                <span class="cpp-span"><?php echo $row['ExperienceLevel']; ?></span>
               </p>
             </div>
 
@@ -158,22 +158,22 @@ if (isset($_SESSION['UserAuthenticationID'])) {
               <p>
                 <img src="icons/Calendar.svg" />
                 DOB:
-                <span class="cpp-span"><?php echo $row['DOB'] ?></span>
+                <span class="cpp-span"><?php echo $row['DOB']; ?></span>
               </p>
               <p>
                 <img src="icons/Phone.svg" />
                 Phone number:
-                <span class="cpp-span"><?php echo $row['Phone'] ?></span>
+                <span class="cpp-span"><?php echo $row['Phone']; ?></span>
               </p>
               <p>
                 <img src="icons/Message.svg" />
                 Email:
-                <span class="cpp-span"><?php echo $user_email ?></span>
+                <span class="cpp-span"><?php echo '$user_email'; ?></span>
               </p>
               <p>
                 <img src="icons/Location.svg" />
                 Address:
-                <span class="cpp-span"><?php echo $row['Address'] ?></span>
+                <span class="cpp-span"><?php echo $row['Address']; ?></span>
               </p>
             <?php } ?>
 
@@ -242,7 +242,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           <!-- CONTENT -->
           <div class="cpp-e-skills-content">
             <?php while ($row = mysqli_fetch_assoc($skill)) { ?>
-              <p><?php echo $row['SkillName'] ?></p>
+              <p><?php echo $row['SkillName']; ?></p>
             <?php } ?>
           </div>
 
@@ -277,14 +277,20 @@ if (isset($_SESSION['UserAuthenticationID'])) {
 
                 <!-- Company -->
                 <h4>
-                  <?php echo $row['WCompanyName'], $row['WTimeRange'] ?>
+                  <?php echo $row['WCompanyName']; ?>
                 </h4>
 
                 <br>
 
+                <h4>
+                  <?php echo $row['WTimeRange']; ?> weeks
+                </h4>
+
+                <br>
+                
                 <!-- Position -->
                 <h5>
-                  <?php echo $row['WJobRole'] ?>
+                  <?php echo $row['WJobRole']; ?>
                 </h5>
 
                 <br>
