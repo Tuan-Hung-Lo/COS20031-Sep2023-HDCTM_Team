@@ -38,7 +38,7 @@
       JOIN s104181721_db.JobSeeker ON JobSeekerInterview.JobSeekerID = JobSeeker.JobSeekerID
       JOIN s104181721_db.Application ON JobSeeker.JobSeekerID = Application.JobSeekerID
       JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-      WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';");
+      WHERE JobSeekerInterview.JobSeekerID = '$JobSeekerID' AND JobSeekerInterview.JobID = '$JobID';");
   }
 ?>
 
