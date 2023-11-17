@@ -85,13 +85,13 @@
           <div id="form_check">
             <!-- Suggest Input-->
             <div>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" name="All" value="All" id="All">
+              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="All" id="All">
                 <span>All</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" name="FnB" value="FnB" id="FnB">
+              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="FnB" id="FnB">
                 <span>F&B</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" name="BeautynSpa" value="BeautynSpa" id="BeautynSpa">
+              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="BeautynSpa" id="BeautynSpa">
                 <span>Beauty & Spa</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" name="TourismHospitality" value="TourismHospitality" id="TourismHospitality">
+              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="TourismHospitality" id="TourismHospitality">
                 <span>Tourism & Hospitality</span></label>
             </div>
 
