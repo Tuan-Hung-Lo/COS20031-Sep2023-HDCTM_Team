@@ -82,7 +82,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
       <ul>
         <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
         <li><i class="uil uil-search" id="search_box"></i></li>
-        <?php if ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
           <li><img src="<?php echo $row['JSImage'] ?>">AVA</img></li>
         <?php } ?>
       </ul>
@@ -104,7 +104,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
         <!-- HEADLINE -->
         <div class="cpp-bi-headline-container">
 
-          <?php if ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+          <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
 
             <!-- PROFILE PICTURE -->
             <div class="cpp-bi-headline-profileimg">
@@ -154,7 +154,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           <!-- CONTENT -->
           <div class="cpp-bi-personalinfo-content">
 
-            <?php if ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+            <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
               <p>
                 <img src="icons/Calendar.svg" />
                 DOB:
