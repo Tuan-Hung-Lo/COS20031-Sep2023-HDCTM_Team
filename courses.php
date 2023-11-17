@@ -4,6 +4,16 @@
   // Include settings and database connection
   require_once("./settings.php");
 
+  $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+  $sug_job = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  
+  $js_job = $sug_job->fetch_assoc();
+  $JSJobTitle = $js_job['JSJobTitle'];
+  
+  if (strpos($JSJobTitle, 'bar') !== false) {
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B';");
+  }
+
   // Check if the filter form is submitted
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check and apply filter conditions based on user input
@@ -17,7 +27,7 @@
 
     // Query to fetch courses based on filter conditions
     $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause");
-    } else {
+  } else {
     $filter_course = $conn->query("SELECT * FROM s104181721_db.Course;");
   }
 ?>
@@ -80,29 +90,7 @@
         </div>
         <hr>
 
-        <!-- Suggest Button-->
-        <form method="post" action="courses.php" id="cp-search-buttons">
-          <div id="form_check">
-            <!-- Suggest Input-->
-            <div>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="All" id="All">
-                <span>All</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="F&B" id="FnB">
-                <span>F&B</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="Beauty & Spa" id="BeautynSpa">
-                <span>Beauty & Spa</span></label>
-              <label><input name="course_category" class="cp-suggested-btn" type="radio" value="Tourism & Hospitality" id="TourismHospitality">
-                <span>Tourism & Hospitality</span></label>
-            </div>
-
-            <!--Submit button-->
-            <div>
-              <input class="cp-submit-btn" type="submit" value="Apply filter">
-            </div>
-          </div>
-        </form>
-
-        <?php while ($row = mysqli_fetch_assoc($filter_course)) { ?>
+        <?php while ($row = mysqli_fetch_assoc($sug_course)) { ?>
           <ul class="autoWidth" class="cs-hidden">
             <!-- Card 1 -->
             <li class="slide">
@@ -142,13 +130,13 @@
           <div id="form_check">
             <!-- Suggest Input-->
             <div>
-              <label><input class="cp-suggested-btn" type="checkbox" name="All" value="All" id="All">
+              <label><input class="cp-suggested-btn" type="radio" name="All" value="All" id="All">
                 <span>All</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="FnB" value="FnB" id="FnB">
+              <label><input class="cp-suggested-btn" type="radio" name="F&B" value="F&B" id="FnB">
                 <span>F&B</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="BeautynSpa" value="BeautynSpa" id="BeautynSpa">
+              <label><input class="cp-suggested-btn" type="radio" name="Beauty & Spa" value="Beauty & Spa" id="BeautynSpa">
                 <span>Beauty & Spa</span></label>
-              <label><input class="cp-suggested-btn" type="checkbox" name="TourismHospitality" id="TourismHospitality" value="TourismHospitality">
+              <label><input class="cp-suggested-btn" type="radio" name="Tourism & Hospitality" value="Tourism & Hospitality" id="TourismHospitality">
                 <span>Tourism & Hospitality</span></label>
             </div>
 

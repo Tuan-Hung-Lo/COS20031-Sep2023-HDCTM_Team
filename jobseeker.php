@@ -1,45 +1,45 @@
 <?php
-  session_start();
+session_start();
 
-  // Include settings and database connection
-  require_once("./settings.php");
-  
-  if (isset($_SESSION['UserAuthenticationID'])) {
-    $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
-    $user_email = $_SESSION['user_email'];
+// Include settings and database connection
+require_once("./settings.php");
 
-    // $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    // $JobSeekerID = $conn->query("SELECT JobSeekerID FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    
-    $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    
-    $js_id = $job_seeker->fetch_assoc();
-    $JobSeekerID = $js_id['JobSeekerID'];
+if (isset($_SESSION['UserAuthenticationID'])) {
+  $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+  $user_email = $_SESSION['user_email'];
 
-    $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
-    $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
-    $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
+  // $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  // $JobSeekerID = $conn->query("SELECT JobSeekerID FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
 
-    $CourseRegistration = $conn->query("SELECT * FROM s104181721_db.CourseRegistration WHERE JobSeekerID = '$JobSeekerID';");
+  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
 
-    $courseID = $CourseRegistration->fetch_assoc();
-    $CourseID = $courseID['CourseID'];
+  $js_id = $job_seeker->fetch_assoc();
+  $JobSeekerID = $js_id['JobSeekerID'];
 
-    $course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseID = '$CourseID';");
+  $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
+  $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
+  $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
 
-    $application = $conn->query("SELECT * FROM s104181721_db.Application WHERE JobSeekerID = '$JobSeekerID';");
+  $CourseRegistration = $conn->query("SELECT * FROM s104181721_db.CourseRegistration WHERE JobSeekerID = '$JobSeekerID';");
 
-    $jobID = $application->fetch_assoc();
-    $JobID = $jobID['JobID'];
+  $courseID = $CourseRegistration->fetch_assoc();
+  $CourseID = $courseID['CourseID'];
 
-    $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+  $course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseID = '$CourseID';");
 
-    $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
+  $application = $conn->query("SELECT * FROM s104181721_db.Application WHERE JobSeekerID = '$JobSeekerID';");
+
+  $jobID = $application->fetch_assoc();
+  $JobID = $jobID['JobID'];
+
+  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+
+  $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
       JOIN s104181721_db.JobSeeker ON JobSeekerInterview.JobSeekerID = JobSeeker.JobSeekerID
       JOIN s104181721_db.Application ON JobSeeker.JobSeekerID = Application.JobSeekerID
       JOIN s104181721_db.Job ON Application.JobID = Job.JobID
       WHERE JobSeekerInterview.JobSeekerID = '$JobSeekerID' AND JobSeekerInterview.JobID = '$JobID';");
-  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,9 +80,13 @@
 
     <div class="icons">
       <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="#" class="uil uil-user"></a></li>
+        <?php if ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+
+          <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
+          <li><i class="uil uil-search" id="search_box"></i></li>
+          <li><a href="<?php echo $row['JSImage'] ?>" class="uil uil-user"></a></li>
+          
+        <?php } ?>
       </ul>
     </div>
 
@@ -299,7 +303,7 @@
 
             <?php } ?>
           </div>
-          
+
           <br>
           <br>
 
