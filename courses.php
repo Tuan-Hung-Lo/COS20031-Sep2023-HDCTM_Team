@@ -151,7 +151,7 @@
           </div>
         </form>
 
-        <?php while ($row = mysqli_fetch_assoc($course)) { ?>
+        <?php while ($row = mysqli_fetch_assoc($filter_course)) { ?>
           <ul class="autoWidth" class="cs-hidden">
             <!-- Card 1 -->
             <li class="slide">
