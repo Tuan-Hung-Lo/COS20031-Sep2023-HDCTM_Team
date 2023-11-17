@@ -9,7 +9,7 @@
     // Check and apply filter conditions based on user input
     $course_category = sanitize_input($_POST["course_category"]);
 
-    if ($course_category = 'All') {
+    if ($course_category === 'All') {
       $whereClause = '1';
     } else {
       $whereClause = 'CourseCategory = $course_category';
