@@ -25,20 +25,19 @@
 
     <!-- Navigation Bar -->
 
-    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
-      <a href="courses.html" class="btn_active">Courses</a>
-      <a href="jobopportunities.html">Job Opportunities</a>
+      <a href="courses.php">Courses</a>
+      <a href="jobopportunities.php">Job Opportunities</a>
     </nav>
 
     <div class="icons">
       <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="#" class="uil uil-user"></a></li>
+        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
@@ -46,73 +45,74 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <div class="bwp-contents">  
-       <!--Navigation Button-->
-      <div class="bwp-nav"> 
-        <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a>   <!--Come Back Page-->
-       <h1>Book An Interview schedule</h1>
+    <div class="bwp-contents">
+      <!--Navigation Button-->
+      <div class="bwp-nav">
+        <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a> <!--Come Back Page-->
+        <h1>Book An Interview schedule</h1>
       </div>
 
       <!--Interview Details-->
       <div class="bwp-interview-details">
         <!--Job Applied Card-->
-       <div class="bwp-interview-schedule">
+        <div class="bwp-interview-schedule">
           <div class="bwp-card">
             <div class="sp-image-box">
               <img src="images/nail.png" alt="product.png">
             </div>
-          <div class="sp-product-details">
-            <div class="type">
-              <h6>UI-UX Designer/Researcher - Melbourne</h6>
+            <div class="sp-product-details">
+              <div class="type">
+                <h6>UI-UX Designer/Researcher - Melbourne</h6>
+              </div>
+              <div class="sp-product-require">
+                <ul>
+                  <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
+                  <li><img src="icons/Fee.svg"> 2,500 - 5,200 AUD$ </li>
+                  <li><img src="icons/ExperienceLevel.svg"> Junior, Fresher </li>
+                  <li><img src="icons/WorkingMode.svg"> Remote</li>
+                </ul>
+              </div>
             </div>
-            <div class="sp-product-require">
-              <ul>
-                <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
-                <li><img src="icons/Fee.svg"> 2,500 - 5,200 AUD$ </li>
-                <li><img src="icons/ExperienceLevel.svg"> Junior, Fresher </li>
-               <li><img src="icons/WorkingMode.svg"> Remote</li>
+          </div>
+        </div>
+
+        <!--Job Applied Schedule-->
+        <form class="bwp-interview-schedule" action="#">
+          <div class="bwp-interview-setup">
+            <div class="bwp-interview-available">
+              <h5>Available time</h5>
+              <h2>09:00 AM - 05:30 PM (19/10/2023 - 21/10/2023)</h2>
+              <ul>Notes:
+                <li>Please pick your interview time later than 1 week after receiving pass Email</li>
+                <li>Please freely pick your interview time in the available time except for the lunch time (11:30AM -
+                  01:30PM)</li>
+                <li>Each interview session last upto 45 minutes</li>
+                <li>You can only schedule your time once and cannot change it</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
+            <div class="bwp-interview-picktime">
+              <h5>Pick your date and time</h5>
 
-      <!--Job Applied Schedule-->
-      <form class="bwp-interview-schedule" action="">
-        <div class="bwp-interview-setup">
-          <div class="bwp-interview-available">
-            <h5>Available time</h5>
-            <h2>09:00 AM - 05:30 PM (19/10/2023 - 21/10/2023)</h2>
-            <ul>Notes:
-              <li>Please pick your interview time later than 1 week after receiving pass Email</li>
-              <li>Please freely pick your interview time in the available time except for the lunch time (11:30AM - 01:30PM)</li>
-              <li>Each interview session last upto 45 minutes</li>
-              <li>You can only schedule your time once and cannot change it</li>
-            </ul>
-          </div>
-          <div class="bwp-interview-picktime">
-            <h5>Pick your date and time</h5>
-            
-            <!--Set Date And Hour Button-->
-           <div class="bwp-interview-button">
-              <div class="bwp-interview-picked">
-                <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
-                <input name="date" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
-             </div>
-             <div class="bwp-interview-picked">
-                <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
-                <input name="time" type="text" class="bwp-input" placeholder="00:00 AM" required>
-              </div>          
+              <!--Set Date And Hour Button-->
+              <div class="bwp-interview-button">
+                <div class="bwp-interview-picked">
+                  <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
+                  <input name="date" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
+                </div>
+                <div class="bwp-interview-picked">
+                  <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
+                  <input name="time" type="text" class="bwp-input" placeholder="00:00 AM" required>
+                </div>
+              </div>
+              <div class="bwp-submit-box">
+                <button type="submit" class="bwp-submit-btn">Pick this time</button>
+              </div>
             </div>
-            <div class="bwp-submit-box">
-              <button type="submit" class="bwp-submit-btn">Pick this time</button>
-            </div>  
           </div>
-        </div>
-      </form>
-      <!---->
+        </form>
+        <!---->
       </div>
-     </div>
+    </div>
   </main>
 
   <!--Back to top button-->
@@ -129,7 +129,7 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
@@ -145,10 +145,10 @@
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 
@@ -156,7 +156,7 @@
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form action="">
+          <form action="#">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">

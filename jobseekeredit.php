@@ -151,27 +151,25 @@
 
   <!-- Navigation Bar -->
 
-  <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+  <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
   <nav class="navbar">
-    <a href="#">Home</a>
-    <a href="#">About</a>
+    <a href="pagenotfound.html">Home</a>
+    <a href="pagenotfound.html">About</a>
     <a href="courses.php">Courses</a>
     <a href="jobopportunities.php">Job Opportunities</a>
   </nav>
 
   <div class="icons">
     <ul>
-      <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
       <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-      <li><img src="http://dummyimage.com/180x180.png/dddddd/000000"></img></li>
+      <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
       <?php } ?>
-      <li><img src="icons/Logout.svg"></li>
+      <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
     </ul>
   </div>
 
   </header>
-
 
   <!-- MAIN CONTENT -->
   <main>
@@ -424,7 +422,7 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
@@ -440,10 +438,10 @@
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 

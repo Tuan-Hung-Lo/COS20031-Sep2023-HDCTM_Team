@@ -53,20 +53,19 @@
 
     <!-- Navigation Bar -->
 
-    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
-      <a href="courses.html" class="btn_active">Courses</a>
-      <a href="jobopportunities.html">Job Opportunities</a>
     </nav>
 
     <div class="icons">
       <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="#" class="uil uil-user"></a></li>
+        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+        <li><a href="recruiter.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <?php } ?>
+        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
@@ -83,55 +82,63 @@
 
     <div class="rpp-intro">
       <?php if ($row = mysqli_fetch_assoc($recruiter)) { ?>
-        <!-- INFORMATION -->
-        <div class="rpp-intro-info">
+      <!-- INFORMATION -->
+      <div class="rpp-intro-info">
 
-          <div class="rpp-title">
+        <div class="rpp-title">
 
-            <h2><?php echo $row['CompanyName'] ?></h2>
+          <h2>
+            <?php echo $row['CompanyName'] ?>
+          </h2>
 
-            <a class="profilelink" href="recruiteredit.html">
-              <img src="icons/Edit.svg" />Edit
-            </a>
-
-          </div>
-          <br>
-          <hr>
-          <br>
-
-          <p>
-            <img src="icons/Comsize.svg" />
-            Company size:
-            <span class="cpp-span"><?php echo $row['Size'] ?></span>
-          </p>
-
-          <p>
-            <img src="icons/Phone.svg" />
-            Phone number:
-            <span class="cpp-span"><?php echo $row['CompanyPhone'] ?></span>
-          </p>
-
-          <p>
-            <img src="icons/Message.svg" />
-            Email:
-            <span class="cpp-span"><?php echo $row['CompanyEmail'] ?></span>
-          </p>
-
-          <p>
-            <img src="icons/Home.svg" />
-            Introduction:
-          </p>
-
-          <p class="rpp-intro-para">
-            <?php echo $row['Introduction'] ?>
-          </p>
+          <a class="profilelink" href="recruiteredit.html">
+            <img src="icons/Edit.svg" />Edit
+          </a>
 
         </div>
+        <br>
+        <hr>
+        <br>
 
-        <!-- IMAGE -->
-        <div class="rpp-intro-img">
-          <img src="<?php echo $row['CompanyImage']; ?>" alt="Company's image">
-        </div>
+        <p>
+          <img src="icons/Comsize.svg" />
+          Company size:
+          <span class="cpp-span">
+            <?php echo $row['Size'] ?>
+          </span>
+        </p>
+
+        <p>
+          <img src="icons/Phone.svg" />
+          Phone number:
+          <span class="cpp-span">
+            <?php echo $row['CompanyPhone'] ?>
+          </span>
+        </p>
+
+        <p>
+          <img src="icons/Message.svg" />
+          Email:
+          <span class="cpp-span">
+            <?php echo $row['CompanyEmail'] ?>
+          </span>
+        </p>
+
+        <p>
+          <img src="icons/Home.svg" />
+          Introduction:
+        </p>
+
+        <p class="rpp-intro-para">
+          <?php echo $row['Introduction'] ?>
+        </p>
+
+      </div>
+
+      <!-- IMAGE -->
+      <div class="rpp-intro-img">
+        <img src="<?php echo $row['CompanyImage']; ?>" alt="Company's image">
+      </div>
       <?php } ?>
     </div>
 
@@ -139,7 +146,7 @@
 
     <div class="rpp-box-container">
       <div class="header">
-        <h5>Job Posting</h5>
+        <h5>Job posting</h5>
       </div>
       <br>
       <hr>
@@ -147,29 +154,40 @@
 
       <ul class="autoWidth" class="cs-hidden">
         <?php while ($row = mysqli_fetch_assoc($job)) { ?>
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="<?php echo $row['CompanyImage']; ?>" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6><?php echo $row['JobTitle']; ?></h6>
-                </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
-                    <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$ </li>
-                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
-                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
-                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiterjsapplied.html"> View candidates applied</a></li>
-                  </ul>
-                </div>
-              </div>
-              <button class="sp-product-btn">See this job posting details</button>
+        <!-- Card 1 -->
+        <li class="slide">
+          <div class="sp-card">
+            <div class="sp-image-box">
+              <img src="<?php echo $row['CompanyImage']; ?>" alt="product.png">
             </div>
-          </li>
+            <div class="sp-product-details">
+              <div class="type">
+                <h6>
+                  <?php echo $row['JobTitle']; ?>
+                </h6>
+              </div>
+              <div class="sp-product-require">
+                <ul>
+                  <li><img src="icons/Location.svg">
+                    <?php echo $row['WorkLocation']; ?>
+                  </li>
+                  <li><img src="icons/Fee.svg">
+                    <?php echo $row['Salary']; ?> AUD$
+                  </li>
+                  <li><img src="icons/ExperienceLevel.svg">
+                    <?php echo $row['ExperienceLevel']; ?>
+                  </li>
+                  <li><img src="icons/WorkingMode.svg">
+                    <?php echo $row['WorkingFormat']; ?>
+                  </li>
+                  <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="pagenotfound.html"> View candidates
+                      applied</a></li>
+                </ul>
+              </div>
+            </div>
+            <button class="sp-product-btn">See this job posting details</button>
+          </div>
+        </li>
         <?php } ?>
       </ul>
 
@@ -188,35 +206,37 @@
 
       <ul class="autoWidth" class="cs-hidden">
         <?php while ($row = mysqli_fetch_assoc($application)) { ?>
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
+        <!-- Card 1 -->
+        <li class="slide">
+          <div class="sp-card">
 
-              <div class="sp-image-box">
+            <div class="sp-image-box">
 
-                <img src="images/CA_img1.png" alt="product.png">
-                <h4><?php echo $row['FirstName'], $row['LastName']; ?></h4>
-
-              </div>
-
-              <div class="sp-product-details">
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/JobApplied.svg"> Job applied:
-                      <span class="ca_span">
-                        <?php echo $row['JobTitle']; ?>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <br>
-
-              <button class="ca-product-btn">View job seeker profile</button>
+              <img src="images/CA_img1.png" alt="product.png">
+              <h4>
+                <?php echo $row['FirstName'], $row['LastName']; ?>
+              </h4>
 
             </div>
-          </li>
+
+            <div class="sp-product-details">
+              <div class="sp-product-require">
+                <ul>
+                  <li><img src="icons/JobApplied.svg"> Job applied:
+                    <span class="ca_span">
+                      <?php echo $row['JobTitle']; ?>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <br>
+
+            <button class="ca-product-btn">View job seeker profile</button>
+
+          </div>
+        </li>
 
         <?php } ?>
 
@@ -236,30 +256,35 @@
 
       <ul class="autoWidth" class="cs-hidden">
         <?php while ($row = mysqli_fetch_assoc($application)) { ?>
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6><?php echo $row['JobTitle']; ?></h6>
-                </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Location.svg"> <?php echo $row['DateStart'] - $row['DateEnd']; ?></li>
-                    <li><img src="icons/Fee.svg"> <?php echo $row['TimeStart'] - $row['TimeEnd']; ?></li>
-                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['JobImage']; ?></li>
-                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['JobID']; ?></li>
-                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiter_candidateapplied.php"> View candidates applied</a></li>
-                  </ul>
-                </div>
-              </div>
-              <button class="sp-product-btn">See interview details</button>
-
+        <!-- Card 1 -->
+        <li class="slide">
+          <div class="sp-card">
+            <div class="sp-image-box">
+              <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
             </div>
-          </li>
+            <div class="sp-product-details">
+              <div class="type">
+                <h6>
+                  <?php echo $row['JobTitle']; ?>
+                </h6>
+              </div>
+              <div class="sp-product-require">
+                <ul>
+                  <li><img src="icons/Calendar.svg">
+                    <?php echo $row['DateStart']; ?> - 
+                    <?php echo $row['DateEnd']; ?>
+                  </li>
+                  <li><img src="icons/Time.svg">
+                    <?php echo $row['TimeStart']; ?> - 
+                    <?php echo $row['TimeEnd']; ?>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button class="sp-product-btn">See interview details</button>
+
+          </div>
+        </li>
         <?php } ?>
 
       </ul>
@@ -282,12 +307,12 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
             <li>Main branch</li>
-            <li><i class="fa-solid fa-location-dot"></i> P2 – 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
+            <li><i class="fa-solid fa-location-dot"></i> P2 - 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
               Nội</li>
             <li><i class="fa-solid fa-phone"></i> (+84)98.499.65.98</li>
           </ul>
@@ -298,10 +323,8 @@
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
           </ul>
         </div>
 
@@ -309,7 +332,7 @@
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form action="">
+          <form action="#">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">

@@ -66,17 +66,16 @@
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
-      <a href="courses.php">Courses</a>
+      <a href="courses.php" class="btn_active" >Courses</a>
       <a href="jobopportunities.php">Job Opportunities</a>
     </nav>
 
     <div class="icons">
       <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
         <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-        <li><img src="http://dummyimage.com/180x180.png/dddddd/000000"></img></li>
+        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
         <?php } ?>
-        <li><img src="icons/Logout.svg"></li>
+        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
@@ -229,7 +228,7 @@
             <li><a href="pagenotfound.html">Home</a></li>
             <li><a href="pagenotfound.html">About</a></li>
             <li><a href="courses.php">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 
@@ -237,7 +236,7 @@
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form action="">
+          <form action="#">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">

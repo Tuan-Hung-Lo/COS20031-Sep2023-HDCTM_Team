@@ -78,133 +78,115 @@
 </head>
 
 <body>
-  
-<header>
 
-  <!-- Navigation Bar -->
+  <header>
 
-  <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <!-- Navigation Bar -->
 
-  <nav class="navbar">
-    <a href="pagenotfound.html">Home</a>
-    <a href="pagenotfound.html">About</a>
-    <a href="courses.html" class="btn_active">Courses</a>
-    <a href="jobopportunities.html">Job Opportunities</a>
-  </nav>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
-  <div class="icons">
-    <ul>
-      <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-      <li><i class="uil uil-search" id="search_box"></i></li>
-      <li><a href="#" class="uil uil-user"></a></li>
-    </ul>
-  </div>
+    <nav class="navbar">
+      <a href="pagenotfound.html">Home</a>
+      <a href="pagenotfound.html">About</a>
+      <a href="courses.php">Courses</a>
+      <a href="jobopportunities.php" class="btn_active">Job Opportunities</a>
+    </nav>
 
-</header>
+    <div class="icons">
+      <ul>
+        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <?php } ?>
+        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
+      </ul>
+    </div>
 
-<main>
+  </header>
+
+  <main>
 
     <section class="jop-contents">
       <h1>Job opportunities</h1>
 
-      <div class="jop-filter">
+      <!-- FILTER -->
+
+      <button type="button" class="collapsible">Filter</button>
+
+      <div class="content">
+        <hr>
         <br>
 
-        <div class="accordion">
-          <div class="contentBx">
+        <div class="jop-filter">
 
-            <div class="label">
-              <h2>Filter</h2>
+          <form method="post" action="jobopportunities.php">
+
+            <!-- EXPERIENCE LEVEL -->
+            <div class="elevel">
+
+              <p>Experience level</p>
+
+              <label><input class="jopfilter" type="radio" name="jopfilter_el" value="Internship">
+                <span>Internship</span></label>
+
+              <label><input class="jopfilter" type="radio" name="jopfilter_el" value="Entry">
+                <span>Entry</span></label>
+
+              <label><input class="jopfilter" type="radio" name="jopfilter_el" value="Junior">
+                <span>Junior</span></label>
+
+              <label><input class="jopfilter" type="radio" name="jopfilter_el" value="Senior">
+                <span>Senior</span></label>
+
             </div>
-            <hr>
             <br>
 
-            <div class="content">
-              <form method="post" action="jobopportunities.php">
+            <!-- WORKING FORMAT -->
+            <div class="wformat">
 
-                <!-- EXPECTED SALARY -->
-                <div class="jop-esalary">
+              <p>Working format</p>
 
-                  <p>Expected salary (AUD$)</p>
+              <label><input class="jopfilter" type="radio" name="jopfilter_wf" value="remote">
+                <span>Remote</span></label>
 
-                  <label>From:</label>
-                  <input class="jopfilterinput" type="number" name="esalaryfrom" placeholder="Eg: 1,200">
-                  <br>
-                  <label>To:</label>
-                  <input class="jopfilterinput" type="number" name="esalaryto" placeholder="Eg: 5,000">
+              <label><input class="jopfilter" type="radio" name="jopfilter_wf" value="hybrid">
+                <span>Hybrid</span></label>
 
-                </div>
+              <label><input class="jopfilter" type="radio" name="jopfilter_wf" value="online">
+                <span>Online</span></label>
 
-                <br>
+              <label><input class="jopfilter" type="radio" name="jopfilter_wf" value="offline">
+                <span>Offline</span></label>
 
-                <!-- EXPERIENCE LEVEL -->
-                <div class="elevel">
+              <label><input class="jopfilter" type="radio" name="jopfilter_wf" value="flexible">
+                <span>Flexible</span></label>
+            </div>
+            <br>
 
-                  <p>Experience level</p>
 
-                  <label><input class="jopfilter" type="checkbox" name="internship" value="Internship">
-                    <span>Internship</span></label>
+            <!-- SPECIALISATION -->
+            <div class="specialisation">
 
-                  <label><input class="jopfilter" type="checkbox" name="entry" value="Entry">
-                    <span>Entry</span></label>
+              <p>Specialisation</p>
 
-                  <label><input class="jopfilter" type="checkbox" name="junior" value="Junior">
-                    <span>Junior</span></label>
+              <label><input class="jopfilter" type="radio" name="jopfilter_s" value="beauty&spa">
+                <span>Beauty & Spa</span></label>
 
-                  <label><input class="jopfilter" type="checkbox" name="senior" value="Senior">
-                    <span>Senior</span></label>
+              <label><input class="jopfilter" type="radio" name="jopfilter_s" value="f&b">
+                <span>F&B</span></label>
 
-                </div>
-                <br>
-
-                <!-- WORKING FORMAT -->
-                <div class="wformat">
-
-                  <p>Working format</p>
-
-                  <label><input class="jopfilter" type="checkbox" name="remote" value="remote">
-                    <span>Remote</span></label>
-
-                  <label><input class="jopfilter" type="checkbox" name="hybrid" value="hybrid">
-                    <span>Hybrid</span></label>
-
-                  <label><input class="jopfilter" type="checkbox" name="online" value="online">
-                    <span>Online</span></label>
-
-                  <label><input class="jopfilter" type="checkbox" name="offline" value="offline">
-                    <span>Offline</span></label>
-
-                  <label><input class="jopfilter" type="checkbox" name="flexible" value="flexible">
-                    <span>Flexible</span></label>
-                </div>
-                <br>
-
-                <!-- SPECIALISATION -->
-                <div class="specialisation">
-
-                  <p>Specialisation</p>
-
-                  <label><input class="jopfilter" type="checkbox" name="beauty&spa" value="beauty&spa">
-                    <span>Beauty & Spa</span></label>
-
-                  <label><input class="jopfilter" type="checkbox" name="f&b" value="f&b">
-                    <span>F&B</span></label>
-
-                  <label><input class="jopfilter" type="checkbox" name="tourism&hospitality" value="tourism&hospitality">
-                    <span>Tourism & Hospitality</span></label>
-
-                </div>
-                <br>
-
-                <!-- SUBMIT, CLEAR BUTTON -->
-                <input class="jopsubmit" type="submit" value="Apply filter">
-                <input class="jopclear" type="reset" value="Clear">
-
-              </form>
+              <label><input class="jopfilter" type="radio" name="jopfilter_s" value="tourism&hospitality">
+                <span>Tourism & Hospitality</span></label>
 
             </div>
 
-          </div>
+            <br>
+            <!-- SUBMIT, CLEAR BUTTON -->
+            <input class="jopsubmit" type="submit" value="Apply filter">
+            <input class="jopclear" type="reset" value="Clear">
+
+          </form>
+          <br>
+          <br>
         </div>
       </div>
 
@@ -216,30 +198,40 @@
         </div>
         <hr>
         <?php while ($row = mysqli_fetch_assoc($job)) { ?>
-          <ul class="autoWidth" class="cs-hidden">
-            <!-- Card 1 -->
-            <li class="slide">
-              <div class="sp-card">
-                <div class="sp-image-box">
-                  <img src="images/nail.png" alt="product.png">
-                </div>
-                <div class="sp-product-details">
-                  <div class="type">
-                    <h6><?php echo $row['JobTitle']; ?></h6>
-                  </div>
-                  <div class="sp-product-require">
-                    <ul>
-                      <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
-                      <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?></li>
-                      <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
-                      <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
-                    </ul>
-                  </div>
-                </div>
-                <button class="sp-product-btn">Apply for this job</button>
+        <ul class="autoWidth" class="cs-hidden">
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="images/nail.png" alt="product.png">
               </div>
-            </li>
-          </ul>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6>
+                    <?php echo $row['JobTitle']; ?>
+                  </h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Location.svg">
+                      <?php echo $row['WorkLocation']; ?>
+                    </li>
+                    <li><img src="icons/Fee.svg">
+                      <?php echo $row['Salary']; ?>
+                    </li>
+                    <li><img src="icons/ExperienceLevel.svg">
+                      <?php echo $row['ExperienceLevel']; ?>
+                    </li>
+                    <li><img src="icons/WorkingMode.svg">
+                      <?php echo $row['WorkingFormat']; ?>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button class="sp-product-btn">Apply for this job</button>
+            </div>
+          </li>
+        </ul>
         <?php } ?>
       </div>
 
@@ -252,30 +244,40 @@
           <hr>
 
           <?php while ($row = mysqli_fetch_assoc($job)) { ?>
-            <ul class="autoWidth" class="cs-hidden">
-              <!-- Card 1 -->
-              <li class="slide">
-                <div class="sp-card">
-                  <div class="sp-image-box">
-                    <img src="images/nail.png" alt="product.png">
-                  </div>
-                  <div class="sp-product-details">
-                    <div class="type">
-                      <h6><?php echo $row['JobTitle']; ?></h6>
-                    </div>
-                    <div class="sp-product-require">
-                      <ul>
-                        <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
-                        <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?></li>
-                        <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
-                        <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <button class="sp-product-btn">Apply for this job</button>
+          <ul class="autoWidth" class="cs-hidden">
+            <!-- Card 1 -->
+            <li class="slide">
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img src="images/nail.png" alt="product.png">
                 </div>
-              </li>
-            </ul>
+                <div class="sp-product-details">
+                  <div class="type">
+                    <h6>
+                      <?php echo $row['JobTitle']; ?>
+                    </h6>
+                  </div>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Location.svg">
+                        <?php echo $row['WorkLocation']; ?>
+                      </li>
+                      <li><img src="icons/Fee.svg">
+                        <?php echo $row['Salary']; ?>
+                      </li>
+                      <li><img src="icons/ExperienceLevel.svg">
+                        <?php echo $row['ExperienceLevel']; ?>
+                      </li>
+                      <li><img src="icons/WorkingMode.svg">
+                        <?php echo $row['WorkingFormat']; ?>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <button class="sp-product-btn">Apply for this job</button>
+              </div>
+            </li>
+          </ul>
           <?php } ?>
         </div>
       </div>
@@ -298,7 +300,7 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
@@ -314,10 +316,10 @@
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 
@@ -325,7 +327,7 @@
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form action="">
+          <form action="#">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">
@@ -339,11 +341,17 @@
 
 
   <script>
-    const accordion = document.getElementsByClassName('contentBx');
-
-    for (i = 0; i < accordion.length; i++) {
-      accordion[i].addEventListener('click', function() {
-        this.classList.toggle('active');
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
       });
     }
   </script>

@@ -68,26 +68,25 @@ if (isset($_SESSION['UserAuthenticationID'])) {
 <body>
   <header>
 
-    <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
 
-    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+  <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
-    <nav class="navbar">
-      <a href="pagenotfound.html">Home</a>
-      <a href="pagenotfound.html">About</a>
-      <a href="courses.php">Courses</a>
-      <a href="jobopportunities.php">Job Opportunities</a>
-    </nav>
+  <nav class="navbar">
+    <a href="pagenotfound.html">Home</a>
+    <a href="pagenotfound.html">About</a>
+    <a href="courses.php">Courses</a>
+    <a href="jobopportunities.php">Job Opportunities</a>
+  </nav>
 
-    <div class="icons">
-      <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-        <li><img src="http://dummyimage.com/180x180.png/dddddd/000000"></img></li>
-        <?php } ?>
-        <li><img src="icons/Logout.svg"></li>
-      </ul>
-    </div>
+  <div class="icons">
+    <ul>
+      <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+      <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+      <?php } ?>
+      <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
+    </ul>
+  </div>
 
   </header>
 
