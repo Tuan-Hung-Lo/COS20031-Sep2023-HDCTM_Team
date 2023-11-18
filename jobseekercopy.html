@@ -82,10 +82,10 @@ if (isset($_SESSION['UserAuthenticationID'])) {
     <div class="icons">
       <ul>
         <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
         <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
         <li><img src="http://dummyimage.com/180x180.png/dddddd/000000"></img></li>
         <?php } ?>
+        <li><img src="icons/Logout.svg"></li>
       </ul>
     </div>
 
@@ -392,6 +392,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           </div>
         </div>
       </div>
+    </div>
 
     </div>
     <!-- COURSES -->

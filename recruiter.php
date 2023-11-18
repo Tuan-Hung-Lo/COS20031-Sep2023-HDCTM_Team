@@ -139,7 +139,7 @@
 
     <div class="rpp-box-container">
       <div class="header">
-        <h5>Job applications</h5>
+        <h5>Job Posting</h5>
       </div>
       <br>
       <hr>

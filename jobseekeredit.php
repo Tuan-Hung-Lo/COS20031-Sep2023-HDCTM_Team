@@ -154,21 +154,24 @@
   <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
   <nav class="navbar">
-    <a href="pagenotfound.html">Home</a>
-    <a href="pagenotfound.html">About</a>
-    <a href="courses.html" class="btn_active">Courses</a>
-    <a href="jobopportunities.html">Job Opportunities</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="courses.php">Courses</a>
+    <a href="jobopportunities.php">Job Opportunities</a>
   </nav>
 
   <div class="icons">
     <ul>
       <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-      <li><i class="uil uil-search" id="search_box"></i></li>
-      <li><a href="#" class="uil uil-user"></a></li>
+      <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+      <li><img src="http://dummyimage.com/180x180.png/dddddd/000000"></img></li>
+      <?php } ?>
+      <li><img src="icons/Logout.svg"></li>
     </ul>
   </div>
 
   </header>
+
 
   <!-- MAIN CONTENT -->
   <main>
@@ -249,12 +252,6 @@
           <label class="jsep-label">
             <img src="icons/Phone_B.svg">
             <input name="jsep-phone" type="text" class="jsep-input" placeholder="Phone number">
-          </label>
-
-          <!-- EMAIL -->
-          <label class="jsep-label">
-            <img src="icons/Message_B.svg">
-            <input name="jsep-email" type="text" class="jsep-input" placeholder="Email">
           </label>
 
           <!-- ADDRESS -->
