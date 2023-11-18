@@ -75,7 +75,7 @@ header li {
     height: 2.5rem;
     text-align: center;
     vertical-align: middle;
-    padding-top: 0.25rem;
+    /* padding-top: 0.25rem; */
 }
 
 header .icons i,
@@ -88,8 +88,15 @@ header .icons a {
     border-radius: 100%;
 }
 
-header .icons li:hover {
-    background-color: #eee;
+header .icons img {
+    width: 48px;
+    border-radius: 100%;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+header .icons img:hover {
+    opacity: 0.5;
 }
 
 #gotopbtn {
@@ -689,7 +696,7 @@ textarea {
 }
 
 .cpp-bi-headline-profileimg img {
-    width: 100%;
+    width: 180px;
 }
 
 .cpp-bi-headline-headline {
