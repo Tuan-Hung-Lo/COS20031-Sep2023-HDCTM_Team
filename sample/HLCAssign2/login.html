@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dreamy Cafe</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Web Development">
+    <meta name="keywords" content="Assignment 2">
+    <meta name="author" content="Hau Linh Chi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/login.js"></script>
+    <script src="https://kit.fontawesome.com/f73039f1ad.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- ============= START Navigation Bar -->
+
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="images/dreamycafelogo.png" alt="Dreamy Cafe Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a>
+                </li>
+                <li><a href="features.html">Features</a></li>
+            </ul>
+            <div>
+                <a href="order.html" class="nav-button"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="login.html" class="nav-button"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- END Navigation Bar -->
+
+
+    <main>
+
+        <form id="loginform" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
+            <h1>Login</h1>
+
+            <div class="input-container">
+                <label class="label-reg" for="email">Email: *</label>
+                <input id="email" name="email" type="email">
+
+            </div>
+
+            <div class="input-container">
+                <label class="label-reg" for="password">Password: *</label>
+                <input id="password" name="password" type="password">
+
+            </div>
+
+            <div class="forgot-pwd">
+                <a href="pagenotfound.html">Forgot password</a>
+            </div>
+
+            <input class="submit-btn" type="submit" value="Log in">
+
+            <div class="switch">
+                <p>Don't have an account? <a href="registration.html">Register</a> now</p>
+            </div>
+
+
+        </form>
+
+    </main>
+
+    <footer>
+
+        <img src="images/dreamycafelogofooter.png" alt="Dreamy Cafe Logo">
+
+        <p><i class="fa-solid fa-location-dot"></i></p>
+        <p>80 Duy Tan</p>
+        <p>02 Duong Khue</p>
+
+        <br>
+
+        <div id="link-footer">
+
+            <ul>
+                <li><a href="pagenotfound.html"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="pagenotfound.html"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+
+        </div>
+        <br>
+        <p id="copyright">&copy; 2022 Dreamy Cafe. All rights reserved.</p>
+        <br>
+    </footer>
+
+</body>
+
+</html>

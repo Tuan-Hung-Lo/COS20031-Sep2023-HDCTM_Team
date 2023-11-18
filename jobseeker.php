@@ -442,6 +442,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           <h5>Job applications</h5>
         </div>
         <hr>
+        
         <?php while ($row = mysqli_fetch_assoc($job)) { ?>
         <ul class="autoWidth" class="cs-hidden">
           <!-- Card 1 -->
@@ -465,7 +466,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
                       <?php echo $row['Salary']; ?> AUD$
                     </li>
                     <li><img src="icons/ExperienceLevel.svg">
-                      <?php echo $row['ExperienceLevel']; ?>
+                      <?php echo $row['ExperienceLevelName']; ?>
                     </li>
                     <li><img src="icons/PeopleGroup.svg">
                       <?php echo $row['WorkingFormat']; ?>

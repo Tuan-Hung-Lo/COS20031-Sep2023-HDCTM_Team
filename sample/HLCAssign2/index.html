@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dreamy Cafe</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Web Development">
+    <meta name="keywords" content="Assignment 2">
+    <meta name="author" content="Hau Linh Chi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/f73039f1ad.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- ============= START Navigation Bar -->
+
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="images/dreamycafelogo.png" alt="Dreamy Cafe Logo">
+            <ul>
+                <li><a href="index.html"
+                        style="background-color: #2b392b; color: #FEF5ED; padding: 0.5em; border-radius: 10px;">Home</a>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="features.html">Features</a></li>
+            </ul>
+            <div>
+                <a href="order.html" class="nav-button"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="login.html" class="nav-button"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- END Navigation Bar -->
+
+
+    <main>
+
+        <!-- ============= START Hero -->
+
+        <div class="hero-img">
+            <div class="hero-text">
+                <h2>Welcome to Dreamy Cafe!</h2>
+                <h6>Your daily happiness.</h6>
+                <br>
+                <a class="hero-button" href="#seemore">See more</a>
+            </div>
+        </div>
+
+        <!-- END Hero -->
+
+        <!-- ============= START Image Carousel -->
+
+        <div class="carousel-container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="images/carouselimg1.png" alt=""></div>
+                    <div class="swiper-slide"><img src="images/carouselimg2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="images/carouselimg3.png" alt=""></div>
+                    <div class="swiper-slide"><img src="images/carouselimg4.png" alt=""></div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- Next/ Prev Buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+
+        <!-- END Image Carousel -->
+
+        <!-- ============= START Menu Preview -->
+
+        <div class="index-menu" id="seemore">
+            <h2>OUR MENU</h2>
+
+            <div class="index-menu-container">
+                <div class="hover-card-container">
+                    <img src="images/coffee.png" alt="Coffees" class="image">
+                    <div class="overlay">
+                        <div class="index-menu-text">
+                            <h3>COFFEES</h3>
+                            <br>
+                            <br>
+                            <a href="menu.html#coffee-menu">See all</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hover-card-container">
+                    <img src="images/smoothie.png" alt="Smoothies" class="image">
+                    <div class="overlay">
+                        <div class="index-menu-text">
+                            <h3>SMOOTHIES</h3>
+                            <br>
+                            <br>
+                            <a href="menu.html#smoothie-menu">See all</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hover-card-container">
+                    <img src="images/dessert.png" alt="Desserts" class="image">
+                    <div class="overlay">
+                        <div class="index-menu-text">
+                            <h3>DESSERTS</h3>
+                            <br>
+                            <br>
+                            <a href="menu.html#dessert-menu">See all</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hover-card-container-to-menu">
+                    <a href="menu.html">FULL MENU <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+        <!-- END Menu Preview -->
+
+        <!-- ============= START About Section -->
+
+        <div class="index-about">
+            <div class="index-text">
+                <h2>ABOUT US</h2>
+                <br>
+                <h3>DREAMY CAFE</h3>
+                <p>We are a place where you can sit down and enjoy that specially brewed cup of coffee, not just a place
+                    to drop by for your morning brew
+                    <br>
+                    <br>
+                    From traditional coffee to our own house-made specialty drinks
+                    and desserts, we have it all.
+                    <br>
+                    <br>
+                    <br>
+                    <a href="about.html">Read more</a>
+            </div>
+        </div>
+
+        <!-- END About Section -->
+
+    </main>
+
+    <footer>
+
+        <img src="images/dreamycafelogofooter.png" alt="Dreamy Cafe Logo">
+
+        <p><i class="fa-solid fa-location-dot"></i></p>
+        <p>80 Duy Tan</p>
+        <p>02 Duong Khue</p>
+
+        <br>
+
+        <div id="link-footer">
+            
+            <ul>
+                <li><a href="pagenotfound.html"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="pagenotfound.html"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+            
+        </div>
+        <br>
+        <p id="copyright">&copy; 2022 Dreamy Cafe. All rights reserved.</p>
+        <br>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+</body>
+
+</html>
