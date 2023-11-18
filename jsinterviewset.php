@@ -40,20 +40,19 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
 
     <!-- Navigation Bar -->
 
-    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
-      <a href="courses.html" class="btn_active">Courses</a>
-      <a href="jobopportunities.html">Job Opportunities</a>
+      <a href="courses.php">Courses</a>
+      <a href="jobopportunities.php">Job Opportunities</a>
     </nav>
 
     <div class="icons">
       <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="#" class="uil uil-user"></a></li>
+        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
@@ -65,7 +64,10 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
       <!--Navigation Button-->
       <div class="bwp-nav">
         <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a> <!--Come Back Page-->
-        <h1>Your Interview Schedule</h1>
+        <<<<<<< HEAD:jsinterviewset.php <h1>Your Interview Schedule</h1>
+          =======
+          <h1>Book An Interview schedule</h1>
+          >>>>>>> 165c0dff10cc7ba9903cb330d49ee1ce6ade0d77:jsinterviewbook.html
       </div>
 
       <!--Interview Details-->
@@ -95,27 +97,45 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
         </div>
 
         <!--Job Applied Schedule-->
-        <div class="bwp-interview-schedule">
+        <form class="bwp-interview-schedule" action="#">
           <div class="bwp-interview-setup">
             <div class="bwp-interview-available">
+              <h5>Available time</h5>
               <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
-                <h2><?php echo $row['InterviewTime']; ?> (<?php echo $row['InterviewDate']; ?>)</h2>
+
+                <h2>09:00 AM - 05:30 PM (19/10/2023 - 21/10/2023)</h2>
               <?php } ?>
+
               <ul>Notes:
-                <li>Each interview session last from 20 to 45 minutes</li>
-                <li>Please be present at least 10 minutes early </li>
+                <li>Please pick your interview time later than 1 week after receiving pass Email</li>
+                <li>Please freely pick your interview time in the available time except for the lunch time (11:30AM -
+                  01:30PM)</li>
+                <li>Each interview session last upto 45 minutes</li>
+                <li>You can only schedule your time once and cannot change it</li>
               </ul>
             </div>
-            <div class="bwp-submit-box">
-              <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
-            </div>
-            <div class="interview-link">
-              <a href="#">Google Meet Link</a>
+            <div class="bwp-interview-picktime">
+              <h5>Pick your date and time</h5>
+
+              <!--Set Date And Hour Button-->
+              <div class="bwp-interview-button">
+                <div class="bwp-interview-picked">
+                  <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
+                  <input name="date" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
+                </div>
+                <div class="bwp-interview-picked">
+                  <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
+                  <input name="time" type="text" class="bwp-input" placeholder="00:00 AM" required>
+                </div>
+              </div>
+              <div class="bwp-submit-box">
+                <button type="submit" class="bwp-submit-btn">Pick this time</button>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
+        <!---->
       </div>
-      <!---->
     </div>
   </main>
 
@@ -133,7 +153,7 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
@@ -149,10 +169,10 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 
@@ -160,7 +180,7 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form action="">
+          <form action="#">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">

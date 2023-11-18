@@ -1,21 +1,20 @@
 <?php
-  session_start();
+session_start();
 
-  // Include settings and database connection
-  require_once("./settings.php");
+// Include settings and database connection
+require_once("./settings.php");
 
-  if (isset($_SESSION['UserAuthenticationID'])) {
-    $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
-    $user_email = $_SESSION['user_email'];
+if (isset($_SESSION['UserAuthenticationID'])) {
+  $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+  $user_email = $_SESSION['user_email'];
 
-    $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
 
-    $re_id = $recruiter->fetch_assoc();
-    $RecruiterID = $re_id['RecruiterID'];
+  $re_id = $recruiter->fetch_assoc();
+  $RecruiterID = $re_id['RecruiterID'];
 
-    $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
-    $application = $conn->query
-      ("SELECT 
+  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
+  $application = $conn->query("SELECT 
             Application.*, 
             Job.*, 
             JobSeeker.*, 
@@ -28,11 +27,11 @@
         WHERE 
             Job.RecruiterID = '$RecruiterID';
       ");
-    $js_id = $application->fetch_assoc();
-    $JobSeekerID = $js_id['JobSeekerID'];
-    
-    $_SESSION['UserAuthenticationID'] = $JobSeekerID;
-  }
+  $js_id = $application->fetch_assoc();
+  $JobSeekerID = $js_id['JobSeekerID'];
+
+  $_SESSION['UserAuthenticationID'] = $JobSeekerID;
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,20 +61,19 @@
 
     <!-- Navigation Bar -->
 
-    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
-      <a href="courses.html" class="btn_active">Courses</a>
-      <a href="jobopportunities.html">Job Opportunities</a>
     </nav>
 
     <div class="icons">
       <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="#" class="uil uil-user"></a></li>
+        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+          <li><a href="recruiter.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <?php } ?>
+        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
@@ -97,7 +95,9 @@
 
           <div class="rpp-title">
 
-            <h2><?php echo $row['CompanyName'] ?></h2>
+            <h2>
+              <?php echo $row['CompanyName'] ?>
+            </h2>
 
             <a class="profilelink" href="recruiteredit.html">
               <img src="icons/Edit.svg" />Edit
@@ -111,19 +111,25 @@
           <p>
             <img src="icons/Comsize.svg" />
             Company size:
-            <span class="cpp-span"><?php echo $row['Size'] ?></span>
+            <span class="cpp-span">
+              <?php echo $row['Size'] ?>
+            </span>
           </p>
 
           <p>
             <img src="icons/Phone.svg" />
             Phone number:
-            <span class="cpp-span"><?php echo $row['CompanyPhone'] ?></span>
+            <span class="cpp-span">
+              <?php echo $row['CompanyPhone'] ?>
+            </span>
           </p>
 
           <p>
             <img src="icons/Message.svg" />
             Email:
-            <span class="cpp-span"><?php echo $row['CompanyEmail'] ?></span>
+            <span class="cpp-span">
+              <?php echo $row['CompanyEmail'] ?>
+            </span>
           </p>
 
           <p>
@@ -148,7 +154,7 @@
 
     <div class="rpp-box-container">
       <div class="header">
-        <h5>Job applications</h5>
+        <h5>Job posting</h5>
       </div>
       <br>
       <hr>
@@ -156,30 +162,64 @@
 
       <ul class="autoWidth" class="cs-hidden">
         <?php while ($row = mysqli_fetch_assoc($job)) { ?>
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6><?php echo $row['JobTitle']; ?></h6>
+          <<<<<<< HEAD <!-- Card 1 -->
+            <li class="slide">
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
                 </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
-                    <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$ </li>
-                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevelName']; ?></li>
-                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
-                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiter_candidateapplied.html"> View candidates applied</a></li>
-                  </ul>
+                <div class="sp-product-details">
+                  <div class="type">
+                    <h6><?php echo $row['JobTitle']; ?></h6>
+                  </div>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
+                      <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$ </li>
+                      <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevelName']; ?></li>
+                      <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
+                      <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiter_candidateapplied.html"> View candidates applied</a></li>
+                    </ul>
+                  </div>
                 </div>
+                <button class="sp-product-btn">See this job posting details</button>
+                =======
+                <!-- Card 1 -->
+            <li class="slide">
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img src="<?php echo $row['CompanyImage']; ?>" alt="product.png">
+                  >>>>>>> 165c0dff10cc7ba9903cb330d49ee1ce6ade0d77
+                </div>
+                <div class="sp-product-details">
+                  <div class="type">
+                    <h6>
+                      <?php echo $row['JobTitle']; ?>
+                    </h6>
+                  </div>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Location.svg">
+                        <?php echo $row['WorkLocation']; ?>
+                      </li>
+                      <li><img src="icons/Fee.svg">
+                        <?php echo $row['Salary']; ?> AUD$
+                      </li>
+                      <li><img src="icons/ExperienceLevel.svg">
+                        <?php echo $row['ExperienceLevel']; ?>
+                      </li>
+                      <li><img src="icons/WorkingMode.svg">
+                        <?php echo $row['WorkingFormat']; ?>
+                      </li>
+                      <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="pagenotfound.html"> View candidates
+                          applied</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <button class="sp-product-btn">See this job posting details</button>
               </div>
-              <button class="sp-product-btn">See this job posting details</button>
-            </div>
-          </li>
-        <?php } ?>
+            </li>
+          <?php } ?>
       </ul>
 
     </div>
@@ -203,8 +243,8 @@
 
               <div class="sp-image-box">
 
-                <img src="images/CA_img1.png" alt="product.png">
-                <h4><?php echo $row['FirstName'], $row['LastName']; ?></h4>
+                <<<<<<< HEAD <img src="images/CA_img1.png" alt="product.png">
+                  <h4><?php echo $row['FirstName'], $row['LastName']; ?></h4>
 
               </div>
 
@@ -223,29 +263,53 @@
               <br>
 
               <button href="recruiter_candidateapplied.html" class="ca-product-btn">View job seeker profile</button>
+              =======
+              <img src="images/CA_img1.png" alt="product.png">
+              <h4>
+                <?php echo $row['FirstName'], $row['LastName']; ?>
+              </h4>
+              >>>>>>> 165c0dff10cc7ba9903cb330d49ee1ce6ade0d77
 
             </div>
-          </li>
 
-        <?php } ?>
+            <div class="sp-product-details">
+              <div class="sp-product-require">
+                <ul>
+                  <li><img src="icons/JobApplied.svg"> Job applied:
+                    <span class="ca_span">
+                      <?php echo $row['JobTitle']; ?>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-      </ul>
+            <br>
+
+            <button class="ca-product-btn">View job seeker profile</button>
 
     </div>
+    </li>
 
-    <!-- INTERVIEW SCHEDULE -->
+  <?php } ?>
 
-    <div class="rpp-box-container">
-      <div class="header">
-        <h5>Interview schedule</h5>
-      </div>
-      <br>
-      <hr>
-      <br>
+  </ul>
 
-      <ul class="autoWidth" class="cs-hidden">
-        <?php while ($row = mysqli_fetch_assoc($application)) { ?>
-          <!-- Card 1 -->
+  </div>
+
+  <!-- INTERVIEW SCHEDULE -->
+
+  <div class="rpp-box-container">
+    <div class="header">
+      <h5>Interview schedule</h5>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <ul class="autoWidth" class="cs-hidden">
+      <?php while ($row = mysqli_fetch_assoc($application)) { ?>
+        <<<<<<< HEAD <!-- Card 1 -->
           <li class="slide">
             <div class="sp-card">
               <div class="sp-image-box">
@@ -267,13 +331,42 @@
               </div>
               <button class="sp-product-btn">See interview details</button>
 
+              =======
+              <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
+                >>>>>>> 165c0dff10cc7ba9903cb330d49ee1ce6ade0d77
+              </div>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6>
+                    <?php echo $row['JobTitle']; ?>
+                  </h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Calendar.svg">
+                      <?php echo $row['DateStart']; ?> -
+                      <?php echo $row['DateEnd']; ?>
+                    </li>
+                    <li><img src="icons/Time.svg">
+                      <?php echo $row['TimeStart']; ?> -
+                      <?php echo $row['TimeEnd']; ?>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button class="sp-product-btn">See interview details</button>
+
             </div>
           </li>
         <?php } ?>
 
-      </ul>
+    </ul>
 
-    </div>
+  </div>
 
   </main>
 
@@ -291,12 +384,12 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
             <li>Main branch</li>
-            <li><i class="fa-solid fa-location-dot"></i> P2 – 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
+            <li><i class="fa-solid fa-location-dot"></i> P2 - 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
               Nội</li>
             <li><i class="fa-solid fa-phone"></i> (+84)98.499.65.98</li>
           </ul>
@@ -307,10 +400,8 @@
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
           </ul>
         </div>
 
@@ -318,7 +409,7 @@
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form action="">
+          <form action="#">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">

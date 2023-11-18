@@ -52,20 +52,19 @@
 
     <!-- Navigation Bar -->
 
-    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
-      <a href="courses.html" class="btn_active">Courses</a>
-      <a href="jobopportunities.html">Job Opportunities</a>
+      <a href="courses.php">Courses</a>
+      <a href="jobopportunities.php">Job Opportunities</a>
     </nav>
 
     <div class="icons">
       <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="#" class="uil uil-user"></a></li>
+        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
@@ -142,6 +141,27 @@
         </form>
         <!---->
       </div>
+
+      <!--Job Applied Schedule-->
+      <div class="bwp-interview-schedule">
+        <div class="bwp-interview-setup">
+          <div class="bwp-interview-available">
+           <h2>10:30 AM (13/11/2023)</h2>
+           <ul>Notes:
+              <li>Each interview session last from 20 to 45 minutes</li>
+              <li>Please be present at least 10 minutes early </li>
+            </ul>
+          </div>
+          <div class="bwp-submit-box">
+            <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
+          </div>
+          <div class="interview-link">
+            <a href="pagenotfound.html">Google Meet Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
     </div>
   </main>
 
@@ -159,12 +179,12 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
             <li>Main branch</li>
-            <li><i class="fa-solid fa-location-dot"></i> P2 – 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
+            <li><i class="fa-solid fa-location-dot"></i> P2 - 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
               Nội</li>
             <li><i class="fa-solid fa-phone"></i> (+84)98.499.65.98</li>
           </ul>
@@ -175,10 +195,10 @@
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 
@@ -186,7 +206,7 @@
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form action="">
+          <form action="#">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">

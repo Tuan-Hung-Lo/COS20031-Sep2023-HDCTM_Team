@@ -152,20 +152,21 @@
 
   <!-- Navigation Bar -->
 
-  <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+  <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
   <nav class="navbar">
     <a href="pagenotfound.html">Home</a>
     <a href="pagenotfound.html">About</a>
-    <a href="courses.html" class="btn_active">Courses</a>
-    <a href="jobopportunities.html">Job Opportunities</a>
+    <a href="courses.php">Courses</a>
+    <a href="jobopportunities.php">Job Opportunities</a>
   </nav>
 
   <div class="icons">
     <ul>
-      <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-      <li><i class="uil uil-search" id="search_box"></i></li>
-      <li><a href="#" class="uil uil-user"></a></li>
+      <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+      <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+      <?php } ?>
+      <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
     </ul>
   </div>
 
@@ -250,12 +251,6 @@
           <label class="jsep-label">
             <img src="icons/Phone_B.svg">
             <input name="jsep-phone" type="text" class="jsep-input" placeholder="Phone number">
-          </label>
-
-          <!-- EMAIL -->
-          <label class="jsep-label">
-            <img src="icons/Message_B.svg">
-            <input name="jsep-email" type="text" class="jsep-input" placeholder="Email">
           </label>
 
           <!-- ADDRESS -->
@@ -428,7 +423,7 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
@@ -444,10 +439,10 @@
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 

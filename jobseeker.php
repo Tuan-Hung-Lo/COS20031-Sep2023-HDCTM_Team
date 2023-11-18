@@ -75,26 +75,25 @@
 <body>
   <header>
 
-    <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
 
-    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+  <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
-    <nav class="navbar">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="courses.php">Courses</a>
-      <a href="jobopportunities.php">Job Opportunities</a>
-    </nav>
+  <nav class="navbar">
+    <a href="pagenotfound.html">Home</a>
+    <a href="pagenotfound.html">About</a>
+    <a href="courses.php">Courses</a>
+    <a href="jobopportunities.php">Job Opportunities</a>
+  </nav>
 
-    <div class="icons">
-      <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
-        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-          <li><img src="<?php echo $row['JSImage'] ?>">AVA</img></li>
-        <?php } ?>
-      </ul>
-    </div>
+  <div class="icons">
+    <ul>
+      <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+      <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+      <?php } ?>
+      <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
+    </ul>
+  </div>
 
   </header>
 
@@ -114,28 +113,32 @@
 
           <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
 
-            <!-- PROFILE PICTURE -->
-            <div class="cpp-bi-headline-profileimg">
-              <img src="<?php echo $row['JSImage'] ?>" alt="Candidate Profile's Picture">
-            </div>
+          <!-- PROFILE PICTURE -->
+          <div class="cpp-bi-headline-profileimg">
+            <img src="<?php echo $row['JSImage'] ?>" alt="Candidate Profile's Picture">
+          </div>
 
-            <!-- HEADLINE INFORMATION -->
-            <div class="cpp-bi-headline-headline">
-              <h2>
-                <?php echo $row['FirstName'], $row['LastName']; ?>
-              </h2>
-              <br>
-              <p>
-                <img src="icons/Job Title.svg" />
-                Job title:
-                <span class="cpp-span"><?php echo $row['JSJobTitle']; ?></span>
-              </p>
-              <p>
-                <img src="icons/Experience Level.svg" />
-                Experience level:
-                <span class="cpp-span"><?php echo $row['ExperienceLevel']; ?></span>
-              </p>
-            </div>
+          <!-- HEADLINE INFORMATION -->
+          <div class="cpp-bi-headline-headline">
+            <h2>
+              <?php echo $row['FirstName'], $row['LastName']; ?>
+            </h2>
+            <br>
+            <p>
+              <img src="icons/Job Title.svg" />
+              Job title:
+              <span class="cpp-span">
+                <?php echo $row['JSJobTitle']; ?>
+              </span>
+            </p>
+            <p>
+              <img src="icons/Experience Level.svg" />
+              Experience level:
+              <span class="cpp-span">
+                <?php echo $row['ExperienceLevel']; ?>
+              </span>
+            </p>
+          </div>
 
           <?php } ?>
         </div>
@@ -163,26 +166,41 @@
           <div class="cpp-bi-personalinfo-content">
 
             <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-              <p>
-                <img src="icons/Calendar.svg" />
-                DOB:
-                <span class="cpp-span"><?php echo $row['DOB']; ?></span>
-              </p>
-              <p>
-                <img src="icons/Phone.svg" />
-                Phone number:
-                <span class="cpp-span"><?php echo $row['Phone']; ?></span>
-              </p>
-              <p>
-                <img src="icons/Message.svg" />
-                Email:
-                <span class="cpp-span"><?php echo '$user_email'; ?></span>
-              </p>
-              <p>
-                <img src="icons/Location.svg" />
-                Address:
-                <span class="cpp-span"><?php echo $row['Address']; ?></span>
-              </p>
+            <p>
+              <img src="icons/Gender.svg" />
+              Gender:
+              <span class="cpp-span">
+                <?php echo $row['Gender']; ?>
+              </span>
+            </p>
+            <p>
+              <img src="icons/Calendar.svg" />
+              DOB:
+              <span class="cpp-span">
+                <?php echo $row['DOB']; ?>
+              </span>
+            </p>
+            <p>
+              <img src="icons/Phone.svg" />
+              Phone number:
+              <span class="cpp-span">
+                <?php echo $row['Phone']; ?>
+              </span>
+            </p>
+            <p>
+              <img src="icons/Message.svg" />
+              Email:
+              <span class="cpp-span">
+                <?php echo '$user_email'; ?>
+              </span>
+            </p>
+            <p>
+              <img src="icons/Location.svg" />
+              Address:
+              <span class="cpp-span">
+                <?php echo $row['Address']; ?>
+              </span>
+            </p>
             <?php } ?>
 
           </div>
@@ -214,10 +232,13 @@
                 <div class="cpp-bi-personalinfo-content-edubg">
                   <ul>
                     <?php while ($row = mysqli_fetch_assoc($education)) { ?>
-                      <li><?php echo $row['GraduationYear'], $row['Institution'] ?>
-                        <br>
-                        <i><?php echo $row['Degree'] ?></i>
-                      </li>
+                    <li>
+                      <?php echo $row['GraduationYear'], $row['Institution'] ?>
+                      <br>
+                      <i>
+                        <?php echo $row['Degree'] ?>
+                      </i>
+                    </li>
                     <?php } ?>
                   </ul>
                 </div>
@@ -250,7 +271,9 @@
           <!-- CONTENT -->
           <div class="cpp-e-skills-content">
             <?php while ($row = mysqli_fetch_assoc($skill)) { ?>
-              <p><?php echo $row['SkillName']; ?></p>
+            <p>
+              <?php echo $row['SkillName']; ?>
+            </p>
             <?php } ?>
           </div>
 
@@ -281,41 +304,41 @@
           <div class="cpp-e-workingexp-content">
             <?php while ($row = mysqli_fetch_assoc($working_experience)) { ?>
 
-              <!-- WORKING EXPERIENCE 1 -->
-              <div class="cpp-e-workingexp-work">
+            <!-- WORKING EXPERIENCE 1 -->
+            <div class="cpp-e-workingexp-work">
 
-                <!-- Company -->
-                <h4>
-                  <?php echo $row['WCompanyName']; ?>
-                </h4>
+              <!-- Company -->
+              <h4>
+                <?php echo $row['WCompanyName']; ?>
+              </h4>
 
-                <br>
+              <br>
 
-                <h4>
-                  <?php echo $row['WTimeRange']; ?> weeks
-                </h4>
+              <h4>
+                <?php echo $row['WTimeRange']; ?> weeks
+              </h4>
 
-                <br>
-                
-                <!-- Position -->
-                <h5>
-                  <?php echo $row['WJobRole']; ?>
-                </h5>
+              <br>
 
-                <br>
+              <!-- Position -->
+              <h5>
+                <?php echo $row['WJobRole']; ?>
+              </h5>
 
-                <!-- Description & Achievement -->
-                <div class="cpp-e-workingexp-work-desc">
-                  <ul>
-                    <li>
-                      <?php echo $row['WDescription']; ?>
-                    </li>
-                  </ul>
-                </div>
+              <br>
+
+              <!-- Description & Achievement -->
+              <div class="cpp-e-workingexp-work-desc">
+                <ul>
+                  <li>
+                    <?php echo $row['WDescription']; ?>
+                  </li>
+                </ul>
               </div>
+            </div>
 
-              <br>
-              <br>
+            <br>
+            <br>
 
             <?php } ?>
           </div>
@@ -342,154 +365,175 @@
           <div class="cpp-e-workingexp-content">
             <?php while ($row = mysqli_fetch_assoc($extracurriculum_activity)) { ?>
 
-              <!-- WORKING EXPERIENCE 1 -->
-              <div class="cpp-e-workingexp-work">
+            <!-- WORKING EXPERIENCE 1 -->
+            <div class="cpp-e-workingexp-work">
 
-                <!-- Company -->
-                <h4>
-                  <?php echo $row['OrganizationName']; ?>
-                </h4>
+              <!-- Company -->
+              <h4>
+                <?php echo $row['OrganizationName']; ?>
+              </h4>
 
-                <br>
+              <br>
 
-                <h4>
-                  <?php echo $row['EATimeRange']; ?> weeks
-                </h4>
+              <h4>
+                <?php echo $row['EATimeRange']; ?> weeks
+              </h4>
 
-                <br>
-                
-                <!-- Position -->
-                <h5>
-                  <?php echo $row['EAJobRole']; ?>
-                </h5>
+              <br>
 
-                <br>
+              <!-- Position -->
+              <h5>
+                <?php echo $row['EAJobRole']; ?>
+              </h5>
 
-                <!-- Description & Achievement -->
-                <div class="cpp-e-workingexp-work-desc">
-                  <ul>
-                    <li>
-                      <?php echo $row['EADescription']; ?>
-                    </li>
-                  </ul>
-                </div>
+              <br>
+
+              <!-- Description & Achievement -->
+              <div class="cpp-e-workingexp-work-desc">
+                <ul>
+                  <li>
+                    <?php echo $row['EADescription']; ?>
+                  </li>
+                </ul>
               </div>
+            </div>
 
-              <br>
-              <br>
+            <br>
+            <br>
 
             <?php } ?>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- COURSES -->
-      <div class="cpp-course-container">
+    <!-- COURSES -->
+    <div class="cpp-course-container">
 
-        <!-- REGISTERED COURSES -->
-        <div class="cp-box-container">
-          <div class="header">
-            <h5>Registered courses</h5>
-          </div>
-          <hr>
-
-          <?php while ($row = mysqli_fetch_assoc($course)) { ?>
-            <ul class="autoWidth" class="cs-hidden">
-              <!-- Card 1 -->
-              <li class="slide">
-                <div class="sp-card">
-                  <div class="sp-image-box">
-                    <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
-                  </div>
-                  <div class="sp-product-details">
-                    <div class="type">
-                      <h6><?php echo $row['Title']; ?></h6>
-                    </div>
-                    <div class="sp-product-require">
-                      <ul>
-                        <li><img src="icons/Time.svg"> <?php echo $row['Length']; ?> weeks</li>
-                        <li><img src="icons/Fee.svg"> <?php echo $row['Price']; ?> AUD$</li>
-                        <li><img src="icons/Scholar.svg"> Up to 100%</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <button class="sp-product-btn">See course details</button>
-                </div>
-              </li>
-            </ul>
-          <?php } ?>
+      <!-- REGISTERED COURSES -->
+      <div class="cp-box-container">
+        <div class="header">
+          <h5>Registered courses</h5>
         </div>
+        <hr>
 
-        <!-- JOB APPLICATIONS -->
-        <div class="cp-box-container">
-          <div class="header">
-            <h5>Job applications</h5>
-          </div>
-          <hr>
-          <?php while ($row = mysqli_fetch_assoc($job)) { ?>
-            <ul class="autoWidth" class="cs-hidden">
-              <!-- Card 1 -->
-              <li class="slide">
-                <div class="sp-card">
-                  <div class="sp-image-box">
-                    <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
-                  </div>
-                  <div class="sp-product-details">
-                    <div class="type">
-                      <h6><?php echo $row['JobTitle']; ?></h6>
-                    </div>
-                    <div class="sp-product-require">
-                      <ul>
-                        <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
-                        <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$</li>
-                        <li><img src="icons/PeopleGroup.svg"> <?php echo $row['WorkingFormat']; ?></li>
-                        <li><img src="icons/Check.svg"> Your profile matches this job</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <button class="sp-product-btn">See job details</button>
+        <?php while ($row = mysqli_fetch_assoc($course)) { ?>
+        <ul class="autoWidth" class="cs-hidden">
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
+              </div>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6>
+                    <?php echo $row['Title']; ?>
+                  </h6>
                 </div>
-              </li>
-            </ul>
-          <?php } ?>
-        </div>
-
-        <!-- INTERVIEW SCHEDULE -->
-        <div class="cp-box-container">
-          <div class="header">
-            <h5>Interview schedule</h5>
-          </div>
-          <hr>
-
-          <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
-            <ul class="autoWidth" class="cs-hidden">
-              <!-- Card 1 -->
-              <li class="slide">
-                <div class="sp-card">
-                  <div class="sp-image-box">
-                    <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
-                  </div>
-                  <div class="sp-product-details">
-                    <div class="type">
-                      <h6><?php echo $row['JobTitle']; ?></h6>
-                    </div>
-                    <div class="sp-product-require">
-                      <ul>
-                        <li><img src="icons/Location.svg"> <?php echo $row['InterviewDate']; ?></li>
-                        <li><img src="icons/Fee.svg"> <?php echo $row['InterviewTime']; ?></li>
-                        <li><img src="icons/PeopleGroup.svg"> <?php echo $row['LinkMeeting']; ?></li>
-                        <li><img src="icons/Check.svg"> Your profile matches this job</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <button class="sp-product-btn">See interview details</button>
-
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Time.svg">
+                      <?php echo $row['Length']; ?> weeks
+                    </li>
+                    <li><img src="icons/Fee.svg">
+                      <?php echo $row['Price']; ?> AUD$
+                    </li>
+                  </ul>
                 </div>
-              </li>
-            </ul>
-          <?php } ?>
-        </div>
+              </div>
+              <button class="sp-product-btn">See course details</button>
+            </div>
+          </li>
+        </ul>
+        <?php } ?>
       </div>
+
+      <!-- JOB APPLICATIONS -->
+      <div class="cp-box-container">
+        <div class="header">
+          <h5>Job applications</h5>
+        </div>
+        <hr>
+
+        <?php while ($row = mysqli_fetch_assoc($job)) { ?>
+        <ul class="autoWidth" class="cs-hidden">
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
+              </div>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6>
+                    <?php echo $row['JobTitle']; ?>
+                  </h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Location.svg">
+                      <?php echo $row['WorkLocation']; ?>
+                    </li>
+                    <li><img src="icons/Fee.svg">
+                      <?php echo $row['Salary']; ?> AUD$
+                    </li>
+                    <li><img src="icons/ExperienceLevel.svg">
+                      <?php echo $row['ExperienceLevelName']; ?>
+                    </li>
+                    <li><img src="icons/PeopleGroup.svg">
+                      <?php echo $row['WorkingFormat']; ?>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button class="sp-product-btn">See job details</button>
+            </div>
+          </li>
+        </ul>
+        <?php } ?>
+      </div>
+
+      <!-- INTERVIEW SCHEDULE -->
+      <div class="cp-box-container">
+        <div class="header">
+          <h5>Interview schedule</h5>
+        </div>
+        <hr>
+
+        <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
+        <ul class="autoWidth" class="cs-hidden">
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
+              </div>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6>
+                    <?php echo $row['JobTitle']; ?>
+                  </h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Calendar.svg">
+                      <?php echo $row['InterviewDate']; ?>
+                    </li>
+                    <li><img src="icons/Time.svg">
+                      <?php echo $row['InterviewTime']; ?>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button class="sp-product-btn">Book interview time</button>
+
+            </div>
+          </li>
+        </ul>
+        <?php } ?>
+      </div>
+    </div>
     </div>
   </main>
 
@@ -507,12 +551,12 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
             <li>Main branch</li>
-            <li><i class="fa-solid fa-location-dot"></i> P2 – 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
+            <li><i class="fa-solid fa-location-dot"></i> P2 - 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
               Nội</li>
             <li><i class="fa-solid fa-phone"></i> (+84)98.499.65.98</li>
           </ul>
@@ -523,8 +567,8 @@
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
             <li><a href="courses.php">Courses</a></li>
             <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>

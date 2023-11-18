@@ -23,6 +23,8 @@ main {
 /* HEADER */
 
 header {
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -66,6 +68,7 @@ header .navbar a:hover::before {
 
 header ul {
     list-style-type: none;
+    margin-top: 0.75rem;
 }
 
 header li {
@@ -75,21 +78,25 @@ header li {
     height: 2.5rem;
     text-align: center;
     vertical-align: middle;
-    padding-top: 0.25rem;
 }
 
 header .icons i,
 header .icons a {
     cursor: pointer;
-    padding: 0.5rem;
     text-align: center;
     font-size: 1.5rem;
     color: #202020;
     border-radius: 100%;
 }
 
-header .icons li:hover {
-    background-color: #eee;
+header .icons img {
+    width: 28px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+header .icons img:hover {
+    opacity: 0.5;
 }
 
 #gotopbtn {
@@ -100,7 +107,6 @@ header .icons li:hover {
     bottom: 40px;
     right: 50px;
     border-radius: 50%;
-
     text-decoration: none;
     text-align: center;
     line-height: 3.75rem;
@@ -444,7 +450,6 @@ textarea {
 }
 
 #cp-search-buttons {
-    /* margin-left: 4.5em; */
     padding: 0.25rem 0;
 }
 
@@ -522,6 +527,10 @@ textarea {
     position: absolute;
     top: 38.5em;
     transform: translateY(38.5em);
+}
+
+.slide {
+    list-style-type: none;
 }
 
 .sp-slide-container .arrow-btn:first-child {
@@ -689,7 +698,7 @@ textarea {
 }
 
 .cpp-bi-headline-profileimg img {
-    width: 100%;
+    width: 180px;
 }
 
 .cpp-bi-headline-headline {
@@ -796,11 +805,11 @@ hr {
     cursor: pointer;
 }
 
-.jopfilter[type="checkbox"] {
+.jopfilter[type="radio"] {
     display: none;
 }
 
-.jopfilter[type="checkbox"]:checked~span {
+.jopfilter[type="radio"]:checked~span {
     padding: 0.25rem 0.5rem;
     background-color: #231278;
     color: #fafafa;
@@ -1295,11 +1304,6 @@ textarea {
     font-weight: bold;
     padding: 0 1rem;
     transition: 0.5s;
-}
-
-.ca-product-btn:hover {
-    background-color: #11185d;
-    color: #eee;
 }
 
 /*RECRUITER PROFILE PAGE*/

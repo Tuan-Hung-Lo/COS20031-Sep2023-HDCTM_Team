@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dreamy Cafe</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Web Development">
+    <meta name="keywords" content="Assignment 2">
+    <meta name="author" content="Hau Linh Chi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/order.js"></script>
+    <script src="https://kit.fontawesome.com/f73039f1ad.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- ============= START Navigation Bar -->
+
+    <header>
+        <nav class="navbar">
+            <img class="logo" src="images/dreamycafelogo.png" alt="Dreamy Cafe Logo">
+            <ul>
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="features.html">Features</a></li>
+            </ul>
+            <div>
+                <a href="order.html" class="nav-button"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="login.html" class="nav-button"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- END Navigation Bar -->
+
+
+    <main>
+
+        <form id="ordform" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/formtest.php">
+
+            <h2>ORDER</h2>
+            <div class="radioinput">
+                <label class="label-reg">How will you take your order?</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" onclick="yesnoCheck();" name="take_order" id="delivery" value="delivery" >
+                <label class="label-reg">Delivery</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" onclick="yesnoCheck();" name="take_order" id="pickupatstore"
+                    value="pickupatstore" >
+                <label class="label-reg">Pick-up</label>
+                <br>
+
+                <br>
+
+            </div>
+            <div id="ifYes" style="visibility: hidden">
+                <div class="textinput">
+                    <label class="label-reg">Delivery address:</label>
+                    <input id="deliveryaddress" type="text" name="delivery_address" >
+                    <br>
+
+                </div>
+                <div class="radioinput">
+                    <label class="label-reg">Billing address same as delivery address: </label>
+                    <input id="duplicate-address" type="checkbox" name="same_as_delivery_address" value="yes"
+                        onclick="copy(event)" >
+                    <br>
+                    <br>
+
+                </div>
+                <div class="textinput">
+                    <label class="label-reg">Billing address:</label>
+                    <input id="billingaddress" type="text" name="billing_adress" >
+                    <br>
+
+                </div>
+            </div>
+            <div class="textinput">
+                <label class="label-reg">Contact number:</label>
+                <input id="phoneno" type="number" name="phoneno" >
+                <br>
+
+            </div>
+            <div class="textinput">
+                <label class="label-reg">Email (for receipt):</label>
+                <input type="email" id="email" name="email" >
+                <br>
+
+            </div>
+            <div class="radioinput">
+                <label class="label-reg">Payment method:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" onclick="yesCheck();" name="pay" id="payonpickup" value="on_pick-up" >
+                <label class="label-reg">On pick-up</label>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" onclick="yesCheck();" name="pay" id="payonline" value="online" >
+                <label class="label-reg">Online</label>
+
+            </div>
+            <br>
+            <div id="ifyeah" style="visibility: hidden">
+                <div class="radioinput">
+                    <label class="label-reg">Choose one of the following types:</label>
+                    <br>
+                    <br>
+                    <input type="radio" id="visa" name="card_type" value="Visa" >
+                    <label class="label-reg">Visa</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="master" name="card_type" value="Mastercard" >
+                    <label class="label-reg">Mastercard</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="americanexpress" name="card_type" value="American_Express" >
+                    <label class="label-reg">American Express</label>
+                    <br>
+                    <br>
+                </div>
+                <div class="textinput">
+                    <label class="label-reg" class="textinput">Enter credit card number:</label>
+                    <input id="creditcardnumber" type="number" name="credit_number" >
+                    <br>
+                    
+                </div>
+
+            </div>
+
+            <input class="submit-btn" type="submit" value="Submit" >
+
+        </form>
+    </main>
+
+    <footer>
+
+        <img src="images/dreamycafelogofooter.png" alt="Dreamy Cafe Logo">
+
+        <p><i class="fa-solid fa-location-dot"></i></p>
+        <p>80 Duy Tan</p>
+        <p>02 Duong Khue</p>
+
+        <br>
+
+        <div id="link-footer">
+            
+            <ul>
+                <li><a href="pagenotfound.html"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="pagenotfound.html"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+            
+        </div>
+        <br>
+        <p id="copyright">&copy; 2022 Dreamy Cafe. All rights reserved.</p>
+        <br>
+    </footer>
+
+</body>
+
+</html>

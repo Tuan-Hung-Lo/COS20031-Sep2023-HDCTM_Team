@@ -61,24 +61,26 @@
 
     <!-- Navigation Bar -->
 
-    <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
-      <a href="courses.html" class="btn_active">Courses</a>
-      <a href="jobopportunities.html">Job Opportunities</a>
+      <a href="courses.php" class="btn_active" >Courses</a>
+      <a href="jobopportunities.php">Job Opportunities</a>
     </nav>
 
     <div class="icons">
       <ul>
-        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-        <li><i class="uil uil-search" id="search_box"></i></li>
-        <li><a href="#" class="uil uil-user"></a></li>
+        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <?php } ?>
+        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
   </header>
+
   <main>
 
     <section class="cp-contents">
@@ -93,28 +95,34 @@
         <hr>
 
         <?php while ($row = mysqli_fetch_assoc($sug_course)) { ?>
-          <ul class="autoWidth" class="cs-hidden">
-            <!-- Card 1 -->
-            <li class="slide">
-              <div class="sp-card">
-                <div class="sp-image-box">
-                  <img src="images/nail.png" alt="product.png">
-                </div>
-                <div class="sp-product-details">
-                  <div class="type">
-                    <h6><?php echo $row['Title']; ?></h6>
-                  </div>
-                  <div class="sp-product-require">
-                    <ul>
-                      <li><img src="icons/Time.svg"> <?php echo $row['Length']; ?></li>
-                      <li><img src="icons/Fee.svg"> <?php echo $row['Price']; ?></li>
-                    </ul>
-                  </div>
-                </div>
-                <button class="sp-product-btn">Register for this course</button>
+        <ul class="autoWidth" class="cs-hidden">
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="images/nail.png" alt="product.png">
               </div>
-            </li>
-          </ul>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6>
+                    <?php echo $row['Title']; ?>
+                  </h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Time.svg">
+                      <?php echo $row['Length']; ?>
+                    </li>
+                    <li><img src="icons/Fee.svg">
+                      <?php echo $row['Price']; ?>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button class="sp-product-btn">Register for this course</button>
+            </div>
+          </li>
+        </ul>
         <?php } ?>
       </div>
 
@@ -136,9 +144,11 @@
                 <span>All</span></label>
               <label><input class="cp-suggested-btn" type="radio" name="F&B" value="F&B" id="FnB">
                 <span>F&B</span></label>
-              <label><input class="cp-suggested-btn" type="radio" name="Beauty & Spa" value="Beauty & Spa" id="BeautynSpa">
+              <label><input class="cp-suggested-btn" type="radio" name="Beauty & Spa" value="Beauty & Spa"
+                  id="BeautynSpa">
                 <span>Beauty & Spa</span></label>
-              <label><input class="cp-suggested-btn" type="radio" name="Tourism & Hospitality" value="Tourism & Hospitality" id="TourismHospitality">
+              <label><input class="cp-suggested-btn" type="radio" name="Tourism & Hospitality"
+                  value="Tourism & Hospitality" id="TourismHospitality">
                 <span>Tourism & Hospitality</span></label>
             </div>
 
@@ -150,28 +160,34 @@
         </form>
 
         <?php while ($row = mysqli_fetch_assoc($filter_course)) { ?>
-          <ul class="autoWidth" class="cs-hidden">
-            <!-- Card 1 -->
-            <li class="slide">
-              <div class="sp-card">
-                <div class="sp-image-box">
-                  <img src="images/nail.png" alt="product.png">
-                </div>
-                <div class="sp-product-details">
-                  <div class="type">
-                    <h6><?php echo $row['Title']; ?></h6>
-                  </div>
-                  <div class="sp-product-require">
-                    <ul>
-                      <li><img src="icons/Time.svg"> <?php echo $row['Length']; ?></li>
-                      <li><img src="icons/Fee.svg"> <?php echo $row['Price']; ?></li>
-                    </ul>
-                  </div>
-                </div>
-                <button class="sp-product-btn">Register for this course</button>
+        <ul class="autoWidth" class="cs-hidden">
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="images/nail.png" alt="product.png">
               </div>
-            </li>
-          </ul>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6>
+                    <?php echo $row['Title']; ?>
+                  </h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Time.svg">
+                      <?php echo $row['Length']; ?>
+                    </li>
+                    <li><img src="icons/Fee.svg">
+                      <?php echo $row['Price']; ?>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button class="sp-product-btn">Register for this course</button>
+            </div>
+          </li>
+        </ul>
         <?php } ?>
       </div>
 
@@ -193,7 +209,7 @@
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
@@ -209,10 +225,10 @@
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="jobopportunities.html">Job Opportunities</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 
@@ -220,7 +236,7 @@
 
         <div class="footer_col">
           <h4>Contact us</h4>
-          <form action="">
+          <form action="#">
             <input type="text" placeholder="Your name" class="inputName">
             <input type="text" placeholder="Your phone number" class="inputNumber">
             <input type="email" placeholder="Your email" class="inputEmail">
@@ -255,6 +271,7 @@
 
     AOS.init();
   </script>
+
 
 
 </body>

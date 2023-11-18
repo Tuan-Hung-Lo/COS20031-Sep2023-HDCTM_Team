@@ -1,4 +1,3 @@
-// ============= START MENU
 $(document).ready(function () {
     $('.autoWidth').lightSlider({
         autoWidth: true,
@@ -8,4 +7,3 @@ $(document).ready(function () {
         }
     });
 });
-// ============= END MENU
