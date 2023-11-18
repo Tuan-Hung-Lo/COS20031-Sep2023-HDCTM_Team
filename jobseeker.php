@@ -68,26 +68,26 @@ if (isset($_SESSION['UserAuthenticationID'])) {
 <body>
   <header>
 
-  <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
 
-  <a href="#"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
-  <nav class="navbar">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="courses.php">Courses</a>
-    <a href="jobopportunities.php">Job Opportunities</a>
-  </nav>
+    <nav class="navbar">
+      <a href="pagenotfound.html">Home</a>
+      <a href="pagenotfound.html">About</a>
+      <a href="courses.php">Courses</a>
+      <a href="jobopportunities.php">Job Opportunities</a>
+    </nav>
 
-  <div class="icons">
-    <ul>
-      <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
-      <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-      <li><img src="http://dummyimage.com/180x180.png/dddddd/000000"></img></li>
-      <?php } ?>
-      <li><img src="icons/Logout.svg"></li>
-    </ul>
-  </div>
+    <div class="icons">
+      <ul>
+        <!-- <li><i class="uil uil-bars" id="bars"></i></li> -->
+        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+        <li><img src="http://dummyimage.com/180x180.png/dddddd/000000"></img></li>
+        <?php } ?>
+        <li><img src="icons/Logout.svg"></li>
+      </ul>
+    </div>
 
   </header>
 
@@ -160,6 +160,13 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           <div class="cpp-bi-personalinfo-content">
 
             <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+            <p>
+              <img src="icons/Gender.svg" />
+              Gender:
+              <span class="cpp-span">
+                <?php echo $row['Gender']; ?>
+              </span>
+            </p>
             <p>
               <img src="icons/Calendar.svg" />
               DOB:
@@ -442,7 +449,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           <h5>Job applications</h5>
         </div>
         <hr>
-        
+
         <?php while ($row = mysqli_fetch_assoc($job)) { ?>
         <ul class="autoWidth" class="cs-hidden">
           <!-- Card 1 -->
@@ -504,20 +511,16 @@ if (isset($_SESSION['UserAuthenticationID'])) {
                 </div>
                 <div class="sp-product-require">
                   <ul>
-                    <li><img src="icons/Location.svg">
+                    <li><img src="icons/Calendar.svg">
                       <?php echo $row['InterviewDate']; ?>
                     </li>
-                    <li><img src="icons/Fee.svg">
+                    <li><img src="icons/Time.svg">
                       <?php echo $row['InterviewTime']; ?>
                     </li>
-                    <li><img src="icons/PeopleGroup.svg">
-                      <?php echo $row['LinkMeeting']; ?>
-                    </li>
-                    <li><img src="icons/Check.svg"> Your profile matches this job</li>
                   </ul>
                 </div>
               </div>
-              <button class="sp-product-btn">See interview details</button>
+              <button class="sp-product-btn">Book interview time</button>
 
             </div>
           </li>
@@ -542,12 +545,12 @@ if (isset($_SESSION['UserAuthenticationID'])) {
         <!-- First column -->
 
         <div class="footer_col">
-          <a href="#"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
+          <a href="pagenotfound.html"><img alt="Logo" src="images/Logo_footer.png" class="logo"></a>
           <br><br>
           <h4>Contact information</h4>
           <ul>
             <li>Main branch</li>
-            <li><i class="fa-solid fa-location-dot"></i> P2 – 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
+            <li><i class="fa-solid fa-location-dot"></i> P2 - 12A Eastern Park 2 Thạch Bàn,<br>Long Biên District, Hà
               Nội</li>
             <li><i class="fa-solid fa-phone"></i> (+84)98.499.65.98</li>
           </ul>
@@ -558,8 +561,8 @@ if (isset($_SESSION['UserAuthenticationID'])) {
         <div class="footer_col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="pagenotfound.html">Home</a></li>
+            <li><a href="pagenotfound.html">About</a></li>
             <li><a href="courses.php">Courses</a></li>
             <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
