@@ -12,6 +12,8 @@
   
   if (strpos($JSJobTitle, 'bar') !== false) {
     $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B';");
+  } else {
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course;");
   }
 
   // Check if the filter form is submitted

@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// Include settings and database connection
+require_once("./settings.php");
+
+$UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+$JobID = $_SESSION['JobID'];
+
+$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+
+$js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
+    WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,57 +61,61 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <div class="bwp-contents">  
-       <!--Navigation Button-->
-      <div class="bwp-nav"> 
-        <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a>   <!--Come Back Page-->
-       <h1>Your Interview Schedule</h1>
+    <div class="bwp-contents">
+      <!--Navigation Button-->
+      <div class="bwp-nav">
+        <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a> <!--Come Back Page-->
+        <h1>Your Interview Schedule</h1>
       </div>
 
-    <!--Interview Details-->
-    <div class="bwp-interview-details"> 
-      <!--Job Applied Card-->
-      <div class="bwp-interview-schedule">
-        <div class="bwp-card">
-          <div class="sp-image-box">
-            <img src="images/nail.png" alt="product.png">
+      <!--Interview Details-->
+      <div class="bwp-interview-details">
+        <!--Job Applied Card-->
+        <div class="bwp-interview-schedule">
+          <div class="bwp-card">
+            <?php while ($row = mysqli_fetch_assoc($job)) { ?>
+              <div class="sp-image-box">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
+              </div>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6><?php echo $row['JobTitle']; ?></h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
+                    <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?></li>
+                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
+                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
+                  </ul>
+                </div>
+              </div>
+            <?php } ?>
           </div>
-          <div class="sp-product-details">
-            <div class="type">
-              <h6>UI-UX Designer/Researcher - Melbourne</h6>
-            </div>
-            <div class="sp-product-require">
-              <ul>
-                <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
-                <li><img src="icons/Fee.svg"> 2,500 - 5,200 AUD$ </li>
-                <li><img src="icons/ExperienceLevel.svg"> Junior, Fresher </li>
-                <li><img src="icons/WorkingMode.svg"> Remote</li>
+        </div>
+
+        <!--Job Applied Schedule-->
+        <div class="bwp-interview-schedule">
+          <div class="bwp-interview-setup">
+            <div class="bwp-interview-available">
+              <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
+                <h2><?php echo $row['InterviewTime']; ?> (<?php echo $row['InterviewDate']; ?>)</h2>
+              <?php } ?>
+              <ul>Notes:
+                <li>Each interview session last from 20 to 45 minutes</li>
+                <li>Please be present at least 10 minutes early </li>
               </ul>
             </div>
+            <div class="bwp-submit-box">
+              <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
+            </div>
+            <div class="interview-link">
+              <a href="#">Google Meet Link</a>
+            </div>
           </div>
         </div>
       </div>
-
-      <!--Job Applied Schedule-->
-      <div class="bwp-interview-schedule">
-        <div class="bwp-interview-setup">
-          <div class="bwp-interview-available">
-           <h2>10:30 AM (13/11/2023)</h2>
-           <ul>Notes:
-              <li>Each interview session last from 20 to 45 minutes</li>
-              <li>Please be present at least 10 minutes early </li>
-            </ul>
-          </div>
-          <div class="bwp-submit-box">
-            <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
-          </div>
-          <div class="interview-link">
-            <a href="#">Google Meet Link</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!---->
+      <!---->
     </div>
   </main>
 

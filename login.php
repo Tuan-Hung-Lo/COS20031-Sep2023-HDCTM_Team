@@ -15,7 +15,7 @@
 
         // The system will return to the log in page if there is no user
         if ($result->num_rows == 0) {
-            header("Location: ./login.php?error_msg=AccessDenied");
+            header("Location: ./login.html?error_msg=AccessDenied");
         } else {
             // Fetch user details
             $user = $result->fetch_assoc();

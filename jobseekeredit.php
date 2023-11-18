@@ -119,7 +119,8 @@
 
     edit($conn, 'ExtracurriculumActivity', $extracurricularData, 'JobSeekerID', $UserAuthenticationID);
 
-    $conn->close();
+    // Redirect to the appropriate page
+    header("Location: ./jobseeker.php");
   }
 ?>
 

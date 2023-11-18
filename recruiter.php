@@ -14,11 +14,20 @@
     $RecruiterID = $re_id['RecruiterID'];
 
     $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
-    $application = $conn->query("SELECT * FROM s104181721_db.Application
-      JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-      JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID
-      JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID WHERE Job.RecruiterID = '$RecruiterID';");
-    
+    $application = $conn->query
+      ("SELECT 
+            Application.*, 
+            Job.*, 
+            JobSeeker.*, 
+            RecruiterInterview.*
+        FROM 
+            s104181721_db.Application
+            JOIN s104181721_db.Job ON Application.JobID = Job.JobID
+            JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID
+            JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID
+        WHERE 
+            Job.RecruiterID = '$RecruiterID';
+      ");
     $js_id = $application->fetch_assoc();
     $JobSeekerID = $js_id['JobSeekerID'];
     
@@ -82,7 +91,7 @@
     <!-- HEADING -->
 
     <div class="rpp-intro">
-      <?php if ($row = mysqli_fetch_assoc($recruiter)) { ?>
+      <?php while ($row = mysqli_fetch_assoc($recruiter)) { ?>
         <!-- INFORMATION -->
         <div class="rpp-intro-info">
 
@@ -151,7 +160,7 @@
           <li class="slide">
             <div class="sp-card">
               <div class="sp-image-box">
-                <img src="<?php echo $row['CompanyImage']; ?>" alt="product.png">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
               </div>
               <div class="sp-product-details">
                 <div class="type">
@@ -161,9 +170,9 @@
                   <ul>
                     <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
                     <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$ </li>
-                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
+                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevelName']; ?></li>
                     <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
-                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiterjsapplied.html"> View candidates applied</a></li>
+                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiter_candidateapplied.html"> View candidates applied</a></li>
                   </ul>
                 </div>
               </div>
@@ -213,7 +222,7 @@
 
               <br>
 
-              <button class="ca-product-btn">View job seeker profile</button>
+              <button href="recruiter_candidateapplied.html" class="ca-product-btn">View job seeker profile</button>
 
             </div>
           </li>
@@ -252,7 +261,7 @@
                     <li><img src="icons/Fee.svg"> <?php echo $row['TimeStart'] - $row['TimeEnd']; ?></li>
                     <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['JobImage']; ?></li>
                     <li><img src="icons/WorkingMode.svg"> <?php echo $row['JobID']; ?></li>
-                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiter_candidateapplied.php"> View candidates applied</a></li>
+                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiter_candidateapplied.html"> View candidates applied</a></li>
                   </ul>
                 </div>
               </div>

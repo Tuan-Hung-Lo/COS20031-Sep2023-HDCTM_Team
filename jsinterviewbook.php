@@ -1,3 +1,30 @@
+<?php
+  session_start();
+
+  // Include settings and database connection
+  require_once("./settings.php");
+
+  // Check if the CourseID parameter is set in the URL
+  if (isset($_GET['JobID'])) {
+    // Retrieve the CourseID from the URL
+    $JobID = $_GET['JobID'];
+    $_SESSION['JobID'] = $JobID;
+
+    $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+  
+      // Get form data
+      $InterviewDate = $_POST['date'];
+      $InterviewTime = $_POST['time'];
+  
+      $js_interview = $conn->query("INSERT INTO s104181721_db.JobSeekerInterview (JobSeekerID, JobID, InterviewDate, InterviewTime)
+        VALUES ('$UserAuthenticationID', '$JobID', '$InterviewDate', '$InterviewTime')");
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,73 +73,76 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <div class="bwp-contents">  
-       <!--Navigation Button-->
-      <div class="bwp-nav"> 
-        <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a>   <!--Come Back Page-->
-       <h1>Book An Interview schedule</h1>
+    <div class="bwp-contents">
+      <!--Navigation Button-->
+      <div class="bwp-nav">
+        <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a> <!--Come Back Page-->
+        <h1>Book An Interview schedule</h1>
       </div>
 
       <!--Interview Details-->
       <div class="bwp-interview-details">
         <!--Job Applied Card-->
-       <div class="bwp-interview-schedule">
+        <div class="bwp-interview-schedule">
           <div class="bwp-card">
-            <div class="sp-image-box">
-              <img src="images/nail.png" alt="product.png">
-            </div>
-          <div class="sp-product-details">
-            <div class="type">
-              <h6>UI-UX Designer/Researcher - Melbourne</h6>
-            </div>
-            <div class="sp-product-require">
-              <ul>
-                <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
-                <li><img src="icons/Fee.svg"> 2,500 - 5,200 AUD$ </li>
-                <li><img src="icons/ExperienceLevel.svg"> Junior, Fresher </li>
-               <li><img src="icons/WorkingMode.svg"> Remote</li>
+            <?php while ($row = mysqli_fetch_assoc($job)) { ?>
+              <div class="sp-image-box">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
+              </div>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6><?php echo $row['JobTitle']; ?></h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
+                    <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$ </li>
+                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
+                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
+                  </ul>
+                </div>
+              </div>
+            <?php } ?>
+          </div>
+        </div>
+
+        <!--Job Applied Schedule-->
+        <form class="bwp-interview-schedule" action="jsinterviewbook.php">
+          <div class="bwp-interview-setup">
+            <div class="bwp-interview-available">
+              <h5>Available time</h5>
+              <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
+                <h2><?php echo $row['TimeStart']; ?> AM - <?php echo $row['TimeEnd']; ?> PM (<?php echo $row['DateStart']; ?> - <?php echo $row['DateEnd']; ?>)</h2>
+              <?php } ?>
+              <ul>Notes:
+                <li>Please pick your interview time later than 1 week after receiving pass Email</li>
+                <li>Please freely pick your interview time in the available time except for the lunch time (11:30AM - 01:30PM)</li>
+                <li>Each interview session last upto 45 minutes</li>
+                <li>You can only schedule your time once and cannot change it</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!--Job Applied Schedule-->
-      <form class="bwp-interview-schedule" action="">
-        <div class="bwp-interview-setup">
-          <div class="bwp-interview-available">
-            <h5>Available time</h5>
-            <h2>09:00 AM - 05:30 PM (19/10/2023 - 21/10/2023)</h2>
-            <ul>Notes:
-              <li>Please pick your interview time later than 1 week after receiving pass Email</li>
-              <li>Please freely pick your interview time in the available time except for the lunch time (11:30AM - 01:30PM)</li>
-              <li>Each interview session last upto 45 minutes</li>
-              <li>You can only schedule your time once and cannot change it</li>
-            </ul>
-          </div>
-          <div class="bwp-interview-picktime">
-            <h5>Pick your date and time</h5>
-            
-            <!--Set Date And Hour Button-->
-           <div class="bwp-interview-button">
-              <div class="bwp-interview-picked">
-                <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
-                <input name="date" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
-             </div>
-             <div class="bwp-interview-picked">
-                <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
-                <input name="time" type="text" class="bwp-input" placeholder="00:00 AM" required>
-              </div>          
+            <div class="bwp-interview-picktime">
+              <h5>Pick your date and time</h5>
+              <!--Set Date And Hour Button-->
+              <div class="bwp-interview-button">
+                <div class="bwp-interview-picked">
+                  <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
+                  <input name="date" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
+                </div>
+                <div class="bwp-interview-picked">
+                  <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
+                  <input name="time" type="text" class="bwp-input" placeholder="00:00 AM" required>
+                </div>
+              </div>
+              <div class="bwp-submit-box">
+                <button type="submit" class="bwp-submit-btn">Pick this time</button>
+              </div>
             </div>
-            <div class="bwp-submit-box">
-              <button type="submit" class="bwp-submit-btn">Pick this time</button>
-            </div>  
           </div>
-        </div>
-      </form>
-      <!---->
+        </form>
+        <!---->
       </div>
-     </div>
+    </div>
   </main>
 
   <!--Back to top button-->
