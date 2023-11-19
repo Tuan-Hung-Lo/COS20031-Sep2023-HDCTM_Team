@@ -424,13 +424,13 @@ SkillID,JobSeekerID,SkillName
 423,351,PCI Standards
 424,243,Xilinx
 425,327,PVTsim
-426,3,Zend Certified Engineer
+426,1,Cash Management
 427,747,Loans
 428,315,IIS
 429,744,Solution Architecture
 430,538,TWIC Card
 431,709,Bank-owned Properties
-432,4,Gigabit Ethernet
+432,2,Gigabit Ethernet
 433,982,Google Adwords
 434,78,DST
 435,381,Vocals
@@ -440,7 +440,7 @@ SkillID,JobSeekerID,SkillName
 439,637,Dog Training
 440,784,JSF
 441,857,Slickline
-442,3,VMware Certified Professional
+442,1,Control crowd
 443,569,E-zines
 444,934,Statistics
 445,421,QR
@@ -494,7 +494,7 @@ SkillID,JobSeekerID,SkillName
 493,585,Slip &amp; Fall
 494,572,HACCP
 495,535,IR Spectroscopy
-496,1,SAP PS
+496,1,Manager
 497,629,Editorial
 498,973,JMF
 499,730,IELTS
@@ -677,7 +677,7 @@ SkillID,JobSeekerID,SkillName
 676,89,RTI
 677,738,Systems Analysis
 678,108,TPA
-679,1,Order Fulfillment
+679,1,Communication
 680,129,
 681,30,RWD Info Pak
 682,774,LS-DYNA

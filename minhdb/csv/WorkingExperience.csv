@@ -294,7 +294,7 @@ WExperienceID,JobSeekerID,WJobRole,WCompanyName,WTimeRange,WDescription
 293,25,Software Consultant,Jacobs-Von,16,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus."
 294,411,Help Desk Technician,Kuhlman Inc,31,Fusce consequat. Nulla nisl. Nunc nisl.
 295,861,Product Engineer,Altenwerth LLC,20,Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
-296,12,Analog Circuit Design manager,"Batz, Turner and Mante",27,Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+296,1,Bartender Intern,Sicily,27,Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
 297,535,Assistant Professor,"Green, Hills and Bosco",5,Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
 298,774,Business Systems Development Analyst,Wehner and Sons,9,"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus."
 299,575,Web Developer III,Harris-Bartell,22,"Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius."
@@ -737,7 +737,7 @@ WExperienceID,JobSeekerID,WJobRole,WCompanyName,WTimeRange,WDescription
 736,436,VP Accounting,"Strosin, Sipes and Keebler",10,Sed ante. Vivamus tortor. Duis mattis egestas metus.
 737,348,Quality Engineer,"Ritchie, Rath and Emmerich",22,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus."
 738,872,Statistician I,"Schaden, Reichert and Predovic",8,Fusce consequat. Nulla nisl. Nunc nisl.
-739,13,Speech Pathologist,Bauch-Runolfsson,27,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."
+739,12,Speech Pathologist,Bauch-Runolfsson,27,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."
 740,728,Associate Professor,"Sawayn, Bechtelar and Wyman",18,"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis."
 741,903,Systems Administrator IV,Quitzon and Sons,5,Sed ante. Vivamus tortor. Duis mattis egestas metus.
 742,543,Office Assistant I,"Murray, Breitenberg and Dooley",5,Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.
@@ -981,7 +981,7 @@ WExperienceID,JobSeekerID,WJobRole,WCompanyName,WTimeRange,WDescription
 980,201,Systems Administrator IV,Murphy and Sons,7,Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.
 981,270,Product Engineer,"Farrell, Schiller and Cartwright",12,"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis."
 982,337,Programmer Analyst I,Hudson Group,7,"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
-983,12,Quality Engineer,"Herman, Haag and Fay",19,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
+983,1,Bar Manager,1900s,19,"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
 984,75,Tax Accountant,Ernser-Rolfson,8,"Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem."
 985,571,Community Outreach Specialist,Barton-Abbott,22,Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
 986,859,Cost Accountant,Cormier-Hettinger,27,"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."

@@ -1,1001 +1,1001 @@
 EducationID,JobSeekerID,Degree,Institution,GraduationYear,GPA
-1,584,Bachelor of Fine Arts,Ambrose Alli University,23-06-2013,2.01
-2,422,Bachelor of Education,Facultés Universitaires Catholiques de Mons,15-06-2013,2.6
-3,488,Bachelor of Commerce, Huaihua University,08-08-2017,1.07
-4,874,Juris Doctor,Maldives National University,26-11-2012,1.13
-5,469,Doctor of Veterinary Medicine,Open University of the Netherlands,11-01-2021,1.14
-6,948,Master of Science,Universiti Malaysia Sabah,19-05-2009,1.17
-7,249,Doctor of Philosophy,Webster University Geneva,05-08-2022,1.05
-8,544,Bachelor of Education,Massey University,21-09-2016,2.82
-9,677,Juris Doctor,Leeds Metropolitan University,30-10-2015,2.79
-10,964,Doctor of Philosophy,Shanghai Television University,14-06-2013,2.58
-11,332,Bachelor of Arts,"Universidad de Puerto Rico, Humacao",02-04-2021,1.02
-12,835,Master of Computer Science,Instituto Superior D. Afonso III - INUAF,03-10-2011,2.07
-13,69,Bachelor of Architecture,St. Petersburg State University of Culture and Arts,06-05-2014,1.54
-14,514,Master of Social Work,Jinan University,11-02-2021,1.18
-15,188,Master of Business Administration,Aga Khan University,24-11-2019,3.04
-16,461,Doctor of Veterinary Medicine,Heritage College,26-04-2023,2.67
-17,125,Master of Public Health,Tohoku Gakuin University,28-08-2019,2.24
-18,844,Bachelor of Nursing,Karachi School of Art,02-08-2012,1.6
-19,538,Bachelor of Education,Yunnan Agriculture University,19-10-2023,3.06
-20,509,Doctor of Pharmacy,Huaihai Institute of Technology,08-08-2014,1.91
-21,371,Bachelor of Engineering,Southwestern Oklahoma State University,27-11-2010,2.96
-22,48,Master of Social Work,Shenyang Polytechnic University,03-12-2016,1.74
-23,930,Master of Public Health,Universidad Internacional Menéndez Pelayo,12-05-2021,2.53
-24,793,Bachelor of Architecture,Semnan University of Medical Sciences,10-06-2011,3.61
-25,899,Doctor of Pharmacy,Politeknik Negeri Pontianak,14-12-2021,2.39
-26,138,Master of Computer Science,Chodang University,04-11-2018,2.48
-27,478,Juris Doctor,Adnan Menderes University,30-07-2011,3.96
-28,312,Doctor of Dental Surgery,University of Reggio Calabria,31-12-2012,3.25
-29,199,Doctor of Medicine,Novosibirsk State Agricultural University,23-11-2018,3.44
-30,352,Doctor of Medicine,University for Peace,04-06-2023,2.04
-31,759,Bachelor of Architecture,Barry University,28-02-2009,1.84
-32,791,Doctor of Dental Surgery,Shanghai Institue of Foreign Trade,30-08-2015,2.93
-33,799,Bachelor of Science,Universidad Nacional de Córdoba,26-09-2021,2.52
-34,556,Master of Social Work,University of Pittsburgh at Greensburg,05-08-2010,1.91
-35,915,Bachelor of Engineering,King Khaled University,02-01-2015,1.14
-36,727,Master of Science,Humboldt State University,18-02-2013,3.98
-37,561,Master of Computer Science,Technological University of Iceland,08-09-2009,3.03
-38,84,Master of Public Health,University of Health Sciences,24-03-2014,3.81
-39,744,Associate of Science,Kurashiki Sakuyo University,11-01-2023,1.05
-40,190,Master of Arts,Univesidade Agostinho Neto,30-12-2013,1.78
-41,930,Doctor of Veterinary Medicine,Higher School o Business in Tarnow,27-08-2010,1.38
-42,287,Master of Computer Science,United States Coast Guard Academy,25-11-2015,3.83
-43,913,Master of Social Work,St. Lawrence University,31-01-2011,1.02
-44,345,Associate of Science,Shreemati Nathibai Damodar Thackersey Women's University,20-11-2016,1.78
-45,196,Bachelor of Fine Arts,Tabriz University,01-09-2019,3.47
-46,50,Doctor of Pharmacy,Chang Gung University,31-10-2021,3.91
-47,221,Bachelor of Commerce,Awadhesh Pratap Singh University,09-10-2009,2.28
-48,832,Doctor of Medicine,Azerbaijan Medical University,05-11-2010,2.65
-49,928,Doctor of Medicine,Pontifcia Università Urbaniana,29-11-2013,2.65
-50,941,Bachelor of Engineering,University of Richmond,07-11-2014,1.85
-51,330,Doctor of Philosophy,Newport International University,30-03-2015,2.93
-52,178,Juris Doctor,University of Food Technology,14-06-2019,1.52
-53,142,Bachelor of Nursing,Universidad Católica San Antonio,24-11-2015,3.63
-54,605,Bachelor of Commerce,University of Jazeera,22-06-2014,2.16
-55,914,Associate of Science,Universidade Católica de Pernambuco,30-08-2010,1.68
-56,551,Doctor of Pharmacy,Karaganda State Technical University,28-06-2011,1.04
-57,593,Juris Doctor,Universidad Cuauhtémoc,27-09-2014,1.87
-58,493,Doctor of Medicine,Universidad Nacional de Educación a Distancia,23-10-2009,2.75
-59,803,Master of Computer Science,Louisiana State University and Agricultural and Mechanical College,30-11-2008,3.76
-60,550,Bachelor of Arts,Shanghai Sipo Polytechnic,23-06-2015,3.48
-61,123,Master of Social Work,Rostov State University,25-05-2014,1.52
-62,95,Master of Science,Lagos City Polytechnic,01-09-2014,2.58
-63,27,Doctor of Dental Surgery,Jai Prakash University,08-05-2012,3.54
-64,773,Doctor of Dental Surgery,University of Art and Design Cluj-Napoca,17-02-2015,1.66
-65,767,Master of Social Work,Sambalpur University,15-03-2023,3.01
-66,285,Associate of Science,Goddard College,27-04-2011,2.2
-67,703,Bachelor of Science,Augustana College,01-03-2022,3.71
-68,611,Bachelor of Education,Universidad Tecnológica del Centro,11-09-2014,1.06
-69,63,Bachelor of Engineering,Universiti Islam Sultan Sharif Ali,26-07-2020,2.6
-70,879,Master of Science,Liaoning University,30-07-2011,2.45
-71,332,Bachelor of Nursing,"Concordia University, Irvine",30-07-2020,2.71
-72,92,Master of Computer Science,Universitas Pendidikan Indonesia,18-05-2009,2.52
-73,174,Bachelor of Education,Université de Sherbrooke,21-02-2019,3.21
-74,974,Bachelor of Education,Dutch University Institute for Art History (DUIA),10-04-2011,1.81
-75,815,Bachelor of Education,Hainan University,14-06-2020,1.23
-76,162,Bachelor of Architecture,University of St. Gallen,17-01-2014,1.6
-77,608,Master of Computer Science,Lewis-Clark State College,19-08-2015,2.37
-78,62,Bachelor of Education,Gotland University College,26-12-2016,1.79
-79,1,Doctor of Medicine,Yantai University,29-11-2008,1.94
-80,881,Master of Social Work,Universidad de Bologna - Representación en Buenos Aires,04-01-2014,1.28
-81,322,Bachelor of Architecture,Universidad Autónoma Gabriel René Moreno,09-03-2019,1.8
-82,667,Bachelor of Engineering,University of Lucknow,28-05-2013,3.74
-83,870,Bachelor of Fine Arts,Annamalai University,17-06-2016,2.35
-84,50,Juris Doctor,Universidad APEC,13-09-2022,2.04
-85,187,Bachelor of Arts,Belarussian State Technological University,06-02-2021,1.67
-86,828,Juris Doctor,Carl von Ossietzky Universität Oldenburg,22-08-2023,2.21
-87,314,Bachelor of Commerce,Bradley University,29-05-2020,3.92
-88,80,Bachelor of Fine Arts,Deutsche Hochschule für Verwaltungswissenschaften Speyer,09-12-2022,2.55
-89,295,Bachelor of Nursing,Walden University,01-05-2009,3.47
-90,877,Master of Business Administration,North Carolina Central University,21-08-2018,1.97
-91,114,Doctor of Medicine,Universidad Isaac Newton,21-02-2014,1.73
-92,278,Bachelor of Arts,Universität für künstlerische und industrielle Gestaltung Linz,03-04-2017,1.57
-93,223,Associate of Science,Université Mohammed Ier,22-05-2021,1.71
-94,499,Master of Science,University of Wisconsin - Milwaukee,07-01-2023,3.66
-95,582,Doctor of Pharmacy,Morehead State University,12-07-2017,1.42
-96,478,Bachelor of Fine Arts,University College of Borås,03-01-2022,3.2
-97,444,Bachelor of Fine Arts,Egerton University,26-12-2019,2.61
-98,8,Juris Doctor,Asa University Bangladesh,05-10-2017,1.81
-99,404,Bachelor of Engineering,Medizinische Hochschule Hannover,19-05-2022,1.04
-100,315,Bachelor of Engineering,Fachhochschule Niederrhein,19-04-2009,1.82
-101,968,Bachelor of Architecture,University of Texas at Arlington,30-03-2010,1.53
-102,888,Master of Computer Science,Politeknik Negeri Semarang,10-06-2013,2.1
-103,625,Master of Arts,Clarion University,02-10-2015,3.51
-104,169,Doctor of Medicine,Muscat College,14-02-2023,2.64
-105,459,Bachelor of Arts,Universidad Alas Peruanas,18-09-2009,3.54
-106,996,Bachelor of Education,University of Lucerne,18-10-2012,1.54
-107,618,Doctor of Philosophy,Riyadh College of Dentistry and Pharmacy,27-03-2022,1.19
-108,978,Master of Arts,Dallas Christian College,05-04-2017,1.1
-109,865,Master of Science,Ukrainian National Forestry University,31-12-2020,2.23
-110,133,Doctor of Medicine,National University of Rwanda,01-11-2016,1.51
-111,440,Master of Public Health,Huaihua Radio and Television University,06-09-2015,2.33
-112,262,Bachelor of Education,Universitas Katolik Indonesia Atma Jaya,17-03-2019,2.45
-113,446,Doctor of Dental Surgery,City University Athens,11-01-2020,2.68
-114,705,Juris Doctor,College of Nursing and Allied Health Scinces,05-06-2009,2.44
-115,522,Master of Science,Texas Lutheran University,02-07-2018,2.92
-116,511,Doctor of Philosophy,Universität für Bodenkultur Wien,06-05-2020,3.14
-117,866,Master of Business Administration,International Bible College,15-05-2019,3.83
-118,721,Doctor of Dental Surgery,Celal Bayar University,02-10-2011,2.3
-119,784,Doctor of Veterinary Medicine,University of Trinity College,11-09-2020,1.04
-120,972,Doctor of Philosophy,Universitas Muslim Indonesia,12-07-2019,2.09
-121,344,Bachelor of Nursing,Miyagi University of Education,17-05-2014,3.79
-122,660,Bachelor of Engineering,Instituts Supérieurs de Formation des Maîtres,19-11-2013,3.9
-123,362,Bachelor of Commerce,Maryville University of St. Louis,24-08-2022,2.48
-124,921,Bachelor of Education,University of Manila,07-04-2021,2.85
-125,78,Doctor of Philosophy,Jami Institute of Technology,17-05-2017,1.1
-126,822,Bachelor of Education,Universidad de Córdoba,22-09-2018,2.02
-127,823,Master of Public Health,Sabzevar School of Medical Sciences,19-10-2017,1.6
-128,657,Doctor of Dental Surgery,Montana State University,19-09-2017,2.32
-129,295,Bachelor of Education,Technological Education Institute of Kozani,16-05-2018,1.4
-130,949,Master of Social Work,Novena University,17-12-2014,3.92
-131,527,Associate of Science,Instituto Superior de Assistentes e Intérpretes,31-08-2018,3.34
-132,950,Doctor of Medicine,Bennington College,25-11-2022,2.08
-133,53,Associate of Science,Irkutsk State Academy of Economics,27-02-2021,1.8
-134,579,Bachelor of Fine Arts,Susquehanna University,01-05-2011,3.43
-135,966,Associate of Science,Centro de Estudios Avanzados de Puerto Rico y el Caribe,25-10-2009,2.49
-136,554,Doctor of Veterinary Medicine,American University of Armenia,06-01-2021,2.68
-137,893,Doctor of Veterinary Medicine,Fielding Institute,17-03-2012,1.44
-138,339,Associate of Science,Canisius College,08-06-2022,3.48
-139,303,Master of Science,Caldwell College,03-04-2009,3.07
-140,327,Bachelor of Science,Waynesburg College,01-08-2022,1.22
-141,43,Master of Public Health,Kyoto Institute of Technology,10-10-2018,3.95
-142,752,Bachelor of Nursing,People's University of Bangladesh,04-05-2021,1.87
-143,641,Bachelor of Commerce,Institut Prima Bestari - Pine Academy ,14-08-2021,3.09
-144,114,Doctor of Dental Surgery,University of South Dakota,26-09-2021,1.21
-145,254,Doctor of Medicine,Utah State University,09-09-2013,1.36
-146,118,Bachelor of Arts,Universität Duisburg-Essen,14-10-2011,1.85
-147,448,Master of Science,Universidad de San José,25-08-2013,2.55
-148,34,Bachelor of Arts,University of Northern Bahr El-Ghazal,28-09-2019,3.9
-149,963,Master of Business Administration,American InterContinental University - Atlanta,31-12-2012,1.61
-150,195,Bachelor of Engineering,University of Michigan - Dearborn,24-09-2009,1.68
-151,872,Master of Computer Science,"University ""Titu Maiorescu""",04-09-2019,3.45
-152,659,Bachelor of Architecture,Bunkyo University,14-09-2021,2.61
-153,500,Master of Computer Science,Oregon State University,20-02-2010,2.39
-154,394,Doctor of Dental Surgery,International Turkmen Turkish University,13-07-2012,2.88
-155,2,Master of Social Work,Tokyo University of Foreign Studies,02-10-2012,1.83
-156,752,Master of Business Administration,Harbin Medical University,26-10-2023,2.88
-157,373,Bachelor of Architecture,"University of Houston, Downtown",04-06-2016,3.24
-158,654,Master of Public Health,"University of California, Santa Barbara",01-09-2017,2.53
-159,58,Associate of Science,Universidad Fundepos Alma Mater,16-08-2021,1.05
-160,315,Master of Arts,University of Kalamoon,03-11-2012,1.81
-161,947,Bachelor of Education,University of Ljubljana,18-03-2022,2.31
-162,882,Bachelor of Fine Arts,Al-Baath University,22-09-2014,1.99
-163,724,Doctor of Veterinary Medicine,Universidad Mexicana,18-09-2011,2.66
-164,40,Bachelor of Nursing,The University of Nottingham Ningbo China,02-12-2015,3.29
-165,494,Bachelor of Fine Arts,Xi'an University of Technology,20-11-2017,1.49
-166,972,Master of Science,Sree Sankaracharya University of Sanskrit,30-01-2019,1.09
-167,980,Bachelor of Fine Arts,"California State University, Los Angeles",25-07-2015,1.97
-168,951,Doctor of Pharmacy,University of North Texas,11-11-2015,1.25
-169,73,Master of Arts,Dutch Delta University,10-06-2022,1.82
-170,293,Bachelor of Arts,University of Lower Silesia of the Association for the Advancement of Education in Wroclaw.,23-09-2016,3.52
-171,5,Associate of Science,"Physical Education Academy ""Jedrzej Sniadecki"" in Gdansk",04-06-2016,2.14
-172,24,Bachelor of Science,Ebonyi State University,24-10-2016,3.17
-173,571,Bachelor of Nursing,Yasar University,06-04-2021,3.14
-174,942,Bachelor of Nursing,Centro Universitario Ciudad Vieja,09-06-2020,2.23
-175,594,Bachelor of Fine Arts,Deutsche Sporthochschule Köln,03-11-2011,2.91
-176,756,Bachelor of Fine Arts,Ecole Nationale des Travaux Publics de l'Etat,19-09-2012,1.47
-177,217,Master of Science,State University of New York College of Optometry,27-09-2015,2.64
-178,372,Bachelor of Architecture,Brest State Technical University,14-10-2011,1.51
-179,805,Doctor of Pharmacy,Texas A&M International University,29-07-2020,2.52
-180,610,Bachelor of Education,Estonian Academy of Music and Theatre,22-10-2016,3.9
-181,517,Bachelor of Fine Arts,"University of Nottingham, Malaysia Campus",16-11-2011,3.62
-182,148,Master of Science,"Indian Institute of Technology, Roorkee",20-07-2017,3.56
-183,32,Master of Public Health,Valdosta State University,07-05-2014,1.75
-184,903,Master of Science,Universität Hildesheim,18-07-2012,2.41
-185,462,Master of Computer Science,"Johns Hopkins University, SAIS Bologna Center",01-08-2017,3.56
-186,83,Doctor of Philosophy,Novosibirsk State Medical Academy,12-09-2017,2.61
-187,246,Juris Doctor,Manhattan College,29-03-2019,3.06
-188,505,Doctor of Dental Surgery,West Coast University (WCU) ,20-11-2015,3.7
-189,635,Bachelor of Science,National Ilan University,06-10-2015,3.1
-190,382,Master of Computer Science,Njala University,03-11-2021,1.27
-191,860,Master of Arts,Capilano College,01-12-2009,3.76
-192,522,Juris Doctor,Isra University,15-09-2015,2.87
-193,489,Master of Arts,University of Arkansas (System),12-09-2011,1.48
-194,329,Master of Arts,Universidad Panamericana de San Salvador,29-08-2013,1.47
-195,742,Master of Arts,Syracuse University,30-01-2019,3.27
-196,336,Bachelor of Engineering,Tianjin University of Finance & Economics,29-08-2012,1.21
-197,193,Master of Science,National University of Arts,03-12-2020,1.24
-198,113,Doctor of Medicine,Wesley College Mississippi,20-09-2010,1.4
-199,121,Doctor of Dental Surgery,Nazareth College,29-03-2015,3.7
-200,769,Bachelor of Education,Instituto Mauá de Tecnologia,04-06-2020,3.19
-201,937,Master of Computer Science,Universidad de Granma,16-05-2021,2.98
-202,566,Bachelor of Fine Arts,Fine Arts Academy in Gdansk,11-12-2012,2.48
-203,69,Bachelor of Architecture,Universidad Nacional de Piura,22-11-2018,1.29
-204,626,Doctor of Dental Surgery,Imperial College School of Medicine,04-12-2014,1.58
-205,389,Doctor of Medicine,Champlain College,04-09-2022,3.83
-206,855,Bachelor of Engineering,Czech University of Agriculture Prague,26-12-2020,2.85
-207,951,Bachelor of Nursing,Illinois College,07-02-2013,1.61
-208,670,Associate of Science,Keller Graduate School of Management,26-12-2008,2.33
-209,770,Bachelor of Education,Tumkur University,05-07-2011,2.53
-210,383,Bachelor of Commerce,4th Military Medical University,18-07-2013,1.79
-211,917,Master of Business Administration,Ecole des Hautes Etudes Commerciales du Nord,24-09-2013,3.55
-212,436,Doctor of Pharmacy,Universitas Hasanuddin,24-10-2021,1.24
-213,894,Doctor of Pharmacy,Universidad Internacional de las Américas,02-06-2021,3.91
-214,473,Bachelor of Fine Arts,International Culinary Institute (ICI),30-03-2010,3.79
-215,664,Doctor of Dental Surgery,Copenhagen Business School,24-08-2013,1.14
-216,298,Bachelor of Science,Haigazian University,29-09-2016,1.09
-217,390,Doctor of Dental Surgery,Universitas Atma Jaya Yogyakarta,26-01-2019,3.21
-218,452,Bachelor of Science,"Teacher Training College of Revalidation, Rehabilitation and Physical Education",25-11-2012,1.1
-219,417,Bachelor of Commerce,Universidad Nacional de Tumbes,08-03-2012,1.92
-220,523,Bachelor of Commerce,University of Pittsburgh at Johnstown,09-02-2019,1.05
-221,231,Bachelor of Nursing,Hebrew College,29-01-2011,2.58
-222,257,Master of Business Administration,Ama International University,30-11-2012,1.82
-223,781,Doctor of Medicine,"California State University, Stanislaus",23-10-2021,1.56
-224,784,Juris Doctor,Huanghe Science & Technology University,25-06-2017,2.6
-225,208,Doctor of Dental Surgery,Institute of Science and Technology,02-09-2017,1.86
-226,291,Bachelor of Science,Pedagogical University of Zielona Gora,14-10-2022,3.85
-227,1000,Associate of Science,Royal University of Agriculture,04-12-2015,3.47
-228,228,Bachelor of Education,Lutheran School Of Theology In Aarhus,22-05-2021,2.85
-229,732,Bachelor of Nursing,Al Mansour University College,18-03-2020,2.99
-230,77,Bachelor of Science,University of Sierra Leone,18-11-2008,2.05
-231,486,Bachelor of Education,Multimedia University of Kenya,23-04-2014,1.69
-232,755,Juris Doctor,LSB College,30-01-2012,1.79
-233,509,Master of Social Work,Universidade Metodista de Angola,12-11-2022,3.54
-234,585,Bachelor of Nursing,Ibrahim Babangida University,13-10-2016,3.17
-235,758,Master of Public Health,University College Cork,26-04-2016,1.93
-236,794,Bachelor of Arts,Universidad de las Regiones Autónomas de la Costa Caribe Nicaragüense,20-10-2012,1.25
-237,107,Master of Social Work,Merlimau Polytechnic,17-09-2011,2.01
-238,628,Associate of Science,Dániel Berzsenyi Teacher Training College,07-01-2011,2.99
-239,797,Bachelor of Architecture,Albertus Magnus College,28-07-2019,2.7
-240,333,Bachelor of Science,National Central University,09-12-2010,1.1
-241,811,Master of Public Health,Reformed Bible College,09-04-2021,3.96
-242,451,Doctor of Philosophy,University of Applied Sciences Rapperswil,05-12-2017,3.86
-243,322,Master of Public Health,Hannam University,10-08-2022,3.02
-244,778,Bachelor of Commerce,Debrecen University of Agricultural Sciences,01-01-2009,3.04
-245,906,Doctor of Medicine,Salam University,23-08-2016,2.5
-246,139,Master of Computer Science,Lumbini Buddhist University,01-12-2010,3.86
-247,931,Doctor of Pharmacy,Hainan University,11-07-2013,1.6
-248,339,Doctor of Philosophy,IntelliTec College - Grand Junction,09-06-2022,3.09
-249,125,Master of Business Administration,Al Hussein Bin Talal University,19-07-2018,1.98
-250,131,Bachelor of Nursing,Rust College,11-10-2017,3.93
-251,302,Juris Doctor,Université de Pau et des Pays de l'Adour,14-06-2011,3.1
-252,796,Juris Doctor,Ferris University,07-10-2010,3.98
-253,785,Master of Science,State University of New York College at Plattsburgh,01-07-2014,3.16
-254,745,Bachelor of Nursing,Oklahoma State University - Institute of Technology,07-02-2023,3.68
-255,163,Associate of Science,Universidad Anáhuac del Sur,18-05-2009,1.54
-256,359,Master of Social Work,Ecole Française d'Electronique et d'Informatique,07-11-2019,3.84
-257,766,Master of Science,Pawel Wlodkowic University College in Plock,30-07-2011,2.69
-258,996,Bachelor of Architecture,Technological Education Institute of Lamia,25-07-2018,1.66
-259,345,Bachelor of Education,Westhill University,12-03-2020,3.77
-260,53,Doctor of Veterinary Medicine,Wellspring University,09-07-2012,3.37
-261,684,Master of Computer Science,Wah Medical College,09-02-2019,1.92
-262,459,Doctor of Medicine,Baze University Abuja,16-12-2011,2.78
-263,842,Doctor of Medicine,Western Mindanao State University,05-06-2015,2.63
-264,845,Bachelor of Nursing,University of Wisconsin - Whitewater,13-10-2023,3.18
-265,299,Doctor of Veterinary Medicine,Fachhochschule Bochum,17-06-2015,2.01
-266,531,Master of Social Work,Nisho Gakusha University,08-09-2013,2.98
-267,969,Master of Public Health,Gonabad University of Medical Sciences,01-01-2015,1.7
-268,83,Master of Public Health,Tokyo Medical and Dental University,11-05-2017,2.07
-269,574,Bachelor of Fine Arts,Hadhramout University of Science and Technology ,12-07-2012,1.08
-270,786,Juris Doctor,University of Nevada - Las Vegas,21-12-2012,3.04
-271,723,Bachelor of Nursing,Musashi Institute of Technology,16-07-2009,2.72
-272,259,Master of Science,Valley City State University,04-10-2012,3.95
-273,129,Doctor of Dental Surgery,Instituto Mauá de Tecnologia,30-10-2021,2.57
-274,804,Doctor of Medicine,Clayton College & State University,07-04-2015,3.59
-275,667,Bachelor of Fine Arts,University of Worcester,20-08-2014,3.15
-276,508,Bachelor of Education,Universidad Central del Caribe,26-03-2016,2.91
-277,738,Juris Doctor,Ecole Supérieure de Commerce de Reims,05-11-2010,3.81
-278,46,Bachelor of Engineering,Ecole pour les Etudes et la Recherche en Informatique et Electronique,06-06-2009,3.41
-279,374,Master of Science,Universidade Jean Piaget de Cabo Verde,10-02-2014,3.01
-280,546,Bachelor of Science,"Akrofi-Christaller Institute of Theeology, Mission and  Culture",08-05-2015,3.16
-281,65,Master of Computer Science,"University of Wales, Bangor",27-02-2019,3.82
-282,263,Juris Doctor,"Islamic Azad University, Arak",20-03-2022,1.66
-283,133,Master of Social Work,Pädagogische Hochschule Weingarten,25-04-2015,3.1
-284,495,Bachelor of Commerce,Niigata University of International and Information Studies,12-04-2023,2.11
-285,557,Bachelor of Commerce,"Ecole Nationale Supérieure d'Electronique, d'Electrotechnique, d'Informatique et d'Hydraulique de Toulouse",23-07-2021,1.97
-286,403,Master of Social Work,Segi University College,01-02-2011,1.36
-287,641,Bachelor of Commerce,"CollegeAmerica, Denver",18-09-2021,2.68
-288,451,Bachelor of Commerce,Music Academy in Cracow,01-03-2014,2.38
-289,99,Bachelor of Fine Arts,Katholische Fachhochschule Berlin (KFB),25-07-2019,3.93
-290,496,Bachelor of Architecture,Columbia College South Carolina,31-01-2016,2.43
-291,220,Bachelor of Architecture,Universitas Mercu Buana,20-08-2022,1.03
-292,955,Bachelor of Arts,South China Agricultural University,09-04-2014,1.74
-293,136,Doctor of Pharmacy,Agricultural University of Plovdiv,10-11-2010,2.19
-294,833,Master of Arts,Grand Valley State University,01-05-2010,3.83
-295,307,Bachelor of Education,Tongji University,09-02-2022,1.51
-296,101,Doctor of Medicine,I-Shou University,24-09-2013,1.45
-297,851,Master of Computer Science,Gandhigram Rural Institute,17-06-2018,3.59
-298,476,Associate of Science,Presbyterian University of East Africa,02-03-2013,2.9
-299,652,Doctor of Veterinary Medicine,Academia Nacional Superior de Orquesta,12-09-2022,2.26
-300,418,Associate of Science,Evangelische Fachhochschule Ludwigshafen Hochschule für Sozial- und Gesundheitswesen,09-09-2012,2.58
-301,318,Bachelor of Nursing,Ural State University of Economics,30-03-2020,1.92
-302,51,Associate of Science,Albion College,03-02-2011,1.82
-303,788,Bachelor of Arts,University of Turku,08-09-2014,1.95
-304,885,Master of Public Health,University of Worcester,04-12-2021,3.28
-305,511,Juris Doctor,Kuvempu University,08-03-2022,3.25
-306,440,Bachelor of Science,Tallinn University,25-06-2016,3.96
-307,859,Bachelor of Fine Arts,Indiana University at South Bend,01-10-2015,3.8
-308,571,Juris Doctor,International Blacksea University,18-04-2014,1.65
-309,596,Doctor of Dental Surgery,"Universiteit Antwerpen, UFSIA",14-11-2014,3.38
-310,78,Master of Arts,College of the Holy Spirit,26-11-2015,3.01
-311,264,Juris Doctor,Samara State Medical University,26-12-2012,1.34
-312,78,Bachelor of Science,Matsumoto Dental University,23-10-2020,2.56
-313,556,Doctor of Pharmacy,Rajitlal Institute of Technology & Health Sciences (RITHS),07-11-2023,3.36
-314,779,Bachelor of Arts,Marylhurst University,11-03-2011,1.51
-315,829,Bachelor of Arts,Theatre Academy Finland,10-07-2021,3.82
-316,747,Master of Business Administration,Zaman University,14-04-2016,3.51
-317,676,Bachelor of Arts,King Saud bin Abdulaziz University for Health Sciences ,03-10-2018,3.16
-318,878,Bachelor of Architecture,European University of Lefke,10-09-2014,2.48
-319,573,Master of Computer Science,Kyushu University of Nursing and SocialWelfare,07-02-2023,1.22
-320,949,Bachelor of Education,Inchon University,17-03-2018,3.23
-321,583,Master of Business Administration,Université de Sherbrooke,28-04-2009,1.36
-322,888,Doctor of Dental Surgery,Hope Africa University,17-03-2014,2.48
-323,480,Bachelor of Fine Arts,Suzuka International University,08-10-2021,1.88
-324,52,Associate of Science,Balamand University,01-01-2021,3.9
-325,832,Master of Arts,Tongji Medical University,21-06-2023,2.52
-326,928,Bachelor of Nursing,Private Fachhochschule für Wirtschaft und Technik Vechta/Diepholz,25-08-2021,2.41
-327,741,Doctor of Medicine,Dominican University,22-07-2022,3.1
-328,508,Bachelor of Engineering,Universidad Galileo,17-04-2014,2.46
-329,958,Bachelor of Nursing,Conservatoire National des Arts et Métiers,31-01-2009,3.15
-330,253,Bachelor of Education,St. George's University,24-09-2013,1.75
-331,825,Doctor of Veterinary Medicine,Universitas Wijaya Kusuma Purwokerto,21-09-2009,3.65
-332,360,Bachelor of Fine Arts,K.N.Toosi University of Technology,16-12-2017,3.82
-333,201,Doctor of Pharmacy,Adeleke University,25-06-2020,3.39
-334,644,Bachelor of Science,Universidad Valle del Momboy,10-12-2016,1.12
-335,249,Doctor of Pharmacy,University of Tennessee Space Institute,13-06-2013,3.13
-336,819,Master of Science,Capitol University,24-09-2016,2.53
-337,389,Bachelor of Arts,Loras College,03-03-2015,3.39
-338,268,Doctor of Veterinary Medicine,North Bengal University,08-01-2022,3.02
-339,670,Doctor of Pharmacy,South Asian Institute of Technology And Medicine (SAITM) ,20-04-2017,2.24
-340,501,Bachelor of Education,Marycrest International University,16-12-2009,3.53
-341,595,Master of Public Health,Ecole Supérieure des Sciences et Technologie de l'Ingénieur de Nancy,30-07-2021,3.21
-342,731,Bachelor of Arts,Université de Kinshasa,01-11-2009,3.28
-343,817,Doctor of Pharmacy,"National Museum Institute of History of Art, Conservation and Museology",10-06-2019,3.36
-344,424,Doctor of Medicine,China Agricultural University,19-08-2012,3.77
-345,365,Doctor of Dental Surgery,University of Central Punjab,01-01-2018,1.64
-346,408,Bachelor of Commerce,Capital University Law School,18-07-2015,2.43
-347,464,Bachelor of Science,Smith College,02-12-2018,3.98
-348,732,Master of Science,Oita University,16-10-2016,3.89
-349,197,Bachelor of Nursing,Arthur D. Little Management Education Institute,23-06-2019,1.68
-350,942,Bachelor of Arts,University of Adelaide,25-08-2021,1.25
-351,843,Doctor of Pharmacy,Jain Vishva Bharati Institute,12-07-2012,2.32
-352,257,Juris Doctor,Bryant University,30-09-2022,3.47
-353,929,Doctor of Pharmacy,Ecole Nationale du Génie de l'Eau et de l'Environnement de Strasbourg,23-12-2015,3.98
-354,178,Bachelor of Nursing,Virginia College,17-01-2010,2.27
-355,591,Doctor of Veterinary Medicine,Aichi University of Education,26-01-2015,1.81
-356,864,Master of Computer Science,Jodhpur National University,18-08-2013,1.95
-357,38,Master of Social Work,University of Sibiu,01-01-2023,2.33
-358,727,Master of Social Work,Taejon University,19-12-2009,2.89
-359,893,Juris Doctor,Concordia University,06-07-2017,1.13
-360,585,Bachelor of Nursing,Mansfield University of Pennsylvania,04-03-2021,1.67
-361,887,Master of Public Health,Universidad de Mendoza,22-08-2020,3.8
-362,818,Bachelor of Architecture,Ecole Nationale Supérieure de Chimie de Toulouse,15-10-2011,1.77
-363,337,Master of Computer Science,Tehran University of Medical Sciences,11-06-2023,3.97
-364,934,Bachelor of Science,Universidad Autónoma Gabriel René Moreno,07-08-2018,2.73
-365,316,Master of Business Administration,Kuban State University of Agriculture,24-04-2013,1.81
-366,389,Doctor of Veterinary Medicine,Chukyo Women's University,02-08-2022,1.8
-367,166,Bachelor of Fine Arts,Institut Supérieur d'Agriculture Lille,17-11-2008,2.53
-368,121,Doctor of Dental Surgery,Academy of Economics in Wroclaw,06-05-2012,1.69
-369,447,Bachelor of Education,Universidad de Magallanes,12-07-2015,1.34
-370,971,Doctor of Pharmacy,Southwest University,02-01-2020,3.9
-371,601,Juris Doctor,Kannada University,20-12-2015,2.69
-372,698,Master of Social Work,University of Tennessee Space Institute,02-09-2010,1.84
-373,527,Master of Social Work,Kettering University (GMI),19-11-2016,2.82
-374,762,Bachelor of Engineering,"California State University, Northridge",28-05-2010,3.26
-375,812,Doctor of Veterinary Medicine,Nagasaki Institute of Applied Science,01-03-2021,2.17
-376,324,Doctor of Medicine,Babes-Bolyai University of Cluj-Napoca,22-08-2023,1.0
-377,930,Master of Computer Science,"Islamic Azad University, North Tehran",27-06-2022,2.85
-378,882,Master of Public Health,Bangladesh University,31-07-2011,3.57
-379,926,Bachelor of Education,Assam University,03-04-2017,1.18
-380,771,Doctor of Pharmacy,Central Radio and TV University,24-01-2010,3.24
-381,93,Master of Computer Science,Université de Sherbrooke,06-10-2018,3.0
-382,247,Associate of Science,Universitas Ibn Chaldun Jakarta,03-08-2014,1.08
-383,43,Bachelor of Commerce,Zhengda Software College,23-01-2011,3.0
-384,509,Doctor of Pharmacy,University of Priština,22-01-2022,3.92
-385,356,Master of Science,Cumberland University,16-03-2013,2.62
-386,497,Bachelor of Architecture,Universitas Islam Riau,21-01-2021,1.56
-387,412,Bachelor of Commerce,Shanghai Customs College,31-12-2015,3.3
-388,231,Bachelor of Science,"Institute of Teachers Education, Kota Bharu",25-12-2016,3.78
-389,769,Bachelor of Fine Arts,Ashikaga Institute of Technology,15-03-2010,3.11
-390,273,Bachelor of Nursing,Westmont College,16-11-2016,2.88
-391,492,Master of Social Work,University of Texas at Arlington,08-07-2015,1.62
-392,160,Bachelor of Commerce,Pak-AIMS (American Institute of Management Sciences),04-05-2023,2.13
-393,865,Doctor of Pharmacy,Lesley University,25-04-2012,2.77
-394,452,Master of Business Administration,Full Sail University,23-04-2011,3.09
-395,657,Doctor of Philosophy,Pedagogical University of Bydgoszcz,19-11-2021,3.46
-396,198,Bachelor of Fine Arts,Chung-Ju National University,03-07-2011,1.37
-397,443,Master of Science,Pacific International College,14-01-2009,3.08
-398,458,Master of Business Administration,Hiiraan University,11-06-2015,3.49
-399,775,Master of Science,Mamoun Private University for Science and Technology,20-08-2010,1.54
-400,968,Doctor of Dental Surgery,Debre Markos University,26-12-2021,2.07
-401,180,Master of Public Health,University of Redlands,08-08-2018,1.75
-402,196,Bachelor of Nursing,Universitas Atma Jaya Yogyakarta,12-03-2021,3.19
-403,741,Bachelor of Science,St. Bernard's Institute,14-11-2012,3.27
-404,849,Master of Business Administration,Universidad Pontificia de Salamanca,18-11-2016,1.99
-405,737,Doctor of Dental Surgery,Earlham College,03-07-2014,3.58
-406,700,Doctor of Pharmacy,Kiev National University of Construction and Architecture,02-09-2012,3.09
-407,25,Bachelor of Fine Arts,Dominican University,21-05-2012,3.77
-408,240,Bachelor of Commerce,Universidad de Cienfuegos,29-09-2022,1.42
-409,251,Bachelor of Commerce,Binary University College of Managemant & Entrepreneurship,01-07-2019,3.9
-410,545,Master of Public Health,Kiev National Economic University Named after Vadym Hetman,05-04-2014,3.39
-411,254,Doctor of Veterinary Medicine,Southwestern Adventist University,05-01-2012,2.97
-412,772,Doctor of Pharmacy,University of Kent at Canterbury,09-06-2017,2.96
-413,244,Associate of Science,Odessa National I.I. Mecnikov University,07-03-2017,2.2
-414,681,Juris Doctor,Lansbridge University,03-10-2009,2.79
-415,652,Bachelor of Science,Ecole Supérieure de Commerce de Grenoble,24-03-2009,1.67
-416,850,Master of Business Administration,China Medical College,03-05-2011,2.55
-417,315,Bachelor of Engineering,Roberts Wesleyan College,22-04-2017,2.56
-418,774,Doctor of Pharmacy,Kuching Polytechnic,17-10-2022,1.07
-419,69,Master of Science,Stockholm School of Economics,25-03-2023,1.32
-420,991,Juris Doctor,Al-Zaiem Al-Azhari University,22-03-2011,3.28
-421,262,Master of Arts,University of Bihac,07-04-2019,2.86
-422,566,Bachelor of Arts,Ritsumeikan University,12-10-2009,1.01
-423,799,Master of Social Work,Beijing Information Science and Technology University,24-11-2013,2.05
-424,990,Doctor of Medicine,Fujian Agricultural University,01-12-2019,2.35
-425,5,Associate of Science,Pak-AIMS (American Institute of Management Sciences),11-01-2015,2.6
-426,502,Doctor of Philosophy,Bridgewater College,22-07-2021,3.64
-427,522,Bachelor of Education,Ecole Nationale des Travaux Publics de l'Etat,11-06-2020,3.01
-428,389,Bachelor of Architecture,University of Vaasa,16-10-2012,3.75
-429,102,Doctor of Dental Surgery,Benadir University,25-09-2015,3.62
-430,901,Bachelor of Arts,"Webster University, Vienna",11-04-2018,3.09
-431,40,Doctor of Medicine,Landmark University,11-12-2008,3.78
-432,781,Master of Science,Cag University,25-12-2012,1.24
-433,744,Bachelor of Engineering,Kalinga University,04-10-2018,2.3
-434,943,Master of Public Health,Surugadai University,23-04-2012,3.14
-435,743,Bachelor of Fine Arts,College of William and Mary,04-03-2017,2.81
-436,289,Bachelor of Architecture,Universidade Metodista de Angola,29-04-2015,1.71
-437,157,Master of Business Administration,Brac University,31-03-2013,3.87
-438,439,Associate of Science,Cumberland College,02-03-2018,1.58
-439,635,Master of Arts,Columbia Southern University,05-09-2009,3.98
-440,125,Bachelor of Science,Hochschule Coburg,07-05-2021,1.67
-441,730,Bachelor of Education,Bluefield College,07-05-2023,3.07
-442,522,Doctor of Veterinary Medicine,Miami Dade College,02-01-2011,3.54
-443,933,Master of Public Health,Myongji University,13-04-2019,1.08
-444,625,Bachelor of Science,Aletheia University,13-03-2022,3.24
-445,89,Associate of Science,Hamline University,11-08-2020,3.56
-446,607,Bachelor of Education,China Academy of Art,13-06-2018,2.89
-447,970,Bachelor of Arts,West Virginia School of Osteopathic Medicine,13-02-2019,3.44
-448,581,Bachelor of Education,Knowledge College for Science and Technology,27-11-2013,2.78
-449,579,Doctor of Veterinary Medicine,China Foreign Affairs University,17-04-2021,2.06
-450,283,Juris Doctor,Universidad de Especialidades Turísticas ,02-03-2015,1.5
-451,320,Doctor of Veterinary Medicine,University of Colorado Health Sciences Center,11-10-2015,3.21
-452,303,Doctor of Veterinary Medicine,Kuala Terengganu City Polytechnic,28-01-2021,2.96
-453,503,Associate of Science,Technische Fachhochschule Berlin,05-09-2010,1.8
-454,897,Bachelor of Architecture,British College of Osteopathic Medicine,22-08-2019,2.45
-455,424,Bachelor of Arts,Islamic University of Technology,16-08-2014,2.68
-456,823,Bachelor of Arts,"Islamic Azad University, Varamin",09-01-2013,2.88
-457,892,Master of Business Administration,Southern Oregon University,04-11-2014,1.14
-458,425,Associate of Science,Universidad de Córdoba,08-07-2017,1.49
-459,128,Juris Doctor,University Medical School of Debrecen,20-07-2018,1.78
-460,377,Bachelor of Education,"Royal Danish Academy of Fine Arts, School of Visual Art",09-05-2022,3.48
-461,514,Doctor of Pharmacy,University of Wisconsin - Green Bay,20-12-2011,1.03
-462,644,Doctor of Philosophy,Technological University (Kyaukse),27-06-2023,1.18
-463,865,Doctor of Pharmacy,Marij State Technical University,13-11-2020,1.98
-464,800,Doctor of Veterinary Medicine,National College of Ireland,31-08-2017,1.67
-465,899,Bachelor of Architecture,Zaporizhzhe National Technical University,12-12-2010,1.18
-466,260,Master of Public Health,Fachhochschule Braunschweig/Wolfenbüttel,11-01-2012,1.38
-467,914,Bachelor of Fine Arts,Stratford College London,06-11-2014,4.0
-468,890,Master of Public Health,Alahgaff University,03-10-2009,1.07
-469,648,Master of Business Administration,Libera Università degli Studi di Scienze Umane e Tecnologiche,05-12-2012,1.62
-470,437,Master of Science,Universidad Tecnológica de México,28-04-2017,1.96
-471,377,Bachelor of Nursing,University of Plovdiv,05-06-2017,1.14
-472,500,Bachelor of Commerce,Silesian Academy of Medicine in Katowice,26-09-2023,1.89
-473,131,Master of Computer Science,Prince Sultan University,16-12-2011,3.54
-474,895,Bachelor of Engineering,Bard Graduate Center for Studies in the Decorative Arts,08-06-2018,3.49
-475,762,Master of Business Administration,PTPL College,06-04-2015,2.37
-476,882,Juris Doctor,Ohio Northern University,27-07-2017,2.58
-477,162,Bachelor of Nursing,Chaudhary Charan Singh Haryana Agricultural University,27-02-2011,1.02
-478,691,Bachelor of Education,Universidad Francisco Marroquín,21-05-2010,1.62
-479,987,Bachelor of Nursing,St. Petersburg Institute of Arts and Restoration,04-11-2018,3.83
-480,940,Bachelor of Commerce,"Univerzitet u Mostaru ""Dzemal Bijedic""",24-07-2019,2.35
-481,790,Bachelor of Science,University of Venda,13-10-2022,1.95
-482,622,Bachelor of Science,Warner Pacific College,01-09-2011,3.39
-483,520,Bachelor of Fine Arts,Minsk State Linguistic University,21-02-2014,3.51
-484,173,Bachelor of Arts,Université Kofi Annan,20-02-2009,2.37
-485,569,Master of Computer Science,Rajitlal Institute of Technology & Health Sciences (RITHS),08-09-2019,2.47
-486,787,Master of Business Administration,Universidad de Panamá,24-12-2015,1.5
-487,133,Bachelor of Engineering,Indiana University - Northwest,04-08-2017,1.19
-488,218,Bachelor of Arts,Near East School of Theology,11-10-2015,2.02
-489,172,Doctor of Pharmacy,Helsinki School of Economics and Business Administration,02-01-2011,3.32
-490,375,Doctor of Veterinary Medicine,Louisiana State University in Shreveport,20-03-2021,2.05
-491,784,Bachelor of Commerce,Fountain University,21-02-2019,1.67
-492,825,Doctor of Medicine,Texas Chiropractic College,07-08-2011,3.71
-493,464,Associate of Science,"Fachhochschule Biberach, Hochschule für Bauwesen und Wirtschaft",03-10-2019,2.67
-494,315,Bachelor of Commerce,Privredna Akademija (Business Academy),16-06-2021,3.73
-495,185,Bachelor of Fine Arts,Higher Colleges of Technology,14-03-2022,2.83
-496,588,Bachelor of Fine Arts,National Chiao Tung University,20-03-2019,2.48
-497,579,Bachelor of Education,Rheinische Friedrich-Wilhelms Universität Bonn,02-08-2016,3.47
-498,426,Bachelor of Fine Arts,Franciscan School of Theology,03-11-2023,3.18
-499,654,Master of Social Work,Universidade Federal da Grande Dourados,17-07-2014,3.14
-500,255,Doctor of Medicine,Yamaguchi University,06-07-2017,3.39
-501,156,Bachelor of Architecture,University of Pretoria,20-07-2016,2.35
-502,151,Master of Business Administration,Université Rennes I,22-08-2020,1.77
-503,472,Bachelor of Science,Université de Reims Champagne-Ardenne,13-07-2020,2.16
-504,677,Master of Science,Gifu University,03-10-2015,2.57
-505,887,Bachelor of Arts,Dalian University,25-08-2016,1.4
-506,815,Doctor of Philosophy,Siberian State Medical University,10-07-2016,2.25
-507,516,Master of Science,Université Paris Sud (Paris XI),11-02-2020,3.32
-508,807,Bachelor of Fine Arts,St. Petersburg State University of Culture and Arts,06-11-2022,2.45
-509,513,Master of Computer Science,Sindh Madressatul Islam University,07-04-2021,3.15
-510,30,Bachelor of Commerce,Universidade do Rio de Janeiro,12-07-2010,1.13
-511,588,Master of Arts,Logan College of Chiropractic,11-06-2023,3.03
-512,592,Associate of Science,University Institute of Architecture Venice,27-08-2015,2.1
-513,147,Bachelor of Nursing,Norwegian University of Sport and Physical Education,21-09-2022,1.67
-514,138,Doctor of Veterinary Medicine,Averett College,25-12-2022,1.69
-515,710,Master of Science,Uva Wellassa University,18-01-2015,2.04
-516,392,Bachelor of Engineering,Rezekne Higher School,09-10-2014,2.22
-517,688,Doctor of Philosophy,National Theatre Conservatory,03-03-2022,3.99
-518,813,Bachelor of Fine Arts,Pontificia Universidad Javeriana,08-11-2021,2.25
-519,455,Bachelor of Science,Nippon Bunri University,15-05-2014,1.54
-520,456,Bachelor of Science,RKDF University,13-08-2014,1.87
-521,537,Master of Public Health,Kostroma State Technological University,15-06-2014,2.58
-522,197,Doctor of Medicine,Universidad Veracruzana,09-08-2019,2.55
-523,214,Doctor of Veterinary Medicine,Northern University Bangladesh,20-09-2016,2.48
-524,571,Bachelor of Education,Jinan University,10-11-2016,1.6
-525,49,Doctor of Veterinary Medicine,Universidad San Francisco de Quito,18-10-2014,1.15
-526,273,Bachelor of Commerce,European University at St.Petersburg,22-08-2017,1.06
-527,443,Master of Computer Science,Universidad Regional Miguel Hidalgo,09-01-2021,3.28
-528,12,Master of Arts,"Evangelische Fachhochschule für Sozialpädagogik der ""Diakonenanstalt des Rauhen Hauses"" Hamburg",17-06-2010,2.03
-529,391,Bachelor of Education,Handelshochschule Leipzig,29-12-2019,3.57
-530,296,Bachelor of Arts,Universiti Malaysia Sarawak,03-11-2022,3.5
-531,65,Bachelor of Engineering,Sungshin Women's University,21-03-2019,2.84
-532,64,Master of Science,"University of Northern Virginia, Prague Campus",25-07-2020,3.86
-533,738,Bachelor of Fine Arts,University Medical School of Pécs,17-09-2009,1.44
-534,3,Bachelor of Commerce,Sabaragamuwa University of Sri Lanka,16-08-2013,3.36
-535,663,Doctor of Dental Surgery,Nigerian Turkish Nile University,15-10-2015,2.95
-536,504,Master of Arts,"Universidad Católica Boliviana, Santa Cruz",22-07-2020,2.82
-537,941,Master of Public Health,Malaspina University College,18-02-2022,1.96
-538,842,Bachelor of Arts,Universidad Privada del Norte,19-03-2021,1.03
-539,14,Master of Social Work,North University of Baia Mare,28-12-2017,1.72
-540,546,Associate of Science,Ain Shams University,03-05-2022,1.73
-541,274,Doctor of Dental Surgery,"COMSATS Institute of Information Technology, Attock",16-01-2018,2.22
-542,522,Bachelor of Architecture,Technological University (West Yangon),25-10-2014,2.93
-543,432,Bachelor of Science,Canakkale (18th March) University,06-11-2013,1.98
-544,537,Bachelor of Nursing,Ukhta State Technical University,29-07-2013,1.35
-545,834,Master of Computer Science,Universidad Católica de Colombia,08-09-2012,2.43
-546,849,Bachelor of Engineering,"Fachhochschule Stuttgart, Hochschule für Technik",01-05-2016,2.49
-547,677,Doctor of Philosophy,Mehran University of Engineering & Technology,26-07-2021,1.05
-548,872,Bachelor of Fine Arts,Jinan University,08-08-2021,1.8
-549,629,Bachelor of Commerce,Mayville State University,15-05-2022,3.61
-550,859,Associate of Science,Zayed University,08-09-2014,1.36
-551,499,Master of Science,Duksung Women's University,01-12-2012,1.05
-552,820,Doctor of Pharmacy,Ateneo de Naga University,16-04-2019,3.53
-553,374,Master of Public Health,Isfahan University of Technology,03-10-2014,3.77
-554,210,Bachelor of Nursing,Bow Valley College,14-04-2020,3.66
-555,217,Master of Science,Tyumen State University of Gas and Oil,10-03-2019,3.7
-556,712,Bachelor of Fine Arts,Ecole Nationale Vétérinaire de Toulouse,17-07-2019,3.31
-557,736,Master of Arts,"Nordakademie, Staatlich anerkannte private Fachhochschule mit dualen Studiengängen",31-05-2014,1.08
-558,740,Doctor of Dental Surgery,Swiss Business School Zurich (SBS),19-11-2009,3.33
-559,751,Master of Public Health,"State Film, Television and Theatre Higher School Leon Schiller in Lodz",02-10-2022,1.09
-560,484,Bachelor of Commerce,Kentucky Wesleyan College,03-08-2017,1.55
-561,349,Bachelor of Fine Arts,Texas Wesleyan University,28-08-2017,1.89
-562,707,Bachelor of Architecture,Shaheed Beheshti University,07-03-2013,3.14
-563,920,Master of Business Administration,"Concordia College, Selma",22-10-2009,2.25
-564,559,Bachelor of Commerce,Alhamd Islamic University,20-02-2011,2.46
-565,235,Master of Science,Universidade Nova de Lisboa,29-07-2015,2.19
-566,795,Master of Business Administration,Youngstown State University,20-09-2019,3.59
-567,791,Bachelor of Fine Arts,Universidad La Salle,06-09-2012,3.98
-568,114,Juris Doctor,Southeastern Oklahoma State University,09-06-2013,1.83
-569,91,Juris Doctor,Oxford Brookes University,19-05-2023,2.53
-570,832,Master of Business Administration,Lutherische Theologische Hochschule Oberursel,27-06-2020,3.96
-571,982,Bachelor of Education,Philippine Women's University,24-05-2018,2.21
-572,789,Doctor of Pharmacy,Manipal University,03-04-2013,2.79
-573,827,Bachelor of Arts,National American University,02-08-2014,2.98
-574,767,Master of Business Administration,Northern Border University,26-09-2023,2.41
-575,944,Associate of Science,Togliatti State University,21-01-2015,2.7
-576,5,Bachelor of Architecture,Universidad Nacional de Lomas de Zamora,30-05-2012,3.53
-577,244,Master of Arts,School of Banking and Management in Cracow,26-09-2020,1.32
-578,774,Master of Computer Science,Universidade de São Paulo,01-09-2022,2.43
-579,974,Master of Business Administration,Technical University of Mombasa,26-11-2021,3.95
-580,760,Doctor of Pharmacy,Berne University,04-12-2012,3.7
-581,140,Juris Doctor,Private Fachhochschule für Wirtschaft und Technik Vechta/Diepholz,01-01-2011,3.23
-582,909,Doctor of Veterinary Medicine,Bemidji State Univeristy,01-06-2023,3.55
-583,246,Master of Social Work,Visvesvaraya National Institute of Technology,31-08-2023,1.76
-584,809,Associate of Science,Southampton Solent University,20-11-2015,3.43
-585,178,Bachelor of Fine Arts,Meisei University,22-12-2018,2.46
-586,860,Bachelor of Arts,Agricultural-Technical Academy in Olsztyn,04-05-2023,3.0
-587,876,Bachelor of Science,Medical Academy in Gdansk,03-11-2017,2.16
-588,102,Juris Doctor,Corporación Universitaria de Santander (UDES),10-01-2009,3.53
-589,917,Master of Social Work,John F. Kennedy University,01-04-2015,1.44
-590,160,Bachelor of Arts,Foundation University,25-03-2016,2.05
-591,358,Bachelor of Engineering,Niigata University,25-01-2016,3.02
-592,465,Doctor of Philosophy,Sapporo Gakuin University,26-07-2009,3.46
-593,400,Associate of Science,Malayer University,28-07-2022,1.91
-594,350,Bachelor of Commerce,Carl von Ossietzky Universität Oldenburg,19-06-2021,2.89
-595,575,Bachelor of Engineering,Eelo American University,21-05-2014,1.61
-596,391,Doctor of Dental Surgery,Western Governors University,24-01-2021,1.78
-597,404,Associate of Science,Gallaudet University,19-02-2011,2.98
-598,129,Master of Science,"University of Wales Institute, Cardiff",20-03-2019,3.14
-599,927,Master of Social Work,ICFAI University,19-07-2009,3.28
-600,68,Bachelor of Engineering,Necmettin Erbakan University,03-12-2011,2.7
-601,473,Bachelor of Nursing,Northeast University at Qinhuangdao Campus,28-03-2011,2.96
-602,110,Master of Business Administration,Philadelphia University,16-10-2013,3.5
-603,591,Doctor of Dental Surgery,University of Virginia,21-06-2017,3.77
-604,601,Master of Arts,Tianjin Normal University,26-07-2019,1.67
-605,53,Doctor of Philosophy,Mar Athanasios College for Advanced Studies,04-11-2012,1.87
-606,629,Master of Science,Technical Institute of Dubnica in Dubnica nad Váhom,03-02-2020,2.65
-607,834,Bachelor of Nursing,"Florida Metropolitan University, Tampa College Brandon",19-08-2019,2.32
-608,105,Master of Science,Universidade do Sagrado Coração,14-02-2023,2.78
-609,691,Doctor of Medicine,University of Otago,25-04-2017,2.19
-610,214,Bachelor of Nursing,Erciyes University,05-03-2013,2.98
-611,549,Bachelor of Architecture,Universidad Autónoma de la Ciudad de México,08-05-2010,1.59
-612,12,Bachelor of Science,"Troy University, Dothan",15-11-2013,1.4
-613,128,Master of Science,Ecole Nationale Supérieure d'Electronique et de Radioelectricite de Grenoble,16-05-2014,2.8
-614,277,Bachelor of Arts,Chadron State College,12-12-2019,2.2
-615,488,Doctor of Veterinary Medicine,Université Amar Telidji,25-07-2015,1.88
-616,388,Bachelor of Fine Arts,Vikram University,17-10-2021,2.21
-617,579,Bachelor of Education,"Concordia College, Selma",18-12-2015,2.17
-618,796,Master of Public Health,Kansai Medical University,27-07-2023,2.0
-619,753,Master of Public Health,Trinity University,01-11-2013,2.79
-620,430,Bachelor of Fine Arts,Kawasaki Medical School,23-02-2018,1.46
-621,134,Bachelor of Fine Arts,Private Universität Witten/Herdecke,29-06-2009,2.4
-622,984,Doctor of Dental Surgery,Birla Institute of Technology and Science,17-07-2011,2.45
-623,140,Master of Public Health,AGH University of Science and Technology,24-09-2018,1.25
-624,39,Master of Science,Holy Names College,26-11-2010,1.34
-625,395,Juris Doctor,Philippine Military Academy,10-09-2016,2.3
-626,662,Doctor of Dental Surgery,Miyazaki Prefectural Nursing University,12-11-2010,1.97
-627,920,Doctor of Medicine,"DeVry Institute of Technology, Chicago",23-07-2022,1.71
-628,156,Doctor of Pharmacy,College of Nursing and Allied Health Scinces,12-06-2023,1.74
-629,701,Bachelor of Arts,Universidad Fundepos Alma Mater,14-08-2009,2.87
-630,928,Doctor of Philosophy,Peace College,29-10-2012,3.9
-631,308,Doctor of Veterinary Medicine,Abdus Salam international centre for theoretical physics,24-04-2023,2.89
-632,299,Bachelor of Architecture,Komazawa University,02-09-2016,3.84
-633,856,Bachelor of Science,Universiti Teknologi Malaysia,05-08-2009,2.88
-634,999,Doctor of Pharmacy,Savannah State University,27-12-2013,3.13
-635,42,Associate of Science,Bamenda University of Science & Technology,09-01-2016,2.62
-636,290,Doctor of Dental Surgery,Shumei University,07-05-2019,1.32
-637,739,Bachelor of Arts,National Sanskrit University,14-12-2013,1.31
-638,422,Doctor of Philosophy,Central Agricultural University,13-06-2015,1.48
-639,634,Bachelor of Commerce,King Mongkut's University of Technology North Bangkok,08-03-2010,2.45
-640,720,Associate of Science,Ashiya University,30-09-2016,3.62
-641,58,Bachelor of Architecture,Daystar University,27-11-2009,3.17
-642,18,Master of Arts,Louisiana State University and Agricultural and Mechanical College,21-02-2023,3.51
-643,220,Bachelor of Science,Ecole Normale Supérieure de Cachan,01-01-2019,3.96
-644,567,Bachelor of Nursing,Universidad Isaac Newton,25-06-2011,2.43
-645,565,Doctor of Veterinary Medicine,"Physical Education Academy ""Jedrzej Sniadecki"" in Gdansk",08-03-2013,1.46
-646,802,Master of Business Administration,"Goldsmiths College, University of London",09-03-2017,2.45
-647,976,Doctor of Veterinary Medicine,Assumption University of Thailand,10-06-2016,3.41
-648,506,Doctor of Medicine,Sri Venkateswara Institute of Medical Sciences,23-11-2013,3.96
-649,213,Doctor of Pharmacy,Ecole Supérieure de Commerce et des Affaires,06-10-2020,3.05
-650,80,Doctor of Pharmacy,Xiangtan University,07-02-2013,2.02
-651,170,Bachelor of Arts,Rostov State Medical University,06-06-2014,3.39
-652,171,Bachelor of Arts,Centro Universitário Monte Serrat,09-12-2008,1.02
-653,337,Bachelor of Commerce,Kennesaw State University,24-08-2015,3.9
-654,531,Doctor of Pharmacy,"Concordia University, Irvine",16-08-2010,3.73
-655,763,Bachelor of Commerce,University of Notre Dame,26-10-2009,3.14
-656,860,Doctor of Philosophy,Universidad Maimónides,27-01-2014,3.78
-657,730,Bachelor of Fine Arts,Devi Ahilya University of Indore,16-05-2017,2.12
-658,646,Bachelor of Fine Arts,Tikrit University,13-09-2023,3.48
-659,536,Master of Social Work,Koyasan University,01-08-2011,3.86
-660,752,Bachelor of Fine Arts,Peking University,13-11-2017,3.52
-661,985,Doctor of Dental Surgery,Qinghai Radio & Television University,30-10-2018,1.76
-662,995,Master of Science,Trent University,09-03-2013,1.46
-663,167,Bachelor of Commerce,National Chi Nan University,05-03-2021,1.63
-664,624,Associate of Science,Mahanakorn University of Technology,16-04-2022,1.01
-665,137,Doctor of Philosophy,Tokyo Kasei University,10-03-2021,1.03
-666,79,Doctor of Medicine,"Swiss Federal Institute of Technology, Lausanne",07-08-2009,1.51
-667,629,Bachelor of Nursing,Stevens Institute of Technology,06-05-2019,1.71
-668,204,Bachelor of Commerce,Osaka Institute of Technology,08-01-2018,2.87
-669,691,Bachelor of Architecture,Katholieke Universiteit Leuven,02-07-2010,2.37
-670,24,Juris Doctor,University of Texas M.D. Anderson Cancer Center,04-08-2014,1.02
-671,928,Bachelor of Science,Université Mouloud Mammeri de Tizi Ouzou,06-03-2020,3.69
-672,148,Doctor of Pharmacy,"State Film, Television and Theatre Higher School Leon Schiller in Lodz",12-04-2019,3.82
-673,953,Juris Doctor,University of Advancing Technology (UAT),23-02-2016,1.82
-674,937,Master of Arts,Universidad de Quintana Roo,02-04-2014,3.76
-675,812,Bachelor of Fine Arts,Shonan Institute of Technology,21-06-2013,3.46
-676,939,Doctor of Philosophy,James Cook University of North Queensland,09-09-2018,1.3
-677,576,Master of Computer Science,Tokyo Medical and Dental University,18-06-2017,1.18
-678,381,Bachelor of Commerce,Centre National d'Etudes Agronomiques des Régions Chaudes,28-02-2011,1.95
-679,215,Bachelor of Fine Arts,University of St. Francis,26-11-2016,3.61
-680,686,Doctor of Dental Surgery,Institut Supérieur de Management et de Technologie (MATCI),15-05-2021,2.18
-681,532,Associate of Science,"Royal Danish Academy of Fine Arts, School of Visual Art",01-02-2011,3.57
-682,437,Bachelor of Fine Arts,Universitas Tanjungpura,16-05-2014,1.66
-683,579,Master of Social Work,Duke University,14-01-2019,1.12
-684,752,Bachelor of Education,Universidad Nacional Autonoma de Nicaragua,15-08-2015,1.43
-685,505,Bachelor of Education,Tamil University,15-09-2016,1.07
-686,169,Master of Computer Science,Southwest University of Finance and Economics,16-12-2016,1.73
-687,36,Master of Science,Unity College,22-10-2021,3.96
-688,388,Bachelor of Science,Belhaven College,26-02-2023,2.9
-689,198,Bachelor of Science,Vitebsk State Medical University,26-08-2009,2.95
-690,179,Master of Public Health,Gubkin Russian State University of Oil and Gas,17-06-2010,2.76
-691,722,Bachelor of Education,Carleton College,02-11-2020,2.11
-692,438,Bachelor of Education,Universidad de Cuenca,20-03-2021,2.03
-693,675,Bachelor of Education,"Florida Metropolitan University, Tampa College Brandon",01-04-2012,3.36
-694,244,Doctor of Dental Surgery,Graduate University for Advanced Studies,13-02-2011,3.16
-695,530,Master of Public Health,Koyasan University,08-02-2010,2.76
-696,572,Master of Computer Science,The Illinois Institute of Art-Chicago,06-06-2023,3.36
-697,453,Master of Science,University of Qatar,06-02-2020,1.11
-698,673,Bachelor of Commerce,Shukutoku University,11-10-2015,2.71
-699,35,Bachelor of Nursing,"Maharaja Ganga Singh University, Bikaner",05-02-2019,1.11
-700,833,Master of Business Administration,Universidad Nacional Daniel Alcides Carrion,19-11-2022,3.75
-701,983,Master of Business Administration,Universidade do Rio de Janeiro,31-08-2020,3.03
-702,243,Bachelor of Architecture,Jawaharlal Nehru Agricultural University,06-11-2016,2.23
-703,158,Bachelor of Architecture,St. Augustine's College North Carolina,05-12-2012,3.73
-704,594,Juris Doctor,Chelsea College of Art and Design,26-03-2012,2.16
-705,560,Bachelor of Nursing,Kwangju University,29-11-2022,1.36
-706,106,Juris Doctor,Northwestern University,20-03-2023,2.18
-707,351,Master of Business Administration,Hodeidah University,24-06-2020,2.48
-708,577,Master of Public Health,International Islamic College of Penang,05-11-2022,3.35
-709,496,Juris Doctor,Al-Bukhari International University,08-06-2011,3.04
-710,893,Doctor of Dental Surgery, Dedan Kimathi University of Technology,11-03-2013,2.63
-711,984,Bachelor of Arts,Astrahan State Technical University,12-09-2013,2.48
-712,729,Juris Doctor,Universidad Especializada de Las Americas,11-06-2013,1.53
-713,940,Master of Arts,Tokyo University of Foreign Studies,21-02-2022,1.54
-714,412,Master of Business Administration,Jain Vishva Bharati Institute,20-09-2020,1.75
-715,623,Bachelor of Engineering,Universidade do Porto,08-04-2018,3.47
-716,368,Bachelor of Nursing,Ganja State University ,16-03-2010,1.73
-717,834,Doctor of Pharmacy,Universidad Privada Juan Mejía Baca,05-01-2021,1.03
-718,89,Bachelor of Education,Jazan University,11-08-2022,2.11
-719,733,Associate of Science,Yasuj University of Medical Sciences,11-12-2014,2.23
-720,479,Bachelor of Engineering,Kostanai State University,28-04-2009,2.41
-721,885,Doctor of Medicine,"Islamic Azad University, Majlesi",03-02-2016,2.65
-722,578,Bachelor of Architecture,National Institute of Fitness and Sports Kanoya,14-01-2013,2.04
-723,121,Associate of Science,"Université Abou Bekr Belkaid, Tlemcen",01-04-2021,1.02
-724,348,Doctor of Pharmacy,Politeknik Negeri Semarang,15-09-2021,3.8
-725,588,Bachelor of Commerce,College Misericordia,01-05-2019,1.18
-726,586,Master of Computer Science,Stamford University,07-06-2020,1.6
-727,94,Bachelor of Architecture,University of Plovdiv,17-12-2021,2.02
-728,21,Associate of Science,Norwegian Teacher Academy for Studies in Religion and Education,19-12-2021,1.08
-729,963,Bachelor of Fine Arts,Shanghai Business School,13-08-2019,2.82
-730,906,Bachelor of Science,Kyungpook National University,04-12-2018,2.72
-731,387,Master of Public Health,University of Sargodha,01-08-2010,3.84
-732,968,Doctor of Veterinary Medicine,FPT University,02-12-2012,3.96
-733,144,Master of Public Health,Institución Universitaria Iberoamericana,26-09-2011,3.96
-734,702,Bachelor of Arts,Kochi University of Technology,09-04-2015,3.4
-735,998,Bachelor of Education,Universidad de Quintana Roo,24-01-2023,2.92
-736,595,Master of Arts,Kumaun University,20-05-2012,1.44
-737,520,Bachelor of Engineering,"Universidad Nacional Experimental Sur del Lago ""Jesús Maria Semprum""",15-06-2013,3.35
-738,561,Master of Science,School for International Training,16-01-2018,1.49
-739,498,Juris Doctor,Universidade Federal do Rio Grande do Norte,25-05-2014,3.21
-740,227,Doctor of Pharmacy,Charles University Prague,06-08-2010,2.38
-741,484,Bachelor of Fine Arts,Jumeira University,29-09-2020,3.18
-742,436,Bachelor of Architecture,University of Portharcourt,01-02-2015,1.98
-743,266,Bachelor of Commerce,Western Kazakhstan Agricultural University,17-08-2009,1.82
-744,150,Master of Business Administration,Albany Medical Center,19-05-2019,1.61
-745,623,Juris Doctor,Atlantic International University,25-08-2016,3.12
-746,551,Doctor of Veterinary Medicine,Moscow International Higher Business School (MIRBIS),15-01-2021,3.05
-747,767,Bachelor of Education,University of Massachusetts at Dartmouth,20-10-2013,2.79
-748,154,Doctor of Philosophy,Universidad Autónoma de Nuevo León,28-02-2018,2.3
-749,330,Juris Doctor,Universidad Central del Valle del Cauca,31-10-2010,2.06
-750,348,Doctor of Veterinary Medicine,Capital University of Economics and Business,23-01-2019,2.77
-751,974,Master of Social Work,Meredith College,22-01-2012,3.85
-752,883,Doctor of Veterinary Medicine,National Dong Hwa University,12-07-2015,2.51
-753,95,Associate of Science,Universidad de Cartago Florencio del Castillo,12-01-2015,1.41
-754,177,Master of Science,Friedrich-Schiller Universität Jena,06-06-2010,2.15
-755,286,Juris Doctor,Guizhou Normal University,12-09-2019,1.85
-756,741,Master of Social Work,Kanagawa Institute of Technology,22-11-2014,1.44
-757,85,Bachelor of Science,Ummah University,15-09-2013,3.4
-758,698,Bachelor of Science,"University of Architecture, Civil Engineering and Geodesy",21-11-2018,2.87
-759,776,Master of Social Work,University of Engineering and Technology Taxila,16-08-2012,2.85
-760,466,Bachelor of Engineering,Instituto Superior D. Afonso III - INUAF,28-09-2010,1.72
-761,845,Bachelor of Fine Arts,Nova Scotia College of Art and Design,31-01-2022,2.32
-762,157,Bachelor of Science,University of the Philippines Visayas - Cebu High School,01-11-2010,2.64
-763,395,Doctor of Dental Surgery,Sultan Salahuddin Abdul Aziz Shah Polytechnic,31-03-2018,3.15
-764,688,Bachelor of Nursing,Kobe Jogakuin University,08-02-2023,1.33
-765,110,Master of Computer Science,National Taiwan College of Physical Education and Sports,05-12-2018,2.91
-766,392,Master of Public Health,Marylhurst University,12-09-2012,1.56
-767,637,Master of Computer Science,College of Business Management ( CBM ),05-10-2022,3.75
-768,962,Bachelor of Commerce,University of Arkansas at Monticello,21-02-2017,2.63
-769,266,Bachelor of Fine Arts,Robert Morris College,19-09-2014,1.47
-770,208,Doctor of Pharmacy,Zimbabwe Open University,15-07-2017,2.03
-771,901,Bachelor of Nursing,Universidad del Valle de Puebla,15-02-2014,3.87
-772,735,Master of Social Work,Coppin State College,23-01-2019,2.72
-773,89,Bachelor of Architecture,Universidad Abierta Para Adultos,30-11-2018,2.0
-774,817,Doctor of Medicine,Niagara University,17-10-2009,3.49
-775,287,Bachelor of Nursing,Universidad de Oriente,08-02-2013,2.98
-776,582,Doctor of Medicine,Nigde University,09-02-2009,3.78
-777,429,Master of Public Health,"University of California, Hastings College of Law",02-08-2021,2.18
-778,960,Doctor of Dental Surgery,Campbellsville College,18-06-2011,2.8
-779,330,Master of Social Work,Semey State Medical University,02-08-2014,1.39
-780,983,Bachelor of Education,Athens University of Economics and Business,19-12-2011,1.9
-781,352,Bachelor of Fine Arts,Nagoya University of Commerce and Business Administration,13-09-2023,2.07
-782,326,Doctor of Medicine,University of Iceland,15-12-2014,2.02
-783,47,Doctor of Veterinary Medicine,Universidade Lusíada de Angola,25-02-2014,1.22
-784,680,Doctor of Philosophy,Norwegian University of Sport and Physical Education,15-12-2011,3.68
-785,42,Bachelor of Arts,Pangasinan State University,11-05-2021,2.39
-786,798,Bachelor of Arts,University of Ulster,18-03-2016,3.64
-787,681,Doctor of Philosophy,"Islamic Azad University, Shiraz",18-05-2011,2.05
-788,975,Master of Arts,Ibra College of Technology,02-04-2015,3.8
-789,734,Doctor of Veterinary Medicine,All India Institute of Medical Sciences,05-09-2009,2.34
-790,71,Master of Computer Science,Prescott College,21-09-2015,1.8
-791,850,Bachelor of Commerce,Worcester State College,21-08-2013,2.93
-792,520,Bachelor of Fine Arts,Khmelnitsky National University,09-01-2023,3.85
-793,356,Master of Computer Science,Kohinoor School of Hospitality Management,08-11-2020,2.09
-794,710,Bachelor of Nursing,University College Dublin,01-09-2013,1.77
-795,292,Bachelor of Commerce,Governors State University,02-08-2010,3.33
-796,514,Master of Social Work,"Universidad Autónoma Agraria ""Antonio Narro""",15-06-2023,2.53
-797,168,Associate of Science,Vaal University of Technology,27-02-2013,3.15
-798,875,Doctor of Medicine,Bob Jones University,27-09-2018,1.93
-799,317,Bachelor of Nursing,Camberwell College of Arts,12-01-2010,2.74
-800,704,Master of Social Work,Jimei University,02-03-2017,2.07
-801,797,Associate of Science,University of Sopron,09-02-2021,1.84
-802,401,Bachelor of Arts,Moscow State Academy of Applied Biotechnology,30-11-2018,2.29
-803,378,Doctor of Veterinary Medicine,Universidad Franciscana de México,13-03-2021,1.84
-804,832,Doctor of Philosophy,University of Calgary,31-05-2013,2.01
-805,986,Bachelor of Engineering,Virginia College,07-08-2011,2.13
-806,217,Bachelor of Arts,Baylor University,15-01-2021,1.65
-807,27,Doctor of Medicine,Universidad Católica de Santiago de Guayaquil,22-09-2013,1.14
-808,564,Doctor of Philosophy,"City University of New York, Lehman College",19-08-2012,2.52
-809,129,Bachelor of Science,Ecole Supérieure de Commerce de Nantes-Atlantique,31-01-2014,2.3
-810,166,Master of Business Administration,Universidad Nacional Pedro Ruíz Gallo,29-07-2018,3.98
-811,699,Master of Public Health,"Fachhochschule Ludwigshafen, Hochschule für Wirtschaft",01-06-2021,2.53
-812,607,Bachelor of Fine Arts,Maria Grzegorzewska College for Special Education,24-05-2018,1.18
-813,86,Bachelor of Engineering,University of the Virgin Islands,10-10-2021,1.65
-814,802,Doctor of Philosophy,Ottawa University,22-02-2016,3.35
-815,640,Master of Business Administration,University of Padua,29-06-2020,2.6
-816,459,Doctor of Philosophy,Manchester College,26-05-2015,2.26
-817,971,Doctor of Dental Surgery,Moscow State Institute of Steel and Alloys,11-08-2021,3.41
-818,608,Associate of Science,Abasyn University Peshawar,23-12-2017,3.68
-819,659,Doctor of Dental Surgery,Jordan Academy of Music / Higher Institute of Music,18-09-2021,1.99
-820,77,Master of Public Health,Ecole Nationale Supérieure des Arts et Industries Textiles,29-12-2015,1.77
-821,174,Bachelor of Engineering,Diyala University,16-10-2012,3.19
-822,666,Master of Business Administration,Oklahoma Baptist University,17-04-2010,2.32
-823,606,Bachelor of Nursing,Universidade da Amazônia,09-01-2021,2.56
-824,492,Bachelor of Science,Jönköping University College of Health Sciences,08-01-2020,1.67
-825,653,Master of Arts,Universitas Ibn Chaldun Jakarta,21-11-2020,3.89
-826,955,Bachelor of Education,Blekinge Institute of Technology,12-06-2018,2.43
-827,648,Master of Arts,Vanderbilt University,03-10-2015,2.26
-828,220,Doctor of Medicine,Saratov State Socio-Economic University,27-07-2017,3.62
-829,766,Bachelor of Education,Saint Paul University,24-08-2020,1.42
-830,712,Doctor of Veterinary Medicine,Tohoku Bunka Gakuen University,18-12-2020,1.52
-831,558,Master of Computer Science,University of Medicine and Pharmacy of Iasi,16-04-2015,3.39
-832,60,Master of Computer Science,Shanghai Normal University,24-02-2013,3.29
-833,343,Bachelor of Engineering,Curry College,27-01-2023,1.79
-834,393,Doctor of Pharmacy,Universidad Latina de Panamá,08-12-2020,1.16
-835,513,Master of Arts,Montana State University - Billings,28-09-2020,3.41
-836,43,Master of Science,Hagerstown Community College,24-03-2021,3.04
-837,84,Master of Arts,Burdwan University,15-03-2019,1.89
-838,748,Doctor of Pharmacy,Universität für künstlerische und industrielle Gestaltung Linz,18-01-2020,4.0
-839,859,Juris Doctor,Sukhothai Thammathirat Open University,07-01-2012,1.87
-840,506,Master of Arts,Mansoura University,29-03-2016,3.64
-841,421,Doctor of Pharmacy,Universitas Muhammadiyah Jakarta,17-08-2021,3.78
-842,846,Master of Arts,Matsuyama University,26-05-2015,2.98
-843,261,Master of Business Administration,Universidad Nacional de La Plata,23-05-2017,2.1
-844,840,Doctor of Medicine,Moscow Power Engineering Institute (Technical University),14-03-2021,1.87
-845,703,Master of Business Administration,Caleb University,13-11-2012,2.04
-846,346,Doctor of Pharmacy,Universidad de Caldas,10-12-2016,1.96
-847,934,Master of Science,University of Sulaimania (Kurdistan Region),01-08-2022,4.0
-848,937,Bachelor of Fine Arts,Ritsumeikan Asia Pacific University,12-04-2013,1.91
-849,41,Bachelor of Fine Arts,Fachhochschule Bonn-Rhein-Sieg,08-07-2021,2.67
-850,791,Master of Business Administration,Modern University for the Humanities,22-10-2022,2.29
-851,348,Doctor of Veterinary Medicine,Southern University - New Orleans,10-04-2022,3.42
-852,598,Master of Arts,"Academy of Music, Dance and Fine Arts",21-01-2012,3.04
-853,559,Juris Doctor,Ashland University,27-07-2010,2.56
-854,901,Bachelor of Engineering,Oregon Health Sciences University,08-08-2014,2.57
-855,830,Bachelor of Education,Wilmington College,30-06-2014,1.21
-856,597,Bachelor of Education,Ecole Supérieure de Commerce de Toulouse,16-05-2014,2.99
-857,130,Bachelor of Commerce,"Washington State University, Tri-Cities",01-05-2012,1.31
-858,624,Bachelor of Commerce,Perm State Pharmaceutical Academy,02-10-2016,2.49
-859,122,Bachelor of Commerce,Université Mohammed Ier,18-04-2011,3.88
-860,870,Doctor of Philosophy,Odessa National I.I. Mecnikov University,02-02-2009,2.71
-861,575,Bachelor of Arts,Universitas Islam Sultan Agung,24-12-2021,3.18
-862,163,Bachelor of Nursing,Universidad Nacional de Chimborazo,27-01-2009,1.43
-863,155,Bachelor of Engineering,Yamanashi Gakuin University,26-10-2018,2.45
-864,31,Bachelor of Education,Baker College of Muskegon,04-08-2023,1.02
-865,431,Bachelor of Commerce,Ecole Nationale Supérieure de Chimie de Lille,26-04-2019,3.69
-866,374,Bachelor of Commerce,Université de Dschang,09-10-2009,2.57
-867,74,Bachelor of Science,School of Business and Finance,07-06-2014,2.81
-868,253,Doctor of Philosophy,Philander Smith College,05-03-2023,3.49
-869,431,Juris Doctor,Sonoma State University,29-07-2021,1.65
-870,409,Juris Doctor,Universität Passau,09-02-2021,3.75
-871,312,Doctor of Dental Surgery,Belmont University,16-02-2017,2.05
-872,85,Doctor of Veterinary Medicine,King Fahd Security College,19-11-2020,3.11
-873,660,Doctor of Philosophy,Guangzhou Academy of Fine Art,01-09-2023,1.56
-874,204,Bachelor of Commerce,University of North Carolina at Charlotte,13-11-2009,1.6
-875,941,Bachelor of Science,Botswana Accountancy College,13-05-2015,3.74
-876,470,Bachelor of Nursing,Wentworth Institute of Technology,24-07-2014,2.26
-877,711,Bachelor of Engineering,Rust College,21-10-2009,2.56
-878,287,Bachelor of Science,Duluth Business University,13-06-2013,1.83
-879,789,Master of Public Health,University of Technology - Iraq,18-11-2009,2.55
-880,571,Master of Science,Fachhochschule Jena,01-06-2021,2.06
-881,847,Juris Doctor,"Hochschule Harz, Hochschule für angewandte Wissenschaften (FH)",12-10-2016,3.18
-882,622,Doctor of Pharmacy,Walailak University,21-07-2022,1.38
-883,227,Bachelor of Architecture,University of Priština,27-09-2018,1.75
-884,977,Bachelor of Science,"University College of Arts, Crafts and Design",26-05-2011,1.07
-885,991,Bachelor of Fine Arts,Edward Waters College,06-03-2019,2.59
-886,640,Juris Doctor,Asbury College,06-10-2017,3.37
-887,672,Master of Social Work,University of Ruhuna,01-06-2021,2.56
-888,766,Bachelor of Engineering,Fundacion Escuela Colombiana de Rehabiliación,25-10-2019,1.02
-889,93,Master of Public Health,Walsh University,13-08-2015,2.31
-890,489,Bachelor of Commerce,University Politehnica of Bucharest,14-05-2016,2.73
-891,336,Doctor of Veterinary Medicine,"Schiller International University, American College of Switzerland",03-09-2019,1.71
-892,530,Bachelor of Architecture,Mountain View College,28-09-2022,1.07
-893,808,Master of Computer Science,Universitas Merdeka Madiun,10-10-2013,2.8
-894,346,Doctor of Veterinary Medicine,Université Catholique de Louvain,05-11-2020,2.51
-895,543,Master of Computer Science,Internationales Hochschulinstitut Zittau,08-02-2010,3.93
-896,863,Doctor of Dental Surgery,Oregon State University,07-10-2015,3.3
-897,651,Doctor of Dental Surgery,Guangzhou Academy of Fine Art,01-04-2017,3.43
-898,57,Bachelor of Fine Arts,Academia de Studii Economice din Bucuresti,16-11-2014,2.23
-899,851,Bachelor of Arts,Sichuan International Studies University,01-01-2021,3.26
-900,236,Bachelor of Commerce,University of Botswana,15-02-2013,3.63
-901,282,Bachelor of Engineering,University of Eastern Philippines,27-10-2010,3.6
-902,619,Bachelor of Nursing,Kutztown University of Pennsylvania,18-08-2022,2.97
-903,445,Bachelor of Education,Universidad del País Vasco,26-12-2010,3.45
-904,709,Master of Computer Science,Université de Kairouan,01-07-2017,1.79
-905,297,Master of Science,Universidad Politécnica Salesiana,16-01-2018,2.82
-906,490,Associate of Science,Freie Kunst-Studienstätte Ottersberg,21-08-2016,3.62
-907,24,Doctor of Philosophy,Universidad de Playa Ancha de Ciencias de la Educacion,04-05-2023,1.87
-908,800,Juris Doctor,"California State University, Channel Islands",21-05-2013,2.42
-909,219,Master of Social Work,St. Joseph's College New York,26-02-2019,1.97
-910,448,Doctor of Dental Surgery,Samchok National University,26-04-2016,1.36
-911,933,Associate of Science,Universidade Regional de Blumenau,17-12-2013,2.36
-912,646,Bachelor of Engineering,Universidad Santa María Campus Guayaquil,12-12-2016,2.55
-913,122,Master of Science,International University College,24-04-2018,2.87
-914,57,Doctor of Medicine,Ecole Supérieure des Sciences Commerciales d'Angers,09-12-2019,1.92
-915,468,Doctor of Veterinary Medicine,Charleston Southern University,18-01-2013,1.27
-916,163,Bachelor of Fine Arts,Colorado State University-Pueblo,13-11-2009,3.19
-917,638,Doctor of Veterinary Medicine,Frank Lloyd Wright School of Architecture,26-09-2019,2.69
-918,990,Master of Public Health,De Haagse Hogeschool,24-04-2020,2.23
-919,775,Doctor of Dental Surgery,East Stroudsburg State University,18-08-2019,2.1
-920,992,Bachelor of Arts,Sibelius Academy,13-11-2008,2.18
-921,206,Doctor of Dental Surgery,Kuching Polytechnic,03-11-2019,2.6
-922,196,Master of Business Administration,Bard College,31-05-2009,1.61
-923,596,Juris Doctor,Orissa University of Agriculture and Technology,14-01-2023,3.32
-924,618,Bachelor of Nursing,University Lucian Blaga of Sibiu,04-07-2010,3.36
-925,706,Bachelor of Fine Arts,St. Mary's University,04-07-2013,1.86
-926,636,Doctor of Medicine,Shenandoah University,15-11-2014,3.28
-927,732,Master of Computer Science,International College of Tourism and Hotel Management,28-04-2011,2.35
-928,252,Bachelor of Arts,"University of Education, Winneba",25-01-2018,2.17
-929,774,Bachelor of Commerce,Godfrey Okoye University,31-05-2012,2.03
-930,948,Bachelor of Education,Fachhochschule Merseburg,02-01-2020,1.82
-931,667,Master of Computer Science,Nagasaki Prefectural University,11-01-2009,3.01
-932,424,Master of Science,Civil Aviation University of China,13-02-2015,2.75
-933,388,Bachelor of Commerce,University of Oslo,08-10-2014,2.53
-934,923,Bachelor of Architecture,International Academy of  Merchandising and Design Tampa,17-02-2021,3.26
-935,654,Bachelor of Education,Westminster College Fulton,05-04-2012,3.28
-936,755,Master of Arts,Turkish Naval Academy,05-10-2016,1.95
-937,962,Master of Public Health,Prince Mohammad Bin Fahd University,21-05-2021,2.48
-938,602,Doctor of Pharmacy,Wakkanai Hokusei Gakuen University,24-07-2010,1.37
-939,745,Master of Business Administration,Vietnam Maritime University,22-03-2010,3.16
-940,588,Doctor of Dental Surgery,Universidad de Especialidades Turísticas ,07-01-2014,2.94
-941,733,Bachelor of Arts,Rivers State University of Science and Technology,19-06-2012,3.4
-942,254,Doctor of Veterinary Medicine,Dr. Babasaheb Ambedkar Marathwada Universtiy,11-06-2023,3.8
-943,24,Master of Business Administration,Kyoto University of Art and Design,15-08-2019,2.97
-944,1000,Master of Arts,Al-Nasser University,05-07-2013,1.06
-945,428,Master of Business Administration,Technological Education Institute of Thessaloniki,26-06-2016,3.87
-946,582,Bachelor of Science,Deutsche Sporthochschule Köln,21-12-2011,1.66
-947,271,Master of Business Administration,Hankyong National University,25-03-2020,3.8
-948,655,Associate of Science,Kurume Institute of Technology,19-07-2017,2.11
-949,236,Bachelor of Science,Stenden University,23-08-2019,1.49
-950,752,Bachelor of Science,NAES College,16-10-2016,2.14
-951,790,Master of Science,Chicago State University,05-05-2022,1.02
-952,480,Master of Public Health,University of Medicine and Pharmacy of Timisoara,03-10-2010,3.47
-953,34,Master of Social Work,Ural State Academy of Mining and Geology,25-03-2014,2.53
-954,818,Bachelor of Fine Arts,Free University Stockholm,15-08-2019,2.44
-955,164,Bachelor of Architecture,East Stroudsburg State University,09-11-2013,1.51
-956,756,Doctor of Dental Surgery,Justus Liebig Universität Gießen,17-05-2019,2.84
-957,990,Master of Social Work,Ouachita Baptist University,01-08-2023,1.34
-958,297,Bachelor of Architecture,College of St. Catherine,15-03-2014,1.11
-959,350,Master of Business Administration,Universidad Católica de Santiago del Estero,23-06-2014,2.99
-960,262,Bachelor of Science,Universitas Mulawarman,11-09-2012,2.65
-961,131,Doctor of Veterinary Medicine,Oklahoma State University - Institute of Technology,26-02-2020,3.91
-962,667,Bachelor of Commerce,University of Missouri - Columbia,19-06-2022,2.13
-963,184,Bachelor of Fine Arts,Shanghai University of Engineering Science,29-01-2017,3.9
-964,688,Master of Science,University of Dodoma,07-05-2021,3.71
-965,77,Doctor of Philosophy,Universidad de San Carlos de Guatemala,27-12-2018,3.9
-966,498,Doctor of Dental Surgery,Escuela Politécnica del Ejercito,21-08-2017,2.53
-967,574,Doctor of Dental Surgery,Guizhou University,25-02-2013,2.23
-968,340,Master of Science,Universidade Internacional Lisboa,24-03-2015,2.76
-969,542,Bachelor of Education,Ulaanbaatar University,24-02-2014,3.36
-970,447,Master of Public Health,Fachhochschulstudiengänge der Wiener Wirtschaft,25-03-2010,3.24
-971,104,Master of Business Administration,Egerton University,25-07-2014,2.22
-972,196,Master of Computer Science,Universidad Cristóbal Colón,13-01-2019,3.59
-973,229,Master of Arts,Kharkiv State Technical University of Construction and Architecture,15-10-2021,3.86
-974,97,Master of Public Health,Knowledge International University,25-01-2014,3.02
-975,478,Bachelor of Arts,Ozark Christian College,23-06-2022,3.46
-976,921,Bachelor of Engineering,Andrassy Gyula German Speaking University Budapest,03-03-2012,2.57
-977,162,Bachelor of Commerce,Ecole Nationale d'Ingénieurs de Saint-Etienne,27-09-2020,2.43
-978,443,Bachelor of Architecture,Dawood College of Engineering and Technology,25-01-2010,2.81
-979,330,Bachelor of Engineering,Colegio de Estudios Superiores de Administración (CESA),17-12-2015,1.76
-980,912,Master of Social Work,Universidad San Juan de la Cruz,04-03-2019,1.67
-981,359,Bachelor of Architecture,Universidad Autónoma Tomás Frías,19-05-2020,3.42
-982,383,Master of Arts,Kyushu Women's University,08-03-2018,2.13
-983,998,Master of Business Administration,Silesian School of Economics and Languages,05-11-2015,1.11
-984,646,Master of Computer Science,Babcock University,04-07-2023,2.15
-985,833,Doctor of Medicine,Victoria University,31-08-2018,1.75
-986,486,Bachelor of Nursing,Universidad Privada Abierta Latinoamericana,27-08-2021,1.45
-987,483,Doctor of Philosophy,Universidad Nacional de Cuyo,18-03-2013,3.26
-988,7,Doctor of Pharmacy,College of St. Mary,05-11-2018,2.94
-989,397,Bachelor of Arts,"Arizona State University, West Campus",10-02-2010,1.54
-990,200,Associate of Science,Universitas Kediri,22-04-2015,1.29
-991,609,Juris Doctor,Beijing University of Chemical Technology,12-09-2014,2.77
-992,696,Master of Arts,Hongik University,12-01-2022,1.07
-993,752,Master of Computer Science,New England College,18-12-2012,2.87
-994,587,Master of Public Health,University of Huddersfield,21-07-2013,1.88
-995,236,Master of Computer Science,Bethel College Newton,26-04-2009,1.01
-996,131,Bachelor of Nursing,University of the Free State,02-07-2023,1.19
-997,580,Bachelor of Engineering,Kyoto University of Art and Design,02-12-2011,2.98
-998,217,Master of Public Health,South China Normal University,05-05-2016,2.81
-999,344,Associate of Science,University of Sassari,27-07-2020,2.19
-1000,341,Bachelor of Arts,"University of Maine, Fort Kent",02-04-2022,1.06
+1,584,Bachelor of Fine Arts,Ambrose Alli University,2012,2.01
+2,422,Bachelor of Education,Facultés Universitaires Catholiques de Mons,2024,2.36
+3,488,Bachelor of Commerce, Huaihua University,2023,2.16
+4,874,Bachelor of Fine Arts,Maldives National University,2016,3.09
+5,469,Bachelor of Education,Open University of the Netherlands,2017,2.48
+6,948,Bachelor of Commerce,Universiti Malaysia Sabah,2019,2.18
+7,249,Bachelor of Fine Arts,Webster University Geneva,2019,2.49
+8,544,Bachelor of Education,Massey University,2018,2.82
+9,677,Bachelor of Commerce,Leeds Metropolitan University,2012,2.79
+10,964,Bachelor of Fine Arts,Shanghai Television University,2024,2.58
+11,332,Bachelor of Education,"Universidad de Puerto Rico, Humacao",2023,2.01
+12,835,Bachelor of Commerce,Instituto Superior D. Afonso III - INUAF,2012,2.36
+13,69,Bachelor of Fine Arts,St. Petersburg State University of Culture and Arts,2024,2.16
+14,514,Bachelor of Education,Jinan University,2023,3.09
+15,188,Bachelor of Commerce,Aga Khan University,2016,2.48
+16,461,Bachelor of Fine Arts,Heritage College,2017,2.18
+17,125,Bachelor of Education,Tohoku Gakuin University,2019,2.49
+18,844,Bachelor of Commerce,Karachi School of Art,2019,2.82
+19,538,Bachelor of Fine Arts,Yunnan Agriculture University,2018,2.79
+20,509,Bachelor of Education,Huaihai Institute of Technology,2012,2.58
+21,371,Bachelor of Commerce,Southwestern Oklahoma State University,2024,2.01
+22,48,Bachelor of Fine Arts,Shenyang Polytechnic University,2023,2.36
+23,930,Bachelor of Education,Universidad Internacional Menéndez Pelayo,2017,2.16
+24,793,Bachelor of Commerce,Semnan University of Medical Sciences,2017,3.09
+25,899,Bachelor of Fine Arts,Politeknik Negeri Pontianak,2017,2.48
+26,138,Bachelor of Education,Chodang University,2025,2.18
+27,478,Bachelor of Commerce,Adnan Menderes University,2012,2.49
+28,312,Bachelor of Fine Arts,University of Reggio Calabria,2019,2.82
+29,199,Bachelor of Education,Novosibirsk State Agricultural University,2019,2.79
+30,352,Bachelor of Commerce,University for Peace,2018,2.58
+31,759,Bachelor of Fine Arts,Barry University,2023,2.01
+32,791,Bachelor of Education,Shanghai Institue of Foreign Trade,2012,2.36
+33,799,Bachelor of Commerce,Universidad Nacional de Córdoba,2012,2.16
+34,556,Bachelor of Fine Arts,University of Pittsburgh at Greensburg,2023,3.09
+35,915,Bachelor of Education,King Khaled University,2017,2.48
+36,727,Bachelor of Commerce,Humboldt State University,2024,2.18
+37,561,Bachelor of Fine Arts,Technological University of Iceland,2023,2.49
+38,84,Bachelor of Education,University of Health Sciences,2019,2.82
+39,744,Bachelor of Commerce,Kurashiki Sakuyo University,2016,2.79
+40,190,Bachelor of Fine Arts,Univesidade Agostinho Neto,2023,2.58
+41,930,Bachelor of Education,Higher School o Business in Tarnow,2019,2.01
+42,287,Bachelor of Commerce,United States Coast Guard Academy,2024,2.36
+43,913,Bachelor of Fine Arts,St. Lawrence University,2019,2.16
+44,345,Bachelor of Education,Shreemati Nathibai Damodar Thackersey Women's University,2023,3.09
+45,196,Bachelor of Commerce,Tabriz University,2025,2.48
+46,50,Bachelor of Fine Arts,Chang Gung University,2023,2.18
+47,221,Bachelor of Education,Awadhesh Pratap Singh University,2024,2.49
+48,832,Bachelor of Commerce,Azerbaijan Medical University,2024,2.82
+49,928,Bachelor of Fine Arts,Pontifcia Università Urbaniana,2018,2.79
+50,941,Bachelor of Education,University of Richmond,2024,2.58
+51,330,Bachelor of Commerce,Newport International University,2024,2.01
+52,178,Bachelor of Fine Arts,University of Food Technology,2012,2.36
+53,142,Bachelor of Education,Universidad Católica San Antonio,2024,2.16
+54,605,Bachelor of Commerce,University of Jazeera,2019,3.09
+55,914,Bachelor of Fine Arts,Universidade Católica de Pernambuco,2023,2.48
+56,551,Bachelor of Education,Karaganda State Technical University,2023,2.18
+57,593,Bachelor of Commerce,Universidad Cuauhtémoc,2018,2.49
+58,493,Bachelor of Fine Arts,Universidad Nacional de Educación a Distancia,2017,2.82
+59,803,Bachelor of Education,Louisiana State University and Agricultural and Mechanical College,2016,2.79
+60,550,Bachelor of Commerce,Shanghai Sipo Polytechnic,2019,2.58
+61,123,Bachelor of Fine Arts,Rostov State University,2016,2.01
+62,95,Bachelor of Education,Lagos City Polytechnic,2024,2.36
+63,27,Bachelor of Commerce,Jai Prakash University,2017,2.16
+64,773,Bachelor of Fine Arts,University of Art and Design Cluj-Napoca,2023,3.09
+65,767,Bachelor of Education,Sambalpur University,2023,2.48
+66,285,Bachelor of Commerce,Goddard College,2018,2.18
+67,703,Bachelor of Fine Arts,Augustana College,2012,2.49
+68,611,Bachelor of Education,Universidad Tecnológica del Centro,2023,2.82
+69,63,Bachelor of Commerce,Universiti Islam Sultan Sharif Ali,2017,2.79
+70,879,Bachelor of Fine Arts,Liaoning University,2012,2.58
+71,332,Bachelor of Education,"Concordia University, Irvine",2012,2.01
+72,92,Bachelor of Commerce,Universitas Pendidikan Indonesia,2017,2.36
+73,174,Bachelor of Fine Arts,Université de Sherbrooke,2018,2.16
+74,974,Bachelor of Education,Dutch University Institute for Art History (DUIA),2017,3.09
+75,815,Bachelor of Commerce,Hainan University,2023,2.48
+76,162,Bachelor of Fine Arts,University of St. Gallen,2024,2.18
+77,608,Bachelor of Education,Lewis-Clark State College,2012,2.49
+78,62,Bachelor of Commerce,Gotland University College,2024,2.82
+79,1,Bachelor of Fine Arts,Yantai University,2019,2.79
+80,881,Bachelor of Education,Universidad de Bologna - Representación en Buenos Aires,2023,2.58
+81,322,Bachelor of Commerce,Universidad Autónoma Gabriel René Moreno,2016,2.01
+82,667,Bachelor of Fine Arts,University of Lucknow,2019,2.36
+83,870,Bachelor of Education,Annamalai University,2018,2.16
+84,50,Bachelor of Commerce,Universidad APEC,2012,3.09
+85,187,Bachelor of Fine Arts,Belarussian State Technological University,2019,2.48
+86,828,Bachelor of Education,Carl von Ossietzky Universität Oldenburg,2023,2.18
+87,314,Bachelor of Commerce,Bradley University,2024,2.49
+88,80,Bachelor of Fine Arts,Deutsche Hochschule für Verwaltungswissenschaften Speyer,2012,2.82
+89,295,Bachelor of Education,Walden University,2018,2.79
+90,877,Bachelor of Commerce,North Carolina Central University,2025,2.58
+91,114,Bachelor of Fine Arts,Universidad Isaac Newton,2012,2.01
+92,278,Bachelor of Education,Universität für künstlerische und industrielle Gestaltung Linz,2017,2.36
+93,223,Bachelor of Commerce,Université Mohammed Ier,2019,2.16
+94,499,Bachelor of Fine Arts,University of Wisconsin - Milwaukee,2025,3.09
+95,582,Bachelor of Education,Morehead State University,2012,2.48
+96,478,Bachelor of Commerce,University College of Borås,2023,2.18
+97,444,Bachelor of Fine Arts,Egerton University,2023,2.49
+98,8,Bachelor of Education,Asa University Bangladesh,2024,2.82
+99,404,Bachelor of Commerce,Medizinische Hochschule Hannover,2025,2.79
+100,315,Bachelor of Fine Arts,Fachhochschule Niederrhein,2023,2.58
+101,968,Bachelor of Education,University of Texas at Arlington,2023,2.01
+102,888,Bachelor of Commerce,Politeknik Negeri Semarang,2024,2.36
+103,625,Bachelor of Fine Arts,Clarion University,2019,2.16
+104,169,Bachelor of Education,Muscat College,2024,3.09
+105,459,Bachelor of Commerce,Universidad Alas Peruanas,2012,2.48
+106,996,Bachelor of Fine Arts,University of Lucerne,2024,2.18
+107,618,Bachelor of Education,Riyadh College of Dentistry and Pharmacy,2016,2.49
+108,978,Bachelor of Commerce,Dallas Christian College,2024,2.82
+109,865,Bachelor of Fine Arts,Ukrainian National Forestry University,2012,2.79
+110,133,Bachelor of Education,National University of Rwanda,2018,2.58
+111,440,Bachelor of Commerce,Huaihua Radio and Television University,2018,2.01
+112,262,Bachelor of Fine Arts,Universitas Katolik Indonesia Atma Jaya,2023,2.36
+113,446,Bachelor of Education,City University Athens,2019,2.16
+114,705,Bachelor of Commerce,College of Nursing and Allied Health Scinces,2012,3.09
+115,522,Bachelor of Fine Arts,Texas Lutheran University,2023,2.48
+116,511,Bachelor of Education,Universität für Bodenkultur Wien,2024,2.18
+117,866,Bachelor of Commerce,International Bible College,2017,2.49
+118,721,Bachelor of Fine Arts,Celal Bayar University,2023,2.82
+119,784,Bachelor of Education,University of Trinity College,2017,2.79
+120,972,Bachelor of Commerce,Universitas Muslim Indonesia,2024,2.58
+121,344,Bachelor of Fine Arts,Miyagi University of Education,2012,2.01
+122,660,Bachelor of Education,Instituts Supérieurs de Formation des Maîtres,2016,2.36
+123,362,Bachelor of Commerce,Maryville University of St. Louis,2017,2.16
+124,921,Bachelor of Fine Arts,University of Manila,2017,3.09
+125,78,Bachelor of Education,Jami Institute of Technology,2025,2.48
+126,822,Bachelor of Commerce,Universidad de Córdoba,2012,2.18
+127,823,Bachelor of Fine Arts,Sabzevar School of Medical Sciences,2025,2.49
+128,657,Bachelor of Education,Montana State University,2024,2.82
+129,295,Bachelor of Commerce,Technological Education Institute of Kozani,2016,2.79
+130,949,Bachelor of Fine Arts,Novena University,2025,2.58
+131,527,Bachelor of Education,Instituto Superior de Assistentes e Intérpretes,2025,2.01
+132,950,Bachelor of Commerce,Bennington College,2019,2.36
+133,53,Bachelor of Fine Arts,Irkutsk State Academy of Economics,2017,2.16
+134,579,Bachelor of Education,Susquehanna University,2017,3.09
+135,966,Bachelor of Commerce,Centro de Estudios Avanzados de Puerto Rico y el Caribe,2018,2.48
+136,554,Bachelor of Fine Arts,American University of Armenia,2019,2.18
+137,893,Bachelor of Education,Fielding Institute,2018,2.49
+138,339,Bachelor of Commerce,Canisius College,2019,2.82
+139,303,Bachelor of Fine Arts,Caldwell College,2024,2.79
+140,327,Bachelor of Education,Waynesburg College,2025,2.58
+141,43,Bachelor of Commerce,Kyoto Institute of Technology,2017,2.01
+142,752,Bachelor of Fine Arts,People's University of Bangladesh,2025,2.36
+143,641,Bachelor of Education,Institut Prima Bestari - Pine Academy ,2023,2.16
+144,114,Bachelor of Commerce,University of South Dakota,2012,3.09
+145,254,Bachelor of Fine Arts,Utah State University,2019,2.48
+146,118,Bachelor of Education,Universität Duisburg-Essen,2018,2.18
+147,448,Bachelor of Commerce,Universidad de San José,2017,2.49
+148,34,Bachelor of Fine Arts,University of Northern Bahr El-Ghazal,2025,2.82
+149,963,Bachelor of Education,American InterContinental University - Atlanta,2023,2.79
+150,195,Bachelor of Commerce,University of Michigan - Dearborn,2012,2.58
+151,872,Bachelor of Fine Arts,"University ""Titu Maiorescu""",2025,2.01
+152,659,Bachelor of Education,Bunkyo University,2016,2.36
+153,500,Bachelor of Commerce,Oregon State University,2017,2.16
+154,394,Bachelor of Fine Arts,International Turkmen Turkish University,2016,3.09
+155,2,Bachelor of Education,Tokyo University of Foreign Studies,2016,2.48
+156,752,Bachelor of Commerce,Harbin Medical University,2017,2.18
+157,373,Bachelor of Fine Arts,"University of Houston, Downtown",2012,2.49
+158,654,Bachelor of Education,"University of California, Santa Barbara",2012,2.82
+159,58,Bachelor of Commerce,Universidad Fundepos Alma Mater,2023,2.79
+160,315,Bachelor of Fine Arts,University of Kalamoon,2017,2.58
+161,947,Bachelor of Education,University of Ljubljana,2017,2.01
+162,882,Bachelor of Commerce,Al-Baath University,2018,2.36
+163,724,Bachelor of Fine Arts,Universidad Mexicana,2016,2.16
+164,40,Bachelor of Education,The University of Nottingham Ningbo China,2019,3.09
+165,494,Bachelor of Commerce,Xi'an University of Technology,2012,2.48
+166,972,Bachelor of Fine Arts,Sree Sankaracharya University of Sanskrit,2017,2.18
+167,980,Bachelor of Education,"California State University, Los Angeles",2024,2.49
+168,951,Bachelor of Commerce,University of North Texas,2023,2.82
+169,73,Bachelor of Fine Arts,Dutch Delta University,2024,2.79
+170,293,Bachelor of Education,University of Lower Silesia of the Association for the Advancement of Education in Wroclaw.,2024,2.58
+171,5,Bachelor of Commerce,"Physical Education Academy ""Jedrzej Sniadecki"" in Gdansk",2025,2.01
+172,24,Bachelor of Fine Arts,Ebonyi State University,2019,2.36
+173,571,Bachelor of Education,Yasar University,2018,2.16
+174,942,Bachelor of Commerce,Centro Universitario Ciudad Vieja,2024,3.09
+175,594,Bachelor of Fine Arts,Deutsche Sporthochschule Köln,2012,2.48
+176,756,Bachelor of Education,Ecole Nationale des Travaux Publics de l'Etat,2023,2.18
+177,217,Bachelor of Commerce,State University of New York College of Optometry,2018,2.49
+178,372,Bachelor of Fine Arts,Brest State Technical University,2018,2.82
+179,805,Bachelor of Education,Texas A&M International University,2016,2.79
+180,610,Bachelor of Commerce,Estonian Academy of Music and Theatre,2018,2.58
+181,517,Bachelor of Fine Arts,"University of Nottingham, Malaysia Campus",2019,2.01
+182,148,Bachelor of Education,"Indian Institute of Technology, Roorkee",2019,2.36
+183,32,Bachelor of Commerce,Valdosta State University,2023,2.16
+184,903,Bachelor of Fine Arts,Universität Hildesheim,2016,3.09
+185,462,Bachelor of Education,"Johns Hopkins University, SAIS Bologna Center",2012,2.48
+186,83,Bachelor of Commerce,Novosibirsk State Medical Academy,2016,2.18
+187,246,Bachelor of Fine Arts,Manhattan College,2024,2.49
+188,505,Bachelor of Education,West Coast University (WCU) ,2023,2.82
+189,635,Bachelor of Commerce,National Ilan University,2018,2.79
+190,382,Bachelor of Fine Arts,Njala University,2017,2.58
+191,860,Bachelor of Education,Capilano College,2019,2.01
+192,522,Bachelor of Commerce,Isra University,2016,2.36
+193,489,Bachelor of Fine Arts,University of Arkansas (System),2023,2.16
+194,329,Bachelor of Education,Universidad Panamericana de San Salvador,2018,3.09
+195,742,Bachelor of Commerce,Syracuse University,2016,2.48
+196,336,Bachelor of Fine Arts,Tianjin University of Finance & Economics,2019,2.18
+197,193,Bachelor of Education,National University of Arts,2017,2.49
+198,113,Bachelor of Commerce,Wesley College Mississippi,2023,2.82
+199,121,Bachelor of Fine Arts,Nazareth College,2024,2.79
+200,769,Bachelor of Education,Instituto Mauá de Tecnologia,2012,2.58
+201,937,Bachelor of Commerce,Universidad de Granma,2023,2.01
+202,566,Bachelor of Fine Arts,Fine Arts Academy in Gdansk,2012,2.36
+203,69,Bachelor of Education,Universidad Nacional de Piura,2019,2.16
+204,626,Bachelor of Commerce,Imperial College School of Medicine,2024,3.09
+205,389,Bachelor of Fine Arts,Champlain College,2016,2.48
+206,855,Bachelor of Education,Czech University of Agriculture Prague,2012,2.18
+207,951,Bachelor of Commerce,Illinois College,2024,2.49
+208,670,Bachelor of Fine Arts,Keller Graduate School of Management,2017,2.82
+209,770,Bachelor of Education,Tumkur University,2019,2.79
+210,383,Bachelor of Commerce,4th Military Medical University,2024,2.58
+211,917,Bachelor of Fine Arts,Ecole des Hautes Etudes Commerciales du Nord,2024,2.01
+212,436,Bachelor of Education,Universitas Hasanuddin,2023,2.36
+213,894,Bachelor of Commerce,Universidad Internacional de las Américas,2019,2.16
+214,473,Bachelor of Fine Arts,International Culinary Institute (ICI),2019,3.09
+215,664,Bachelor of Education,Copenhagen Business School,2017,2.48
+216,298,Bachelor of Commerce,Haigazian University,2025,2.18
+217,390,Bachelor of Fine Arts,Universitas Atma Jaya Yogyakarta,2016,2.49
+218,452,Bachelor of Education,"Teacher Training College of Revalidation, Rehabilitation and Physical Education",2012,2.82
+219,417,Bachelor of Commerce,Universidad Nacional de Tumbes,2017,2.79
+220,523,Bachelor of Fine Arts,University of Pittsburgh at Johnstown,2016,2.58
+221,231,Bachelor of Education,Hebrew College,2019,2.01
+222,257,Bachelor of Commerce,Ama International University,2016,2.36
+223,781,Bachelor of Fine Arts,"California State University, Stanislaus",2023,2.16
+224,784,Bachelor of Education,Huanghe Science & Technology University,2017,3.09
+225,208,Bachelor of Commerce,Institute of Science and Technology,2016,2.48
+226,291,Bachelor of Fine Arts,Pedagogical University of Zielona Gora,2023,2.18
+227,1000,Bachelor of Education,Royal University of Agriculture,2024,2.49
+228,228,Bachelor of Commerce,Lutheran School Of Theology In Aarhus,2023,2.82
+229,732,Bachelor of Fine Arts,Al Mansour University College,2016,2.79
+230,77,Bachelor of Education,University of Sierra Leone,2016,2.58
+231,486,Bachelor of Commerce,Multimedia University of Kenya,2024,2.01
+232,755,Bachelor of Fine Arts,LSB College,2012,2.36
+233,509,Bachelor of Education,Universidade Metodista de Angola,2017,2.16
+234,585,Bachelor of Commerce,Ibrahim Babangida University,2017,3.09
+235,758,Bachelor of Fine Arts,University College Cork,2012,2.48
+236,794,Bachelor of Education,Universidad de las Regiones Autónomas de la Costa Caribe Nicaragüense,2024,2.18
+237,107,Bachelor of Commerce,Merlimau Polytechnic,2012,2.49
+238,628,Bachelor of Fine Arts,Dániel Berzsenyi Teacher Training College,2024,2.82
+239,797,Bachelor of Education,Albertus Magnus College,2023,2.79
+240,333,Bachelor of Commerce,National Central University,2023,2.58
+241,811,Bachelor of Fine Arts,Reformed Bible College,2017,2.01
+242,451,Bachelor of Education,University of Applied Sciences Rapperswil,2024,2.36
+243,322,Bachelor of Commerce,Hannam University,2024,2.16
+244,778,Bachelor of Fine Arts,Debrecen University of Agricultural Sciences,2017,3.09
+245,906,Bachelor of Education,Salam University,2023,2.48
+246,139,Bachelor of Commerce,Lumbini Buddhist University,2024,2.18
+247,931,Bachelor of Fine Arts,Hainan University,2012,2.49
+248,339,Bachelor of Education,IntelliTec College - Grand Junction,2016,2.82
+249,125,Bachelor of Commerce,Al Hussein Bin Talal University,2019,2.79
+250,131,Bachelor of Fine Arts,Rust College,2012,2.58
+251,302,Bachelor of Education,Université de Pau et des Pays de l'Adour,2023,2.01
+252,796,Bachelor of Commerce,Ferris University,2012,2.36
+253,785,Bachelor of Fine Arts,State University of New York College at Plattsburgh,2023,2.16
+254,745,Bachelor of Education,Oklahoma State University - Institute of Technology,2025,3.09
+255,163,Bachelor of Commerce,Universidad Anáhuac del Sur,2017,2.48
+256,359,Bachelor of Fine Arts,Ecole Française d'Electronique et d'Informatique,2024,2.18
+257,766,Bachelor of Education,Pawel Wlodkowic University College in Plock,2012,2.49
+258,996,Bachelor of Commerce,Technological Education Institute of Lamia,2023,2.82
+259,345,Bachelor of Fine Arts,Westhill University,2012,2.79
+260,53,Bachelor of Education,Wellspring University,2023,2.58
+261,684,Bachelor of Commerce,Wah Medical College,2017,2.01
+262,459,Bachelor of Fine Arts,Baze University Abuja,2023,2.36
+263,842,Bachelor of Education,Western Mindanao State University,2012,2.16
+264,845,Bachelor of Commerce,University of Wisconsin - Whitewater,2017,3.09
+265,299,Bachelor of Fine Arts,Fachhochschule Bochum,2019,2.48
+266,531,Bachelor of Education,Nisho Gakusha University,2012,2.18
+267,969,Bachelor of Commerce,Gonabad University of Medical Sciences,2012,2.49
+268,83,Bachelor of Fine Arts,Tokyo Medical and Dental University,2025,2.82
+269,574,Bachelor of Education,Hadhramout University of Science and Technology ,2016,2.79
+270,786,Bachelor of Commerce,University of Nevada - Las Vegas,2018,2.58
+271,723,Bachelor of Fine Arts,Musashi Institute of Technology,2019,2.01
+272,259,Bachelor of Education,Valley City State University,2019,2.36
+273,129,Bachelor of Commerce,Instituto Mauá de Tecnologia,2023,2.16
+274,804,Bachelor of Fine Arts,Clayton College & State University,2023,3.09
+275,667,Bachelor of Education,University of Worcester,2016,2.48
+276,508,Bachelor of Commerce,Universidad Central del Caribe,2024,2.18
+277,738,Bachelor of Fine Arts,Ecole Supérieure de Commerce de Reims,2024,2.49
+278,46,Bachelor of Education,Ecole pour les Etudes et la Recherche en Informatique et Electronique,2018,2.82
+279,374,Bachelor of Commerce,Universidade Jean Piaget de Cabo Verde,2019,2.79
+280,546,Bachelor of Fine Arts,"Akrofi-Christaller Institute of Theeology, Mission and  Culture",2024,2.58
+281,65,Bachelor of Education,"University of Wales, Bangor",2019,2.01
+282,263,Bachelor of Commerce,"Islamic Azad University, Arak",2017,2.36
+283,133,Bachelor of Fine Arts,Pädagogische Hochschule Weingarten,2012,2.16
+284,495,Bachelor of Education,Niigata University of International and Information Studies,2012,3.09
+285,557,Bachelor of Commerce,"Ecole Nationale Supérieure d'Electronique, d'Electrotechnique, d'Informatique et d'Hydraulique de Toulouse",2012,2.48
+286,403,Bachelor of Fine Arts,Segi University College,2016,2.18
+287,641,Bachelor of Education,"CollegeAmerica, Denver",2012,2.49
+288,451,Bachelor of Commerce,Music Academy in Cracow,2023,2.82
+289,99,Bachelor of Fine Arts,Katholische Fachhochschule Berlin (KFB),2024,2.79
+290,496,Bachelor of Education,Columbia College South Carolina,2019,2.58
+291,220,Bachelor of Commerce,Universitas Mercu Buana,2018,2.01
+292,955,Bachelor of Fine Arts,South China Agricultural University,2016,2.36
+293,136,Bachelor of Education,Agricultural University of Plovdiv,2024,2.16
+294,833,Bachelor of Commerce,Grand Valley State University,2024,3.09
+295,307,Bachelor of Fine Arts,Tongji University,2017,2.48
+296,101,Bachelor of Education,I-Shou University,2023,2.18
+297,851,Bachelor of Commerce,Gandhigram Rural Institute,2019,2.49
+298,476,Bachelor of Fine Arts,Presbyterian University of East Africa,2024,2.82
+299,652,Bachelor of Education,Academia Nacional Superior de Orquesta,2018,2.79
+300,418,Bachelor of Commerce,Evangelische Fachhochschule Ludwigshafen Hochschule für Sozial- und Gesundheitswesen,2023,2.58
+301,318,Bachelor of Fine Arts,Ural State University of Economics,2012,2.01
+302,51,Bachelor of Education,Albion College,2012,2.36
+303,788,Bachelor of Commerce,University of Turku,2025,2.16
+304,885,Bachelor of Fine Arts,University of Worcester,2024,3.09
+305,511,Bachelor of Education,Kuvempu University,2019,2.48
+306,440,Bachelor of Commerce,Tallinn University,2018,2.18
+307,859,Bachelor of Fine Arts,Indiana University at South Bend,2012,2.49
+308,571,Bachelor of Education,International Blacksea University,2024,2.82
+309,596,Bachelor of Commerce,"Universiteit Antwerpen, UFSIA",2023,2.79
+310,78,Bachelor of Fine Arts,College of the Holy Spirit,2024,2.58
+311,264,Bachelor of Education,Samara State Medical University,2019,2.01
+312,78,Bachelor of Commerce,Matsumoto Dental University,2019,2.36
+313,556,Bachelor of Fine Arts,Rajitlal Institute of Technology & Health Sciences (RITHS),2024,2.16
+314,779,Bachelor of Education,Marylhurst University,2019,3.09
+315,829,Bachelor of Commerce,Theatre Academy Finland,2025,2.48
+316,747,Bachelor of Fine Arts,Zaman University,2012,2.18
+317,676,Bachelor of Education,King Saud bin Abdulaziz University for Health Sciences ,2024,2.49
+318,878,Bachelor of Commerce,European University of Lefke,2019,2.82
+319,573,Bachelor of Fine Arts,Kyushu University of Nursing and SocialWelfare,2024,2.79
+320,949,Bachelor of Education,Inchon University,2024,2.58
+321,583,Bachelor of Commerce,Université de Sherbrooke,2012,2.01
+322,888,Bachelor of Fine Arts,Hope Africa University,2019,2.36
+323,480,Bachelor of Education,Suzuka International University,2024,2.16
+324,52,Bachelor of Commerce,Balamand University,2025,3.09
+325,832,Bachelor of Fine Arts,Tongji Medical University,2012,2.48
+326,928,Bachelor of Education,Private Fachhochschule für Wirtschaft und Technik Vechta/Diepholz,2019,2.18
+327,741,Bachelor of Commerce,Dominican University,2023,2.49
+328,508,Bachelor of Fine Arts,Universidad Galileo,2024,2.82
+329,958,Bachelor of Education,Conservatoire National des Arts et Métiers,2023,2.79
+330,253,Bachelor of Commerce,St. George's University,2024,2.58
+331,825,Bachelor of Fine Arts,Universitas Wijaya Kusuma Purwokerto,2012,2.01
+332,360,Bachelor of Education,K.N.Toosi University of Technology,2016,2.36
+333,201,Bachelor of Commerce,Adeleke University,2023,2.16
+334,644,Bachelor of Fine Arts,Universidad Valle del Momboy,2016,3.09
+335,249,Bachelor of Education,University of Tennessee Space Institute,2023,2.48
+336,819,Bachelor of Commerce,Capitol University,2024,2.18
+337,389,Bachelor of Fine Arts,Loras College,2023,2.49
+338,268,Bachelor of Education,North Bengal University,2019,2.82
+339,670,Bachelor of Commerce,South Asian Institute of Technology And Medicine (SAITM) ,2023,2.79
+340,501,Bachelor of Fine Arts,Marycrest International University,2024,2.58
+341,595,Bachelor of Education,Ecole Supérieure des Sciences et Technologie de l'Ingénieur de Nancy,2025,2.01
+342,731,Bachelor of Commerce,Université de Kinshasa,2018,2.36
+343,817,Bachelor of Fine Arts,"National Museum Institute of History of Art, Conservation and Museology",2024,2.16
+344,424,Bachelor of Education,China Agricultural University,2019,3.09
+345,365,Bachelor of Commerce,University of Central Punjab,2018,2.48
+346,408,Bachelor of Fine Arts,Capital University Law School,2023,2.18
+347,464,Bachelor of Education,Smith College,2023,2.49
+348,732,Bachelor of Commerce,Oita University,2017,2.82
+349,197,Bachelor of Fine Arts,Arthur D. Little Management Education Institute,2012,2.79
+350,942,Bachelor of Education,University of Adelaide,2023,2.58
+351,843,Bachelor of Commerce,Jain Vishva Bharati Institute,2017,2.01
+352,257,Bachelor of Fine Arts,Bryant University,2025,2.36
+353,929,Bachelor of Education,Ecole Nationale du Génie de l'Eau et de l'Environnement de Strasbourg,2016,2.16
+354,178,Bachelor of Commerce,Virginia College,2012,3.09
+355,591,Bachelor of Fine Arts,Aichi University of Education,2017,2.48
+356,864,Bachelor of Education,Jodhpur National University,2016,2.18
+357,38,Bachelor of Commerce,University of Sibiu,2016,2.49
+358,727,Bachelor of Fine Arts,Taejon University,2024,2.82
+359,893,Bachelor of Education,Concordia University,2012,2.79
+360,585,Bachelor of Commerce,Mansfield University of Pennsylvania,2025,2.58
+361,887,Bachelor of Fine Arts,Universidad de Mendoza,2025,2.01
+362,818,Bachelor of Education,Ecole Nationale Supérieure de Chimie de Toulouse,2019,2.36
+363,337,Bachelor of Commerce,Tehran University of Medical Sciences,2012,2.16
+364,934,Bachelor of Fine Arts,Universidad Autónoma Gabriel René Moreno,2019,3.09
+365,316,Bachelor of Education,Kuban State University of Agriculture,2017,2.48
+366,389,Bachelor of Commerce,Chukyo Women's University,2024,2.18
+367,166,Bachelor of Fine Arts,Institut Supérieur d'Agriculture Lille,2012,2.49
+368,121,Bachelor of Education,Academy of Economics in Wroclaw,2012,2.82
+369,447,Bachelor of Commerce,Universidad de Magallanes,2025,2.79
+370,971,Bachelor of Fine Arts,Southwest University,2019,2.58
+371,601,Bachelor of Education,Kannada University,2012,2.01
+372,698,Bachelor of Commerce,University of Tennessee Space Institute,2016,2.36
+373,527,Bachelor of Fine Arts,Kettering University (GMI),2023,2.16
+374,762,Bachelor of Education,"California State University, Northridge",2024,3.09
+375,812,Bachelor of Commerce,Nagasaki Institute of Applied Science,2024,2.48
+376,324,Bachelor of Fine Arts,Babes-Bolyai University of Cluj-Napoca,2023,2.18
+377,930,Bachelor of Education,"Islamic Azad University, North Tehran",2024,2.49
+378,882,Bachelor of Commerce,Bangladesh University,2012,2.82
+379,926,Bachelor of Fine Arts,Assam University,2018,2.79
+380,771,Bachelor of Education,Central Radio and TV University,2012,2.58
+381,93,Bachelor of Commerce,Université de Sherbrooke,2018,2.01
+382,247,Bachelor of Fine Arts,Universitas Ibn Chaldun Jakarta,2018,2.36
+383,43,Bachelor of Education,Zhengda Software College,2019,2.16
+384,509,Bachelor of Commerce,University of Priština,2024,3.09
+385,356,Bachelor of Fine Arts,Cumberland University,2012,2.48
+386,497,Bachelor of Education,Universitas Islam Riau,2023,2.18
+387,412,Bachelor of Commerce,Shanghai Customs College,2017,2.49
+388,231,Bachelor of Fine Arts,"Institute of Teachers Education, Kota Bharu",2024,2.82
+389,769,Bachelor of Education,Ashikaga Institute of Technology,2018,2.79
+390,273,Bachelor of Commerce,Westmont College,2019,2.58
+391,492,Bachelor of Fine Arts,University of Texas at Arlington,2024,2.01
+392,160,Bachelor of Education,Pak-AIMS (American Institute of Management Sciences),2019,2.36
+393,865,Bachelor of Commerce,Lesley University,2023,2.16
+394,452,Bachelor of Fine Arts,Full Sail University,2017,3.09
+395,657,Bachelor of Education,Pedagogical University of Bydgoszcz,2019,2.48
+396,198,Bachelor of Commerce,Chung-Ju National University,2012,2.18
+397,443,Bachelor of Fine Arts,Pacific International College,2019,2.49
+398,458,Bachelor of Education,Hiiraan University,2019,2.82
+399,775,Bachelor of Commerce,Mamoun Private University for Science and Technology,2019,2.79
+400,968,Bachelor of Fine Arts,Debre Markos University,2012,2.58
+401,180,Bachelor of Education,University of Redlands,2024,2.01
+402,196,Bachelor of Commerce,Universitas Atma Jaya Yogyakarta,2018,2.36
+403,741,Bachelor of Fine Arts,St. Bernard's Institute,2012,2.16
+404,849,Bachelor of Education,Universidad Pontificia de Salamanca,2019,3.09
+405,737,Bachelor of Commerce,Earlham College,2017,2.48
+406,700,Bachelor of Fine Arts,Kiev National University of Construction and Architecture,2012,2.18
+407,25,Bachelor of Education,Dominican University,2024,2.49
+408,240,Bachelor of Commerce,Universidad de Cienfuegos,2025,2.82
+409,251,Bachelor of Fine Arts,Binary University College of Managemant & Entrepreneurship,2024,2.79
+410,545,Bachelor of Education,Kiev National Economic University Named after Vadym Hetman,2024,2.58
+411,254,Bachelor of Commerce,Southwestern Adventist University,2023,2.01
+412,772,Bachelor of Fine Arts,University of Kent at Canterbury,2024,2.36
+413,244,Bachelor of Education,Odessa National I.I. Mecnikov University,2017,2.16
+414,681,Bachelor of Commerce,Lansbridge University,2024,3.09
+415,652,Bachelor of Fine Arts,Ecole Supérieure de Commerce de Grenoble,2024,2.48
+416,850,Bachelor of Education,China Medical College,2012,2.18
+417,315,Bachelor of Commerce,Roberts Wesleyan College,2023,2.49
+418,774,Bachelor of Fine Arts,Kuching Polytechnic,2023,2.82
+419,69,Bachelor of Education,Stockholm School of Economics,2023,2.79
+420,991,Bachelor of Commerce,Al-Zaiem Al-Azhari University,2016,2.58
+421,262,Bachelor of Fine Arts,University of Bihac,2025,2.01
+422,566,Bachelor of Education,Ritsumeikan University,2023,2.36
+423,799,Bachelor of Commerce,Beijing Information Science and Technology University,2017,2.16
+424,990,Bachelor of Fine Arts,Fujian Agricultural University,2025,3.09
+425,5,Bachelor of Education,Pak-AIMS (American Institute of Management Sciences),2019,2.48
+426,502,Bachelor of Commerce,Bridgewater College,2012,2.18
+427,522,Bachelor of Fine Arts,Ecole Nationale des Travaux Publics de l'Etat,2018,2.49
+428,389,Bachelor of Education,University of Vaasa,2024,2.82
+429,102,Bachelor of Commerce,Benadir University,2017,2.79
+430,901,Bachelor of Fine Arts,"Webster University, Vienna",2018,2.58
+431,40,Bachelor of Education,Landmark University,2012,2.01
+432,781,Bachelor of Commerce,Cag University,2019,2.36
+433,744,Bachelor of Fine Arts,Kalinga University,2025,2.16
+434,943,Bachelor of Education,Surugadai University,2023,3.09
+435,743,Bachelor of Commerce,College of William and Mary,2019,2.48
+436,289,Bachelor of Fine Arts,Universidade Metodista de Angola,2012,2.18
+437,157,Bachelor of Education,Brac University,2016,2.49
+438,439,Bachelor of Commerce,Cumberland College,2023,2.82
+439,635,Bachelor of Fine Arts,Columbia Southern University,2016,2.79
+440,125,Bachelor of Education,Hochschule Coburg,2012,2.58
+441,730,Bachelor of Commerce,Bluefield College,2024,2.01
+442,522,Bachelor of Fine Arts,Miami Dade College,2023,2.36
+443,933,Bachelor of Education,Myongji University,2019,2.16
+444,625,Bachelor of Commerce,Aletheia University,2018,3.09
+445,89,Bachelor of Fine Arts,Hamline University,2018,2.48
+446,607,Bachelor of Education,China Academy of Art,2018,2.18
+447,970,Bachelor of Commerce,West Virginia School of Osteopathic Medicine,2017,2.49
+448,581,Bachelor of Fine Arts,Knowledge College for Science and Technology,2017,2.82
+449,579,Bachelor of Education,China Foreign Affairs University,2024,2.79
+450,283,Bachelor of Commerce,Universidad de Especialidades Turísticas ,2018,2.58
+451,320,Bachelor of Fine Arts,University of Colorado Health Sciences Center,2023,2.01
+452,303,Bachelor of Education,Kuala Terengganu City Polytechnic,2019,2.36
+453,503,Bachelor of Commerce,Technische Fachhochschule Berlin,2024,2.16
+454,897,Bachelor of Fine Arts,British College of Osteopathic Medicine,2018,3.09
+455,424,Bachelor of Education,Islamic University of Technology,2012,2.48
+456,823,Bachelor of Commerce,"Islamic Azad University, Varamin",2018,2.18
+457,892,Bachelor of Fine Arts,Southern Oregon University,2023,2.49
+458,425,Bachelor of Education,Universidad de Córdoba,2023,2.82
+459,128,Bachelor of Commerce,University Medical School of Debrecen,2023,2.79
+460,377,Bachelor of Fine Arts,"Royal Danish Academy of Fine Arts, School of Visual Art",2016,2.58
+461,514,Bachelor of Education,University of Wisconsin - Green Bay,2024,2.01
+462,644,Bachelor of Commerce,Technological University (Kyaukse),2012,2.36
+463,865,Bachelor of Fine Arts,Marij State Technical University,2017,2.16
+464,800,Bachelor of Education,National College of Ireland,2024,3.09
+465,899,Bachelor of Commerce,Zaporizhzhe National Technical University,2012,2.48
+466,260,Bachelor of Fine Arts,Fachhochschule Braunschweig/Wolfenbüttel,2018,2.18
+467,914,Bachelor of Education,Stratford College London,2018,2.49
+468,890,Bachelor of Commerce,Alahgaff University,2024,2.82
+469,648,Bachelor of Fine Arts,Libera Università degli Studi di Scienze Umane e Tecnologiche,2024,2.79
+470,437,Bachelor of Education,Universidad Tecnológica de México,2023,2.58
+471,377,Bachelor of Commerce,University of Plovdiv,2024,2.01
+472,500,Bachelor of Fine Arts,Silesian Academy of Medicine in Katowice,2018,2.36
+473,131,Bachelor of Education,Prince Sultan University,2023,2.16
+474,895,Bachelor of Commerce,Bard Graduate Center for Studies in the Decorative Arts,2024,3.09
+475,762,Bachelor of Fine Arts,PTPL College,2017,2.48
+476,882,Bachelor of Education,Ohio Northern University,2019,2.18
+477,162,Bachelor of Commerce,Chaudhary Charan Singh Haryana Agricultural University,2024,2.49
+478,691,Bachelor of Fine Arts,Universidad Francisco Marroquín,2024,2.82
+479,987,Bachelor of Education,St. Petersburg Institute of Arts and Restoration,2012,2.79
+480,940,Bachelor of Commerce,"Univerzitet u Mostaru ""Dzemal Bijedic""",2024,2.58
+481,790,Bachelor of Fine Arts,University of Venda,2024,2.01
+482,622,Bachelor of Education,Warner Pacific College,2018,2.36
+483,520,Bachelor of Commerce,Minsk State Linguistic University,2016,2.16
+484,173,Bachelor of Fine Arts,Université Kofi Annan,2023,3.09
+485,569,Bachelor of Education,Rajitlal Institute of Technology & Health Sciences (RITHS),2023,2.48
+486,787,Bachelor of Commerce,Universidad de Panamá,2016,2.18
+487,133,Bachelor of Fine Arts,Indiana University - Northwest,2019,2.49
+488,218,Bachelor of Education,Near East School of Theology,2019,2.82
+489,172,Bachelor of Commerce,Helsinki School of Economics and Business Administration,2023,2.79
+490,375,Bachelor of Fine Arts,Louisiana State University in Shreveport,2012,2.58
+491,784,Bachelor of Education,Fountain University,2018,2.01
+492,825,Bachelor of Commerce,Texas Chiropractic College,2024,2.36
+493,464,Bachelor of Fine Arts,"Fachhochschule Biberach, Hochschule für Bauwesen und Wirtschaft",2023,2.16
+494,315,Bachelor of Education,Privredna Akademija (Business Academy),2018,3.09
+495,185,Bachelor of Commerce,Higher Colleges of Technology,2018,2.48
+496,588,Bachelor of Fine Arts,National Chiao Tung University,2024,2.18
+497,579,Bachelor of Education,Rheinische Friedrich-Wilhelms Universität Bonn,2019,2.49
+498,426,Bachelor of Commerce,Franciscan School of Theology,2023,2.82
+499,654,Bachelor of Fine Arts,Universidade Federal da Grande Dourados,2024,2.79
+500,255,Bachelor of Education,Yamaguchi University,2012,2.58
+501,156,Bachelor of Commerce,University of Pretoria,2019,2.01
+502,151,Bachelor of Fine Arts,Université Rennes I,2025,2.36
+503,472,Bachelor of Education,Université de Reims Champagne-Ardenne,2018,2.16
+504,677,Bachelor of Commerce,Gifu University,2023,3.09
+505,887,Bachelor of Fine Arts,Dalian University,2023,2.48
+506,815,Bachelor of Education,Siberian State Medical University,2012,2.18
+507,516,Bachelor of Commerce,Université Paris Sud (Paris XI),2019,2.49
+508,807,Bachelor of Fine Arts,St. Petersburg State University of Culture and Arts,2024,2.82
+509,513,Bachelor of Education,Sindh Madressatul Islam University,2016,2.79
+510,30,Bachelor of Commerce,Universidade do Rio de Janeiro,2012,2.58
+511,588,Bachelor of Fine Arts,Logan College of Chiropractic,2016,2.01
+512,592,Bachelor of Education,University Institute of Architecture Venice,2012,2.36
+513,147,Bachelor of Commerce,Norwegian University of Sport and Physical Education,2012,2.16
+514,138,Bachelor of Fine Arts,Averett College,2017,3.09
+515,710,Bachelor of Education,Uva Wellassa University,2016,2.48
+516,392,Bachelor of Commerce,Rezekne Higher School,2017,2.18
+517,688,Bachelor of Fine Arts,National Theatre Conservatory,2019,2.49
+518,813,Bachelor of Education,Pontificia Universidad Javeriana,2024,2.82
+519,455,Bachelor of Commerce,Nippon Bunri University,2024,2.79
+520,456,Bachelor of Fine Arts,RKDF University,2012,2.58
+521,537,Bachelor of Education,Kostroma State Technological University,2019,2.01
+522,197,Bachelor of Commerce,Universidad Veracruzana,2012,2.36
+523,214,Bachelor of Fine Arts,Northern University Bangladesh,2024,2.16
+524,571,Bachelor of Education,Jinan University,2012,3.09
+525,49,Bachelor of Commerce,Universidad San Francisco de Quito,2019,2.48
+526,273,Bachelor of Fine Arts,European University at St.Petersburg,2023,2.18
+527,443,Bachelor of Education,Universidad Regional Miguel Hidalgo,2018,2.49
+528,12,Bachelor of Commerce,"Evangelische Fachhochschule für Sozialpädagogik der ""Diakonenanstalt des Rauhen Hauses"" Hamburg",2012,2.82
+529,391,Bachelor of Fine Arts,Handelshochschule Leipzig,2023,2.79
+530,296,Bachelor of Education,Universiti Malaysia Sarawak,2019,2.58
+531,65,Bachelor of Commerce,Sungshin Women's University,2024,2.01
+532,64,Bachelor of Fine Arts,"University of Northern Virginia, Prague Campus",2017,2.36
+533,738,Bachelor of Education,University Medical School of Pécs,2023,2.16
+534,3,Bachelor of Commerce,Sabaragamuwa University of Sri Lanka,2012,3.09
+535,663,Bachelor of Fine Arts,Nigerian Turkish Nile University,2018,2.48
+536,504,Bachelor of Education,"Universidad Católica Boliviana, Santa Cruz",2018,2.18
+537,941,Bachelor of Commerce,Malaspina University College,2023,2.49
+538,842,Bachelor of Fine Arts,Universidad Privada del Norte,2012,2.82
+539,14,Bachelor of Education,North University of Baia Mare,2017,2.79
+540,546,Bachelor of Commerce,Ain Shams University,2019,2.58
+541,274,Bachelor of Fine Arts,"COMSATS Institute of Information Technology, Attock",2018,2.01
+542,522,Bachelor of Education,Technological University (West Yangon),2023,2.36
+543,432,Bachelor of Commerce,Canakkale (18th March) University,2019,2.16
+544,537,Bachelor of Fine Arts,Ukhta State Technical University,2023,3.09
+545,834,Bachelor of Education,Universidad Católica de Colombia,2018,2.48
+546,849,Bachelor of Commerce,"Fachhochschule Stuttgart, Hochschule für Technik",2018,2.18
+547,677,Bachelor of Fine Arts,Mehran University of Engineering & Technology,2012,2.49
+548,872,Bachelor of Education,Jinan University,2024,2.82
+549,629,Bachelor of Commerce,Mayville State University,2025,2.79
+550,859,Bachelor of Fine Arts,Zayed University,2012,2.58
+551,499,Bachelor of Education,Duksung Women's University,2016,2.01
+552,820,Bachelor of Commerce,Ateneo de Naga University,2018,2.36
+553,374,Bachelor of Fine Arts,Isfahan University of Technology,2018,2.16
+554,210,Bachelor of Education,Bow Valley College,2012,3.09
+555,217,Bachelor of Commerce,Tyumen State University of Gas and Oil,2025,2.48
+556,712,Bachelor of Fine Arts,Ecole Nationale Vétérinaire de Toulouse,2024,2.18
+557,736,Bachelor of Education,"Nordakademie, Staatlich anerkannte private Fachhochschule mit dualen Studiengängen",2017,2.49
+558,740,Bachelor of Commerce,Swiss Business School Zurich (SBS),2023,2.82
+559,751,Bachelor of Fine Arts,"State Film, Television and Theatre Higher School Leon Schiller in Lodz",2023,2.79
+560,484,Bachelor of Education,Kentucky Wesleyan College,2018,2.58
+561,349,Bachelor of Commerce,Texas Wesleyan University,2023,2.01
+562,707,Bachelor of Fine Arts,Shaheed Beheshti University,2024,2.36
+563,920,Bachelor of Education,"Concordia College, Selma",2017,2.16
+564,559,Bachelor of Commerce,Alhamd Islamic University,2024,3.09
+565,235,Bachelor of Fine Arts,Universidade Nova de Lisboa,2024,2.48
+566,795,Bachelor of Education,Youngstown State University,2012,2.18
+567,791,Bachelor of Commerce,Universidad La Salle,2012,2.49
+568,114,Bachelor of Fine Arts,Southeastern Oklahoma State University,2019,2.82
+569,91,Bachelor of Education,Oxford Brookes University,2016,2.79
+570,832,Bachelor of Commerce,Lutherische Theologische Hochschule Oberursel,2019,2.58
+571,982,Bachelor of Fine Arts,Philippine Women's University,2017,2.01
+572,789,Bachelor of Education,Manipal University,2012,2.36
+573,827,Bachelor of Commerce,National American University,2012,2.16
+574,767,Bachelor of Fine Arts,Northern Border University,2018,3.09
+575,944,Bachelor of Education,Togliatti State University,2016,2.48
+576,5,Bachelor of Commerce,Universidad Nacional de Lomas de Zamora,2017,2.18
+577,244,Bachelor of Fine Arts,School of Banking and Management in Cracow,2023,2.49
+578,774,Bachelor of Education,Universidade de São Paulo,2025,2.82
+579,974,Bachelor of Commerce,Technical University of Mombasa,2018,2.79
+580,760,Bachelor of Fine Arts,Berne University,2019,2.58
+581,140,Bachelor of Education,Private Fachhochschule für Wirtschaft und Technik Vechta/Diepholz,2016,2.01
+582,909,Bachelor of Commerce,Bemidji State Univeristy,2016,2.36
+583,246,Bachelor of Fine Arts,Visvesvaraya National Institute of Technology,2023,2.16
+584,809,Bachelor of Education,Southampton Solent University,2024,3.09
+585,178,Bachelor of Commerce,Meisei University,2023,2.48
+586,860,Bachelor of Fine Arts,Agricultural-Technical Academy in Olsztyn,2019,2.18
+587,876,Bachelor of Education,Medical Academy in Gdansk,2019,2.49
+588,102,Bachelor of Commerce,Corporación Universitaria de Santander (UDES),2012,2.82
+589,917,Bachelor of Fine Arts,John F. Kennedy University,2012,2.79
+590,160,Bachelor of Education,Foundation University,2024,2.58
+591,358,Bachelor of Commerce,Niigata University,2019,2.01
+592,465,Bachelor of Fine Arts,Sapporo Gakuin University,2023,2.36
+593,400,Bachelor of Education,Malayer University,2023,2.16
+594,350,Bachelor of Commerce,Carl von Ossietzky Universität Oldenburg,2017,3.09
+595,575,Bachelor of Fine Arts,Eelo American University,2016,2.48
+596,391,Bachelor of Education,Western Governors University,2019,2.18
+597,404,Bachelor of Commerce,Gallaudet University,2024,2.49
+598,129,Bachelor of Fine Arts,"University of Wales Institute, Cardiff",2024,2.82
+599,927,Bachelor of Education,ICFAI University,2023,2.79
+600,68,Bachelor of Commerce,Necmettin Erbakan University,2012,2.58
+601,473,Bachelor of Fine Arts,Northeast University at Qinhuangdao Campus,2016,2.01
+602,110,Bachelor of Education,Philadelphia University,2023,2.36
+603,591,Bachelor of Commerce,University of Virginia,2016,2.16
+604,601,Bachelor of Fine Arts,Tianjin Normal University,2023,3.09
+605,53,Bachelor of Education,Mar Athanasios College for Advanced Studies,2019,2.48
+606,629,Bachelor of Commerce,Technical Institute of Dubnica in Dubnica nad Váhom,2017,2.18
+607,834,Bachelor of Fine Arts,"Florida Metropolitan University, Tampa College Brandon",2018,2.49
+608,105,Bachelor of Education,Universidade do Sagrado Coração,2024,2.82
+609,691,Bachelor of Commerce,University of Otago,2023,2.79
+610,214,Bachelor of Fine Arts,Erciyes University,2017,2.58
+611,549,Bachelor of Education,Universidad Autónoma de la Ciudad de México,2018,2.01
+612,12,Bachelor of Commerce,"Troy University, Dothan",2012,2.36
+613,128,Bachelor of Fine Arts,Ecole Nationale Supérieure d'Electronique et de Radioelectricite de Grenoble,2012,2.16
+614,277,Bachelor of Education,Chadron State College,2023,3.09
+615,488,Bachelor of Commerce,Université Amar Telidji,2023,2.48
+616,388,Bachelor of Fine Arts,Vikram University,2024,2.18
+617,579,Bachelor of Education,"Concordia College, Selma",2012,2.49
+618,796,Bachelor of Commerce,Kansai Medical University,2024,2.82
+619,753,Bachelor of Fine Arts,Trinity University,2023,2.79
+620,430,Bachelor of Education,Kawasaki Medical School,2023,2.58
+621,134,Bachelor of Commerce,Private Universität Witten/Herdecke,2019,2.01
+622,984,Bachelor of Fine Arts,Birla Institute of Technology and Science,2024,2.36
+623,140,Bachelor of Education,AGH University of Science and Technology,2012,2.16
+624,39,Bachelor of Commerce,Holy Names College,2025,3.09
+625,395,Bachelor of Fine Arts,Philippine Military Academy,2012,2.48
+626,662,Bachelor of Education,Miyazaki Prefectural Nursing University,2012,2.18
+627,920,Bachelor of Commerce,"DeVry Institute of Technology, Chicago",2023,2.49
+628,156,Bachelor of Fine Arts,College of Nursing and Allied Health Scinces,2012,2.82
+629,701,Bachelor of Education,Universidad Fundepos Alma Mater,2023,2.79
+630,928,Bachelor of Commerce,Peace College,2024,2.58
+631,308,Bachelor of Fine Arts,Abdus Salam international centre for theoretical physics,2017,2.01
+632,299,Bachelor of Education,Komazawa University,2023,2.36
+633,856,Bachelor of Commerce,Universiti Teknologi Malaysia,2012,2.16
+634,999,Bachelor of Fine Arts,Savannah State University,2023,3.09
+635,42,Bachelor of Education,Bamenda University of Science & Technology,2023,2.48
+636,290,Bachelor of Commerce,Shumei University,2025,2.18
+637,739,Bachelor of Fine Arts,National Sanskrit University,2019,2.49
+638,422,Bachelor of Education,Central Agricultural University,2019,2.82
+639,634,Bachelor of Commerce,King Mongkut's University of Technology North Bangkok,2018,2.79
+640,720,Bachelor of Fine Arts,Ashiya University,2025,2.58
+641,58,Bachelor of Education,Daystar University,2023,2.01
+642,18,Bachelor of Commerce,Louisiana State University and Agricultural and Mechanical College,2024,2.36
+643,220,Bachelor of Fine Arts,Ecole Normale Supérieure de Cachan,2024,2.16
+644,567,Bachelor of Education,Universidad Isaac Newton,2023,3.09
+645,565,Bachelor of Commerce,"Physical Education Academy ""Jedrzej Sniadecki"" in Gdansk",2012,2.48
+646,802,Bachelor of Fine Arts,"Goldsmiths College, University of London",2024,2.18
+647,976,Bachelor of Education,Assumption University of Thailand,2012,2.49
+648,506,Bachelor of Commerce,Sri Venkateswara Institute of Medical Sciences,2016,2.82
+649,213,Bachelor of Fine Arts,Ecole Supérieure de Commerce et des Affaires,2023,2.79
+650,80,Bachelor of Education,Xiangtan University,2024,2.58
+651,170,Bachelor of Commerce,Rostov State Medical University,2018,2.01
+652,171,Bachelor of Fine Arts,Centro Universitário Monte Serrat,2012,2.36
+653,337,Bachelor of Education,Kennesaw State University,2012,2.16
+654,531,Bachelor of Commerce,"Concordia University, Irvine",2019,3.09
+655,763,Bachelor of Fine Arts,University of Notre Dame,2018,2.48
+656,860,Bachelor of Education,Universidad Maimónides,2024,2.18
+657,730,Bachelor of Commerce,Devi Ahilya University of Indore,2025,2.49
+658,646,Bachelor of Fine Arts,Tikrit University,2019,2.82
+659,536,Bachelor of Education,Koyasan University,2018,2.79
+660,752,Bachelor of Commerce,Peking University,2012,2.58
+661,985,Bachelor of Fine Arts,Qinghai Radio & Television University,2018,2.01
+662,995,Bachelor of Education,Trent University,2019,2.36
+663,167,Bachelor of Commerce,National Chi Nan University,2024,2.16
+664,624,Bachelor of Fine Arts,Mahanakorn University of Technology,2012,3.09
+665,137,Bachelor of Education,Tokyo Kasei University,2025,2.48
+666,79,Bachelor of Commerce,"Swiss Federal Institute of Technology, Lausanne",2019,2.18
+667,629,Bachelor of Fine Arts,Stevens Institute of Technology,2012,2.49
+668,204,Bachelor of Education,Osaka Institute of Technology,2023,2.82
+669,691,Bachelor of Commerce,Katholieke Universiteit Leuven,2012,2.79
+670,24,Bachelor of Fine Arts,University of Texas M.D. Anderson Cancer Center,2023,2.58
+671,928,Bachelor of Education,Université Mouloud Mammeri de Tizi Ouzou,2024,2.01
+672,148,Bachelor of Commerce,"State Film, Television and Theatre Higher School Leon Schiller in Lodz",2024,2.36
+673,953,Bachelor of Fine Arts,University of Advancing Technology (UAT),2023,2.16
+674,937,Bachelor of Education,Universidad de Quintana Roo,2024,3.09
+675,812,Bachelor of Commerce,Shonan Institute of Technology,2023,2.48
+676,939,Bachelor of Fine Arts,James Cook University of North Queensland,2012,2.18
+677,576,Bachelor of Education,Tokyo Medical and Dental University,2016,2.49
+678,381,Bachelor of Commerce,Centre National d'Etudes Agronomiques des Régions Chaudes,2012,2.82
+679,215,Bachelor of Fine Arts,University of St. Francis,2023,2.79
+680,686,Bachelor of Education,Institut Supérieur de Management et de Technologie (MATCI),2023,2.58
+681,532,Bachelor of Commerce,"Royal Danish Academy of Fine Arts, School of Visual Art",2017,2.01
+682,437,Bachelor of Fine Arts,Universitas Tanjungpura,2012,2.36
+683,579,Bachelor of Education,Duke University,2012,2.16
+684,752,Bachelor of Commerce,Universidad Nacional Autonoma de Nicaragua,2025,3.09
+685,505,Bachelor of Fine Arts,Tamil University,2024,2.48
+686,169,Bachelor of Education,Southwest University of Finance and Economics,2024,2.18
+687,36,Bachelor of Commerce,Unity College,2024,2.49
+688,388,Bachelor of Fine Arts,Belhaven College,2024,2.82
+689,198,Bachelor of Education,Vitebsk State Medical University,2024,2.79
+690,179,Bachelor of Commerce,Gubkin Russian State University of Oil and Gas,2012,2.58
+691,722,Bachelor of Fine Arts,Carleton College,2018,2.01
+692,438,Bachelor of Education,Universidad de Cuenca,2012,2.36
+693,675,Bachelor of Commerce,"Florida Metropolitan University, Tampa College Brandon",2024,2.16
+694,244,Bachelor of Fine Arts,Graduate University for Advanced Studies,2024,3.09
+695,530,Bachelor of Education,Koyasan University,2017,2.48
+696,572,Bachelor of Commerce,The Illinois Institute of Art-Chicago,2012,2.18
+697,453,Bachelor of Fine Arts,University of Qatar,2024,2.49
+698,673,Bachelor of Education,Shukutoku University,2023,2.82
+699,35,Bachelor of Commerce,"Maharaja Ganga Singh University, Bikaner",2017,2.79
+700,833,Bachelor of Fine Arts,Universidad Nacional Daniel Alcides Carrion,2019,2.58
+701,983,Bachelor of Education,Universidade do Rio de Janeiro,2024,2.01
+702,243,Bachelor of Commerce,Jawaharlal Nehru Agricultural University,2017,2.36
+703,158,Bachelor of Fine Arts,St. Augustine's College North Carolina,2024,2.16
+704,594,Bachelor of Education,Chelsea College of Art and Design,2018,3.09
+705,560,Bachelor of Commerce,Kwangju University,2019,2.48
+706,106,Bachelor of Fine Arts,Northwestern University,2023,2.18
+707,351,Bachelor of Education,Hodeidah University,2023,2.49
+708,577,Bachelor of Commerce,International Islamic College of Penang,2012,2.82
+709,496,Bachelor of Fine Arts,Al-Bukhari International University,2012,2.79
+710,893,Bachelor of Education, Dedan Kimathi University of Technology,2012,2.58
+711,984,Bachelor of Commerce,Astrahan State Technical University,2019,2.01
+712,729,Bachelor of Fine Arts,Universidad Especializada de Las Americas,2012,2.36
+713,940,Bachelor of Education,Tokyo University of Foreign Studies,2023,2.16
+714,412,Bachelor of Commerce,Jain Vishva Bharati Institute,2024,3.09
+715,623,Bachelor of Fine Arts,Universidade do Porto,2024,2.48
+716,368,Bachelor of Education,Ganja State University ,2018,2.18
+717,834,Bachelor of Commerce,Universidad Privada Juan Mejía Baca,2024,2.49
+718,89,Bachelor of Fine Arts,Jazan University,2023,2.82
+719,733,Bachelor of Education,Yasuj University of Medical Sciences,2023,2.79
+720,479,Bachelor of Commerce,Kostanai State University,2012,2.58
+721,885,Bachelor of Fine Arts,"Islamic Azad University, Majlesi",2024,2.01
+722,578,Bachelor of Education,National Institute of Fitness and Sports Kanoya,2023,2.36
+723,121,Bachelor of Commerce,"Université Abou Bekr Belkaid, Tlemcen",2024,2.16
+724,348,Bachelor of Fine Arts,Politeknik Negeri Semarang,2016,3.09
+725,588,Bachelor of Education,College Misericordia,2024,2.48
+726,586,Bachelor of Commerce,Stamford University,2019,2.18
+727,94,Bachelor of Fine Arts,University of Plovdiv,2016,2.49
+728,21,Bachelor of Education,Norwegian Teacher Academy for Studies in Religion and Education,2016,2.82
+729,963,Bachelor of Commerce,Shanghai Business School,2023,2.79
+730,906,Bachelor of Fine Arts,Kyungpook National University,2012,2.58
+731,387,Bachelor of Education,University of Sargodha,2024,2.01
+732,968,Bachelor of Commerce,FPT University,2016,2.36
+733,144,Bachelor of Fine Arts,Institución Universitaria Iberoamericana,2016,2.16
+734,702,Bachelor of Education,Kochi University of Technology,2016,3.09
+735,998,Bachelor of Commerce,Universidad de Quintana Roo,2012,2.48
+736,595,Bachelor of Fine Arts,Kumaun University,2024,2.18
+737,520,Bachelor of Education,"Universidad Nacional Experimental Sur del Lago ""Jesús Maria Semprum""",2023,2.49
+738,561,Bachelor of Commerce,School for International Training,2019,2.82
+739,498,Bachelor of Fine Arts,Universidade Federal do Rio Grande do Norte,2017,2.79
+740,227,Bachelor of Education,Charles University Prague,2012,2.58
+741,484,Bachelor of Commerce,Jumeira University,2023,2.01
+742,436,Bachelor of Fine Arts,University of Portharcourt,2012,2.36
+743,266,Bachelor of Education,Western Kazakhstan Agricultural University,2024,2.16
+744,150,Bachelor of Commerce,Albany Medical Center,2016,3.09
+745,623,Bachelor of Fine Arts,Atlantic International University,2023,2.48
+746,551,Bachelor of Education,Moscow International Higher Business School (MIRBIS),2023,2.18
+747,767,Bachelor of Commerce,University of Massachusetts at Dartmouth,2023,2.49
+748,154,Bachelor of Fine Arts,Universidad Autónoma de Nuevo León,2024,2.82
+749,330,Bachelor of Education,Universidad Central del Valle del Cauca,2024,2.79
+750,348,Bachelor of Commerce,Capital University of Economics and Business,2012,2.58
+751,974,Bachelor of Fine Arts,Meredith College,2012,2.01
+752,883,Bachelor of Education,National Dong Hwa University,2012,2.36
+753,95,Bachelor of Commerce,Universidad de Cartago Florencio del Castillo,2025,2.16
+754,177,Bachelor of Fine Arts,Friedrich-Schiller Universität Jena,2024,3.09
+755,286,Bachelor of Education,Guizhou Normal University,2023,2.48
+756,741,Bachelor of Commerce,Kanagawa Institute of Technology,2024,2.18
+757,85,Bachelor of Fine Arts,Ummah University,2023,2.49
+758,698,Bachelor of Education,"University of Architecture, Civil Engineering and Geodesy",2019,2.82
+759,776,Bachelor of Commerce,University of Engineering and Technology Taxila,2018,2.79
+760,466,Bachelor of Fine Arts,Instituto Superior D. Afonso III - INUAF,2023,2.58
+761,845,Bachelor of Education,Nova Scotia College of Art and Design,2024,2.01
+762,157,Bachelor of Commerce,University of the Philippines Visayas - Cebu High School,2024,2.36
+763,395,Bachelor of Fine Arts,Sultan Salahuddin Abdul Aziz Shah Polytechnic,2024,2.16
+764,688,Bachelor of Education,Kobe Jogakuin University,2023,3.09
+765,110,Bachelor of Commerce,National Taiwan College of Physical Education and Sports,2016,2.48
+766,392,Bachelor of Fine Arts,Marylhurst University,2017,2.18
+767,637,Bachelor of Education,College of Business Management ( CBM ),2012,2.49
+768,962,Bachelor of Commerce,University of Arkansas at Monticello,2017,2.82
+769,266,Bachelor of Fine Arts,Robert Morris College,2017,2.79
+770,208,Bachelor of Education,Zimbabwe Open University,2018,2.58
+771,901,Bachelor of Commerce,Universidad del Valle de Puebla,2012,2.01
+772,735,Bachelor of Fine Arts,Coppin State College,2012,2.36
+773,89,Bachelor of Education,Universidad Abierta Para Adultos,2023,2.16
+774,817,Bachelor of Commerce,Niagara University,2016,3.09
+775,287,Bachelor of Fine Arts,Universidad de Oriente,2012,2.48
+776,582,Bachelor of Education,Nigde University,2024,2.18
+777,429,Bachelor of Commerce,"University of California, Hastings College of Law",2018,2.49
+778,960,Bachelor of Fine Arts,Campbellsville College,2023,2.82
+779,330,Bachelor of Education,Semey State Medical University,2012,2.79
+780,983,Bachelor of Commerce,Athens University of Economics and Business,2024,2.58
+781,352,Bachelor of Fine Arts,Nagoya University of Commerce and Business Administration,2019,2.01
+782,326,Bachelor of Education,University of Iceland,2025,2.36
+783,47,Bachelor of Commerce,Universidade Lusíada de Angola,2017,2.16
+784,680,Bachelor of Fine Arts,Norwegian University of Sport and Physical Education,2023,3.09
+785,42,Bachelor of Education,Pangasinan State University,2019,2.48
+786,798,Bachelor of Commerce,University of Ulster,2024,2.18
+787,681,Bachelor of Fine Arts,"Islamic Azad University, Shiraz",2019,2.49
+788,975,Bachelor of Education,Ibra College of Technology,2018,2.82
+789,734,Bachelor of Commerce,All India Institute of Medical Sciences,2016,2.79
+790,71,Bachelor of Fine Arts,Prescott College,2017,2.58
+791,850,Bachelor of Education,Worcester State College,2016,2.01
+792,520,Bachelor of Commerce,Khmelnitsky National University,2019,2.36
+793,356,Bachelor of Fine Arts,Kohinoor School of Hospitality Management,2012,2.16
+794,710,Bachelor of Education,University College Dublin,2023,3.09
+795,292,Bachelor of Commerce,Governors State University,2016,2.48
+796,514,Bachelor of Fine Arts,"Universidad Autónoma Agraria ""Antonio Narro""",2012,2.18
+797,168,Bachelor of Education,Vaal University of Technology,2012,2.49
+798,875,Bachelor of Commerce,Bob Jones University,2016,2.82
+799,317,Bachelor of Fine Arts,Camberwell College of Arts,2025,2.79
+800,704,Bachelor of Education,Jimei University,2012,2.58
+801,797,Bachelor of Commerce,University of Sopron,2018,2.01
+802,401,Bachelor of Fine Arts,Moscow State Academy of Applied Biotechnology,2023,2.36
+803,378,Bachelor of Education,Universidad Franciscana de México,2016,2.16
+804,832,Bachelor of Commerce,University of Calgary,2019,3.09
+805,986,Bachelor of Fine Arts,Virginia College,2024,2.48
+806,217,Bachelor of Education,Baylor University,2023,2.18
+807,27,Bachelor of Commerce,Universidad Católica de Santiago de Guayaquil,2023,2.49
+808,564,Bachelor of Fine Arts,"City University of New York, Lehman College",2019,2.82
+809,129,Bachelor of Education,Ecole Supérieure de Commerce de Nantes-Atlantique,2023,2.79
+810,166,Bachelor of Commerce,Universidad Nacional Pedro Ruíz Gallo,2023,2.58
+811,699,Bachelor of Fine Arts,"Fachhochschule Ludwigshafen, Hochschule für Wirtschaft",2024,2.01
+812,607,Bachelor of Education,Maria Grzegorzewska College for Special Education,2017,2.36
+813,86,Bachelor of Commerce,University of the Virgin Islands,2024,2.16
+814,802,Bachelor of Fine Arts,Ottawa University,2023,3.09
+815,640,Bachelor of Education,University of Padua,2019,2.48
+816,459,Bachelor of Commerce,Manchester College,2016,2.18
+817,971,Bachelor of Fine Arts,Moscow State Institute of Steel and Alloys,2019,2.49
+818,608,Bachelor of Education,Abasyn University Peshawar,2017,2.82
+819,659,Bachelor of Commerce,Jordan Academy of Music / Higher Institute of Music,2012,2.79
+820,77,Bachelor of Fine Arts,Ecole Nationale Supérieure des Arts et Industries Textiles,2017,2.58
+821,174,Bachelor of Education,Diyala University,2023,2.01
+822,666,Bachelor of Commerce,Oklahoma Baptist University,2023,2.36
+823,606,Bachelor of Fine Arts,Universidade da Amazônia,2019,2.16
+824,492,Bachelor of Education,Jönköping University College of Health Sciences,2012,3.09
+825,653,Bachelor of Commerce,Universitas Ibn Chaldun Jakarta,2016,2.48
+826,955,Bachelor of Fine Arts,Blekinge Institute of Technology,2023,2.18
+827,648,Bachelor of Education,Vanderbilt University,2023,2.49
+828,220,Bachelor of Commerce,Saratov State Socio-Economic University,2019,2.82
+829,766,Bachelor of Fine Arts,Saint Paul University,2024,2.79
+830,712,Bachelor of Education,Tohoku Bunka Gakuen University,2012,2.58
+831,558,Bachelor of Commerce,University of Medicine and Pharmacy of Iasi,2025,2.01
+832,60,Bachelor of Fine Arts,Shanghai Normal University,2019,2.36
+833,343,Bachelor of Education,Curry College,2025,2.16
+834,393,Bachelor of Commerce,Universidad Latina de Panamá,2012,3.09
+835,513,Bachelor of Fine Arts,Montana State University - Billings,2023,2.48
+836,43,Bachelor of Education,Hagerstown Community College,2012,2.18
+837,84,Bachelor of Commerce,Burdwan University,2023,2.49
+838,748,Bachelor of Fine Arts,Universität für künstlerische und industrielle Gestaltung Linz,2019,2.82
+839,859,Bachelor of Education,Sukhothai Thammathirat Open University,2012,2.79
+840,506,Bachelor of Commerce,Mansoura University,2025,2.58
+841,421,Bachelor of Fine Arts,Universitas Muhammadiyah Jakarta,2023,2.01
+842,846,Bachelor of Education,Matsuyama University,2017,2.36
+843,261,Bachelor of Commerce,Universidad Nacional de La Plata,2012,2.16
+844,840,Bachelor of Fine Arts,Moscow Power Engineering Institute (Technical University),2016,3.09
+845,703,Bachelor of Education,Caleb University,2012,2.48
+846,346,Bachelor of Commerce,Universidad de Caldas,2016,2.18
+847,934,Bachelor of Fine Arts,University of Sulaimania (Kurdistan Region),2012,2.49
+848,937,Bachelor of Education,Ritsumeikan Asia Pacific University,2018,2.82
+849,41,Bachelor of Commerce,Fachhochschule Bonn-Rhein-Sieg,2024,2.79
+850,791,Bachelor of Fine Arts,Modern University for the Humanities,2023,2.58
+851,348,Bachelor of Education,Southern University - New Orleans,2024,2.01
+852,598,Bachelor of Commerce,"Academy of Music, Dance and Fine Arts",2012,2.36
+853,559,Bachelor of Fine Arts,Ashland University,2016,2.16
+854,901,Bachelor of Education,Oregon Health Sciences University,2024,3.09
+855,830,Bachelor of Commerce,Wilmington College,2023,2.48
+856,597,Bachelor of Fine Arts,Ecole Supérieure de Commerce de Toulouse,2012,2.18
+857,130,Bachelor of Education,"Washington State University, Tri-Cities",2016,2.49
+858,624,Bachelor of Commerce,Perm State Pharmaceutical Academy,2023,2.82
+859,122,Bachelor of Fine Arts,Université Mohammed Ier,2017,2.79
+860,870,Bachelor of Education,Odessa National I.I. Mecnikov University,2023,2.58
+861,575,Bachelor of Commerce,Universitas Islam Sultan Agung,2012,2.01
+862,163,Bachelor of Fine Arts,Universidad Nacional de Chimborazo,2019,2.36
+863,155,Bachelor of Education,Yamanashi Gakuin University,2017,2.16
+864,31,Bachelor of Commerce,Baker College of Muskegon,2017,3.09
+865,431,Bachelor of Fine Arts,Ecole Nationale Supérieure de Chimie de Lille,2018,2.48
+866,374,Bachelor of Education,Université de Dschang,2023,2.18
+867,74,Bachelor of Commerce,School of Business and Finance,2023,2.49
+868,253,Bachelor of Fine Arts,Philander Smith College,2016,2.82
+869,431,Bachelor of Education,Sonoma State University,2025,2.79
+870,409,Bachelor of Commerce,Universität Passau,2017,2.58
+871,312,Bachelor of Fine Arts,Belmont University,2016,2.01
+872,85,Bachelor of Education,King Fahd Security College,2016,2.36
+873,660,Bachelor of Commerce,Guangzhou Academy of Fine Art,2012,2.16
+874,204,Bachelor of Fine Arts,University of North Carolina at Charlotte,2019,3.09
+875,941,Bachelor of Education,Botswana Accountancy College,2016,2.48
+876,470,Bachelor of Commerce,Wentworth Institute of Technology,2024,2.18
+877,711,Bachelor of Fine Arts,Rust College,2016,2.49
+878,287,Bachelor of Education,Duluth Business University,2023,2.82
+879,789,Bachelor of Commerce,University of Technology - Iraq,2023,2.79
+880,571,Bachelor of Fine Arts,Fachhochschule Jena,2023,2.58
+881,847,Bachelor of Education,"Hochschule Harz, Hochschule für angewandte Wissenschaften (FH)",2023,2.01
+882,622,Bachelor of Commerce,Walailak University,2023,2.36
+883,227,Bachelor of Fine Arts,University of Priština,2016,2.16
+884,977,Bachelor of Education,"University College of Arts, Crafts and Design",2019,3.09
+885,991,Bachelor of Commerce,Edward Waters College,2012,2.48
+886,640,Bachelor of Fine Arts,Asbury College,2012,2.18
+887,672,Bachelor of Education,University of Ruhuna,2024,2.49
+888,766,Bachelor of Commerce,Fundacion Escuela Colombiana de Rehabiliación,2024,2.82
+889,93,Bachelor of Fine Arts,Walsh University,2025,2.79
+890,489,Bachelor of Education,University Politehnica of Bucharest,2017,2.58
+891,336,Bachelor of Commerce,"Schiller International University, American College of Switzerland",2019,2.01
+892,530,Bachelor of Fine Arts,Mountain View College,2012,2.36
+893,808,Bachelor of Education,Universitas Merdeka Madiun,2024,2.16
+894,346,Bachelor of Commerce,Université Catholique de Louvain,2025,3.09
+895,543,Bachelor of Fine Arts,Internationales Hochschulinstitut Zittau,2017,2.48
+896,863,Bachelor of Education,Oregon State University,2023,2.18
+897,651,Bachelor of Commerce,Guangzhou Academy of Fine Art,2025,2.49
+898,57,Bachelor of Fine Arts,Academia de Studii Economice din Bucuresti,2024,2.82
+899,851,Bachelor of Education,Sichuan International Studies University,2025,2.79
+900,236,Bachelor of Commerce,University of Botswana,2024,2.58
+901,282,Bachelor of Fine Arts,University of Eastern Philippines,2024,2.01
+902,619,Bachelor of Education,Kutztown University of Pennsylvania,2018,2.36
+903,445,Bachelor of Commerce,Universidad del País Vasco,2012,2.16
+904,709,Bachelor of Fine Arts,Université de Kairouan,2025,3.09
+905,297,Bachelor of Education,Universidad Politécnica Salesiana,2019,2.48
+906,490,Bachelor of Commerce,Freie Kunst-Studienstätte Ottersberg,2019,2.18
+907,24,Bachelor of Fine Arts,Universidad de Playa Ancha de Ciencias de la Educacion,2019,2.49
+908,800,Bachelor of Education,"California State University, Channel Islands",2018,2.82
+909,219,Bachelor of Commerce,St. Joseph's College New York,2019,2.79
+910,448,Bachelor of Fine Arts,Samchok National University,2012,2.58
+911,933,Bachelor of Education,Universidade Regional de Blumenau,2019,2.01
+912,646,Bachelor of Commerce,Universidad Santa María Campus Guayaquil,2024,2.36
+913,122,Bachelor of Fine Arts,International University College,2012,2.16
+914,57,Bachelor of Education,Ecole Supérieure des Sciences Commerciales d'Angers,2012,3.09
+915,468,Bachelor of Commerce,Charleston Southern University,2024,2.48
+916,163,Bachelor of Fine Arts,Colorado State University-Pueblo,2019,2.18
+917,638,Bachelor of Education,Frank Lloyd Wright School of Architecture,2012,2.49
+918,990,Bachelor of Commerce,De Haagse Hogeschool,2012,2.82
+919,775,Bachelor of Fine Arts,East Stroudsburg State University,2019,2.79
+920,992,Bachelor of Education,Sibelius Academy,2012,2.58
+921,206,Bachelor of Commerce,Kuching Polytechnic,2023,2.01
+922,196,Bachelor of Fine Arts,Bard College,2018,2.36
+923,596,Bachelor of Education,Orissa University of Agriculture and Technology,2012,2.16
+924,618,Bachelor of Commerce,University Lucian Blaga of Sibiu,2023,3.09
+925,706,Bachelor of Fine Arts,St. Mary's University,2016,2.48
+926,636,Bachelor of Education,Shenandoah University,2024,2.18
+927,732,Bachelor of Commerce,International College of Tourism and Hotel Management,2018,2.49
+928,252,Bachelor of Fine Arts,"University of Education, Winneba",2019,2.82
+929,774,Bachelor of Education,Godfrey Okoye University,2017,2.79
+930,948,Bachelor of Commerce,Fachhochschule Merseburg,2019,2.58
+931,667,Bachelor of Fine Arts,Nagasaki Prefectural University,2019,2.01
+932,424,Bachelor of Education,Civil Aviation University of China,2019,2.36
+933,388,Bachelor of Commerce,University of Oslo,2012,2.16
+934,923,Bachelor of Fine Arts,International Academy of  Merchandising and Design Tampa,2018,3.09
+935,654,Bachelor of Education,Westminster College Fulton,2023,2.48
+936,755,Bachelor of Commerce,Turkish Naval Academy,2016,2.18
+937,962,Bachelor of Fine Arts,Prince Mohammad Bin Fahd University,2023,2.49
+938,602,Bachelor of Education,Wakkanai Hokusei Gakuen University,2016,2.82
+939,745,Bachelor of Commerce,Vietnam Maritime University,2019,2.79
+940,588,Bachelor of Fine Arts,Universidad de Especialidades Turísticas ,2023,2.58
+941,733,Bachelor of Education,Rivers State University of Science and Technology,2012,2.01
+942,254,Bachelor of Commerce,Dr. Babasaheb Ambedkar Marathwada Universtiy,2012,2.36
+943,24,Bachelor of Fine Arts,Kyoto University of Art and Design,2019,2.16
+944,1000,Bachelor of Education,Al-Nasser University,2018,3.09
+945,428,Bachelor of Commerce,Technological Education Institute of Thessaloniki,2019,2.48
+946,582,Bachelor of Fine Arts,Deutsche Sporthochschule Köln,2024,2.18
+947,271,Bachelor of Education,Hankyong National University,2016,2.49
+948,655,Bachelor of Commerce,Kurume Institute of Technology,2018,2.82
+949,236,Bachelor of Fine Arts,Stenden University,2017,2.79
+950,752,Bachelor of Education,NAES College,2018,2.58
+951,790,Bachelor of Commerce,Chicago State University,2012,2.01
+952,480,Bachelor of Fine Arts,University of Medicine and Pharmacy of Timisoara,2017,2.36
+953,34,Bachelor of Education,Ural State Academy of Mining and Geology,2023,2.16
+954,818,Bachelor of Commerce,Free University Stockholm,2019,3.09
+955,164,Bachelor of Fine Arts,East Stroudsburg State University,2023,2.48
+956,756,Bachelor of Education,Justus Liebig Universität Gießen,2016,2.18
+957,990,Bachelor of Commerce,Ouachita Baptist University,2012,2.49
+958,297,Bachelor of Fine Arts,College of St. Catherine,2019,2.82
+959,350,Bachelor of Education,Universidad Católica de Santiago del Estero,2019,2.79
+960,262,Bachelor of Commerce,Universitas Mulawarman,2018,2.58
+961,131,Bachelor of Fine Arts,Oklahoma State University - Institute of Technology,2018,2.01
+962,667,Bachelor of Education,University of Missouri - Columbia,2024,2.36
+963,184,Bachelor of Commerce,Shanghai University of Engineering Science,2012,2.16
+964,688,Bachelor of Fine Arts,University of Dodoma,2016,3.09
+965,77,Bachelor of Education,Universidad de San Carlos de Guatemala,2024,2.48
+966,498,Bachelor of Commerce,Escuela Politécnica del Ejercito,2023,2.18
+967,574,Bachelor of Fine Arts,Guizhou University,2019,2.49
+968,340,Bachelor of Education,Universidade Internacional Lisboa,2024,2.82
+969,542,Bachelor of Commerce,Ulaanbaatar University,2016,2.79
+970,447,Bachelor of Fine Arts,Fachhochschulstudiengänge der Wiener Wirtschaft,2019,2.58
+971,104,Bachelor of Education,Egerton University,2024,2.01
+972,196,Bachelor of Commerce,Universidad Cristóbal Colón,2012,2.36
+973,229,Bachelor of Fine Arts,Kharkiv State Technical University of Construction and Architecture,2024,2.16
+974,97,Bachelor of Education,Knowledge International University,2024,3.09
+975,478,Bachelor of Commerce,Ozark Christian College,2024,2.48
+976,921,Bachelor of Fine Arts,Andrassy Gyula German Speaking University Budapest,2017,2.18
+977,162,Bachelor of Education,Ecole Nationale d'Ingénieurs de Saint-Etienne,2023,2.49
+978,443,Bachelor of Commerce,Dawood College of Engineering and Technology,2012,2.82
+979,330,Bachelor of Fine Arts,Colegio de Estudios Superiores de Administración (CESA),2012,2.79
+980,912,Bachelor of Education,Universidad San Juan de la Cruz,2025,2.58
+981,359,Bachelor of Commerce,Universidad Autónoma Tomás Frías,2025,2.01
+982,383,Bachelor of Fine Arts,Kyushu Women's University,2024,2.36
+983,998,Bachelor of Education,Silesian School of Economics and Languages,2012,2.16
+984,646,Bachelor of Commerce,Babcock University,2018,3.09
+985,833,Bachelor of Fine Arts,Victoria University,2012,2.48
+986,486,Bachelor of Education,Universidad Privada Abierta Latinoamericana,2019,2.18
+987,483,Bachelor of Commerce,Universidad Nacional de Cuyo,2012,2.49
+988,7,Bachelor of Fine Arts,College of St. Mary,2012,2.82
+989,397,Bachelor of Education,"Arizona State University, West Campus",2024,2.79
+990,200,Bachelor of Commerce,Universitas Kediri,2025,2.58
+991,609,Bachelor of Fine Arts,Beijing University of Chemical Technology,2024,2.01
+992,696,Bachelor of Education,Hongik University,2018,2.36
+993,752,Bachelor of Commerce,New England College,2018,2.16
+994,587,Bachelor of Fine Arts,University of Huddersfield,2019,3.09
+995,236,Bachelor of Education,Bethel College Newton,2023,2.48
+996,131,Bachelor of Commerce,University of the Free State,2025,2.18
+997,580,Bachelor of Fine Arts,Kyoto University of Art and Design,2023,2.49
+998,217,Bachelor of Education,South China Normal University,2016,2.82
+999,344,Bachelor of Commerce,University of Sassari,2016,2.79
+1000,341,Bachelor of Fine Arts,"University of Maine, Fort Kent",2024,2.58

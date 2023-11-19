@@ -1,21 +1,21 @@
 CourseID,CourseCategory,Title,Price,Length,CourseImage
-1,Beauty & Spa,est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo,57,8,http://dummyimage.com/413x269.png/ff4444/ffffff
+1,Beauty & Spa,est congue elementum in hac,57,8,http://dummyimage.com/413x269.png/ff4444/ffffff
 2,F&B,vestibulum ante ipsum primis in faucibus orci luctus,63,2,http://dummyimage.com/413x269.png/5fa2dd/ffffff
 3,Tourism & Hospitality,urna ut tellus nulla ut erat id,81,7,http://dummyimage.com/413x269.png/cc0000/ffffff
 4,Beauty & Spa,id consequat in consequat ut nulla sed accumsan,29,7,http://dummyimage.com/413x269.png/dddddd/000000
 5,Beauty & Spa,ac consequat metus sapien ut,59,9,http://dummyimage.com/413x269.png/ff4444/ffffff
-6,Beauty & Spa,et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec,44,5,http://dummyimage.com/413x269.png/cc0000/ffffff
+6,Beauty & Spa,et ultrices posuere cubilia curae duis,44,5,http://dummyimage.com/413x269.png/cc0000/ffffff
 7,F&B,sed lacus morbi sem mauris laoreet,22,11,http://dummyimage.com/413x269.png/ff4444/ffffff
 8,Beauty & Spa,feugiat et eros vestibulum ac est lacinia,23,8,http://dummyimage.com/413x269.png/dddddd/000000
-9,Beauty & Spa,adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus,66,9,http://dummyimage.com/413x269.png/cc0000/ffffff
-10,Tourism & Hospitality,odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce,68,6,http://dummyimage.com/413x269.png/5fa2dd/ffffff
-11,F&B,est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla,42,5,http://dummyimage.com/413x269.png/5fa2dd/ffffff
+9,Beauty & Spa,adipiscing elit proin interdum,66,9,http://dummyimage.com/413x269.png/cc0000/ffffff
+10,Tourism & Hospitality,odio justo sollicitudin ut suscipit a feugiat,68,6,http://dummyimage.com/413x269.png/5fa2dd/ffffff
+11,F&B,est phasellus sit amet,42,5,http://dummyimage.com/413x269.png/5fa2dd/ffffff
 12,Tourism & Hospitality,luctus rutrum nulla tellus in sagittis dui,78,9,http://dummyimage.com/413x269.png/ff4444/ffffff
-13,Tourism & Hospitality,vulputate elementum nullam varius nulla facilisi cras non velit,35,7,http://dummyimage.com/413x269.png/dddddd/000000
-14,F&B,in purus eu magna vulputate luctus cum sociis natoque penatibus,93,6,http://dummyimage.com/413x269.png/dddddd/000000
-15,Tourism & Hospitality,viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus,60,6,http://dummyimage.com/413x269.png/ff4444/ffffff
+13,Tourism & Hospitality,vulputate elementum,35,7,http://dummyimage.com/413x269.png/dddddd/000000
+14,F&B,in purus eu magna vulputate,93,6,http://dummyimage.com/413x269.png/dddddd/000000
+15,Tourism & Hospitality,viverra diam vitae quam,60,6,http://dummyimage.com/413x269.png/ff4444/ffffff
 16,Beauty & Spa,est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi,74,7,http://dummyimage.com/413x269.png/ff4444/ffffff
-17,Beauty & Spa,accumsan odio curabitur convallis duis,75,9,http://dummyimage.com/413x269.png/5fa2dd/ffffff
+17,Beauty & Spa,accumsan odio curabitur,75,9,http://dummyimage.com/413x269.png/5fa2dd/ffffff
 18,Tourism & Hospitality,in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit,91,4,http://dummyimage.com/413x269.png/cc0000/ffffff
 19,F&B,varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices,71,11,http://dummyimage.com/413x269.png/cc0000/ffffff
 20,F&B,ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla,16,3,http://dummyimage.com/413x269.png/cc0000/ffffff
@@ -33,11 +33,11 @@ CourseID,CourseCategory,Title,Price,Length,CourseImage
 32,F&B,id turpis integer aliquet massa id lobortis convallis tortor risus dapibus,56,4,http://dummyimage.com/413x269.png/dddddd/000000
 33,F&B,felis sed lacus morbi sem mauris,89,5,http://dummyimage.com/413x269.png/dddddd/000000
 34,F&B,at nunc commodo placerat praesent,29,4,http://dummyimage.com/413x269.png/5fa2dd/ffffff
-35,Tourism & Hospitality,vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo,54,11,http://dummyimage.com/413x269.png/cc0000/ffffff
+35,Tourism & Hospitality,vehicula condimentum,54,11,http://dummyimage.com/413x269.png/cc0000/ffffff
 36,Tourism & Hospitality,vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae,72,3,http://dummyimage.com/413x269.png/dddddd/000000
 37,Tourism & Hospitality,cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis,77,11,http://dummyimage.com/413x269.png/ff4444/ffffff
-38,Beauty & Spa,augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea,31,6,http://dummyimage.com/413x269.png/5fa2dd/ffffff
-39,Beauty & Spa,fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies,24,8,http://dummyimage.com/413x269.png/ff4444/ffffff
+38,Beauty & Spa,augue luctus tincidunt nulla,31,6,http://dummyimage.com/413x269.png/5fa2dd/ffffff
+39,Beauty & Spa,fermentum donec ut,24,8,http://dummyimage.com/413x269.png/ff4444/ffffff
 40,F&B,nec dui luctus rutrum nulla tellus,26,3,http://dummyimage.com/413x269.png/dddddd/000000
 41,Beauty & Spa,amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit,40,5,http://dummyimage.com/413x269.png/5fa2dd/ffffff
 42,Beauty & Spa,augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula,21,11,http://dummyimage.com/413x269.png/ff4444/ffffff
@@ -131,7 +131,7 @@ CourseID,CourseCategory,Title,Price,Length,CourseImage
 130,Beauty & Spa,cubilia curae duis faucibus accumsan odio,67,5,http://dummyimage.com/413x269.png/dddddd/000000
 131,Tourism & Hospitality,quis turpis eget elit sodales scelerisque mauris sit,75,7,http://dummyimage.com/413x269.png/5fa2dd/ffffff
 132,F&B,et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat,90,6,http://dummyimage.com/413x269.png/cc0000/ffffff
-133,F&B,aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget,23,3,http://dummyimage.com/413x269.png/cc0000/ffffff
+133,F&B,Good waiter,12,3,http://dummyimage.com/413x269.png/cc0000/ffffff
 134,Tourism & Hospitality,aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus,54,9,http://dummyimage.com/413x269.png/5fa2dd/ffffff
 135,Beauty & Spa,lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus,63,12,http://dummyimage.com/413x269.png/dddddd/000000
 136,Tourism & Hospitality,lectus vestibulum quam sapien varius ut blandit non,64,11,http://dummyimage.com/413x269.png/cc0000/ffffff
@@ -180,7 +180,7 @@ CourseID,CourseCategory,Title,Price,Length,CourseImage
 179,Beauty & Spa,diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam,44,4,http://dummyimage.com/413x269.png/dddddd/000000
 180,F&B,ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet,25,8,http://dummyimage.com/413x269.png/ff4444/ffffff
 181,Beauty & Spa,leo rhoncus sed vestibulum sit amet cursus id turpis integer,65,8,http://dummyimage.com/413x269.png/ff4444/ffffff
-182,F&B,at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis,31,10,http://dummyimage.com/413x269.png/ff4444/ffffff
+182,F&B,Professional Manager,99,10,http://dummyimage.com/413x269.png/ff4444/ffffff
 183,Beauty & Spa,lorem quisque ut erat curabitur gravida nisi at,89,7,http://dummyimage.com/413x269.png/cc0000/ffffff
 184,Beauty & Spa,dolor sit amet consectetuer adipiscing elit,55,5,http://dummyimage.com/413x269.png/ff4444/ffffff
 185,Tourism & Hospitality,amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in,90,6,http://dummyimage.com/413x269.png/ff4444/ffffff
@@ -233,7 +233,7 @@ CourseID,CourseCategory,Title,Price,Length,CourseImage
 232,Beauty & Spa,sed augue aliquam erat volutpat in congue,40,3,http://dummyimage.com/413x269.png/cc0000/ffffff
 233,Beauty & Spa,vivamus in felis eu sapien cursus vestibulum proin,98,2,http://dummyimage.com/413x269.png/5fa2dd/ffffff
 234,F&B,lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo,87,2,http://dummyimage.com/413x269.png/cc0000/ffffff
-235,F&B,aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis,34,4,http://dummyimage.com/413x269.png/cc0000/ffffff
+235,F&B,Professional Bartender,34,4,http://dummyimage.com/413x269.png/cc0000/ffffff
 236,Tourism & Hospitality,non mauris morbi non lectus aliquam,93,11,http://dummyimage.com/413x269.png/ff4444/ffffff
 237,F&B,vel nulla eget eros elementum pellentesque quisque porta,29,8,http://dummyimage.com/413x269.png/dddddd/000000
 238,F&B,maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante,71,2,http://dummyimage.com/413x269.png/5fa2dd/ffffff
@@ -880,7 +880,7 @@ CourseID,CourseCategory,Title,Price,Length,CourseImage
 879,Beauty & Spa,elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at,94,8,http://dummyimage.com/413x269.png/ff4444/ffffff
 880,F&B,proin interdum mauris non ligula pellentesque ultrices phasellus id sapien,74,8,http://dummyimage.com/413x269.png/ff4444/ffffff
 881,Beauty & Spa,dolor vel est donec odio justo sollicitudin ut suscipit,34,9,http://dummyimage.com/413x269.png/ff4444/ffffff
-882,Tourism & Hospitality,vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id nisl venenatis lacinia aenean sit amet,69,3,http://dummyimage.com/413x269.png/cc0000/ffffff
+882,F&B,Communicate with your customers,69,3,http://dummyimage.com/413x269.png/cc0000/ffffff
 883,Tourism & Hospitality,velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id,19,2,http://dummyimage.com/413x269.png/cc0000/ffffff
 884,Beauty & Spa,pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas,62,4,http://dummyimage.com/413x269.png/dddddd/000000
 885,F&B,nulla sed accumsan felis ut at,88,11,http://dummyimage.com/413x269.png/cc0000/ffffff
@@ -985,7 +985,7 @@ CourseID,CourseCategory,Title,Price,Length,CourseImage
 984,F&B,in libero ut massa volutpat convallis morbi,29,9,http://dummyimage.com/413x269.png/cc0000/ffffff
 985,Tourism & Hospitality,nam dui proin leo odio porttitor id consequat in consequat ut,52,12,http://dummyimage.com/413x269.png/5fa2dd/ffffff
 986,F&B,nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit,66,9,http://dummyimage.com/413x269.png/ff4444/ffffff
-987,F&B,pulvinar lobortis est phasellus sit amet erat nulla tempus,28,4,http://dummyimage.com/413x269.png/5fa2dd/ffffff
+987,F&B,Become a Cash Manager,28,4,http://dummyimage.com/413x269.png/5fa2dd/ffffff
 988,Tourism & Hospitality,elit proin risus praesent lectus vestibulum quam sapien varius ut,67,3,http://dummyimage.com/413x269.png/ff4444/ffffff
 989,Tourism & Hospitality,odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus,48,11,http://dummyimage.com/413x269.png/ff4444/ffffff
 990,Beauty & Spa,ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis,88,8,http://dummyimage.com/413x269.png/5fa2dd/ffffff

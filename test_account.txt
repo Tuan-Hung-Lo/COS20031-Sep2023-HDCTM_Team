@@ -1,9 +1,9 @@
-1. Recruiter:
-
+1
 Jane@gmail.com
 123456
+Recruiter
 
-500001. Job Seekers:
-
+1001
 James@gmail.com
 123456
+JobSeeker
