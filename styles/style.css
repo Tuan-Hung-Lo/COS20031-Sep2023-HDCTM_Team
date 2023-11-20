@@ -209,23 +209,35 @@ textarea {
 }
 
 .si-image {
-    float: right;
-    width: 40em;
-    height: 100%;
+    flex: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+.si-image img {
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     margin: auto;
+    width: 80%;
 }
 
 .si-content .logo {
     padding-bottom: 5em;
 }
 
+.si-form-box img {
+    width: 40%;
+}
+
 .si-form-box {
-    float: left;
-    width: 50em;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* width: 50em; */
+    justify-content: center;
+    align-items: center;
     height: 100%;
     position: relative;
     background: #fff;
@@ -235,7 +247,6 @@ textarea {
 
 .si-button-box {
     width: 20.5em;
-    margin: 20px auto;
     position: relative;
     border-radius: 5px;
     background-color: #eee;
@@ -303,7 +314,6 @@ textarea {
 */
 .inputgr {
     padding-top: 20px;
-    margin-left: 10.5em;
     width: 25em;
     transition: .5s;
 }
