@@ -107,29 +107,14 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
               <?php } ?>
 
               <ul>Notes:
-                <li>Please pick your interview time later than 1 week after receiving pass Email</li>
-                <li>Please freely pick your interview time in the available time except for the lunch time (11:30AM -
-                  01:30PM)</li>
-                <li>Each interview session last upto 45 minutes</li>
-                <li>You can only schedule your time once and cannot change it</li>
+                <li>Each interview session last from 20 to 45 minutes</li>
+                <li>Please be present at least 10 minutes early</li>
               </ul>
-            </div>
-            <div class="bwp-interview-picktime">
-              <h5>Pick your date and time</h5>
-
-              <!--Set Date And Hour Button-->
-              <div class="bwp-interview-button">
-                <div class="bwp-interview-picked">
-                  <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
-                  <input name="date" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
-                </div>
-                <div class="bwp-interview-picked">
-                  <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
-                  <input name="time" type="text" class="bwp-input" placeholder="00:00 AM" required>
-                </div>
-              </div>
               <div class="bwp-submit-box">
-                <button type="submit" class="bwp-submit-btn">Pick this time</button>
+                <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
+              </div>
+              <div class="interview-link">
+                <a href="pagenotfound.html">Google Meet Link</a>
               </div>
             </div>
           </div>
