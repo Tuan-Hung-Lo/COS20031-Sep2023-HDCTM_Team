@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Include settings and database connection
+require_once("./settings.php");
+
+$UserAuthenticationID = $_SESSION['recruiter_ID'];
+
+$recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+$existingRecruiter = $recruiter->fetch_assoc();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +30,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <title>Recruiter - Set Interview Schedule Page</title>
+  <title>Recruiter Edit Page</title>
 </head>
 
 <body>
@@ -34,7 +47,9 @@
 
     <div class="icons">
       <ul>
-        <li><a href="recruiter.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <?php while ($row = mysqli_fetch_assoc($recruiter)) { ?>
+          <li><a href="recruiter.php"><img src="<?php echo $row['CompanyImage'] ?>"></a></li>
+        <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
@@ -43,55 +58,63 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <div class="bwp-contents">  
-       <!--Navigation Button-->
-      <div class="bwp-nav"> 
-        <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a>   <!--Come Back Page-->
-       <h1>Interview Schedule</h1>
-      </div>
 
-      <!--Interview Details-->
-      <div class="bwp-interview-details"> 
-        <!--Job Applied Card-->
-        <div class="bwp-interview-schedule">
-          <div class="bwp-card">
-            <div class="sp-image-box">
-              <img src="images/nail.png" alt="product.png">
-            </div>
-            <div class="sp-product-details">
-              <div class="type">
-                <h6>UI-UX Designer/Researcher - Melbourne</h6>
-              </div>
-              <div class="sp-product-require">
-                <ul>
-                  <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
-                  <li><img src="icons/Fee.svg"> 2,500 - 5,200 AUD$ </li>
-                  <li><img src="icons/ExperienceLevel.svg"> Junior, Fresher </li>
-                  <li><img src="icons/WorkingMode.svg"> Remote</li>
-                  <li><img src="icons/PeopleGroup.svg"> <a href="pagenotfound.html">View candidates applied</a></li>
-                </ul>
-              </div>
-            </div>
+    <h1 class="rep-heading">Profile</h1>
+
+    <!--EDITING FORM-->
+    <form method="post" action="#" class="rep-form">
+      <?php if ($existingRecruiter) { ?>
+
+        <!--LEFT COLUMN-->
+        <div class="rep-content-left">
+
+          <!--COMPANY NAME-->
+          <label class="rep-label">
+            <img src="icons/PeopleGroup.svg">
+            <input name="rep-com-name" type="text" class="rep-btn" placeholder="Company name" value="<?php echo $existingRecruiter['CompanyName']; ?>">
+          </label>
+
+          <!--COMPANY SIZE-->
+          <label class="rep-label">
+            <img src="icons/Comsize.svg">
+            <input name="rep-com-size" type="text" class="rep-btn" placeholder="Company size" value="<?php echo $existingRecruiter['Size']; ?>">
+          </label>
+
+          <!--PHONE NUMBER-->
+          <label class="rep-label">
+            <img src="icons/Phone.svg">
+            <input name="rep-com-phone" type="text" class="rep-btn" placeholder="Phone number" value="<?php echo $existingRecruiter['CompanyPhone']; ?>">
+          </label>
+
+          <!--COMPANY INTRODUCTION-->
+          <div class="rep-input-box">
+            <input name="rep-com-intro" type="text" class="rep-btn" placeholder="Introduction" value="<?php echo $existingRecruiter['Introduction']; ?>">
           </div>
         </div>
 
-        <!--Job Applied Schedule-->
-        <div class="bwp-interview-schedule">
-          <div class="bwp-interview-setup">
-            <div class="bwp-interview-available">
-              <h2>10:30 AM (13/11/2023)</h2>
-              <h2>09:00 AM - 05:30 PM</h2>
-            </div>
-          <div class="bwp-submit-box">
-            <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
+        <!--RIGHT COLUMN-->
+        <div class="rep-content-right">
+
+          <!--IMAGE BOX-->
+          <div class="rep-img-box">
+            <img src="<?php echo $existingRecruiter['CompanyImage']; ?>">
           </div>
-          <div class="interview-link">
-            <a href="pagenotfound.html">Google Meet Link</a>
+
+          <!--IMAGE LINK-->
+          <div class="rep-img-link">
+            <img src="icons/Link_B.svg">
+            <input name="rep-com-img-link" type="text" class="rep-link" placeholder="Insert profile image link" value="<?php echo $existingRecruiter['CompanyImage']; ?>">
           </div>
         </div>
-      <!---->
+
+      <?php } ?>
+
+      <!--Save Edit Button-->
+
+      <div class="rep-submit-btn">
+        <input type="submit" value="Save changes">
       </div>
-    </div>
+    </form>
   </main>
 
   <!--Back to top button-->
@@ -126,6 +149,8 @@
           <ul>
             <li><a href="pagenotfound.html">Home</a></li>
             <li><a href="pagenotfound.html">About</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 

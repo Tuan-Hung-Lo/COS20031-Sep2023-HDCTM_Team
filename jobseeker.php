@@ -4,14 +4,13 @@
   // Include settings and database connection
   require_once("./settings.php");
 
-  if (isset($_SESSION['UserAuthenticationID'])) {
-    $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
-    $user_email = $_SESSION['user_email'];
+  if (isset($_SESSION['job_seeker_ID'])) {
+    $UserAuthenticationID = $_SESSION['job_seeker_ID'];
+    $user_email = $_SESSION['js_email'];
 
     $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-
-    $js_id = $job_seeker->fetch_assoc();
-    $JobSeekerID = $js_id['JobSeekerID'];
+    $job_seeker_data = mysqli_fetch_assoc($job_seeker);
+    $JobSeekerID = $job_seeker_data['JobSeekerID'];
 
     $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
     $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
@@ -88,8 +87,8 @@
 
   <div class="icons">
     <ul>
-      <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-      <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+      <?php if ($job_seeker_data) { ?>
+      <li><a href="jobseeker.php"><img src="<?php echo $job_seeker_data['JSImage'] ?>"></a></li>
       <?php } ?>
       <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
     </ul>
@@ -111,31 +110,31 @@
         <!-- HEADLINE -->
         <div class="cpp-bi-headline-container">
 
-          <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+          <?php if ($job_seeker_data) { ?>
 
           <!-- PROFILE PICTURE -->
           <div class="cpp-bi-headline-profileimg">
-            <img src="<?php echo $row['JSImage'] ?>" alt="Candidate Profile's Picture">
+            <img src="<?php echo $job_seeker_data['JSImage'] ?>" alt="Candidate Profile's Picture">
           </div>
 
           <!-- HEADLINE INFORMATION -->
           <div class="cpp-bi-headline-headline">
             <h2>
-              <?php echo $row['FirstName'], $row['LastName']; ?>
+              <?php echo $job_seeker_data['FirstName'], $job_seeker_data['LastName']; ?>
             </h2>
             <br>
             <p>
               <img src="icons/Job Title.svg" />
               Job title:
               <span class="cpp-span">
-                <?php echo $row['JSJobTitle']; ?>
+                <?php echo $job_seeker_data['JSJobTitle']; ?>
               </span>
             </p>
             <p>
               <img src="icons/Experience Level.svg" />
               Experience level:
               <span class="cpp-span">
-                <?php echo $row['ExperienceLevel']; ?>
+                <?php echo $job_seeker_data['ExperienceLevel']; ?>
               </span>
             </p>
           </div>
@@ -165,40 +164,40 @@
           <!-- CONTENT -->
           <div class="cpp-bi-personalinfo-content">
 
-            <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+            <?php if ($job_seeker_data) { ?>
             <p>
               <img src="icons/Gender.svg" />
               Gender:
               <span class="cpp-span">
-                <?php echo $row['Gender']; ?>
+                <?php echo $job_seeker_data['Gender']; ?>
               </span>
             </p>
             <p>
               <img src="icons/Calendar.svg" />
               DOB:
               <span class="cpp-span">
-                <?php echo $row['DOB']; ?>
+                <?php echo $job_seeker_data['DOB']; ?>
               </span>
             </p>
             <p>
               <img src="icons/Phone.svg" />
               Phone number:
               <span class="cpp-span">
-                <?php echo $row['Phone']; ?>
+                <?php echo $job_seeker_data['Phone']; ?>
               </span>
             </p>
             <p>
               <img src="icons/Message.svg" />
               Email:
               <span class="cpp-span">
-                <?php echo '$user_email'; ?>
+                <?php echo $user_email; ?>
               </span>
             </p>
             <p>
               <img src="icons/Location.svg" />
               Address:
               <span class="cpp-span">
-                <?php echo $row['Address']; ?>
+                <?php echo $job_seeker_data['Address']; ?>
               </span>
             </p>
             <?php } ?>

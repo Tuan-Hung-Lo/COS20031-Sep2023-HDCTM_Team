@@ -4,34 +4,23 @@ session_start();
 // Include settings and database connection
 require_once("./settings.php");
 
-if (isset($_SESSION['UserAuthenticationID'])) {
-  $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
-  $user_email = $_SESSION['user_email'];
+$UserAuthenticationID = $_SESSION['recruiter_ID'];
+$user_email = $_SESSION['re_email'];
 
-  $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+$recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+$recruiter_data = mysqli_fetch_assoc($recruiter);
+$RecruiterID = $recruiter_data['RecruiterID'];
 
-  $re_id = $recruiter->fetch_assoc();
-  $RecruiterID = $re_id['RecruiterID'];
+$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
+$application = $conn->query("SELECT * FROM s104181721_db.Application
+        JOIN s104181721_db.Job ON Application.JobID = Job.JobID
+        JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID
+        JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID WHERE Job.RecruiterID = '$RecruiterID';");
 
-  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
-  $application = $conn->query("SELECT 
-            Application.*, 
-            Job.*, 
-            JobSeeker.*, 
-            RecruiterInterview.*
-        FROM 
-            s104181721_db.Application
-            JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-            JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID
-            JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID
-        WHERE 
-            Job.RecruiterID = '$RecruiterID';
-      ");
-  $js_id = $application->fetch_assoc();
-  $JobSeekerID = $js_id['JobSeekerID'];
+$js_id = $application->fetch_assoc();
+$JobSeekerID = $js_id['JobSeekerID'];
 
-  $_SESSION['UserAuthenticationID'] = $JobSeekerID;
-}
+$_SESSION['job_seeker_ID'] = $JobSeekerID;
 ?>
 
 <!DOCTYPE html>
@@ -70,8 +59,8 @@ if (isset($_SESSION['UserAuthenticationID'])) {
 
     <div class="icons">
       <ul>
-        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-          <li><a href="recruiter.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <?php if ($recruiter_data) { ?>
+          <li><a href="recruiter.php"><img src="<?php echo $recruiter_data['CompanyImage'] ?>"></a></li>
         <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
@@ -89,17 +78,17 @@ if (isset($_SESSION['UserAuthenticationID'])) {
     <!-- HEADING -->
 
     <div class="rpp-intro">
-      <?php while ($row = mysqli_fetch_assoc($recruiter)) { ?>
+      <?php if ($recruiter_data) { ?>
         <!-- INFORMATION -->
         <div class="rpp-intro-info">
 
           <div class="rpp-title">
 
             <h2>
-              <?php echo $row['CompanyName'] ?>
+              <?php echo $recruiter_data['CompanyName'] ?>
             </h2>
 
-            <a class="profilelink" href="recruiteredit.html">
+            <a class="profilelink" href="recruiteredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
 
@@ -112,7 +101,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
             <img src="icons/Comsize.svg" />
             Company size:
             <span class="cpp-span">
-              <?php echo $row['Size'] ?>
+              <?php echo $recruiter_data['Size'] ?>
             </span>
           </p>
 
@@ -120,7 +109,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
             <img src="icons/Phone.svg" />
             Phone number:
             <span class="cpp-span">
-              <?php echo $row['CompanyPhone'] ?>
+              <?php echo $recruiter_data['CompanyPhone'] ?>
             </span>
           </p>
 
@@ -128,7 +117,7 @@ if (isset($_SESSION['UserAuthenticationID'])) {
             <img src="icons/Message.svg" />
             Email:
             <span class="cpp-span">
-              <?php echo $row['CompanyEmail'] ?>
+              <?php echo $recruiter_data['CompanyEmail'] ?>
             </span>
           </p>
 
@@ -138,14 +127,14 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           </p>
 
           <p class="rpp-intro-para">
-            <?php echo $row['Introduction'] ?>
+            <?php echo $recruiter_data['Introduction'] ?>
           </p>
 
         </div>
 
         <!-- IMAGE -->
         <div class="rpp-intro-img">
-          <img src="<?php echo $row['CompanyImage']; ?>" alt="Company's image">
+          <img src="<?php echo $recruiter_data['CompanyImage']; ?>" alt="Company's image">
         </div>
       <?php } ?>
     </div>
@@ -162,64 +151,41 @@ if (isset($_SESSION['UserAuthenticationID'])) {
 
       <ul class="autoWidth" class="cs-hidden">
         <?php while ($row = mysqli_fetch_assoc($job)) { ?>
-          <<<<<<< HEAD <!-- Card 1 -->
-            <li class="slide">
-              <div class="sp-card">
-                <div class="sp-image-box">
-                  <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
-                </div>
-                <div class="sp-product-details">
-                  <div class="type">
-                    <h6><?php echo $row['JobTitle']; ?></h6>
-                  </div>
-                  <div class="sp-product-require">
-                    <ul>
-                      <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
-                      <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$ </li>
-                      <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevelName']; ?></li>
-                      <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
-                      <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiter_candidateapplied.html"> View candidates applied</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <button class="sp-product-btn">See this job posting details</button>
-                =======
-                <!-- Card 1 -->
-            <li class="slide">
-              <div class="sp-card">
-                <div class="sp-image-box">
-                  <img src="<?php echo $row['CompanyImage']; ?>" alt="product.png">
-                  >>>>>>> 165c0dff10cc7ba9903cb330d49ee1ce6ade0d77
-                </div>
-                <div class="sp-product-details">
-                  <div class="type">
-                    <h6>
-                      <?php echo $row['JobTitle']; ?>
-                    </h6>
-                  </div>
-                  <div class="sp-product-require">
-                    <ul>
-                      <li><img src="icons/Location.svg">
-                        <?php echo $row['WorkLocation']; ?>
-                      </li>
-                      <li><img src="icons/Fee.svg">
-                        <?php echo $row['Salary']; ?> AUD$
-                      </li>
-                      <li><img src="icons/ExperienceLevel.svg">
-                        <?php echo $row['ExperienceLevel']; ?>
-                      </li>
-                      <li><img src="icons/WorkingMode.svg">
-                        <?php echo $row['WorkingFormat']; ?>
-                      </li>
-                      <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="pagenotfound.html"> View candidates
-                          applied</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <button class="sp-product-btn">See this job posting details</button>
+          <!-- Card 1 -->
+          <li class="slide">
+            <div class="sp-card">
+              <div class="sp-image-box">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
               </div>
-            </li>
-          <?php } ?>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6>
+                    <?php echo $row['JobTitle']; ?>
+                  </h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Location.svg">
+                      <?php echo $row['WorkLocation']; ?>
+                    </li>
+                    <li><img src="icons/Fee.svg">
+                      <?php echo $row['Salary']; ?> AUD$
+                    </li>
+                    <li><img src="icons/ExperienceLevel.svg">
+                      <?php echo $row['ExperienceLevel']; ?>
+                    </li>
+                    <li><img src="icons/WorkingMode.svg">
+                      <?php echo $row['WorkingFormat']; ?>
+                    </li>
+                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="pagenotfound.html"> View candidates
+                        applied</a></li>
+                  </ul>
+                </div>
+              </div>
+              <button class="sp-product-btn">See this job posting details</button>
+            </div>
+          </li>
+        <?php } ?>
       </ul>
 
     </div>
@@ -243,8 +209,10 @@ if (isset($_SESSION['UserAuthenticationID'])) {
 
               <div class="sp-image-box">
 
-                <<<<<<< HEAD <img src="images/CA_img1.png" alt="product.png">
-                  <h4><?php echo $row['FirstName'], $row['LastName']; ?></h4>
+                <img src="images/CA_img1.png" alt="product.png">
+                <h4>
+                  <?php echo $row['FirstName'], $row['LastName']; ?>
+                </h4>
 
               </div>
 
@@ -262,82 +230,34 @@ if (isset($_SESSION['UserAuthenticationID'])) {
 
               <br>
 
-              <button href="recruiter_candidateapplied.html" class="ca-product-btn">View job seeker profile</button>
-              =======
-              <img src="images/CA_img1.png" alt="product.png">
-              <h4>
-                <?php echo $row['FirstName'], $row['LastName']; ?>
-              </h4>
-              >>>>>>> 165c0dff10cc7ba9903cb330d49ee1ce6ade0d77
+              <button class="ca-product-btn">View job seeker profile</button>
 
             </div>
+          </li>
 
-            <div class="sp-product-details">
-              <div class="sp-product-require">
-                <ul>
-                  <li><img src="icons/JobApplied.svg"> Job applied:
-                    <span class="ca_span">
-                      <?php echo $row['JobTitle']; ?>
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        <?php } ?>
 
-            <br>
-
-            <button class="ca-product-btn">View job seeker profile</button>
+      </ul>
 
     </div>
-    </li>
 
-  <?php } ?>
+    <!-- INTERVIEW SCHEDULE -->
 
-  </ul>
+    <div class="rpp-box-container">
+      <div class="header">
+        <h5>Interview schedule</h5>
+      </div>
+      <br>
+      <hr>
+      <br>
 
-  </div>
-
-  <!-- INTERVIEW SCHEDULE -->
-
-  <div class="rpp-box-container">
-    <div class="header">
-      <h5>Interview schedule</h5>
-    </div>
-    <br>
-    <hr>
-    <br>
-
-    <ul class="autoWidth" class="cs-hidden">
-      <?php while ($row = mysqli_fetch_assoc($application)) { ?>
-        <<<<<<< HEAD <!-- Card 1 -->
+      <ul class="autoWidth" class="cs-hidden">
+        <?php while ($row = mysqli_fetch_assoc($application)) { ?>
+          <!-- Card 1 -->
           <li class="slide">
             <div class="sp-card">
               <div class="sp-image-box">
                 <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6><?php echo $row['JobTitle']; ?></h6>
-                </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Location.svg"> <?php echo $row['DateStart'] - $row['DateEnd']; ?></li>
-                    <li><img src="icons/Fee.svg"> <?php echo $row['TimeStart'] - $row['TimeEnd']; ?></li>
-                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['JobImage']; ?></li>
-                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['JobID']; ?></li>
-                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="recruiter_candidateapplied.html"> View candidates applied</a></li>
-                  </ul>
-                </div>
-              </div>
-              <button class="sp-product-btn">See interview details</button>
-
-              =======
-              <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
-                >>>>>>> 165c0dff10cc7ba9903cb330d49ee1ce6ade0d77
               </div>
               <div class="sp-product-details">
                 <div class="type">
@@ -364,9 +284,9 @@ if (isset($_SESSION['UserAuthenticationID'])) {
           </li>
         <?php } ?>
 
-    </ul>
+      </ul>
 
-  </div>
+    </div>
 
   </main>
 

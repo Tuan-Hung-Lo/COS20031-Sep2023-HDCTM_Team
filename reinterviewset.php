@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+// Include settings and database connection
+require_once("./settings.php");
+
+$UserAuthenticationID = $_SESSION['recruiter_ID'];
+$user_email = $_SESSION['re_email'];
+
+$recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+$recruiter_data = mysqli_fetch_assoc($recruiter);
+$RecruiterID = $recruiter_data['RecruiterID'];
+
+// Retrieve the CourseID from the URL
+$JobID = $_GET['JobID'];
+$_SESSION['JobID'] = $JobID;
+
+$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +37,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <title>Recruiter Edit Page</title>
+  <title>Recruiter - Set Interview Schedule Page</title>
 </head>
 
 <body>
@@ -34,7 +54,9 @@
 
     <div class="icons">
       <ul>
-        <li><a href="recruiter.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <?php while ($row = mysqli_fetch_assoc($recruiter)) { ?>
+          <li><a href="recruiter.php"><img src="<?php echo $row['CompanyImage']; ?>"></a></li>
+        <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
@@ -43,60 +65,58 @@
 
   <!-- MAIN CONTENT -->
   <main>
-
-    <h1 class="rep-heading">Profile</h1>
-
-    <!--EDITING FORM-->
-    <form method="post" action="#" class="rep-form">
-
-      <!--LEFT COLUMN-->
-      <div class="rep-content-left">
-
-        <!--COMPANY NAME-->
-        <label class="rep-label">
-          <img src="icons/PeopleGroup.svg">
-          <input name="rep-com-name" type="text" class="rep-btn" placeholder="Company name">
-        </label>
-
-        <!--COMPANY SIZE-->
-        <label class="rep-label">
-          <img src="icons/Comsize.svg">
-          <input name="rep-com-size" type="text" class="rep-btn" placeholder="Company size">
-        </label>
-        
-        <!--PHONE NUMBER-->
-        <label class="rep-label">
-          <img src="icons/Phone.svg">
-          <input name="rep-com-phone" type="text" class="rep-btn" placeholder="Phone number">
-        </label>
-
-        <!--COMPANY INTRODUCTION-->
-        <div class="rep-input-box">
-          <input name="rep-com-intro" type="text" class="rep-btn" placeholder="Introduction">
-        </div>
+    <div class="bwp-contents">
+      <!--Navigation Button-->
+      <div class="bwp-nav">
+        <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a> <!--Come Back Page-->
+        <h1>Interview Schedule</h1>
       </div>
 
-      <!--RIGHT COLUMN-->
-      <div class="rep-content-right">
-
-        <!--IMAGE BOX-->
-        <div class="rep-img-box">
-          <img src="images/comprofilepic.png"> 
+      <!--Interview Details-->
+      <div class="bwp-interview-details">
+        <!--Job Applied Card-->
+        <div class="bwp-interview-schedule">
+          <div class="bwp-card">
+            <?php while ($row = mysqli_fetch_assoc($job)) { ?>
+              <div class="sp-image-box">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
+              </div>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6><?php echo $row['JobTitle']; ?></h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
+                    <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$ </li>
+                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
+                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
+                  </ul>
+                </div>
+              </div>
+            <?php } ?>
+          </div>
         </div>
 
-        <!--IMAGE LINK-->
-        <div class="rep-img-link">
-          <img src="icons/Link_B.svg">
-          <input name="rep-com-img-link" type="text" class="rep-link" placeholder="Insert profile image link">
+        <!--Job Applied Schedule-->
+        <div class="bwp-interview-schedule">
+          <div class="bwp-interview-setup">
+            <div class="bwp-interview-available">
+              <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
+                <h2><?php echo $row['DateStart']; ?> - <?php echo $row['DateEnd']; ?></h2>
+                <h2><?php echo $row['TimeStart']; ?> - <?php echo $row['TimeEnd']; ?></h2>
+              <?php } ?>
+            </div>
+            <div class="bwp-submit-box">
+              <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
+            </div>
+            <div class="interview-link">
+              <a href="pagenotfound.html">Google Meet Link</a>
+            </div>
+          </div>
+          <!---->
         </div>
       </div>
-
-      <!--Save Edit Button-->
-
-      <div class="rep-submit-btn">
-        <input type="submit" value="Save changes">
-      </div>
-    </form>
   </main>
 
   <!--Back to top button-->
@@ -131,8 +151,6 @@
           <ul>
             <li><a href="pagenotfound.html">Home</a></li>
             <li><a href="pagenotfound.html">About</a></li>
-            <li><a href="courses.php">Courses</a></li>
-            <li><a href="jobopportunities.php">Job Opportunities</a></li>
           </ul>
         </div>
 

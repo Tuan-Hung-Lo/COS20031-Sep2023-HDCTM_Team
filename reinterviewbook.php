@@ -1,3 +1,30 @@
+<?php
+session_start();
+
+// Include settings and database connection
+require_once("./settings.php");
+
+$UserAuthenticationID = $_SESSION['recruiter_ID'];
+$recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+
+// Retrieve the CourseID from the URL
+$JobID = $_GET['JobID'];
+$_SESSION['JobID'] = $JobID;
+
+$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Get form data
+  $DateStart = $_POST['date_start'];
+  $DateEnd = $_POST['date_end'];
+  $TimeStart = $_POST['time_start'];
+  $TimeEnd = $_POST['time_end'];
+
+  $re_interview = $conn->query("INSERT INTO s104181721_db.RecruiterInterview (JobSeekerID, JobID, DateStart, DateEnd, TimeStart, TimeEnd)
+    VALUES ('$UserAuthenticationID', '$JobID', '$DateStart', '$DateEnd', $TimeStart, $TimeEnd')");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +61,9 @@
 
     <div class="icons">
       <ul>
-        <li><a href="recruiter.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <?php while ($row = mysqli_fetch_assoc($recruiter)) { ?>
+          <li><a href="recruiter.php"><img src="<?php echo $row['CompanyImage']; ?>"></a></li>
+        <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
@@ -55,23 +84,24 @@
         <!--Job Applied Card-->
         <div class="bwp-interview-schedule">
           <div class="bwp-card">
-            <div class="sp-image-box">
-              <img src="images/nail.png" alt="product.png">
-            </div>
-            <div class="sp-product-details">
-              <div class="type">
-                <h6>UI-UX Designer/Researcher - Melbourne</h6>
+            <?php while ($row = mysqli_fetch_assoc($job)) { ?>
+              <div class="sp-image-box">
+                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
               </div>
-              <div class="sp-product-require">
-                <ul>
-                  <li><img src="icons/Location.svg"> Melbourne, Victoria, Australia</li>
-                  <li><img src="icons/Fee.svg"> 2,500 - 5,200 AUD$ </li>
-                  <li><img src="icons/ExperienceLevel.svg"> Junior, Fresher </li>
-                  <li><img src="icons/WorkingMode.svg"> Remote</li>
-                  <li><img src="icons/PeopleGroup.svg"> <a href="pagenotfound.html">View candidates applied</a></li>
-                </ul>
+              <div class="sp-product-details">
+                <div class="type">
+                  <h6><?php echo $row['JobTitle']; ?></h6>
+                </div>
+                <div class="sp-product-require">
+                  <ul>
+                    <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
+                    <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$ </li>
+                    <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
+                    <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
+                  </ul>
+                </div>
               </div>
-            </div>
+            <?php } ?>
           </div>
         </div>
 
@@ -84,12 +114,12 @@
               <div class="bgp-interview-button">
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
-                  <input name="date" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
+                  <input name="date_start" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
                 </div>
                 <span class="bgp-link-point"> - </span>
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
-                  <input name="time" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
+                  <input name="date_end" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
                 </div>
               </div>
 
@@ -97,12 +127,12 @@
               <div class="bgp-interview-button">
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
-                  <input name="date" type="text" class="bwp-input" placeholder="00:00 AM" required>
+                  <input name="time_start" type="text" class="bwp-input" placeholder="00:00 AM" required>
                 </div>
                 <span class="bgp-link-point"> - </span>
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
-                  <input name="time" type="text" class="bwp-input" placeholder="00:00 AM" required>
+                  <input name="time_end" type="text" class="bwp-input" placeholder="00:00 AM" required>
                 </div>
               </div>
 
@@ -110,7 +140,7 @@
               <div class="bgp-interview-button">
                 <div class="bgp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/Link_B.svg"></span>
-                  <input name="time" type="text" class="bwp-input" placeholder="Interview Meeting Room Link" required>
+                  <input name="link" type="text" class="bwp-input" placeholder="Interview Meeting Room Link" required>
                 </div>
               </div>
 

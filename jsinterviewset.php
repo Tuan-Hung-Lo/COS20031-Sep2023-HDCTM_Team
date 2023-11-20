@@ -4,7 +4,7 @@ session_start();
 // Include settings and database connection
 require_once("./settings.php");
 
-$UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+$UserAuthenticationID = $_SESSION['job_seeker_ID'];
 $JobID = $_SESSION['JobID'];
 
 $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
@@ -51,8 +51,9 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
 
     <div class="icons">
       <ul>
-        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
-        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
+        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+          <li><a href="jobseeker.php"><img src="<?php echo $row['JSImage']; ?>"></a></li>
+        <?php } ?> <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
@@ -64,10 +65,7 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
       <!--Navigation Button-->
       <div class="bwp-nav">
         <a href="javascript:history.back()"><img src="icons/Navigation.svg"></a> <!--Come Back Page-->
-        <<<<<<< HEAD:jsinterviewset.php <h1>Your Interview Schedule</h1>
-          =======
-          <h1>Book An Interview schedule</h1>
-          >>>>>>> 165c0dff10cc7ba9903cb330d49ee1ce6ade0d77:jsinterviewbook.html
+        <h1>Your Interview Schedule</h1>
       </div>
 
       <!--Interview Details-->
@@ -95,31 +93,26 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
             <?php } ?>
           </div>
         </div>
-
         <!--Job Applied Schedule-->
-        <form class="bwp-interview-schedule" action="#">
+        <div class="bwp-interview-schedule">
           <div class="bwp-interview-setup">
             <div class="bwp-interview-available">
-              <h5>Available time</h5>
-              <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
-
-                <h2>09:00 AM - 05:30 PM (19/10/2023 - 21/10/2023)</h2>
+              <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
+                <h2><?php echo $row['InterviewTime']; ?> (<?php echo $row['InterviewDate']; ?>)</h2>
               <?php } ?>
-
               <ul>Notes:
                 <li>Each interview session last from 20 to 45 minutes</li>
-                <li>Please be present at least 10 minutes early</li>
+                <li>Please be present at least 10 minutes early </li>
               </ul>
-              <div class="bwp-submit-box">
-                <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
-              </div>
-              <div class="interview-link">
-                <a href="pagenotfound.html">Google Meet Link</a>
-              </div>
+            </div>
+            <div class="bwp-submit-box">
+              <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
+            </div>
+            <div class="interview-link">
+              <a href="pagenotfound.html">Google Meet Link</a>
             </div>
           </div>
-        </form>
-        <!---->
+        </div>
       </div>
     </div>
   </main>

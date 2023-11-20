@@ -4,55 +4,50 @@
   // Include settings and database connection
   require_once("./settings.php");
 
+  $UserAuthenticationID = $_SESSION['job_seeker_ID'];
+  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  
+  $js_job = $job_seeker->fetch_assoc();
+  $JSJobTitle = $js_job['JSJobTitle'];
+  
+  if (strpos($JSJobTitle, 'bar') !== false) {
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'F&B';");
+  } else {
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5;");
+  }
+
   // Initialize the WHERE clause for filtering
   $whereClause = "1"; // Default condition to select all jobs
 
   // Check if filter form is submitted
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check and apply filter conditions based on user input
-
-    // EXPECTED SALARY
-    $esalaryfrom = isset($_POST['esalaryfrom']) ? intval($_POST['esalaryfrom']) : 0;
-    $esalaryto = isset($_POST['esalaryto']) ? intval($_POST['esalaryto']) : PHP_INT_MAX;
-
-    $whereClause .= " AND Salary BETWEEN $esalaryfrom AND $esalaryto";
-
     // EXPERIENCE LEVEL
-    $experienceLevels = isset($_POST['experienceLevels']) ? $_POST['experienceLevels'] : [];
+    $experienceLevels = $_POST['jopfilter_el'];
     if (!empty($experienceLevels)) {
-      $experienceLevels = array_map('mysqli_real_escape_string', $experienceLevels);
-      $experienceLevelsStr = "'" . implode("', '", $experienceLevels) . "'";
-      $whereClause .= " AND ExperienceLevel IN ($experienceLevelsStr)";
+      $whereClause .= " AND ExperienceLevel = '$experienceLevels'";
     }
 
     // WORKING FORMAT
-    $workingFormats = isset($_POST['workingFormats']) ? $_POST['workingFormats'] : [];
+    $workingFormats = $_POST['jopfilter_wf'];
     if (!empty($workingFormats)) {
-      $workingFormats = array_map('mysqli_real_escape_string', $workingFormats);
-      $workingFormatsStr = "'" . implode("', '", $workingFormats) . "'";
-      $whereClause .= " AND WorkingFormat IN ($workingFormatsStr)";
+      $whereClause .= " AND WorkingFormat = '$workingFormats'";
     }
 
-    // SPECIALISATION
-    $specialisations = isset($_POST['specialisations']) ? $_POST['specialisations'] : [];
-    if (!empty($specialisations)) {
-      $specialisations = array_map('mysqli_real_escape_string', $specialisations);
-      $specialisationsStr = "'" . implode("', '", $specialisations) . "'";
-      $whereClause .= " AND Specialisation IN ($specialisationsStr)";
+    // SPECIALIZATION
+    $specializations = $_POST['jopfilter_s'];
+    if (!empty($specializations)) {
+      $whereClause .= " AND Specializations = '$specializations'";
     }
+
+    if ($whereClause == 1){
+      // Query to fetch jobs based on filter conditions
+      $filter_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5");
+    } else {
+      $filter_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE $whereClause");
+    }
+  } else {
+    $filter_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5");
   }
-
-  // Query to fetch jobs based on filter conditions
-  $result = mysqli_query($conn, "SELECT * FROM s104181721_db.Job WHERE $whereClause");
-
-  // Fetch all rows into an associative array
-  $jobs = [];
-  while ($row = mysqli_fetch_assoc($result)) {
-    $jobs[] = $row;
-  }
-
-  // Close the database connection
-  mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +90,7 @@
     <div class="icons">
       <ul>
         <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <li><a href="jobseeker.php"><img src="<?php echo $row['JSImage']; ?>"></a></li>
         <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
@@ -197,7 +192,7 @@
           <h5>Suggested for you</h5>
         </div>
         <hr>
-        <?php while ($row = mysqli_fetch_assoc($job)) { ?>
+        <?php while ($row = mysqli_fetch_assoc($sug_job)) { ?>
         <ul class="autoWidth" class="cs-hidden">
           <!-- Card 1 -->
           <li class="slide">
@@ -243,7 +238,7 @@
           </div>
           <hr>
 
-          <?php while ($row = mysqli_fetch_assoc($job)) { ?>
+          <?php while ($row = mysqli_fetch_assoc($filter_job)) { ?>
           <ul class="autoWidth" class="cs-hidden">
             <!-- Card 1 -->
             <li class="slide">

@@ -4,21 +4,18 @@
   // Include settings and database connection
   require_once("./settings.php");
 
-  if (isset($_SESSION['UserAuthenticationID'])) {
-    $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+  if (isset($_SESSION['job_seeker_ID'])) {
+    $UserAuthenticationID = $_SESSION['job_seeker_ID'];
     $user_email = $_SESSION['user_email'];
 
-    // $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    // $JobSeekerID = $conn->query("SELECT JobSeekerID FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    
     $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    
-    $js_id = $job_seeker->fetch_assoc();
-    $JobSeekerID = $js_id['JobSeekerID'];
+    $job_seeker_data = mysqli_fetch_assoc($job_seeker);
+    $JobSeekerID = $job_seeker_data['JobSeekerID'];
 
     $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
     $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
     $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
+    $extracurriculum_activity = $conn->query("SELECT * FROM s104181721_db.ExtracurriculumActivity WHERE JobSeekerID = '$JobSeekerID';");
 
     $CourseRegistration = $conn->query("SELECT * FROM s104181721_db.CourseRegistration WHERE JobSeekerID = '$JobSeekerID';");
 
@@ -34,11 +31,21 @@
 
     $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
 
-    $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
-      JOIN s104181721_db.JobSeeker ON JobSeekerInterview.JobSeekerID = JobSeeker.JobSeekerID
-      JOIN s104181721_db.Application ON JobSeeker.JobSeekerID = Application.JobSeekerID
-      JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-      WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';");
+    $js_interview = $conn->query
+      ("SELECT 
+            JobSeekerInterview.*, 
+            JobSeeker.*, 
+            Application.*, 
+            Job.*
+        FROM 
+            s104181721_db.JobSeekerInterview
+            JOIN s104181721_db.JobSeeker ON JobSeekerInterview.JobSeekerID = JobSeeker.JobSeekerID
+            JOIN s104181721_db.Application ON JobSeeker.JobSeekerID = Application.JobSeekerID
+            JOIN s104181721_db.Job ON Application.JobID = Job.JobID
+        WHERE 
+            JobSeekerInterview.JobSeekerID = '$JobSeekerID' 
+            AND JobSeekerInterview.JobID = '$JobID';
+      ");
   }
 ?>
 

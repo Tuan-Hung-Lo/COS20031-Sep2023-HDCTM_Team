@@ -27,15 +27,18 @@
             switch ($userRole) {
                 case 'Job Seeker':
                     $redirectPage = "jobseeker.php";
+                    // Set session variables
+                    $_SESSION['job_seeker_ID'] = $user['UserAuthenticationID'];
+                    $_SESSION['js_email'] = $email;
                     break;
                 case 'Recruiter':
                     $redirectPage = "recruiter.php";
+                    // Set session variables
+                    $_SESSION['recruiter_ID'] = $user['UserAuthenticationID'];
+                    $_SESSION['re_email'] = $email;
                     break;
             }
 
-            // Set session variables
-            $_SESSION['UserAuthenticationID'] = $user['UserAuthenticationID'];
-            $_SESSION['user_email'] = $email;
 
             // Redirect to the appropriate page
             header("Location: ./$redirectPage");

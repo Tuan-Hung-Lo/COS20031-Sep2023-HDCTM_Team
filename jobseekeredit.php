@@ -1,43 +1,54 @@
 <?php
   session_start();
 
+  // Include settings and database connection
+  require_once("./settings.php");
+
+  $UserAuthenticationID = $_SESSION['job_seeker_ID'];
+
+  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $existingJobSeeker = $job_seeker->fetch_assoc();
+  $JobSeekerID = $existingJobSeeker['JobSeekerID'];
+
+  $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
+  $existingEducation = $education->fetch_assoc();
+
+  $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
+  $existingSkill = $skill->fetch_assoc();
+
+  $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
+  $existingWorkingExperience = $working_experience->fetch_assoc();
+
+  $extracurriculum_activity = $conn->query("SELECT * FROM s104181721_db.ExtracurriculumActivity WHERE JobSeekerID = '$JobSeekerID';");
+  $existingExtracurriculumActivity = $extracurriculum_activity->fetch_assoc();
+
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
-
-    require_once("./settings.php");
-
-    $fetchDataQuery = $conn->query("SELECT * FROM JobSeeker WHERE JobSeekerID = '$UserAuthenticationID';");
-
-    if ($fetchDataQuery) {
-        $existingData = $fetchDataQuery->fetch_assoc();
-  
-        // Assign existing data to variables
-        $existingFirstName = $existingData['FirstName'];
-        $existingLastName = $existingData['LastName'];
-        $existingExperienceLevel = $existingData['ExperienceLevel'];
-        // Assign other variables similarly for other fields
-    }
 
     // Function to update or insert data into a table
     function edit($conn, $table, $data, $conditionColumn, $conditionValue)
-    {
+  {
       $columns = implode(", ", array_keys($data));
       $values = "'" . implode("', '", array_map('sanitize_input', $data)) . "'";
 
-      $sql = "INSERT INTO $table ($columns) VALUES ($values) ON DUPLICATE KEY UPDATE ";
+      // Build the SQL query
+      $sql = "INSERT INTO $table ($columns) VALUES ($values) 
+              ON DUPLICATE KEY UPDATE " . implode(", ", array_map(function ($column) {
+                  return "$column = VALUES($column)";
+              }, array_keys($data)));
 
-      foreach ($data as $column => $value) {
-        $sql .= "$column = VALUES($column), ";
+      // Add the WHERE clause
+      $sql .= " WHERE $conditionColumn = $conditionValue";
+
+      // Execute the query
+      if ($conn->query($sql) === TRUE) {
+          // Redirect to another page after form submission
+          header("Location: jobseeker.php");
+          exit();
+      } else {
+          // Handle database query error if needed
+          echo "Error in database query: " . $conn->error;
       }
-
-      // Remove the trailing comma
-      $sql = rtrim($sql, ", ");
-
-      // Add the condition for the WHERE clause
-      $sql .= " WHERE $conditionColumn = '$conditionValue'";
-
-      return $conn->query($sql);
-    }
+  }
 
     // Retrieve data from the form
     $JSImage = $_POST["jsep-profileimg-link"];
@@ -80,7 +91,7 @@
       'Address' => $Address,
     ];
 
-    edit($conn, 'JobSeeker', $jobSeekerData, 'JobSeekerID', $UserAuthenticationID);
+    edit($conn, 'JobSeeker', $jobSeekerData, 'UserAuthenticationID', $UserAuthenticationID);
 
     // Update or insert data into Education table
     $educationData = [
@@ -90,14 +101,14 @@
       'GPA' => $GPA,
     ];
 
-    edit($conn, 'Education', $educationData, 'JobSeekerID', $UserAuthenticationID);
+    edit($conn, 'Education', $educationData, 'JobSeekerID', $JobSeekerID);
 
     // Update or insert data into Skill table
     $skillData = [
       'SkillName' => $SkillName,
     ];
 
-    edit($conn, 'Skill', $skillData, 'JobSeekerID', $UserAuthenticationID);
+    edit($conn, 'Skill', $skillData, 'JobSeekerID', $JobSeekerID);
 
     // Update or insert data into WorkingExperience table
     $workExperienceData = [
@@ -107,7 +118,7 @@
       'WDescription' => $WDescription,
     ];
 
-    edit($conn, 'WorkingExperience', $workExperienceData, 'JobSeekerID', $UserAuthenticationID);
+    edit($conn, 'WorkingExperience', $workExperienceData, 'JobSeekerID', $JobSeekerID);
 
     // Update or insert data into ExtracurriculumActivity table
     $extracurricularData = [
@@ -117,13 +128,9 @@
       'EADescription' => $EADescription,
     ];
 
-    edit($conn, 'ExtracurriculumActivity', $extracurricularData, 'JobSeekerID', $UserAuthenticationID);
-
-    // Redirect to the appropriate page
-    header("Location: ./jobseeker.php");
+    edit($conn, 'ExtracurriculumActivity', $extracurricularData, 'JobSeekerID', $JobSeekerID);
   }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -150,25 +157,25 @@
 <body>
   <header>
 
-  <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
 
-  <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
-  <nav class="navbar">
-    <a href="pagenotfound.html">Home</a>
-    <a href="pagenotfound.html">About</a>
-    <a href="courses.php">Courses</a>
-    <a href="jobopportunities.php">Job Opportunities</a>
-  </nav>
+    <nav class="navbar">
+      <a href="pagenotfound.html">Home</a>
+      <a href="pagenotfound.html">About</a>
+      <a href="courses.php">Courses</a>
+      <a href="jobopportunities.php">Job Opportunities</a>
+    </nav>
 
-  <div class="icons">
-    <ul>
-      <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-      <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
-      <?php } ?>
-      <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
-    </ul>
-  </div>
+    <div class="icons">
+      <ul>
+        <?php if ($existingJobSeeker) { ?>
+          <li><a href="jobseeker.php"><img src="<?php echo $existingJobSeeker['JSImage'] ?>"></a></li>
+        <?php } ?>
+        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
+      </ul>
+    </div>
 
   </header>
 
@@ -179,7 +186,6 @@
       Profile
     </h1>
 
-
     <form method="post" action="jobseekeredit.php" class="jsep-form">
 
       <div class="jsep-container">
@@ -187,102 +193,110 @@
         <!-- LEFT COLUMN -->
         <div class="left-col">
 
-          <img src="images/profilepic.png" alt="Upload profile picture link">
+          <?php if ($existingJobSeeker) { ?>
+            <img src="<?php echo $existingJobSeeker['JSImage']; ?>" alt="Upload profile picture link">
 
-          <!-- INSERT PROFILE IMAGE LINK -->
-          <label class="jsep-label">
-            <img src="icons/Link_B.svg">
-            <input name="jsep-profileimg-link" type="text" class="jsep-input" placeholder="Insert profile image link">
-          </label>
+            <!-- INSERT PROFILE IMAGE LINK -->
+            <label class="jsep-label">
+              <img src="icons/Link_B.svg">
+              <input name="jsep-profileimg-link" type="text" class="jsep-input" placeholder="Insert profile image link" value="<?php echo $existingJobSeeker['JSImage']; ?>">
+            </label>
 
-          <!-- FIRST NAME -->
-          <label class="jsep-label">
-            <img src="icons/Name_B.svg">
-            <input name="jsep-first-name" type="text" class="jsep-input" placeholder="First Name" value="<?php echo $existingFirstName; ?>">
-          </label>
+            <!-- FIRST NAME -->
+            <label class="jsep-label">
+              <img src="icons/Name_B.svg">
+              <input name="jsep-first-name" type="text" class="jsep-input" placeholder="First Name" value="<?php echo $existingJobSeeker['FirstName']; ?>">
+            </label>
 
-          <!-- LAST NAME -->
-          <label class="jsep-label">
-            <img src="icons/Name_B.svg">
-            <input name="jsep-last-name" type="text" class="jsep-input" placeholder="Last Name">
-          </label>
+            <!-- LAST NAME -->
+            <label class="jsep-label">
+              <img src="icons/Name_B.svg">
+              <input name="jsep-last-name" type="text" class="jsep-input" placeholder="Last Name" value="<?php echo $existingJobSeeker['LastName']; ?>">
+            </label>
 
-          <!-- EXPERIENCE LEVEL -->
-          <label class="jsep-label">
-            <img src="icons/ExperienceLevel_B.svg">
-            <input name="jsep-experience-level" type="text" class="jsep-input" placeholder="Experience level">
-          </label>
+            <!-- EXPERIENCE LEVEL -->
+            <label class="jsep-label">
+              <img src="icons/ExperienceLevel_B.svg">
+              <input name="jsep-experience-level" type="text" class="jsep-input" placeholder="Experience level" value="<?php echo $existingJobSeeker['ExperienceLevel']; ?>">
+            </label>
 
-          <!-- JOB TITLE -->
-          <label class="jsep-label">
-            <img src="icons/JobTitle_B.svg">
-            <input name="jsep-job-title" type="text" class="jsep-input" placeholder="Job title">
-          </label>
-          <br>
-
-          <!-- PERSONAL INFORMATION -->
-          <h3>Personal information</h3>
-
-          <!-- GENDER -->
-          <div class="gender">
+            <!-- JOB TITLE -->
+            <label class="jsep-label">
+              <img src="icons/JobTitle_B.svg">
+              <input name="jsep-job-title" type="text" class="jsep-input" placeholder="Job title" value="<?php echo $existingJobSeeker['JSJobTitle']; ?>">
+            </label>
             <br>
-            <p>Gender:</p>
 
-            <label><input type="radio" name="jsep-gender" value="Female">
-              Female</label>
+            <!-- PERSONAL INFORMATION -->
+            <h3>Personal information</h3>
+
+            <!-- GENDER -->
+            <div class="gender">
+              <br>
+              <p>Gender:</p>
+
+              <label><input type="radio" name="jsep-gender" value="Female" <?php echo ($existingJobSeeker['Gender'] == 'Female') ? 'checked' : ''; ?>>
+                Female</label>
+              <br>
+              <label><input type="radio" name="jsep-gender" value="Male" <?php echo ($existingJobSeeker['Gender'] == 'Male') ? 'checked' : ''; ?>>
+                Male</label>
+              <br>
+              <label><input type="radio" name="jsep-gender" value="Others" <?php echo ($existingJobSeeker['Gender'] == 'Others') ? 'checked' : ''; ?>>
+                Others</label>
+              <br>
+              <label><input type="radio" name="jsep-gender" value="Prefernottosay" <?php echo ($existingJobSeeker['Gender'] == 'Prefernottosay') ? 'checked' : ''; ?>>
+                Prefer not to say</label>
+            </div>
+
+            <!-- DOB -->
+            <label class="jsep-label">
+              <img src="icons/Calendar_B.svg">
+              <input name="jsep-dob" type="text" class="jsep-input" placeholder="DOB (dd/mm/yyyy)" value="<?php echo $existingJobSeeker['DOB']; ?>">
+            </label>
+
+            <!-- PHONE NUMBER -->
+            <label class="jsep-label">
+              <img src="icons/Phone_B.svg">
+              <input name="jsep-phone" type="text" class="jsep-input" placeholder="Phone number" value="<?php echo $existingJobSeeker['Phone']; ?>">
+            </label>
+
+            <!-- ADDRESS -->
+            <label class="jsep-label">
+              <img src="icons/Location_B.svg">
+              <input name="jsep-address" type="text" class="jsep-input" placeholder="Address" value="<?php echo $existingJobSeeker['Address']; ?>">
+            </label>
             <br>
-            <label><input type="radio" name="jsep-gender" value="Male">
-              Male</label>
-            <br>
-            <label><input type="radio" name="jsep-gender" value="Others">
-              Others</label>
-            <br>
-            <label><input type="radio" name="jsep-gender" value="Prefernottosay">
-              Prefer not to say</label>
-          </div>
-
-          <!-- DOB -->
-          <label class="jsep-label">
-            <img src="icons/Calendar_B.svg">
-            <input name="jsep-dob" type="text" class="jsep-input" placeholder="DOB (dd/mm/yyyy)">
-          </label>
-
-          <!-- PHONE NUMBER -->
-          <label class="jsep-label">
-            <img src="icons/Phone_B.svg">
-            <input name="jsep-phone" type="text" class="jsep-input" placeholder="Phone number">
-          </label>
-
-          <!-- ADDRESS -->
-          <label class="jsep-label">
-            <img src="icons/Location_B.svg">
-            <input name="jsep-address" type="text" class="jsep-input" placeholder="Address">
-          </label>
-          <br>
+          <?php } ?>
 
           <!-- EDUCATION BACKGROUND -->
           <h3>Education background</h3>
 
           <div class="jsep-addmore-edu-p">
-            <label class="jsep-label">
-              <img src="icons/Degree_B.svg">
-              <input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree">
-            </label>
 
-            <label class="jsep-label">
-              <img src="icons/Institute_B.svg">
-              <input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute">
-            </label>
+            <?php if ($existingEducation) { ?>
 
-            <label class="jsep-label">
-              <img src="icons/Calendar_B.svg">
-              <input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)">
-            </label>
+              <label class="jsep-label">
+                <img src="icons/Degree_B.svg">
+                <input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree" value="<?php echo $existingEducation['Degree']; ?>">
+              </label>
 
-            <label class="jsep-label">
-              <img src="icons/GPA_B.svg">
-              <input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)">
-            </label>
+              <label class="jsep-label">
+                <img src="icons/Institute_B.svg">
+                <input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute" value="<?php echo $existingEducation['Institution']; ?>">
+              </label>
+
+              <label class="jsep-label">
+                <img src="icons/Calendar_B.svg">
+                <input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)" value="<?php echo $existingEducation['GraduationYear']; ?>">
+              </label>
+
+              <label class="jsep-label">
+                <img src="icons/GPA_B.svg">
+                <input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)" value="<?php echo $existingEducation['GPA']; ?>">
+              </label>
+
+            <?php } ?>
+
             <br>
 
             <label class="jsep-addmore-edu">
@@ -306,10 +320,13 @@
           <br>
 
           <div class="jsep-addmore-skills-p">
+            <?php if ($existingSkill) { ?>
 
-            <div class="jsep-skill">
-              <input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills">
-            </div>
+              <div class="jsep-skill">
+                <input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills" value="<?php echo $existingSkill['SkillName']; ?>">
+              </div>
+
+            <?php } ?>
 
             <label class="jsep-addmore-skills">
               + Add more&nbsp;
@@ -324,26 +341,29 @@
           <h3>Working experience</h3>
 
           <div class="jsep-addmore-wexp-p">
+            <?php if ($existingWorkingExperience) { ?>
 
-            <div class="jsep-addmore-wexp-np">
+              <div class="jsep-addmore-wexp-np">
 
-              <div class="jsep-addmore-wexp-npcol">
-                <input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name">
+                <div class="jsep-addmore-wexp-npcol">
+                  <input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name" value="<?php echo $existingWorkingExperience['WCompanyName']; ?>">
+                </div>
+
+                <div class="jsep-addmore-wexp-npcol">
+                  <input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period" value="<?php echo $existingWorkingExperience['WTimeRange']; ?>">
+                </div>
+
               </div>
 
-              <div class="jsep-addmore-wexp-npcol">
-                <input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period">
+              <div>
+                <input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position" value="<?php echo $existingWorkingExperience['WJobRole']; ?>">
               </div>
 
-            </div>
+              <div>
+                <textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"><?php echo $existingWorkingExperience['WDescription']; ?></textarea>
+              </div>
 
-            <div>
-              <input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position">
-            </div>
-
-            <div>
-              <textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"></textarea>
-            </div>
+            <?php } ?>
 
             <br>
             <br>
@@ -363,26 +383,29 @@
           <h3>Extracurricular activities</h3>
 
           <div class="jsep-addmore-extraa-p">
+            <?php if ($existingExtracurriculumActivity) { ?>
 
-            <div class="jsep-addmore-extraa-np">
+              <div class="jsep-addmore-extraa-np">
 
-              <div class="jsep-addmore-extraa-npcol">
-                <input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name">
+                <div class="jsep-addmore-extraa-npcol">
+                  <input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name" value="<?php echo $existingExtracurriculumActivity['OrganizationName']; ?>">
+                </div>
+
+                <div class="jsep-addmore-extraa-npcol">
+                  <input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period" value="<?php echo $existingExtracurriculumActivity['EATimeRange']; ?>">
+                </div>
+
               </div>
 
-              <div class="jsep-addmore-extraa-npcol">
-                <input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period">
+              <div>
+                <input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role" value="<?php echo $existingExtracurriculumActivity['EAJobRole']; ?>">
               </div>
 
-            </div>
+              <div>
+                <textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"><?php echo $existingExtracurriculumActivity['EADescription']; ?></textarea>
+              </div>
 
-            <div>
-              <input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role">
-            </div>
-
-            <div>
-              <textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"></textarea>
-            </div>
+            <?php } ?>
 
             <br>
             <br>
@@ -395,7 +418,6 @@
 
           </div>
 
-
         </div>
 
       </div>
@@ -405,7 +427,6 @@
       </div>
 
     </form>
-
 
   </main>
 

@@ -4,24 +4,26 @@
   // Include settings and database connection
   require_once("./settings.php");
 
-  // Check if the CourseID parameter is set in the URL
-  if (isset($_GET['JobID'])) {
-    // Retrieve the CourseID from the URL
-    $JobID = $_GET['JobID'];
-    $_SESSION['JobID'] = $JobID;
+  $UserAuthenticationID = $_SESSION['job_seeker_ID'];
+  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
 
-    $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
+  // Retrieve the CourseID from the URL
+  $JobID = $_GET['JobID'];
+  $_SESSION['JobID'] = $JobID;
+
+  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
   
-      // Get form data
-      $InterviewDate = $_POST['date'];
-      $InterviewTime = $_POST['time'];
-  
-      $js_interview = $conn->query("INSERT INTO s104181721_db.JobSeekerInterview (JobSeekerID, JobID, InterviewDate, InterviewTime)
-        VALUES ('$UserAuthenticationID', '$JobID', '$InterviewDate', '$InterviewTime')");
-    }
+  $re_interview = $conn->query("SELECT * FROM s104181721_db.RecruiterInterview WHERE JobID = '$JobID';");
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $UserAuthenticationID = $_SESSION['job_seeker_ID'];
+
+    // Get form data
+    $InterviewDate = $_POST['date'];
+    $InterviewTime = $_POST['time'];
+
+    $js_interview = $conn->query("INSERT INTO s104181721_db.JobSeekerInterview (JobSeekerID, JobID, InterviewDate, InterviewTime)
+      VALUES ('$UserAuthenticationID', '$JobID', '$InterviewDate', '$InterviewTime')");
   }
 ?>
 
@@ -63,7 +65,9 @@
 
     <div class="icons">
       <ul>
-        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
+          <li><a href="jobseeker.php"><img src="<?php echo $row['JSImage']; ?>"></a></li>
+        <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
@@ -111,7 +115,7 @@
             <div class="bwp-interview-available">
               <h5>Available time</h5>
               <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
-                <h2><?php echo $row['TimeStart']; ?> AM - <?php echo $row['TimeEnd']; ?> PM (<?php echo $row['DateStart']; ?> - <?php echo $row['DateEnd']; ?>)</h2>
+                <h2><?php echo $row['TimeStart']; ?> - <?php echo $row['TimeEnd']; ?> (<?php echo $row['DateStart']; ?> - <?php echo $row['DateEnd']; ?>)</h2>
               <?php } ?>
               <ul>Notes:
                 <li>Please pick your interview time later than 1 week after receiving pass Email</li>
@@ -139,29 +143,7 @@
             </div>
           </div>
         </form>
-        <!---->
       </div>
-
-      <!--Job Applied Schedule-->
-      <div class="bwp-interview-schedule">
-        <div class="bwp-interview-setup">
-          <div class="bwp-interview-available">
-           <h2>10:30 AM (13/11/2023)</h2>
-           <ul>Notes:
-              <li>Each interview session last from 20 to 45 minutes</li>
-              <li>Please be present at least 10 minutes early </li>
-            </ul>
-          </div>
-          <div class="bwp-submit-box">
-            <button type="submit" class="bwp-submit-btn">Join Interview Meeting Room</button>
-          </div>
-          <div class="interview-link">
-            <a href="pagenotfound.html">Google Meet Link</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!---->
     </div>
   </main>
 

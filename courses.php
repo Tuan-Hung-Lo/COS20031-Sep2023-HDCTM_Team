@@ -4,16 +4,16 @@
   // Include settings and database connection
   require_once("./settings.php");
 
-  $UserAuthenticationID = $_SESSION['UserAuthenticationID'];
-  $sug_job = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $UserAuthenticationID = $_SESSION['job_seeker_ID'];
+  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
   
-  $js_job = $sug_job->fetch_assoc();
+  $js_job = $job_seeker->fetch_assoc();
   $JSJobTitle = $js_job['JSJobTitle'];
   
   if (strpos($JSJobTitle, 'bar') !== false) {
     $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B';");
   } else {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course;");
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course LIMIT 5;");
   }
 
   // Check if the filter form is submitted
@@ -24,13 +24,13 @@
     if ($course_category === 'All') {
       $whereClause = "1";
     } else {
-      $whereClause = "CourseCategory = '$course_category';";
+      $whereClause = "CourseCategory = '$course_category'";
     }
 
     // Query to fetch courses based on filter conditions
-    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause");
+    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause;");
   } else {
-    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course;");
+    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course LIMIT 5;");
   }
 ?>
 
@@ -73,7 +73,7 @@
     <div class="icons">
       <ul>
         <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-        <li><a href="jobseeker.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
+        <li><a href="jobseeker.php"><img src="<?php echo $row['JSImage']; ?>"></a></li>
         <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
@@ -140,15 +140,13 @@
           <div id="form_check">
             <!-- Suggest Input-->
             <div>
-              <label><input class="cp-suggested-btn" type="radio" name="All" value="All" id="All">
+              <label><input class="cp-suggested-btn" type="radio" name="course_category" value="All" id="All">
                 <span>All</span></label>
-              <label><input class="cp-suggested-btn" type="radio" name="F&B" value="F&B" id="FnB">
+              <label><input class="cp-suggested-btn" type="radio" name="course_category" value="F&B" id="FnB">
                 <span>F&B</span></label>
-              <label><input class="cp-suggested-btn" type="radio" name="Beauty & Spa" value="Beauty & Spa"
-                  id="BeautynSpa">
+              <label><input class="cp-suggested-btn" type="radio" name="course_category" value="Beauty & Spa" id="BeautynSpa">
                 <span>Beauty & Spa</span></label>
-              <label><input class="cp-suggested-btn" type="radio" name="Tourism & Hospitality"
-                  value="Tourism & Hospitality" id="TourismHospitality">
+              <label><input class="cp-suggested-btn" type="radio" name="course_category" value="Tourism & Hospitality" id="TourismHospitality">
                 <span>Tourism & Hospitality</span></label>
             </div>
 
