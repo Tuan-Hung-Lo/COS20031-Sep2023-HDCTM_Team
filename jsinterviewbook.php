@@ -115,7 +115,7 @@
             <div class="bwp-interview-available">
               <h5>Available time</h5>
               <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
-                <h2><?php echo $row['TimeStart']; ?> - <?php echo $row['TimeEnd']; ?> (<?php echo $row['DateStart']; ?> - <?php echo $row['DateEnd']; ?>)</h2>
+                <h2><?php echo $row['TimeStart'] . '-' . $row['TimeEnd'] . ' (' . $row['DateStart'] . ' ' . $row['DateEnd'] . ')'; ?></h2>
               <?php } ?>
               <ul>Notes:
                 <li>Please pick your interview time later than 1 week after receiving pass Email</li>

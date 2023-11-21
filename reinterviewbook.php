@@ -1,28 +1,28 @@
 <?php
-session_start();
+  session_start();
 
-// Include settings and database connection
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-$UserAuthenticationID = $_SESSION['recruiter_ID'];
-$recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $UserAuthenticationID = $_SESSION['recruiter_ID'];
+  $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
 
-// Retrieve the CourseID from the URL
-$JobID = $_GET['JobID'];
-$_SESSION['JobID'] = $JobID;
+  // Retrieve the CourseID from the URL
+  $JobID = $_GET['JobID'];
+  $_SESSION['JobID'] = $JobID;
 
-$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Get form data
-  $DateStart = $_POST['date_start'];
-  $DateEnd = $_POST['date_end'];
-  $TimeStart = $_POST['time_start'];
-  $TimeEnd = $_POST['time_end'];
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $DateStart = $_POST['date_start'];
+    $DateEnd = $_POST['date_end'];
+    $TimeStart = $_POST['time_start'];
+    $TimeEnd = $_POST['time_end'];
 
-  $re_interview = $conn->query("INSERT INTO s104181721_db.RecruiterInterview (JobSeekerID, JobID, DateStart, DateEnd, TimeStart, TimeEnd)
-    VALUES ('$UserAuthenticationID', '$JobID', '$DateStart', '$DateEnd', $TimeStart, $TimeEnd')");
-}
+    $re_interview = $conn->query("INSERT INTO s104181721_db.RecruiterInterview (JobSeekerID, JobID, DateStart, DateEnd, TimeStart, TimeEnd)
+      VALUES ('$UserAuthenticationID', '$JobID', '$DateStart', '$DateEnd', $TimeStart, $TimeEnd')");
+  }
 ?>
 
 <!DOCTYPE html>

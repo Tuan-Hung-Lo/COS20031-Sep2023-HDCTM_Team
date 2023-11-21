@@ -1,21 +1,21 @@
 <?php
-session_start();
+  session_start();
 
-// Include settings and database connection
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-$UserAuthenticationID = $_SESSION['recruiter_ID'];
-$user_email = $_SESSION['re_email'];
+  $UserAuthenticationID = $_SESSION['recruiter_ID'];
+  $user_email = $_SESSION['re_email'];
 
-$recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
-$recruiter_data = mysqli_fetch_assoc($recruiter);
-$RecruiterID = $recruiter_data['RecruiterID'];
+  $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $recruiter_data = mysqli_fetch_assoc($recruiter);
+  $RecruiterID = $recruiter_data['RecruiterID'];
 
-// Retrieve the CourseID from the URL
-$JobID = $_GET['JobID'];
-$_SESSION['JobID'] = $JobID;
+  // Retrieve the CourseID from the URL
+  $JobID = $_GET['JobID'];
+  $_SESSION['JobID'] = $JobID;
 
-$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
 ?>
 
 <!DOCTYPE html>
@@ -103,8 +103,8 @@ $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
           <div class="bwp-interview-setup">
             <div class="bwp-interview-available">
               <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
-                <h2><?php echo $row['DateStart']; ?> - <?php echo $row['DateEnd']; ?></h2>
-                <h2><?php echo $row['TimeStart']; ?> - <?php echo $row['TimeEnd']; ?></h2>
+                <h2><?php echo $row['DateStart'] . '-' . $row['DateEnd']; ?></h2>
+                <h2><?php echo $row['TimeStart'] . '-' . $row['TimeEnd']; ?></h2>
               <?php } ?>
             </div>
             <div class="bwp-submit-box">

@@ -117,7 +117,7 @@ $js_interview = $conn->query("SELECT
             <!-- HEADLINE INFORMATION -->
             <div class="cpp-bi-headline-headline">
               <h2>
-                <?php echo $job_seeker_data['FirstName'], $job_seeker_data['LastName']; ?>
+                <?php echo $job_seeker_data['FirstName'] . ' ' .  $job_seeker_data['LastName']; ?>
               </h2>
               <br>
               <p>
@@ -229,7 +229,7 @@ $js_interview = $conn->query("SELECT
                   <ul>
                     <?php while ($row = mysqli_fetch_assoc($education)) { ?>
                       <li>
-                        <?php echo $row['GraduationYear'], $row['Institution'] ?>
+                        <?php echo $row['GraduationYear'] . ' ' .  $row['Institution'] ?>
                         <br>
                         <i>
                           <?php echo $row['Degree'] ?>

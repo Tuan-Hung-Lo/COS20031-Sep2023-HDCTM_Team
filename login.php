@@ -40,7 +40,6 @@
                     break;
             }
 
-
             // Redirect to the appropriate page
             header("Location: ./$redirectPage");
         }

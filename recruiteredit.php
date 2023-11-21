@@ -1,14 +1,40 @@
 <?php
-session_start();
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  session_start();
 
-// Include settings and database connection
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-$UserAuthenticationID = $_SESSION['recruiter_ID'];
+  $UserAuthenticationID = $_SESSION['recruiter_ID'];
 
-$recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
-$existingRecruiter = $recruiter->fetch_assoc();
+  $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $existingRecruiter = $recruiter->fetch_assoc();
 
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Retrieve data from the form
+    $CompanyName = $_POST["rep-com-name"];
+    $Size = $_POST["rep-com-size"];
+    $CompanyPhone = $_POST["rep-com-phone"];
+    $Introduction = $_POST["rep-com-intro"];
+    $CompanyImage = $_POST["rep-com-img-link"];
+
+    $sql = "UPDATE s104181721_db.Recruiter 
+      SET CompanyName = '$CompanyName', 
+        Size = '$Size', 
+        CompanyPhone = '$CompanyPhone', 
+        Introduction = '$Introduction', 
+        CompanyImage = '$CompanyImage' 
+      WHERE UserAuthenticationID = '$UserAuthenticationID';";
+  
+    // Execute the query
+    if ($conn->query($sql) === TRUE) {
+      // Redirect to another page after form submission
+      header("Location: recruiter.php");
+      exit();
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +88,7 @@ $existingRecruiter = $recruiter->fetch_assoc();
     <h1 class="rep-heading">Profile</h1>
 
     <!--EDITING FORM-->
-    <form method="post" action="#" class="rep-form">
+    <form method="post" action="recruiteredit.php" class="rep-form">
       <?php if ($existingRecruiter) { ?>
 
         <!--LEFT COLUMN-->

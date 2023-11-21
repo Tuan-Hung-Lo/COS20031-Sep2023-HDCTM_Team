@@ -1,15 +1,15 @@
 <?php
-session_start();
+  session_start();
 
-// Include settings and database connection
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-$UserAuthenticationID = $_SESSION['job_seeker_ID'];
-$JobID = $_SESSION['JobID'];
+  $UserAuthenticationID = $_SESSION['job_seeker_ID'];
+  $JobID = $_SESSION['JobID'];
 
-$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
 
-$js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
+  $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
     WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';");
 ?>
 
@@ -98,7 +98,7 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
           <div class="bwp-interview-setup">
             <div class="bwp-interview-available">
               <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
-                <h2><?php echo $row['InterviewTime']; ?> (<?php echo $row['InterviewDate']; ?>)</h2>
+                <h2><?php echo $row['InterviewTime'] . ' (' . $row['InterviewDate'] . ')';?></h2>
               <?php } ?>
               <ul>Notes:
                 <li>Each interview session last from 20 to 45 minutes</li>

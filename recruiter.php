@@ -1,39 +1,38 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-session_start();
+  session_start();
 
-// Include settings and database connection
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-$UserAuthenticationID = $_SESSION['recruiter_ID'];
-$user_email = $_SESSION['re_email'];
+  $UserAuthenticationID = $_SESSION['recruiter_ID'];
+  $user_email = $_SESSION['re_email'];
 
-$recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
-$recruiter_data = mysqli_fetch_assoc($recruiter);
-$RecruiterID = $recruiter_data['RecruiterID'];
+  $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $recruiter_data = mysqli_fetch_assoc($recruiter);
+  $RecruiterID = $recruiter_data['RecruiterID'];
 
-$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
+  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
 
-$application = $conn->query("SELECT 
-    Application.*, 
-    Job.*, 
-    JobSeeker.* 
-  FROM 
-    s104181721_db.Application
-    JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-    JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID
-  WHERE 
-    Job.RecruiterID = '$RecruiterID';");
+  $application = $conn->query("SELECT 
+      Application.*, 
+      Job.*, 
+      JobSeeker.* 
+    FROM 
+      s104181721_db.Application
+      JOIN s104181721_db.Job ON Application.JobID = Job.JobID
+      JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID
+    WHERE 
+      Job.RecruiterID = '$RecruiterID';");
 
-$interview = $conn->query("SELECT 
-    Job.*, 
-    RecruiterInterview.* 
-  FROM 
-    s104181721_db.Job
-    JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID
-  WHERE 
-    Job.RecruiterID = '$RecruiterID';");
+  $interview = $conn->query("SELECT 
+      Job.*, 
+      RecruiterInterview.* 
+    FROM 
+      s104181721_db.Job
+      JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID
+    WHERE 
+      Job.RecruiterID = '$RecruiterID';
+  ");
 ?>
 
 <!DOCTYPE html>
@@ -280,12 +279,10 @@ $interview = $conn->query("SELECT
                 <div class="sp-product-require">
                   <ul>
                     <li><img src="icons/Calendar.svg">
-                      <?php echo $row['DateStart']; ?> -
-                      <?php echo $row['DateEnd']; ?>
+                      <?php echo $row['DateStart'] . '-' . $row['DateEnd']; ?>
                     </li>
                     <li><img src="icons/Time.svg">
-                      <?php echo $row['TimeStart']; ?> -
-                      <?php echo $row['TimeEnd']; ?>
+                      <?php echo $row['TimeStart'] . '-' . $row['TimeEnd']; ?>
                     </li>
                   </ul>
                 </div>

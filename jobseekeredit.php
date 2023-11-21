@@ -24,32 +24,6 @@
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Function to update or insert data into a table
-    function edit($conn, $table, $data, $conditionColumn, $conditionValue)
-  {
-      $columns = implode(", ", array_keys($data));
-      $values = "'" . implode("', '", array_map('sanitize_input', $data)) . "'";
-
-      // Build the SQL query
-      $sql = "INSERT INTO $table ($columns) VALUES ($values) 
-              ON DUPLICATE KEY UPDATE " . implode(", ", array_map(function ($column) {
-                  return "$column = VALUES($column)";
-              }, array_keys($data)));
-
-      // Add the WHERE clause
-      $sql .= " WHERE $conditionColumn = $conditionValue";
-
-      // Execute the query
-      if ($conn->query($sql) === TRUE) {
-          // Redirect to another page after form submission
-          header("Location: jobseeker.php");
-          exit();
-      } else {
-          // Handle database query error if needed
-          echo "Error in database query: " . $conn->error;
-      }
-  }
-
     // Retrieve data from the form
     $JSImage = $_POST["jsep-profileimg-link"];
     $FirstName = $_POST["jsep-first-name"];
@@ -78,20 +52,17 @@
     $EAJobRole = $_POST["jsep-earole"];
     $EADescription = $_POST["jsep-eadesc"];
 
-    // Update or insert data into JobSeeker table
-    $jobSeekerData = [
-      'JSImage' => $JSImage,
-      'FirstName' => $FirstName,
-      'LastName' => $LastName,
-      'ExperienceLevel' => $ExperienceLevel,
-      'JSJobTitle' => $JSJobTitle,
-      'Gender' => $Gender,
-      'DOB' => $DOB,
-      'Phone' => $Phone,
-      'Address' => $Address,
-    ];
-
-    edit($conn, 'JobSeeker', $jobSeekerData, 'UserAuthenticationID', $UserAuthenticationID);
+    $sql1 = "UPDATE s104181721_db.JobSeeker 
+      SET JSImage = '$JSImage', 
+        FirstName = '$FirstName', 
+        LastName = '$LastName', 
+        ExperienceLevel = '$ExperienceLevel', 
+        JSJobTitle = '$JSJobTitle', 
+        Gender = '$Gender', 
+        DOB = '$DOB', 
+        Phone = '$Phone', 
+        Address = '$Address' 
+      WHERE UserAuthenticationID = '$UserAuthenticationID';";
 
     // Update or insert data into Education table
     $educationData = [
@@ -101,14 +72,10 @@
       'GPA' => $GPA,
     ];
 
-    edit($conn, 'Education', $educationData, 'JobSeekerID', $JobSeekerID);
-
     // Update or insert data into Skill table
     $skillData = [
       'SkillName' => $SkillName,
     ];
-
-    edit($conn, 'Skill', $skillData, 'JobSeekerID', $JobSeekerID);
 
     // Update or insert data into WorkingExperience table
     $workExperienceData = [
@@ -118,8 +85,6 @@
       'WDescription' => $WDescription,
     ];
 
-    edit($conn, 'WorkingExperience', $workExperienceData, 'JobSeekerID', $JobSeekerID);
-
     // Update or insert data into ExtracurriculumActivity table
     $extracurricularData = [
       'OrganizationName' => $OrganizationName,
@@ -128,7 +93,12 @@
       'EADescription' => $EADescription,
     ];
 
-    edit($conn, 'ExtracurriculumActivity', $extracurricularData, 'JobSeekerID', $JobSeekerID);
+    // Execute the query
+    if ($conn->query($sql) === TRUE) {
+      // Redirect to another page after form submission
+      header("Location: jobseeker.php");
+      exit();
+    }
   }
 ?>
 
