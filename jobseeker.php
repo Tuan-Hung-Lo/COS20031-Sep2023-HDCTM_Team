@@ -38,7 +38,7 @@ $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID IN ('$jobIDsStr
 
 $js_interview = $conn->query("SELECT 
     JobSeekerInterview.*, 
-    Job.*
+    Job.* 
   FROM 
     s104181721_db.JobSeekerInterview
     JOIN s104181721_db.Job ON JobSeekerInterview.JobID = Job.JobID
@@ -522,8 +522,7 @@ $js_interview = $conn->query("SELECT
                     </ul>
                   </div>
                 </div>
-                <button class="sp-product-btn">Book interview time</button>
-
+                <a class="sp-product-btn" onclick="location.href='jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>'">Book interview time</a>
               </div>
             </li>
           </ul>

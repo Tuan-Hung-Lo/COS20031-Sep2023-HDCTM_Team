@@ -1,16 +1,22 @@
 <?php
-  session_start();
+session_start();
 
-  // Include settings and database connection
-  require_once("./settings.php");
+// Include settings and database connection
+require_once("./settings.php");
 
-  $UserAuthenticationID = $_SESSION['job_seeker_ID'];
-  $JobID = $_SESSION['JobID'];
+$UserAuthenticationID = $_SESSION['job_seeker_ID'];
 
-  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+$job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+$job_seeker_data = mysqli_fetch_assoc($job_seeker);
+$JobSeekerID = $job_seeker_data['JobSeekerID'];
 
-  $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
-    WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';");
+// Retrieve the JobID
+$JobID = $_GET['JobID'];
+
+$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+
+$js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
+  WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';");
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +57,8 @@
 
     <div class="icons">
       <ul>
-        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-          <li><a href="jobseeker.php"><img src="<?php echo $row['JSImage']; ?>"></a></li>
+        <?php if ($job_seeker_data) { ?>
+          <li><a href="jobseeker.php"><img src="<?php echo $job_seeker_data['JSImage']; ?>"></a></li>
         <?php } ?> <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
@@ -97,8 +103,8 @@
         <div class="bwp-interview-schedule">
           <div class="bwp-interview-setup">
             <div class="bwp-interview-available">
-              <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
-                <h2><?php echo $row['InterviewTime'] . ' (' . $row['InterviewDate'] . ')';?></h2>
+              <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
+                <h2><?php echo $row['InterviewTime'] . ' (' . $row['InterviewDate'] . ')'; ?></h2>
               <?php } ?>
               <ul>Notes:
                 <li>Each interview session last from 20 to 45 minutes</li>

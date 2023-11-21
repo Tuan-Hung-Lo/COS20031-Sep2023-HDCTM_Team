@@ -5,25 +5,34 @@
   require_once("./settings.php");
 
   $UserAuthenticationID = $_SESSION['job_seeker_ID'];
-  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
 
-  // Retrieve the CourseID from the URL
-  $JobID = $_GET['JobID'];
-  $_SESSION['JobID'] = $JobID;
+  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $job_seeker_data = mysqli_fetch_assoc($job_seeker);
+  $JobSeekerID = $job_seeker_data['JobSeekerID'];
+
+  // Retrieve the JobID
+  $JobID = sanitize_input($_GET['JobID']);
 
   $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
   
   $re_interview = $conn->query("SELECT * FROM s104181721_db.RecruiterInterview WHERE JobID = '$JobID';");
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $UserAuthenticationID = $_SESSION['job_seeker_ID'];
-
     // Get form data
     $InterviewDate = $_POST['date'];
     $InterviewTime = $_POST['time'];
+    
+    $sql = "UPDATE s104181721_db.JobSeekerInterview 
+      SET InterviewDate = '$InterviewDate', 
+        InterviewTime = '$InterviewTime' 
+      WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';";
 
-    $js_interview = $conn->query("INSERT INTO s104181721_db.JobSeekerInterview (JobSeekerID, JobID, InterviewDate, InterviewTime)
-      VALUES ('$UserAuthenticationID', '$JobID', '$InterviewDate', '$InterviewTime')");
+    // Execute the query
+    if ($conn->query($sql) === TRUE) {
+      // Redirect to another page after form submission
+      header("Location: jsinterviewset.php?JobID=$JobID");
+      exit();
+    }
   }
 ?>
 
@@ -65,8 +74,8 @@
 
     <div class="icons">
       <ul>
-        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-          <li><a href="jobseeker.php"><img src="<?php echo $row['JSImage']; ?>"></a></li>
+        <?php if ($job_seeker_data) { ?>
+          <li><a href="jobseeker.php"><img src="<?php echo $job_seeker_data['JSImage']; ?>"></a></li>
         <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>
@@ -110,7 +119,7 @@
         </div>
 
         <!--Job Applied Schedule-->
-        <form class="bwp-interview-schedule" action="jsinterviewbook.php">
+        <form class="bwp-interview-schedule" action="jsinterviewbook.php" method="post">
           <div class="bwp-interview-setup">
             <div class="bwp-interview-available">
               <h5>Available time</h5>
