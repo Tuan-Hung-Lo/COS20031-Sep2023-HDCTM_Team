@@ -11,9 +11,9 @@
   $JSJobTitle = $js_job['JSJobTitle'];
   
   if (strpos($JSJobTitle, 'bar') !== false) {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B' LIMIT 5;");
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B';");
   } else {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course LIMIT 5;");
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course;");
   }
 
   // Check if the filter form is submitted
@@ -28,9 +28,9 @@
     }
 
     // Query to fetch courses based on filter conditions
-    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause LIMIT 5;");
+    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause;");
   } else {
-    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course LIMIT 5;");
+    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course;");
   }
 ?>
 

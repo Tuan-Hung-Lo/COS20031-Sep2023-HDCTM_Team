@@ -11,9 +11,9 @@
   $JSJobTitle = $js_job['JSJobTitle'];
   
   if (strpos($JSJobTitle, 'bar') !== false) {
-    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'F&B' LIMIT 5;");
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'F&B';");
   } else {
-    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5;");
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job;");
   }
 
   // Initialize the WHERE clause for filtering
@@ -41,12 +41,12 @@
 
     if ($whereClause == 1){
       // Query to fetch jobs based on filter conditions
-      $filter_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5");
+      $filter_job = $conn->query("SELECT * FROM s104181721_db.Job");
     } else {
-      $filter_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE $whereClause LIMIT 5");
+      $filter_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE $whereClause");
     }
   } else {
-    $filter_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5");
+    $filter_job = $conn->query("SELECT * FROM s104181721_db.Job");
   }
 ?>
 
