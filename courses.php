@@ -11,7 +11,7 @@
   $JSJobTitle = $js_job['JSJobTitle'];
   
   if (strpos($JSJobTitle, 'bar') !== false) {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B';");
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B' LIMIT 5;");
   } else {
     $sug_course = $conn->query("SELECT * FROM s104181721_db.Course LIMIT 5;");
   }
@@ -19,7 +19,7 @@
   // Check if the filter form is submitted
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check and apply filter conditions based on user input
-    $course_category = sanitize_input($_POST["course_category"]);
+    $course_category = ($_POST["course_category"]);
 
     if ($course_category === 'All') {
       $whereClause = "1";
@@ -28,7 +28,7 @@
     }
 
     // Query to fetch courses based on filter conditions
-    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause;");
+    $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause LIMIT 5;");
   } else {
     $filter_course = $conn->query("SELECT * FROM s104181721_db.Course LIMIT 5;");
   }
@@ -72,8 +72,8 @@
 
     <div class="icons">
       <ul>
-        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-        <li><a href="jobseeker.php"><img src="<?php echo $row['JSImage']; ?>"></a></li>
+        <?php if ($js_job) { ?>
+        <li><a href="jobseeker.php"><img src="<?php echo $js_job['JSImage']; ?>"></a></li>
         <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>

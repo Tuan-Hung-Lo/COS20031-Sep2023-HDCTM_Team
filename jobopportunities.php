@@ -11,7 +11,7 @@
   $JSJobTitle = $js_job['JSJobTitle'];
   
   if (strpos($JSJobTitle, 'bar') !== false) {
-    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'F&B';");
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'F&B' LIMIT 5;");
   } else {
     $sug_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5;");
   }
@@ -43,7 +43,7 @@
       // Query to fetch jobs based on filter conditions
       $filter_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5");
     } else {
-      $filter_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE $whereClause");
+      $filter_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE $whereClause LIMIT 5");
     }
   } else {
     $filter_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5");
@@ -89,8 +89,8 @@
 
     <div class="icons">
       <ul>
-        <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
-        <li><a href="jobseeker.php"><img src="<?php echo $row['JSImage']; ?>"></a></li>
+        <?php if ($js_job) { ?>
+        <li><a href="jobseeker.php"><img src="<?php echo $js_job['JSImage']; ?>"></a></li>
         <?php } ?>
         <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
       </ul>

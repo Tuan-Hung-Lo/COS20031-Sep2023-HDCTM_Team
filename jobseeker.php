@@ -1,52 +1,49 @@
 <?php
-  session_start();
+session_start();
 
-  // Include settings and database connection
-  require_once("./settings.php");
+// Include settings and database connection
+require_once("./settings.php");
 
-  if (isset($_SESSION['job_seeker_ID'])) {
-    $UserAuthenticationID = $_SESSION['job_seeker_ID'];
-    $user_email = $_SESSION['js_email'];
+$UserAuthenticationID = $_SESSION['job_seeker_ID'];
+$user_email = $_SESSION['js_email'];
 
-    $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-    $job_seeker_data = mysqli_fetch_assoc($job_seeker);
-    $JobSeekerID = $job_seeker_data['JobSeekerID'];
+$job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+$job_seeker_data = mysqli_fetch_assoc($job_seeker);
+$JobSeekerID = $job_seeker_data['JobSeekerID'];
 
-    $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
-    $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
-    $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
-    $extracurriculum_activity = $conn->query("SELECT * FROM s104181721_db.ExtracurriculumActivity WHERE JobSeekerID = '$JobSeekerID';");
+$education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
+$skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
+$working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
+$extracurriculum_activity = $conn->query("SELECT * FROM s104181721_db.ExtracurriculumActivity WHERE JobSeekerID = '$JobSeekerID';");
 
-    $CourseRegistration = $conn->query("SELECT * FROM s104181721_db.CourseRegistration WHERE JobSeekerID = '$JobSeekerID';");
+$CourseRegistration = $conn->query("SELECT * FROM s104181721_db.CourseRegistration WHERE JobSeekerID = '$JobSeekerID';");
 
-    $courseID = $CourseRegistration->fetch_assoc();
-    $CourseID = $courseID['CourseID'];
+// Fetch all CourseIDs
+$courseIDs = [];
+while ($courseIDRow = $CourseRegistration->fetch_assoc()) {
+  $courseIDs[] = $courseIDRow['CourseID'];
+}
+$courseIDsString = implode("','", $courseIDs);
+$course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseID IN ('$courseIDsString');");
 
-    $course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseID = '$CourseID';");
+$application = $conn->query("SELECT * FROM s104181721_db.Application WHERE JobSeekerID = '$JobSeekerID';");
 
-    $application = $conn->query("SELECT * FROM s104181721_db.Application WHERE JobSeekerID = '$JobSeekerID';");
+// Fetch all JobIDs
+$jobIDs = [];
+while ($jobIDRow = $application->fetch_assoc()) {
+  $jobIDs[] = $jobIDRow['JobID'];
+}
+$jobIDsString = implode("','", $jobIDs);
+$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID IN ('$jobIDsString');");
 
-    $jobID = $application->fetch_assoc();
-    $JobID = $jobID['JobID'];
-
-    $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
-
-    $js_interview = $conn->query
-      ("SELECT 
-            JobSeekerInterview.*, 
-            JobSeeker.*, 
-            Application.*, 
-            Job.*
-        FROM 
-            s104181721_db.JobSeekerInterview
-            JOIN s104181721_db.JobSeeker ON JobSeekerInterview.JobSeekerID = JobSeeker.JobSeekerID
-            JOIN s104181721_db.Application ON JobSeeker.JobSeekerID = Application.JobSeekerID
-            JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-        WHERE 
-            JobSeekerInterview.JobSeekerID = '$JobSeekerID' 
-            AND JobSeekerInterview.JobID = '$JobID';
-      ");
-  }
+$js_interview = $conn->query("SELECT 
+    JobSeekerInterview.*, 
+    Job.*
+  FROM 
+    s104181721_db.JobSeekerInterview
+    JOIN s104181721_db.Job ON JobSeekerInterview.JobID = Job.JobID
+  WHERE 
+    JobSeekerInterview.JobSeekerID = '$JobSeekerID';");
 ?>
 
 <!DOCTYPE html>
@@ -74,25 +71,25 @@
 <body>
   <header>
 
-  <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
 
-  <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
+    <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
 
-  <nav class="navbar">
-    <a href="pagenotfound.html">Home</a>
-    <a href="pagenotfound.html">About</a>
-    <a href="courses.php">Courses</a>
-    <a href="jobopportunities.php">Job Opportunities</a>
-  </nav>
+    <nav class="navbar">
+      <a href="pagenotfound.html">Home</a>
+      <a href="pagenotfound.html">About</a>
+      <a href="courses.php">Courses</a>
+      <a href="jobopportunities.php">Job Opportunities</a>
+    </nav>
 
-  <div class="icons">
-    <ul>
-      <?php if ($job_seeker_data) { ?>
-      <li><a href="jobseeker.php"><img src="<?php echo $job_seeker_data['JSImage'] ?>"></a></li>
-      <?php } ?>
-      <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
-    </ul>
-  </div>
+    <div class="icons">
+      <ul>
+        <?php if ($job_seeker_data) { ?>
+          <li><a href="jobseeker.php"><img src="<?php echo $job_seeker_data['JSImage'] ?>"></a></li>
+        <?php } ?>
+        <li><a href="login.php"><img src="icons/Logout.svg"></a></li>
+      </ul>
+    </div>
 
   </header>
 
@@ -112,32 +109,32 @@
 
           <?php if ($job_seeker_data) { ?>
 
-          <!-- PROFILE PICTURE -->
-          <div class="cpp-bi-headline-profileimg">
-            <img src="<?php echo $job_seeker_data['JSImage'] ?>" alt="Candidate Profile's Picture">
-          </div>
+            <!-- PROFILE PICTURE -->
+            <div class="cpp-bi-headline-profileimg">
+              <img src="<?php echo $job_seeker_data['JSImage'] ?>" alt="Candidate Profile's Picture">
+            </div>
 
-          <!-- HEADLINE INFORMATION -->
-          <div class="cpp-bi-headline-headline">
-            <h2>
-              <?php echo $job_seeker_data['FirstName'], $job_seeker_data['LastName']; ?>
-            </h2>
-            <br>
-            <p>
-              <img src="icons/Job Title.svg" />
-              Job title:
-              <span class="cpp-span">
-                <?php echo $job_seeker_data['JSJobTitle']; ?>
-              </span>
-            </p>
-            <p>
-              <img src="icons/Experience Level.svg" />
-              Experience level:
-              <span class="cpp-span">
-                <?php echo $job_seeker_data['ExperienceLevel']; ?>
-              </span>
-            </p>
-          </div>
+            <!-- HEADLINE INFORMATION -->
+            <div class="cpp-bi-headline-headline">
+              <h2>
+                <?php echo $job_seeker_data['FirstName'], $job_seeker_data['LastName']; ?>
+              </h2>
+              <br>
+              <p>
+                <img src="icons/Job Title.svg" />
+                Job title:
+                <span class="cpp-span">
+                  <?php echo $job_seeker_data['JSJobTitle']; ?>
+                </span>
+              </p>
+              <p>
+                <img src="icons/Experience Level.svg" />
+                Experience level:
+                <span class="cpp-span">
+                  <?php echo $job_seeker_data['ExperienceLevel']; ?>
+                </span>
+              </p>
+            </div>
 
           <?php } ?>
         </div>
@@ -165,41 +162,41 @@
           <div class="cpp-bi-personalinfo-content">
 
             <?php if ($job_seeker_data) { ?>
-            <p>
-              <img src="icons/Gender.svg" />
-              Gender:
-              <span class="cpp-span">
-                <?php echo $job_seeker_data['Gender']; ?>
-              </span>
-            </p>
-            <p>
-              <img src="icons/Calendar.svg" />
-              DOB:
-              <span class="cpp-span">
-                <?php echo $job_seeker_data['DOB']; ?>
-              </span>
-            </p>
-            <p>
-              <img src="icons/Phone.svg" />
-              Phone number:
-              <span class="cpp-span">
-                <?php echo $job_seeker_data['Phone']; ?>
-              </span>
-            </p>
-            <p>
-              <img src="icons/Message.svg" />
-              Email:
-              <span class="cpp-span">
-                <?php echo $user_email; ?>
-              </span>
-            </p>
-            <p>
-              <img src="icons/Location.svg" />
-              Address:
-              <span class="cpp-span">
-                <?php echo $job_seeker_data['Address']; ?>
-              </span>
-            </p>
+              <p>
+                <img src="icons/Gender.svg" />
+                Gender:
+                <span class="cpp-span">
+                  <?php echo $job_seeker_data['Gender']; ?>
+                </span>
+              </p>
+              <p>
+                <img src="icons/Calendar.svg" />
+                DOB:
+                <span class="cpp-span">
+                  <?php echo $job_seeker_data['DOB']; ?>
+                </span>
+              </p>
+              <p>
+                <img src="icons/Phone.svg" />
+                Phone number:
+                <span class="cpp-span">
+                  <?php echo $job_seeker_data['Phone']; ?>
+                </span>
+              </p>
+              <p>
+                <img src="icons/Message.svg" />
+                Email:
+                <span class="cpp-span">
+                  <?php echo $user_email; ?>
+                </span>
+              </p>
+              <p>
+                <img src="icons/Location.svg" />
+                Address:
+                <span class="cpp-span">
+                  <?php echo $job_seeker_data['Address']; ?>
+                </span>
+              </p>
             <?php } ?>
 
           </div>
@@ -231,13 +228,13 @@
                 <div class="cpp-bi-personalinfo-content-edubg">
                   <ul>
                     <?php while ($row = mysqli_fetch_assoc($education)) { ?>
-                    <li>
-                      <?php echo $row['GraduationYear'], $row['Institution'] ?>
-                      <br>
-                      <i>
-                        <?php echo $row['Degree'] ?>
-                      </i>
-                    </li>
+                      <li>
+                        <?php echo $row['GraduationYear'], $row['Institution'] ?>
+                        <br>
+                        <i>
+                          <?php echo $row['Degree'] ?>
+                        </i>
+                      </li>
                     <?php } ?>
                   </ul>
                 </div>
@@ -270,9 +267,9 @@
           <!-- CONTENT -->
           <div class="cpp-e-skills-content">
             <?php while ($row = mysqli_fetch_assoc($skill)) { ?>
-            <p>
-              <?php echo $row['SkillName']; ?>
-            </p>
+              <p>
+                <?php echo $row['SkillName']; ?>
+              </p>
             <?php } ?>
           </div>
 
@@ -303,41 +300,41 @@
           <div class="cpp-e-workingexp-content">
             <?php while ($row = mysqli_fetch_assoc($working_experience)) { ?>
 
-            <!-- WORKING EXPERIENCE 1 -->
-            <div class="cpp-e-workingexp-work">
+              <!-- WORKING EXPERIENCE 1 -->
+              <div class="cpp-e-workingexp-work">
 
-              <!-- Company -->
-              <h4>
-                <?php echo $row['WCompanyName']; ?>
-              </h4>
+                <!-- Company -->
+                <h4>
+                  <?php echo $row['WCompanyName']; ?>
+                </h4>
 
-              <br>
+                <br>
 
-              <h4>
-                <?php echo $row['WTimeRange']; ?> weeks
-              </h4>
+                <h4>
+                  <?php echo $row['WTimeRange']; ?> weeks
+                </h4>
 
-              <br>
+                <br>
 
-              <!-- Position -->
-              <h5>
-                <?php echo $row['WJobRole']; ?>
-              </h5>
+                <!-- Position -->
+                <h5>
+                  <?php echo $row['WJobRole']; ?>
+                </h5>
 
-              <br>
+                <br>
 
-              <!-- Description & Achievement -->
-              <div class="cpp-e-workingexp-work-desc">
-                <ul>
-                  <li>
-                    <?php echo $row['WDescription']; ?>
-                  </li>
-                </ul>
+                <!-- Description & Achievement -->
+                <div class="cpp-e-workingexp-work-desc">
+                  <ul>
+                    <li>
+                      <?php echo $row['WDescription']; ?>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <br>
-            <br>
+              <br>
+              <br>
 
             <?php } ?>
           </div>
@@ -364,41 +361,41 @@
           <div class="cpp-e-workingexp-content">
             <?php while ($row = mysqli_fetch_assoc($extracurriculum_activity)) { ?>
 
-            <!-- WORKING EXPERIENCE 1 -->
-            <div class="cpp-e-workingexp-work">
+              <!-- WORKING EXPERIENCE 1 -->
+              <div class="cpp-e-workingexp-work">
 
-              <!-- Company -->
-              <h4>
-                <?php echo $row['OrganizationName']; ?>
-              </h4>
+                <!-- Company -->
+                <h4>
+                  <?php echo $row['OrganizationName']; ?>
+                </h4>
 
-              <br>
+                <br>
 
-              <h4>
-                <?php echo $row['EATimeRange']; ?> weeks
-              </h4>
+                <h4>
+                  <?php echo $row['EATimeRange']; ?> weeks
+                </h4>
 
-              <br>
+                <br>
 
-              <!-- Position -->
-              <h5>
-                <?php echo $row['EAJobRole']; ?>
-              </h5>
+                <!-- Position -->
+                <h5>
+                  <?php echo $row['EAJobRole']; ?>
+                </h5>
 
-              <br>
+                <br>
 
-              <!-- Description & Achievement -->
-              <div class="cpp-e-workingexp-work-desc">
-                <ul>
-                  <li>
-                    <?php echo $row['EADescription']; ?>
-                  </li>
-                </ul>
+                <!-- Description & Achievement -->
+                <div class="cpp-e-workingexp-work-desc">
+                  <ul>
+                    <li>
+                      <?php echo $row['EADescription']; ?>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <br>
-            <br>
+              <br>
+              <br>
 
             <?php } ?>
           </div>
@@ -417,34 +414,34 @@
         <hr>
 
         <?php while ($row = mysqli_fetch_assoc($course)) { ?>
-        <ul class="autoWidth" class="cs-hidden">
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6>
-                    <?php echo $row['Title']; ?>
-                  </h6>
+          <ul class="autoWidth" class="cs-hidden">
+            <!-- Card 1 -->
+            <li class="slide">
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
                 </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Time.svg">
-                      <?php echo $row['Length']; ?> weeks
-                    </li>
-                    <li><img src="icons/Fee.svg">
-                      <?php echo $row['Price']; ?> AUD$
-                    </li>
-                  </ul>
+                <div class="sp-product-details">
+                  <div class="type">
+                    <h6>
+                      <?php echo $row['Title']; ?>
+                    </h6>
+                  </div>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Time.svg">
+                        <?php echo $row['Length']; ?> weeks
+                      </li>
+                      <li><img src="icons/Fee.svg">
+                        <?php echo $row['Price']; ?> AUD$
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+                <button class="sp-product-btn">See course details</button>
               </div>
-              <button class="sp-product-btn">See course details</button>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
         <?php } ?>
       </div>
 
@@ -456,40 +453,40 @@
         <hr>
 
         <?php while ($row = mysqli_fetch_assoc($job)) { ?>
-        <ul class="autoWidth" class="cs-hidden">
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6>
-                    <?php echo $row['JobTitle']; ?>
-                  </h6>
+          <ul class="autoWidth" class="cs-hidden">
+            <!-- Card 1 -->
+            <li class="slide">
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
                 </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Location.svg">
-                      <?php echo $row['WorkLocation']; ?>
-                    </li>
-                    <li><img src="icons/Fee.svg">
-                      <?php echo $row['Salary']; ?> AUD$
-                    </li>
-                    <li><img src="icons/ExperienceLevel.svg">
-                      <?php echo $row['ExperienceLevelName']; ?>
-                    </li>
-                    <li><img src="icons/PeopleGroup.svg">
-                      <?php echo $row['WorkingFormat']; ?>
-                    </li>
-                  </ul>
+                <div class="sp-product-details">
+                  <div class="type">
+                    <h6>
+                      <?php echo $row['JobTitle']; ?>
+                    </h6>
+                  </div>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Location.svg">
+                        <?php echo $row['WorkLocation']; ?>
+                      </li>
+                      <li><img src="icons/Fee.svg">
+                        <?php echo $row['Salary']; ?> AUD$
+                      </li>
+                      <li><img src="icons/ExperienceLevel.svg">
+                        <?php echo $row['ExperienceLevelName']; ?>
+                      </li>
+                      <li><img src="icons/PeopleGroup.svg">
+                        <?php echo $row['WorkingFormat']; ?>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+                <button class="sp-product-btn">See job details</button>
               </div>
-              <button class="sp-product-btn">See job details</button>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
         <?php } ?>
       </div>
 
@@ -501,35 +498,35 @@
         <hr>
 
         <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
-        <ul class="autoWidth" class="cs-hidden">
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6>
-                    <?php echo $row['JobTitle']; ?>
-                  </h6>
+          <ul class="autoWidth" class="cs-hidden">
+            <!-- Card 1 -->
+            <li class="slide">
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
                 </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Calendar.svg">
-                      <?php echo $row['InterviewDate']; ?>
-                    </li>
-                    <li><img src="icons/Time.svg">
-                      <?php echo $row['InterviewTime']; ?>
-                    </li>
-                  </ul>
+                <div class="sp-product-details">
+                  <div class="type">
+                    <h6>
+                      <?php echo $row['JobTitle']; ?>
+                    </h6>
+                  </div>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Calendar.svg">
+                        <?php echo $row['InterviewDate']; ?>
+                      </li>
+                      <li><img src="icons/Time.svg">
+                        <?php echo $row['InterviewTime']; ?>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <button class="sp-product-btn">Book interview time</button>
+                <button class="sp-product-btn">Book interview time</button>
 
-            </div>
-          </li>
-        </ul>
+              </div>
+            </li>
+          </ul>
         <?php } ?>
       </div>
     </div>

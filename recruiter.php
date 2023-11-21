@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 
 // Include settings and database connection
@@ -12,15 +14,26 @@ $recruiter_data = mysqli_fetch_assoc($recruiter);
 $RecruiterID = $recruiter_data['RecruiterID'];
 
 $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
-$application = $conn->query("SELECT * FROM s104181721_db.Application
-        JOIN s104181721_db.Job ON Application.JobID = Job.JobID
-        JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID
-        JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID WHERE Job.RecruiterID = '$RecruiterID';");
 
-$js_id = $application->fetch_assoc();
-$JobSeekerID = $js_id['JobSeekerID'];
+$application = $conn->query("SELECT 
+    Application.*, 
+    Job.*, 
+    JobSeeker.* 
+  FROM 
+    s104181721_db.Application
+    JOIN s104181721_db.Job ON Application.JobID = Job.JobID
+    JOIN s104181721_db.JobSeeker ON Application.JobSeekerID = JobSeeker.JobSeekerID
+  WHERE 
+    Job.RecruiterID = '$RecruiterID';");
 
-$_SESSION['job_seeker_ID'] = $JobSeekerID;
+$interview = $conn->query("SELECT 
+    Job.*, 
+    RecruiterInterview.* 
+  FROM 
+    s104181721_db.Job
+    JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID
+  WHERE 
+    Job.RecruiterID = '$RecruiterID';");
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +75,7 @@ $_SESSION['job_seeker_ID'] = $JobSeekerID;
         <?php if ($recruiter_data) { ?>
           <li><a href="recruiter.php"><img src="<?php echo $recruiter_data['CompanyImage'] ?>"></a></li>
         <?php } ?>
-        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
+        <li><a href="login.php"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
@@ -177,8 +190,7 @@ $_SESSION['job_seeker_ID'] = $JobSeekerID;
                     <li><img src="icons/WorkingMode.svg">
                       <?php echo $row['WorkingFormat']; ?>
                     </li>
-                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="pagenotfound.html"> View candidates
-                        applied</a></li>
+                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="pagenotfound.html"> View candidates applied</a></li>
                   </ul>
                 </div>
               </div>
@@ -209,9 +221,9 @@ $_SESSION['job_seeker_ID'] = $JobSeekerID;
 
               <div class="sp-image-box">
 
-                <img src="images/CA_img1.png" alt="product.png">
+                <img src="<?php echo $row['JSImage']; ?>" alt="product.png">
                 <h4>
-                  <?php echo $row['FirstName'], $row['LastName']; ?>
+                  <?php echo $row['FirstName'] . ' ' . $row['LastName']; ?>
                 </h4>
 
               </div>
@@ -252,7 +264,7 @@ $_SESSION['job_seeker_ID'] = $JobSeekerID;
       <br>
 
       <ul class="autoWidth" class="cs-hidden">
-        <?php while ($row = mysqli_fetch_assoc($application)) { ?>
+        <?php while ($row = mysqli_fetch_assoc($interview)) { ?>
           <!-- Card 1 -->
           <li class="slide">
             <div class="sp-card">
