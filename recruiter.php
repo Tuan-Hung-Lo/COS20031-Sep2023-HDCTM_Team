@@ -287,7 +287,7 @@
                   </ul>
                 </div>
               </div>
-              <button class="sp-product-btn">See interview details</button>
+              <a class="sp-product-btn">See interview details</a>
 
             </div>
           </li>
