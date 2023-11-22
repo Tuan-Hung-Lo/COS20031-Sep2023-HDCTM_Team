@@ -10,14 +10,14 @@
   $js_job = $job_seeker->fetch_assoc();
   $JSJobTitle = $js_job['JSJobTitle'];
 
-  if (strpos($JSJobTitle, 'Bar') == true) {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B';");
-  } elseif (strpos($JSJobTitle, 'ist') == true) {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Beauty & Spa';");
-  } elseif (strpos($JSJobTitle, 'Tour') == true) {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Tourism & Hospitality';");
+  if (stripos($JSJobTitle, 'Bar') !== false) {
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B' LIMIT 5;");
+  } elseif (stripos($JSJobTitle, 'ist') !== false) {
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Beauty & Spa' LIMIT 5;");
+  } elseif (stripos($JSJobTitle, 'Tour') !== false) {
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Tourism & Hospitality' LIMIT 5;");
   } else {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course;");
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course LIMIT 5;");
   }
 
   // Check if the filter form is submitted
