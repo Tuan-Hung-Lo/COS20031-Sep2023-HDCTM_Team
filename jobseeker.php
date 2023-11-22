@@ -522,7 +522,7 @@ $js_interview = $conn->query("SELECT
                     </ul>
                   </div>
                 </div>
-                <a class="sp-product-btn" onclick="location.href='jsinterviewbook.php?$_SESSION['JobID']=<?php echo $row['JobID']; ?>'">Book interview time</a>
+                <a class="sp-product-btn" onclick="location.href='jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>'">Book interview time</a>
               </div>
             </li>
           </ul>
