@@ -36,7 +36,7 @@
     // SPECIALIZATION
     $specializations = $_POST['jopfilter_s'];
     if (!empty($specializations)) {
-      $whereClause .= " AND Specializations = '$specializations'";
+      $whereClause .= " AND JobSpecializations = '$specializations'";
     }
 
     if ($whereClause == 1){
