@@ -59,7 +59,7 @@ $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
       <ul>
         <?php if ($job_seeker_data) { ?>
           <li><a href="jobseeker.php"><img src="<?php echo $job_seeker_data['JSImage']; ?>"></a></li>
-        <?php } ?> <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
+        <?php } ?> <li><a href="login.php"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 

@@ -85,7 +85,7 @@
         <?php while ($row = mysqli_fetch_assoc($job_seeker)) { ?>
           <li><a href="recruiter.php"><img src="http://dummyimage.com/180x180.png/dddddd/000000"></a></li>
         <?php } ?>
-        <li><a href="login.html"><img src="icons/Logout.svg"></a></li>
+        <li><a href="login.php"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
 
