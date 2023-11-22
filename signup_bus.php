@@ -4,36 +4,28 @@
     
     // Get form data
     $company_name = $_POST['company_name'];
-    $address = $_POST['address'];
     $contact_number = $_POST['contact_number'];
-    $industry = $_POST['industry'];
-    $website_url = $_POST['website_url'];
+    $email = $_POST['email'];
+    $pwd = $_POST['password'];
 
-    // Hash the password using the password_hash function
-    $hashed_password = password_hash($pwd, PASSWORD_DEFAULT);
-
-    // Insert data into tables
-    $sql1 = "INSERT INTO s104181721_db.Users (FirstName, LastName)
-        VALUES ('$first_name', '$first_name')";
+    // Insert data into UserAuthentication table
+    $sql1 = "INSERT INTO s104181721_db.UserAuthentication (UserEmail, UserPassword, UserRole)
+        VALUES ('$email', '$pwd', 'Recruiter')";
     $conn->query($sql1);
-
-    $sql2 = "INSERT INTO s104181721_db.UserAuthentication (UserEmail, UserPassword)
-        VALUES ('$email', '$hashed_password')";
-    $conn->query($sql2);
-
-    $sql3 = "INSERT INTO s104181721_db.UserRole (UserRoleName)
-        VALUES ('Bus')";
-    $conn->query($sql3);
 
     // Get the UserAuthenticationID after inserting data into UserAuthentication table
     $UserAuthenticationID = $conn->insert_id;
 
+    $sql2 = "INSERT INTO s104181721_db.Recruiter (UserAuthenticationID, CompanyName, CompanyPhone)
+        VALUES ('$UserAuthenticationID', '$company_name', '$contact_number')";
+    $conn->query($sql2);
+
     // Store data in the session
-    $_SESSION['user_data'] = array(
-        'UserAuthenticationID' => $UserAuthenticationID,
-        'UserEmail' => $email,
-        'UserPassword' => $hashed_password
-    );
+    $_SESSION['recruiter_ID'] = $UserAuthenticationID;
+    $_SESSION['re_email'] = $email;
+
+    // Redirect to the appropriate page
+    header("Location: ./recruiter.php");
 ?>
 
 <!DOCTYPE html>
@@ -68,20 +60,16 @@
                     <input name="company_name" type="text" class="si-input" placeholder="Company Name" required> 
                 </div>
                 <div class="si-input-box">
-                    <span class="si-input-icon"><img src="icons/LocationL.svg"></span>
-                    <input name="address" type="text" class="si-input" placeholder="Address" required> 
-                </div>
-                <div class="si-input-box">
                     <span class="si-input-icon"><img src="icons/PhoneL.svg"></span>
                     <input name="contact_number" type="text" class="si-input" placeholder="Contact Number" required> 
                 </div>
                 <div class="si-input-box">
-                    <span class="si-input-icon"><img src="icons/Industry.svg"></span>
-                    <input name="industry" type="text" class="si-input" placeholder="Industry" required> 
+                    <span class="si-input-icon"><img src="icons/MessageL.svg"></span>
+                    <input name="email" type="text" class="si-input" placeholder="Email address" required>
                 </div>
                 <div class="si-input-box">
-                    <span class="si-input-icon"><img src="icons/Link.svg"></span>
-                    <input name="website_url" type="text" class="si-input" placeholder="Website URL (Optional)"> 
+                    <span class="si-input-icon"><img src="icons/Check&Security.svg"></span>
+                    <input name="password" type="password" class="si-input" placeholder="Password" required>
                 </div>
                 <div class="si-submit-box">
                     <button type="submit" class="si-submit-btn">Log in</button>
