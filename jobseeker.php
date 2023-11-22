@@ -475,7 +475,7 @@ $js_interview = $conn->query("SELECT
                         <?php echo $row['Salary']; ?> AUD$
                       </li>
                       <li><img src="icons/ExperienceLevel.svg">
-                        <?php echo $row['ExperienceLevelName']; ?>
+                        <?php echo $row['ExperienceLevel']; ?>
                       </li>
                       <li><img src="icons/PeopleGroup.svg">
                         <?php echo $row['WorkingFormat']; ?>
@@ -522,7 +522,7 @@ $js_interview = $conn->query("SELECT
                     </ul>
                   </div>
                 </div>
-                <a class="sp-product-btn" onclick="location.href='jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>'">Book interview time</a>
+                <a class="sp-product-btn" onclick="location.href='jsinterviewbook.php?$_SESSION['JobID']=<?php echo $row['JobID']; ?>'">Book interview time</a>
               </div>
             </li>
           </ul>

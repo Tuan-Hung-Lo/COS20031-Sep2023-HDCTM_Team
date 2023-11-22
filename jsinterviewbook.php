@@ -11,7 +11,8 @@
   $JobSeekerID = $job_seeker_data['JobSeekerID'];
 
   // Retrieve the JobID
-  $JobID = sanitize_input($_GET['JobID']);
+  $_SESSION['JobID'] = $_GET['JobID'];
+  $JobID = $_SESSION['JobID'];
 
   $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
   
