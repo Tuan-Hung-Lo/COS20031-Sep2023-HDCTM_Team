@@ -1,22 +1,22 @@
 <?php
-session_start();
+  session_start();
 
-// Include settings and database connection
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-$UserAuthenticationID = $_SESSION['job_seeker_ID'];
+  $UserAuthenticationID = $_SESSION['job_seeker_ID'];
 
-$job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-$job_seeker_data = mysqli_fetch_assoc($job_seeker);
-$JobSeekerID = $job_seeker_data['JobSeekerID'];
+  // Retrieve the JobID
+  $JobID = $_GET['JobID'];
 
-// Retrieve the JobID
-$JobID = $_GET['JobID'];
+  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $job_seeker_data = mysqli_fetch_assoc($job_seeker);
+  $JobSeekerID = $job_seeker_data['JobSeekerID'];
 
-$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
 
-$js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
-  WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';");
+  $js_interview = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview
+    WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';");
 ?>
 
 <!DOCTYPE html>

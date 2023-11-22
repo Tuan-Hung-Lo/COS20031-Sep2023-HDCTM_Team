@@ -1,58 +1,56 @@
 <?php
-  session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
 
-  // Include settings and database connection
-  require_once("./settings.php");
+// Include settings and database connection
+require_once("./settings.php");
 
-  $UserAuthenticationID = $_SESSION['job_seeker_ID'];
+$UserAuthenticationID = $_SESSION['job_seeker_ID'];
 
-  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-  $existingJobSeeker = $job_seeker->fetch_assoc();
-  $JobSeekerID = $existingJobSeeker['JobSeekerID'];
+$job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+$existingJobSeeker = $job_seeker->fetch_assoc();
+$JobSeekerID = $existingJobSeeker['JobSeekerID'];
 
-  $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
-  $existingEducation = $education->fetch_assoc();
+$education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
 
-  $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
-  $existingSkill = $skill->fetch_assoc();
+$skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
 
-  $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
-  $existingWorkingExperience = $working_experience->fetch_assoc();
+$working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
 
-  $extracurriculum_activity = $conn->query("SELECT * FROM s104181721_db.ExtracurriculumActivity WHERE JobSeekerID = '$JobSeekerID';");
-  $existingExtracurriculumActivity = $extracurriculum_activity->fetch_assoc();
+$extracurriculum_activity = $conn->query("SELECT * FROM s104181721_db.ExtracurriculumActivity WHERE JobSeekerID = '$JobSeekerID';");
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Retrieve data from the form
-    $JSImage = $_POST["jsep-profileimg-link"];
-    $FirstName = $_POST["jsep-first-name"];
-    $LastName = $_POST["jsep-last-name"];
-    $ExperienceLevel = $_POST["jsep-experience-level"];
-    $JSJobTitle = $_POST["jsep-job-title"];
-    $Gender = $_POST["jsep-gender"];
-    $DOB = $_POST["jsep-dob"];
-    $Phone = $_POST["jsep-phone"];
-    $Address = $_POST["jsep-address"];
+  // Retrieve data from the form
+  $JSImage = $_POST["jsep-profileimg-link"];
+  $FirstName = $_POST["jsep-first-name"];
+  $LastName = $_POST["jsep-last-name"];
+  $ExperienceLevel = $_POST["jsep-experience-level"];
+  $JSJobTitle = $_POST["jsep-job-title"];
+  $Gender = $_POST["jsep-gender"];
+  $DOB = $_POST["jsep-dob"];
+  $Phone = $_POST["jsep-phone"];
+  $Address = $_POST["jsep-address"];
 
-    $Degree = $_POST["jsep-degree"];
-    $Institution = $_POST["jsep-institute"];
-    $GraduationYear = $_POST["jsep-period"];
-    $GPA = $_POST["jsep-gpa"];
+  $Degree = $_POST["jsep-degree"];
+  $Institution = $_POST["jsep-institute"];
+  $GraduationYear = $_POST["jsep-period"];
+  $GPA = $_POST["jsep-gpa"];
 
-    $SkillName = $_POST["jsep-skill"];
+  $SkillName = $_POST["jsep-skill"];
 
-    $WCompanyName = $_POST["jsep-companyname"];
-    $WTimeRange = $_POST["jsep-wperiod"];
-    $WJobRole = $_POST["jsep-wposition"];
-    $WDescription = $_POST["jsep-wdesc"];
+  $WCompanyName = $_POST["jsep-companyname"];
+  $WTimeRange = $_POST["jsep-wperiod"];
+  $WJobRole = $_POST["jsep-wposition"];
+  $WDescription = $_POST["jsep-wdesc"];
 
-    $OrganizationName = $_POST["jsep-organisationname"];
-    $EATimeRange = $_POST["jsep-eaperiod"];
-    $EAJobRole = $_POST["jsep-earole"];
-    $EADescription = $_POST["jsep-eadesc"];
+  $OrganizationName = $_POST["jsep-organisationname"];
+  $EATimeRange = $_POST["jsep-eaperiod"];
+  $EAJobRole = $_POST["jsep-earole"];
+  $EADescription = $_POST["jsep-eadesc"];
 
-    $sql1 = "UPDATE s104181721_db.JobSeeker 
+  $sql1 = "UPDATE s104181721_db.JobSeeker 
       SET JSImage = '$JSImage', 
         FirstName = '$FirstName', 
         LastName = '$LastName', 
@@ -64,42 +62,42 @@
         Address = '$Address' 
       WHERE UserAuthenticationID = '$UserAuthenticationID';";
 
-    // Update or insert data into Education table
-    $educationData = [
-      'Degree' => $Degree,
-      'Institution' => $Institution,
-      'GraduationYear' => $GraduationYear,
-      'GPA' => $GPA,
-    ];
+  // Update or insert data into Education table
+  $educationData = [
+    'Degree' => $Degree,
+    'Institution' => $Institution,
+    'GraduationYear' => $GraduationYear,
+    'GPA' => $GPA,
+  ];
 
-    // Update or insert data into Skill table
-    $skillData = [
-      'SkillName' => $SkillName,
-    ];
+  // Update or insert data into Skill table
+  $skillData = [
+    'SkillName' => $SkillName,
+  ];
 
-    // Update or insert data into WorkingExperience table
-    $workExperienceData = [
-      'WCompanyName' => $WCompanyName,
-      'WTimeRange' => $WTimeRange,
-      'WJobRole' => $WJobRole,
-      'WDescription' => $WDescription,
-    ];
+  // Update or insert data into WorkingExperience table
+  $workExperienceData = [
+    'WCompanyName' => $WCompanyName,
+    'WTimeRange' => $WTimeRange,
+    'WJobRole' => $WJobRole,
+    'WDescription' => $WDescription,
+  ];
 
-    // Update or insert data into ExtracurriculumActivity table
-    $extracurricularData = [
-      'OrganizationName' => $OrganizationName,
-      'EATimeRange' => $EATimeRange,
-      'EAJobRole' => $EAJobRole,
-      'EADescription' => $EADescription,
-    ];
+  // Update or insert data into ExtracurriculumActivity table
+  $extracurricularData = [
+    'OrganizationName' => $OrganizationName,
+    'EATimeRange' => $EATimeRange,
+    'EAJobRole' => $EAJobRole,
+    'EADescription' => $EADescription,
+  ];
 
-    // Execute the query
-    if ($conn->query($sql) === TRUE) {
-      // Redirect to another page after form submission
-      header("Location: jobseeker.php");
-      exit();
-    }
+  // Execute the query
+  if ($conn->query($sql1) === TRUE) {
+    // Redirect to another page after form submission
+    header("Location: jobseeker.php");
+    exit();
   }
+}
 ?>
 
 <!DOCTYPE html>
@@ -243,26 +241,26 @@
 
           <div class="jsep-addmore-edu-p">
 
-            <?php if ($existingEducation) { ?>
+            <?php while ($row = mysqli_fetch_assoc($education)) { ?>
 
               <label class="jsep-label">
                 <img src="icons/Degree_B.svg">
-                <input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree" value="<?php echo $existingEducation['Degree']; ?>">
+                <input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree" value="<?php echo $row['Degree']; ?>">
               </label>
 
               <label class="jsep-label">
                 <img src="icons/Institute_B.svg">
-                <input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute" value="<?php echo $existingEducation['Institution']; ?>">
+                <input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute" value="<?php echo $row['Institution']; ?>">
               </label>
 
               <label class="jsep-label">
                 <img src="icons/Calendar_B.svg">
-                <input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)" value="<?php echo $existingEducation['GraduationYear']; ?>">
+                <input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)" value="<?php echo $row['GraduationYear']; ?>">
               </label>
 
               <label class="jsep-label">
                 <img src="icons/GPA_B.svg">
-                <input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)" value="<?php echo $existingEducation['GPA']; ?>">
+                <input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)" value="<?php echo $row['GPA']; ?>">
               </label>
 
             <?php } ?>
@@ -290,12 +288,11 @@
           <br>
 
           <div class="jsep-addmore-skills-p">
-            <?php if ($existingSkill) { ?>
 
+            <?php while ($row = mysqli_fetch_assoc($skill)) { ?>
               <div class="jsep-skill">
-                <input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills" value="<?php echo $existingSkill['SkillName']; ?>">
+                <input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills" value="<?php echo $row['SkillName']; ?>">
               </div>
-
             <?php } ?>
 
             <label class="jsep-addmore-skills">
@@ -311,26 +308,26 @@
           <h3>Working experience</h3>
 
           <div class="jsep-addmore-wexp-p">
-            <?php if ($existingWorkingExperience) { ?>
+            <?php while ($row = mysqli_fetch_assoc($working_experience)) { ?>
 
               <div class="jsep-addmore-wexp-np">
 
                 <div class="jsep-addmore-wexp-npcol">
-                  <input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name" value="<?php echo $existingWorkingExperience['WCompanyName']; ?>">
+                  <input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name" value="<?php echo $row['WCompanyName']; ?>">
                 </div>
 
                 <div class="jsep-addmore-wexp-npcol">
-                  <input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period" value="<?php echo $existingWorkingExperience['WTimeRange']; ?>">
+                  <input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period" value="<?php echo $row['WTimeRange']; ?>">
                 </div>
 
               </div>
 
               <div>
-                <input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position" value="<?php echo $existingWorkingExperience['WJobRole']; ?>">
+                <input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position" value="<?php echo $row['WJobRole']; ?>">
               </div>
 
               <div>
-                <textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"><?php echo $existingWorkingExperience['WDescription']; ?></textarea>
+                <textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"><?php echo $row['WDescription']; ?></textarea>
               </div>
 
             <?php } ?>
@@ -353,26 +350,26 @@
           <h3>Extracurricular activities</h3>
 
           <div class="jsep-addmore-extraa-p">
-            <?php if ($existingExtracurriculumActivity) { ?>
+          <?php while ($row = mysqli_fetch_assoc($extracurriculum_activity)) { ?>
 
               <div class="jsep-addmore-extraa-np">
 
                 <div class="jsep-addmore-extraa-npcol">
-                  <input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name" value="<?php echo $existingExtracurriculumActivity['OrganizationName']; ?>">
+                  <input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name" value="<?php echo $row['OrganizationName']; ?>">
                 </div>
 
                 <div class="jsep-addmore-extraa-npcol">
-                  <input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period" value="<?php echo $existingExtracurriculumActivity['EATimeRange']; ?>">
+                  <input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period" value="<?php echo $row['EATimeRange']; ?>">
                 </div>
 
               </div>
 
               <div>
-                <input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role" value="<?php echo $existingExtracurriculumActivity['EAJobRole']; ?>">
+                <input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role" value="<?php echo $row['EAJobRole']; ?>">
               </div>
 
               <div>
-                <textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"><?php echo $existingExtracurriculumActivity['EADescription']; ?></textarea>
+                <textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"><?php echo $row['EADescription']; ?></textarea>
               </div>
 
             <?php } ?>

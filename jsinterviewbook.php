@@ -6,12 +6,12 @@
 
   $UserAuthenticationID = $_SESSION['job_seeker_ID'];
 
+  // Retrieve the JobID
+  $JobID = $_GET['JobID'];
+
   $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
   $job_seeker_data = mysqli_fetch_assoc($job_seeker);
   $JobSeekerID = $job_seeker_data['JobSeekerID'];
-
-  // Retrieve the JobID
-  $JobID = $_GET['JobID'];
 
   $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
   
@@ -29,9 +29,9 @@
 
     // Execute the query
     if ($conn->query($sql) === TRUE) {
-      // Redirect to another page after form submission
-      header("Location: jsinterviewset.php?JobID=$JobID");
-      exit();
+        // Redirect to another page after form submission
+        header("Location: jsinterviewset.php?JobID=$JobID");
+        exit();
     }
   }
 ?>

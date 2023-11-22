@@ -529,7 +529,6 @@ $js_interview = $conn->query("SELECT
         <?php } ?>
       </div>
     </div>
-    </div>
   </main>
 
   <!--Back to top button-->
