@@ -9,9 +9,13 @@
   
   $js_job = $job_seeker->fetch_assoc();
   $JSJobTitle = $js_job['JSJobTitle'];
-  
-  if (strpos($JSJobTitle, 'bar') !== false) {
+
+  if (strpos($JSJobTitle, 'Bar') == true) {
     $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B';");
+  } elseif (strpos($JSJobTitle, 'ist') == true) {
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Beauty & Spa';");
+  } elseif (strpos($JSJobTitle, 'Tour') == true) {
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Tourism & Hospitality';");
   } else {
     $sug_course = $conn->query("SELECT * FROM s104181721_db.Course;");
   }
@@ -100,7 +104,7 @@
           <li class="slide">
             <div class="sp-card">
               <div class="sp-image-box">
-                <img src="images/nail.png" alt="product.png">
+                <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
               </div>
               <div class="sp-product-details">
                 <div class="type">
@@ -163,7 +167,7 @@
           <li class="slide">
             <div class="sp-card">
               <div class="sp-image-box">
-                <img src="images/nail.png" alt="product.png">
+                <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
               </div>
               <div class="sp-product-details">
                 <div class="type">
