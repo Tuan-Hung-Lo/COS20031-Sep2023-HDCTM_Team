@@ -126,9 +126,7 @@
             </div>
           <?php } ?>
         </div>
-
-        <br>
-        <hr>
+        
         <br>
 
         <!-- PERSONAL INFORMATION -->
@@ -186,8 +184,7 @@
             <?php } ?>
           </div>
         </div>
-        <br>
-        <hr>
+        
         <br>
 
         <!-- EDUCATION BACKGROUND -->
@@ -199,6 +196,7 @@
               <img src="icons/Edit.svg" />Edit
             </a>
           </div>
+
           <br>
           <hr>
           <br>
@@ -217,6 +215,7 @@
                           <?php echo $row['Degree'] ?>
                         </i>
                       </li>
+                      <br>
                     <?php } ?>
                   </ul>
                 </div>
@@ -263,7 +262,6 @@
               <img src="icons/Edit.svg" />Edit
             </a>
           </div>
-
           <br>
           <hr>
           <br>
@@ -301,9 +299,6 @@
             <?php } ?>
           </div>
 
-          <br>
-          <br>
-
           <!-- TITLE -->
           <div class="cpp-title">
             <h3>Extracurriculum Activity </h3>
@@ -311,7 +306,6 @@
               <img src="icons/Edit.svg" />Edit
             </a>
           </div>
-
           <br>
           <hr>
           <br>
@@ -477,7 +471,7 @@
                     </ul>
                   </div>
                 </div>
-                <a class="sp-product-btn" onclick="location.href='jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>'">Book interview time</a>
+                <button class="sp-product-btn"><a href="jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">Book interview time</a></button>
               </div>
             </li>
           <?php } ?>

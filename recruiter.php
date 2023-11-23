@@ -1,19 +1,19 @@
 <?php
-  session_start();
+session_start();
 
-  // Include settings and database connection
-  require_once("./settings.php");
+// Include settings and database connection
+require_once("./settings.php");
 
-  $UserAuthenticationID = $_SESSION['recruiter_ID'];
-  $user_email = $_SESSION['re_email'];
+$UserAuthenticationID = $_SESSION['recruiter_ID'];
+$user_email = $_SESSION['re_email'];
 
-  $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
-  $recruiter_data = mysqli_fetch_assoc($recruiter);
-  $RecruiterID = $recruiter_data['RecruiterID'];
+$recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
+$recruiter_data = mysqli_fetch_assoc($recruiter);
+$RecruiterID = $recruiter_data['RecruiterID'];
 
-  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
+$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE RecruiterID = '$RecruiterID';");
 
-  $application = $conn->query("SELECT 
+$application = $conn->query("SELECT 
       Application.*, 
       Job.*, 
       JobSeeker.* 
@@ -24,7 +24,7 @@
     WHERE 
       Job.RecruiterID = '$RecruiterID';");
 
-  $interview = $conn->query("SELECT 
+$interview = $conn->query("SELECT 
       Job.*, 
       RecruiterInterview.* 
     FROM 
@@ -172,7 +172,7 @@
                   </ul>
                 </div>
               </div>
-              <button class="sp-product-btn">See this job posting details</button>
+              <button class="sp-product-btn"><a href="reinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">See this job posting details</a></button>
             </div>
           </li>
         <?php } ?>
@@ -210,7 +210,7 @@
                   </ul>
                 </div>
               </div>
-              <button class="ca-product-btn">View job seeker profile</button>
+              <button class="ca-product-btn"><a href="jobseekerrpov.php?JobSeekerID=<?php echo $row['JobSeekerID']; ?>">View job seeker profile</a></button>
             </div>
           </li>
         <?php } ?>
@@ -243,15 +243,15 @@
                 <div class="sp-product-require">
                   <ul>
                     <li><img src="icons/Calendar.svg">
-                      <?php echo $row['DateStart'] . '-' . $row['DateEnd']; ?>
+                      <?php echo $row['DateStart'] . '  to  ' . $row['DateEnd']; ?>
                     </li>
                     <li><img src="icons/Time.svg">
-                      <?php echo $row['TimeStart'] . '-' . $row['TimeEnd']; ?>
+                      <?php echo date('H:i', strtotime($row['TimeStart'])) . ' to ' . date('H:i', strtotime($row['TimeEnd'])); ?>
                     </li>
                   </ul>
                 </div>
               </div>
-              <a class="sp-product-btn">See interview details</a>
+              <button class="sp-product-btn"><a href="reinterviewset.php?JobID=<?php echo $row['JobID']; ?>">See interview details</a></button>
             </div>
           </li>
         <?php } ?>

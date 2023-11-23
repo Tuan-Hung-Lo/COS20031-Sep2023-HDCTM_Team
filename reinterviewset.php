@@ -13,9 +13,9 @@
 
   // Retrieve the CourseID from the URL
   $JobID = $_GET['JobID'];
-  $_SESSION['JobID'] = $JobID;
 
   $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
+  $re_interview = $conn->query("SELECT * FROM s104181721_db.RecruiterInterview WHERE JobID = '$JobID';");
 ?>
 
 <!DOCTYPE html>
@@ -103,8 +103,8 @@
           <div class="bwp-interview-setup">
             <div class="bwp-interview-available">
               <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
-                <h2><?php echo $row['DateStart'] . '-' . $row['DateEnd']; ?></h2>
-                <h2><?php echo $row['TimeStart'] . '-' . $row['TimeEnd']; ?></h2>
+                <h2><?php echo $row['DateStart'] . '  to  ' . $row['DateEnd']; ?></h2>
+                <h2><?php echo date('H:i', strtotime($row['TimeStart'])) . ' to ' . date('H:i', strtotime($row['TimeEnd'])); ?></h2>
               <?php } ?>
             </div>
             <div class="bwp-submit-box">
