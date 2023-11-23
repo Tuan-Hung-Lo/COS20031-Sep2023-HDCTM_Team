@@ -31,7 +31,7 @@
     $workingFormats = $_POST['jopfilter_wf'];
     if (!empty($workingFormats)) {
       $whereClause .= " AND WorkingFormat = '$workingFormats'";
-    }
+    } 
 
     // SPECIALIZATION
     $specializations = $_POST['jopfilter_s'];

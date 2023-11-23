@@ -409,6 +409,16 @@ textarea {
     font-size: 1rem;
 }
 */
+
+.su-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.su-btn img {
+    width: 5em;
+}
+
 /* Courses Page */
 
 .cp-contents {
