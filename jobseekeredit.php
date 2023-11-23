@@ -33,70 +33,167 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $Phone = $_POST["jsep-phone"];
   $Address = $_POST["jsep-address"];
 
+  $EducationID = $_POST["jsep-education-ID"];
   $Degree = $_POST["jsep-degree"];
   $Institution = $_POST["jsep-institute"];
   $GraduationYear = $_POST["jsep-period"];
   $GPA = $_POST["jsep-gpa"];
 
+  $SkillID = $_POST["jsep-skill-ID"];
   $SkillName = $_POST["jsep-skill"];
 
-  $WCompanyName = $_POST["jsep-companyname"];
+  $WExperienceID = $_POST["jsep-we-ID"];
+  $WCompanyName = $_POST["jsep-company-name"];
   $WTimeRange = $_POST["jsep-wperiod"];
   $WJobRole = $_POST["jsep-wposition"];
   $WDescription = $_POST["jsep-wdesc"];
 
+  $ActivityID = $_POST["jsep-ea-ID"];
   $OrganizationName = $_POST["jsep-organisationname"];
   $EATimeRange = $_POST["jsep-eaperiod"];
   $EAJobRole = $_POST["jsep-earole"];
   $EADescription = $_POST["jsep-eadesc"];
 
-  $sql1 = "UPDATE s104181721_db.JobSeeker 
-      SET JSImage = '$JSImage', 
-        FirstName = '$FirstName', 
-        LastName = '$LastName', 
-        ExperienceLevel = '$ExperienceLevel', 
-        JSJobTitle = '$JSJobTitle', 
-        Gender = '$Gender', 
-        DOB = '$DOB', 
-        Phone = '$Phone', 
-        Address = '$Address' 
-      WHERE UserAuthenticationID = '$UserAuthenticationID';";
+  $sqlJS = "UPDATE s104181721_db.JobSeeker 
+    SET JSImage = '$JSImage', 
+      FirstName = '$FirstName', 
+      LastName = '$LastName', 
+      ExperienceLevel = '$ExperienceLevel', 
+      JSJobTitle = '$JSJobTitle', 
+      Gender = '$Gender', 
+      DOB = '$DOB', 
+      Phone = '$Phone', 
+      Address = '$Address' 
+    WHERE UserAuthenticationID = '$UserAuthenticationID';";
+  
+  // Execute the query for job seeker
+  $conn->query($sqlJS);
 
-  // Update or insert data into Education table
-  $educationData = [
-    'Degree' => $Degree,
-    'Institution' => $Institution,
-    'GraduationYear' => $GraduationYear,
-    'GPA' => $GPA,
-  ];
+  // Loop through the education array
+  foreach ($Degree as $edu_index => $degree) {
+    // Loop through the education arrays
+    $educationID = $EducationID[$edu_index];
+    $institution = $Institution[$edu_index];
+    $graduationYear = $GraduationYear[$edu_index];
+    $gpa = $GPA[$edu_index];
 
-  // Update or insert data into Skill table
-  $skillData = [
-    'SkillName' => $SkillName,
-  ];
-
-  // Update or insert data into WorkingExperience table
-  $workExperienceData = [
-    'WCompanyName' => $WCompanyName,
-    'WTimeRange' => $WTimeRange,
-    'WJobRole' => $WJobRole,
-    'WDescription' => $WDescription,
-  ];
-
-  // Update or insert data into ExtracurriculumActivity table
-  $extracurricularData = [
-    'OrganizationName' => $OrganizationName,
-    'EATimeRange' => $EATimeRange,
-    'EAJobRole' => $EAJobRole,
-    'EADescription' => $EADescription,
-  ];
-
-  // Execute the query
-  if ($conn->query($sql1) === TRUE) {
-    // Redirect to another page after form submission
-    header("Location: jobseeker.php");
-    exit();
+    if (!empty($educationID)) {
+      // Check if company name is not empty
+      if (($degree == '') && ($institution == '') && ($graduationYear == '') && ($gpa == '')) {
+        // Delete rows where WExperienceID is empty
+        $conn->query("DELETE FROM s104181721_db.Education WHERE EducationID = '$educationID';");
+      } else {
+        // Construct the SQL statement for education
+        $conn->query("UPDATE s104181721_db.Education 
+          SET Degree = '$degree', 
+            Institution = '$institution', 
+            GraduationYear = '$graduationYear', 
+            GPA = '$gpa'
+          WHERE EducationID = '$educationID';");
+      }
+    } else {
+      // Check if company name is not empty
+      if (($degree != '') && ($institution != '') && ($graduationYear != '') && ($gpa != '')) {
+        // Construct the SQL statement for new education
+        $conn->query("INSERT INTO s104181721_db.Education (JobSeekerID, Degree, Institution, GraduationYear, GPA) 
+          VALUES ('$JobSeekerID', '$degree', '$institution', '$graduationYear', '$gpa');");
+      }
+    }
   }
+
+  // Loop through the skills array
+  foreach ($SkillName as $skill_index => $skillName) {
+    // Loop through the skill arrays
+    $skillID = $SkillID[$skill_index];
+
+    if (!empty($skillID)) {
+      // Check if SkillName is not empty
+      if ($skillName == '') {
+        // Delete rows where SkillID is empty
+        $conn->query("DELETE FROM s104181721_db.Skill WHERE SkillID = '$skillID';");
+      } else {
+        // Construct the SQL statement for skills
+        $conn->query("UPDATE s104181721_db.Skill 
+          SET SkillName = '$skillName' 
+          WHERE SkillID = '$skillID';");
+      }
+    } else {
+      // Check if SkillName is not empty
+      if ($skillName != '') {
+        // Construct the SQL statement for new skills
+        $conn->query("INSERT INTO s104181721_db.Skill (JobSeekerID, SkillName) 
+          VALUES ('$JobSeekerID', '$skillName');");
+      }
+    }
+  }
+
+  // Loop through the working experience array
+  foreach ($WCompanyName as $we_index => $wCompanyName) {
+    // Loop through the working experience arrays
+    $wExperienceID = $WExperienceID[$we_index];
+    $wTimeRange = $WTimeRange[$we_index];
+    $wJobRole = $WJobRole[$we_index];
+    $wDescription = $WDescription[$we_index];
+
+    if (!empty($wExperienceID)) {
+      // Check if company name is not empty
+      if (($wCompanyName == '') && ($wTimeRange == '') && ($wJobRole == '') && ($wDescription == '')) {
+        // Delete rows where WExperienceID is empty
+        $conn->query("DELETE FROM s104181721_db.WorkingExperience WHERE WExperienceID = '$wExperienceID';");
+      } else {
+        // Construct the SQL statement for working experience
+        $conn->query("UPDATE s104181721_db.WorkingExperience 
+          SET WCompanyName = '$wCompanyName', 
+            WJobRole = '$wJobRole', 
+            WTimeRange = '$wTimeRange', 
+            WDescription = '$wDescription'
+        WHERE WExperienceID = '$wExperienceID';");
+      }
+    } else {
+      // Check if company name is not empty
+      if (($wCompanyName != '') && ($wTimeRange != '') && ($wJobRole != '') && ($wDescription != '')) {
+        // Construct the SQL statement for new working experience
+        $conn->query("INSERT INTO s104181721_db.WorkingExperience (JobSeekerID, WJobRole, WCompanyName, WTimeRange, WDescription) 
+          VALUES ('$JobSeekerID', '$wJobRole', '$wCompanyName', '$wTimeRange', '$wDescription');");
+      }
+    }
+  }
+
+  // Loop through the extracurricular activities array
+  foreach ($OrganizationName as $ea_index => $organizationName) {
+    // Loop through the extracurricular activities arrays
+    $activityID = $ActivityID[$ea_index];
+    $eATimeRange = $EATimeRange[$ea_index];
+    $eAJobRole = $EAJobRole[$ea_index];
+    $eADescription = $EADescription[$ea_index];
+
+    if (!empty($activityID)) {
+      // Check if OrganizationName is not empty
+      if (($organizationName == '') && ($eATimeRange == '') && ($eAJobRole == '') && ($eADescription == '')) {
+        // Delete rows where ExtracurriculumActivityID is empty
+        $conn->query("DELETE FROM s104181721_db.ExtracurriculumActivity WHERE ActivityID = '$activityID';");
+      } else {
+        // Construct the SQL statement for extracurricular activities
+        $conn->query("UPDATE s104181721_db.ExtracurriculumActivity 
+          SET OrganizationName = '$organizationName', 
+            EATimeRange = '$eATimeRange', 
+            EAJobRole = '$eAJobRole', 
+            EADescription = '$eADescription' 
+          WHERE ActivityID = '$activityID';");
+      }
+    } else {
+      // Check if OrganizationName is not empty
+      if (($organizationName != '') && ($eATimeRange != '') && ($eAJobRole != '') && ($eADescription != '')) {
+        // Construct the SQL statement for new extracurricular activities
+        $conn->query("INSERT INTO s104181721_db.ExtracurriculumActivity (JobSeekerID, OrganizationName, EATimeRange, EAJobRole, EADescription) 
+          VALUES ('$JobSeekerID', '$organizationName', '$eATimeRange', '$eAJobRole', '$eADescription');");
+      }
+    }
+  }
+
+  // Redirect to another page after form submission
+  header("Location: jobseeker.php");
+  exit();
 }
 ?>
 
@@ -242,25 +339,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="jsep-addmore-edu-p">
 
             <?php while ($row = mysqli_fetch_assoc($education)) { ?>
+              <input name="jsep-education-ID[]" value="<?php echo $row['EducationID']; ?>" hidden>
 
               <label class="jsep-label">
                 <img src="icons/Degree_B.svg">
-                <input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree" value="<?php echo $row['Degree']; ?>">
+                <input name="jsep-degree[]" type="text" class="jsep-input" placeholder="Degree" value="<?php echo $row['Degree']; ?>">
               </label>
 
               <label class="jsep-label">
                 <img src="icons/Institute_B.svg">
-                <input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute" value="<?php echo $row['Institution']; ?>">
+                <input name="jsep-institute[]" type="text" class="jsep-input" placeholder="Institute" value="<?php echo $row['Institution']; ?>">
               </label>
 
               <label class="jsep-label">
                 <img src="icons/Calendar_B.svg">
-                <input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)" value="<?php echo $row['GraduationYear']; ?>">
+                <input name="jsep-period[]" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)" value="<?php echo $row['GraduationYear']; ?>">
               </label>
 
               <label class="jsep-label">
                 <img src="icons/GPA_B.svg">
-                <input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)" value="<?php echo $row['GPA']; ?>">
+                <input name="jsep-gpa[]" type="text" class="jsep-input" placeholder="GPA (x.xx)" value="<?php echo $row['GPA']; ?>">
               </label>
 
             <?php } ?>
@@ -290,8 +388,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="jsep-addmore-skills-p">
 
             <?php while ($row = mysqli_fetch_assoc($skill)) { ?>
+              <input name="jsep-skill-ID[]" value="<?php echo $row['SkillID']; ?>" hidden>
+
               <div class="jsep-skill">
-                <input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills" value="<?php echo $row['SkillName']; ?>">
+                <input name="jsep-skill[]" type="text" class="jsep-input" placeholder="Skills" value="<?php echo $row['SkillName']; ?>">
               </div>
             <?php } ?>
 
@@ -309,11 +409,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           <div class="jsep-addmore-wexp-p">
             <?php while ($row = mysqli_fetch_assoc($working_experience)) { ?>
+              <input name="jsep-we-ID[]" value="<?php echo $row['WExperienceID']; ?>" hidden>
 
               <div class="jsep-addmore-wexp-np">
 
                 <div class="jsep-addmore-wexp-npcol">
-                  <input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name" value="<?php echo $row['WCompanyName']; ?>">
+                  <input name="jsep-company-name" type="text" class="jsep-input-np" placeholder="Company name" value="<?php echo $row['WCompanyName']; ?>">
                 </div>
 
                 <div class="jsep-addmore-wexp-npcol">
@@ -351,25 +452,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           <div class="jsep-addmore-extraa-p">
           <?php while ($row = mysqli_fetch_assoc($extracurriculum_activity)) { ?>
+              <input name="jsep-ea-ID[]" value="<?php echo $row['ActivityID']; ?>" hidden>
 
               <div class="jsep-addmore-extraa-np">
 
                 <div class="jsep-addmore-extraa-npcol">
-                  <input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name" value="<?php echo $row['OrganizationName']; ?>">
+                  <input name="jsep-organisationname[]" type="text" class="jsep-input-np" placeholder="Organisation name" value="<?php echo $row['OrganizationName']; ?>">
                 </div>
 
                 <div class="jsep-addmore-extraa-npcol">
-                  <input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period" value="<?php echo $row['EATimeRange']; ?>">
+                  <input name="jsep-eaperiod[]" type="text" class="jsep-input-np" placeholder="Participation period" value="<?php echo $row['EATimeRange']; ?>">
                 </div>
 
               </div>
 
               <div>
-                <input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role" value="<?php echo $row['EAJobRole']; ?>">
+                <input name="jsep-earole[]" type="text" class="jsep-input-wea" placeholder="Role" value="<?php echo $row['EAJobRole']; ?>">
               </div>
 
               <div>
-                <textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"><?php echo $row['EADescription']; ?></textarea>
+                <textarea name="jsep-eadesc[]" type="text" class="jsep-desc" placeholder="Description"><?php echo $row['EADescription']; ?></textarea>
               </div>
 
             <?php } ?>
@@ -462,7 +564,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (x < max_fields) {
           x++;
 
-          $(wrapper).append('<div class="jsep-addmore-edu-p"><label class="jsep-label"><img src="icons/Degree_B.svg"><input name="jsep-degree" type="text" class="jsep-input" placeholder="Degree"></label><label class="jsep-label"><img src="icons/Institute_B.svg"><input name="jsep-institute" type="text" class="jsep-input" placeholder="Institute"></label><label class="jsep-label"><img src="icons/Calendar_B.svg"><input name="jsep-period" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)"></label><label class="jsep-label"><img src="icons/GPA_B.svg"><input name="jsep-gpa" type="text" class="jsep-input" placeholder="GPA (x.xx)"></label><br><label class="jsep-remove-edu">- Remove&nbsp;</label><br><br><br></div>')
+          $(wrapper).append('<div class="jsep-addmore-edu-p"><label class="jsep-label"><img src="icons/Degree_B.svg"><input name="jsep-degree[]" type="text" class="jsep-input" placeholder="Degree"></label><label class="jsep-label"><img src="icons/Institute_B.svg"><input name="jsep-institute[]" type="text" class="jsep-input" placeholder="Institute"></label><label class="jsep-label"><img src="icons/Calendar_B.svg"><input name="jsep-period[]" type="text" class="jsep-input" placeholder="Period (xxxx - xxxx)"></label><label class="jsep-label"><img src="icons/GPA_B.svg"><input name="jsep-gpa[]" type="text" class="jsep-input" placeholder="GPA (x.xx)"></label><br><label class="jsep-remove-edu">- Remove&nbsp;</label><br><br><br></div>')
 
         }
       });
@@ -483,7 +585,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $(add_button).click(function(e) {
         e.preventDefault();
 
-        $(wrapper).append('<div class="jsep-addmore-skills-p"><div class="jsep-skill"><input name="jsep-skill" type="text" class="jsep-input" placeholder="Skills"></div><label class="jsep-remove-skills">- Remove&nbsp;</label><br></div>')
+        $(wrapper).append('<div class="jsep-addmore-skills-p"><div class="jsep-skill"><input name="jsep-skill[]" type="text" class="jsep-input" placeholder="Skills"></div><label class="jsep-remove-skills">- Remove&nbsp;</label><br></div>')
 
       });
 
@@ -506,7 +608,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (x < max_fields) {
           x++;
 
-          $(wrapper).append('<div class="jsep-addmore-wexp-p"><div class="jsep-addmore-wexp-np"><div class="jsep-addmore-wexp-npcol"><input name="jsep-companyname" type="text" class="jsep-input-np" placeholder="Company name"></div><div class="jsep-addmore-wexp-npcol"><input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period"></div></div><div><input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position"></div><div><textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br><br><br></div>')
+          $(wrapper).append('<div class="jsep-addmore-wexp-p"><div class="jsep-addmore-wexp-np"><div class="jsep-addmore-wexp-npcol"><input name="jsep-company-name[]" type="text" class="jsep-input-np" placeholder="Company name"></div><div class="jsep-addmore-wexp-npcol"><input name="jsep-wperiod[]" type="text" class="jsep-input-np" placeholder="Working period"></div></div><div><input name="jsep-wposition[]" type="text" class="jsep-input-wea" placeholder="Position"></div><div><textarea name="jsep-wdesc[]" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br><br><br></div>')
 
         }
       });
@@ -530,7 +632,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (x < max_fields) {
           x++;
 
-          $(wrapper).append('<div class="jsep-addmore-extraa-p"><div class="jsep-addmore-extraa-np"><div class="jsep-addmore-extraa-npcol"><input name="jsep-organisationname" type="text" class="jsep-input-np" placeholder="Organisation name"></div><div class="jsep-addmore-extraa-npcol"><input name="jsep-eaperiod" type="text" class="jsep-input-np" placeholder="Participation period"></div></div><div><input name="jsep-earole" type="text" class="jsep-input-wea" placeholder="Role"></div><div><textarea name="jsep-eadesc" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br><br><br></div>')
+          $(wrapper).append('<div class="jsep-addmore-extraa-p"><div class="jsep-addmore-extraa-np"><div class="jsep-addmore-extraa-npcol"><input name="jsep-organisationname[]" type="text" class="jsep-input-np" placeholder="Organisation name"></div><div class="jsep-addmore-extraa-npcol"><input name="jsep-eaperiod[]" type="text" class="jsep-input-np" placeholder="Participation period"></div></div><div><input name="jsep-earole[]" type="text" class="jsep-input-wea" placeholder="Role"></div><div><textarea name="jsep-eadesc[]" type="text" class="jsep-desc" placeholder="Description"></textarea></div><br><br><label class="jsep-remove-extraa">- Remove&nbsp;</label><br><br><br></div>')
 
         }
       });
