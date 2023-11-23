@@ -31,12 +31,12 @@
     $workingFormats = $_POST['jopfilter_wf'];
     if (!empty($workingFormats)) {
       $whereClause .= " AND WorkingFormat = '$workingFormats'";
-    }
+    } 
 
     // SPECIALIZATION
     $specializations = $_POST['jopfilter_s'];
     if (!empty($specializations)) {
-      $whereClause .= " AND Specializations = '$specializations'";
+      $whereClause .= " AND JobSpecializations = '$specializations'";
     }
 
     if ($whereClause == 1){

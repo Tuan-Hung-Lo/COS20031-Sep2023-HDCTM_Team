@@ -70,7 +70,7 @@
             <br>
             <div class="si-button-box">
                 <button type="button" class="si-toggle-btn" id="si-btn-selected">Log In</button>
-                <button type="button" class="si-toggle-btn" onclick="location.href='pagenotfound.html'">Sign Up</button>
+                <button type="button" class="si-toggle-btn" onclick="location.href='signup_role.html'">Sign Up</button>
             </div>
             <form class="inputgr" id="si-inputgr" method="post" action="login.php">
                 <div class="si-input-box">

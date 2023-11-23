@@ -48,10 +48,10 @@
 
         <div class="si-form-box">
             <img alt="Logo" src="images/Logo.png" class="logo">
-            <h1>Welcome!</h1>
+            <h1>Welcome back!</h1>
+            <br>
             <div class="si-button-box">
-                <div id="su-btn"></div>
-                <button type="button" class="si-toggle-btn" onclick="location.href='login.html'">Sign In</button>
+                <button type="button" class="si-toggle-btn" id="si-btn-selected">Log In</button>
                 <button type="button" class="si-toggle-btn" onclick="location.href='signup_role.html'">Sign Up</button>
             </div>
             <form class="inputgr" id="si-inputgr" action="signup_bus.php" method="post">
