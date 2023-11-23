@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
   session_start();
 
   // Include settings and database connection
@@ -12,26 +14,28 @@
 
   // Retrieve the JobID
   $JobID = $_GET['JobID'];
-  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
-  
-  $re_interview = $conn->query("SELECT * FROM s104181721_db.RecruiterInterview WHERE JobID = '$JobID';");
+  $check = $conn->query("SELECT * FROM s104181721_db.JobSeekerInterview WHERE JobSeekerID = $JobSeekerID AND JobID = '$JobID';");
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $ID = $_POST['ID'];
-    $InterviewDate = $_POST['date'];
-    $InterviewTime = $_POST['time'];
-    
-    $sql = "UPDATE s104181721_db.JobSeekerInterview 
-      SET InterviewDate = '$InterviewDate', 
-        InterviewTime = '$InterviewTime' 
-      WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$ID';";
+  // Check if any rows were returned
+  if ($check->num_rows > 0) {
+    // Redirect to another page after form submission
+    header("Location: jsinterviewset.php?JobID=$JobID");
+  } else {
+    $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID = '$JobID';");
 
-    // Execute the query
-    if ($conn->query($sql) === TRUE) {
-        // Redirect to another page after form submission
-        header("Location: jsinterviewset.php?JobID=$ID");
-        exit();
+    $re_interview = $conn->query("SELECT * FROM s104181721_db.RecruiterInterview WHERE JobID = '$JobID';");
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      // Get form data
+      $ID = $_POST['ID'];
+      $InterviewDate = $_POST['date'];
+      $InterviewTime = $_POST['time'];
+
+      $conn->query("INSERT INTO s104181721_db.JobSeekerInterview (JobSeekerID, JobID, InterviewDate, InterviewTime)
+        VALUES ('$JobSeekerID', '$ID', '$InterviewDate', '$InterviewTime');");
+
+      // Redirect to another page
+      header("Location: jobseeker.php");
     }
   }
 ?>
@@ -124,7 +128,7 @@
             <div class="bwp-interview-available">
               <h5>Available time</h5>
               <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
-              <input name="ID" value="<?php echo $row['JobID']; ?>" hidden>
+                <input name="ID" value="<?php echo $row['JobID']; ?>" hidden>
                 <h2><?php echo $row['TimeStart'] . '-' . $row['TimeEnd'] . ' (' . $row['DateStart'] . ' ' . $row['DateEnd'] . ')'; ?></h2>
               <?php } ?>
               <ul>Notes:

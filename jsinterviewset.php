@@ -90,7 +90,7 @@
                 <div class="sp-product-require">
                   <ul>
                     <li><img src="icons/Location.svg"> <?php echo $row['WorkLocation']; ?></li>
-                    <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?></li>
+                    <li><img src="icons/Fee.svg"> <?php echo $row['Salary']; ?> AUD$</li>
                     <li><img src="icons/ExperienceLevel.svg"> <?php echo $row['ExperienceLevel']; ?></li>
                     <li><img src="icons/WorkingMode.svg"> <?php echo $row['WorkingFormat']; ?></li>
                   </ul>
@@ -104,7 +104,7 @@
           <div class="bwp-interview-setup">
             <div class="bwp-interview-available">
               <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
-                <h2><?php echo $row['InterviewTime'] . ' (' . $row['InterviewDate'] . ')'; ?></h2>
+                <h2><?php echo date('H:i', strtotime($row['InterviewTime'])) . ' (' . $row['InterviewDate'] . ')'; ?></h2>
               <?php } ?>
               <ul>Notes:
                 <li>Each interview session last from 20 to 45 minutes</li>

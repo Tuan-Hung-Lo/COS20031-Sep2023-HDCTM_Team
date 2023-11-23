@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
   session_start();
 
   // Include settings and database connection
@@ -6,18 +8,18 @@
 
   $UserAuthenticationID = $_SESSION['job_seeker_ID'];
   $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-  
+
   $js_job = $job_seeker->fetch_assoc();
   $JSJobTitle = $js_job['JSJobTitle'];
-  
+
   if (stripos($JSJobTitle, 'bar') !== false) {
-    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'F&B'; LIMIT 5");
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'F&B';");
   } elseif (stripos($JSJobTitle, 'ist') !== false) {
-    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'Beauty & Spa' LIMIT 5;");
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'Beauty & Spa';");
   } elseif (stripos($JSJobTitle, 'Tour') !== false) {
-    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'Tourism & Hospitality' LIMIT 5;");
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'Tourism & Hospitality';");
   } else {
-    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5;");
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job;");
   }
 
   // Initialize the WHERE clause for filtering
@@ -35,20 +37,21 @@
     $workingFormats = $_POST['jopfilter_wf'];
     if (!empty($workingFormats)) {
       $whereClause .= " AND WorkingFormat = '$workingFormats'";
-    } 
+    }
 
     // SPECIALIZATION
     $specializations = $_POST['jopfilter_s'];
     if (!empty($specializations)) {
-      $whereClause .= " AND JobSpecializations = '$specializations'";
+      $whereClause .= " AND JobSpecialization = '$specializations'";
     }
 
-    if ($whereClause == 1){
+    if ($whereClause == 1) {
       // Query to fetch jobs based on filter conditions
       $filter_job = $conn->query("SELECT * FROM s104181721_db.Job");
     } else {
       $filter_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE $whereClause");
     }
+
   } else {
     $filter_job = $conn->query("SELECT * FROM s104181721_db.Job");
   }
@@ -94,7 +97,7 @@
     <div class="icons">
       <ul>
         <?php if ($js_job) { ?>
-        <li><a href="jobseeker.php"><img src="<?php echo $js_job['JSImage']; ?>"></a></li>
+          <li><a href="jobseeker.php"><img src="<?php echo $js_job['JSImage']; ?>"></a></li>
         <?php } ?>
         <li><a href="login.php"><img src="icons/Logout.svg"></a></li>
       </ul>
@@ -106,6 +109,50 @@
 
     <section class="jop-contents">
       <h1>Job opportunities</h1>
+
+      <!-- First Course Group -->
+
+      <div class="cp-box-container">
+        <div class="header">
+          <h5>Suggested for you</h5>
+        </div>
+        <ul class="autoWidth" class="cs-hidden">
+          <?php while ($row = mysqli_fetch_assoc($sug_job)) { ?>
+            <!-- Card 1 -->
+            <li class="slide">
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
+                </div>
+                <div class="sp-product-details">
+                  <div class="type">
+                    <h6>
+                      <?php echo $row['JobTitle']; ?>
+                    </h6>
+                  </div>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Location.svg">
+                        <?php echo $row['WorkLocation']; ?>
+                      </li>
+                      <li><img src="icons/Fee.svg">
+                        <?php echo $row['Salary']; ?> AUD$
+                      </li>
+                      <li><img src="icons/ExperienceLevel.svg">
+                        <?php echo $row['ExperienceLevel']; ?>
+                      </li>
+                      <li><img src="icons/WorkingMode.svg">
+                        <?php echo $row['WorkingFormat']; ?>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <button class="sp-product-btn">Apply for this job</button>
+              </div>
+            </li>
+          <?php } ?>
+        </ul>
+      </div>
 
       <!-- FILTER -->
 
@@ -184,54 +231,7 @@
             <input class="jopclear" type="reset" value="Clear">
 
           </form>
-          <br>
-          <br>
         </div>
-      </div>
-
-      <!-- First Course Group -->
-
-      <div class="cp-box-container">
-        <div class="header">
-          <h5>Suggested for you</h5>
-        </div>
-        <hr>
-        <?php while ($row = mysqli_fetch_assoc($sug_job)) { ?>
-        <ul class="autoWidth" class="cs-hidden">
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="images/nail.png" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6>
-                    <?php echo $row['JobTitle']; ?>
-                  </h6>
-                </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Location.svg">
-                      <?php echo $row['WorkLocation']; ?>
-                    </li>
-                    <li><img src="icons/Fee.svg">
-                      <?php echo $row['Salary']; ?>
-                    </li>
-                    <li><img src="icons/ExperienceLevel.svg">
-                      <?php echo $row['ExperienceLevel']; ?>
-                    </li>
-                    <li><img src="icons/WorkingMode.svg">
-                      <?php echo $row['WorkingFormat']; ?>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <button class="sp-product-btn">Apply for this job</button>
-            </div>
-          </li>
-        </ul>
-        <?php } ?>
       </div>
 
       <!-- Second Course Group -->
@@ -240,44 +240,42 @@
           <div class="header">
             <h5>All job opportunities</h5>
           </div>
-          <hr>
-
-          <?php while ($row = mysqli_fetch_assoc($filter_job)) { ?>
           <ul class="autoWidth" class="cs-hidden">
-            <!-- Card 1 -->
-            <li class="slide">
-              <div class="sp-card">
-                <div class="sp-image-box">
-                  <img src="images/nail.png" alt="product.png">
-                </div>
-                <div class="sp-product-details">
-                  <div class="type">
-                    <h6>
-                      <?php echo $row['JobTitle']; ?>
-                    </h6>
+            <?php while ($row = mysqli_fetch_assoc($filter_job)) { ?>
+              <!-- Card 1 -->
+              <li class="slide">
+                <div class="sp-card">
+                  <div class="sp-image-box">
+                    <img src="<?php echo $row['JobImage']; ?>" alt="product.png">
                   </div>
-                  <div class="sp-product-require">
-                    <ul>
-                      <li><img src="icons/Location.svg">
-                        <?php echo $row['WorkLocation']; ?>
-                      </li>
-                      <li><img src="icons/Fee.svg">
-                        <?php echo $row['Salary']; ?>
-                      </li>
-                      <li><img src="icons/ExperienceLevel.svg">
-                        <?php echo $row['ExperienceLevel']; ?>
-                      </li>
-                      <li><img src="icons/WorkingMode.svg">
-                        <?php echo $row['WorkingFormat']; ?>
-                      </li>
-                    </ul>
+                  <div class="sp-product-details">
+                    <div class="type">
+                      <h6>
+                        <?php echo $row['JobTitle']; ?>
+                      </h6>
+                    </div>
+                    <div class="sp-product-require">
+                      <ul>
+                        <li><img src="icons/Location.svg">
+                          <?php echo $row['WorkLocation']; ?>
+                        </li>
+                        <li><img src="icons/Fee.svg">
+                          <?php echo $row['Salary']; ?> AUD$
+                        </li>
+                        <li><img src="icons/ExperienceLevel.svg">
+                          <?php echo $row['ExperienceLevel']; ?>
+                        </li>
+                        <li><img src="icons/WorkingMode.svg">
+                          <?php echo $row['WorkingFormat']; ?>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
+                  <button class="sp-product-btn">Apply for this job</button>
                 </div>
-                <button class="sp-product-btn">Apply for this job</button>
-              </div>
-            </li>
+              </li>
+            <?php } ?>
           </ul>
-          <?php } ?>
         </div>
       </div>
 
@@ -343,7 +341,7 @@
     var coll = document.getElementsByClassName("collapsible");
     var i;
     for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
+      coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
         if (content.style.display === "block") {

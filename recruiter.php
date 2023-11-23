@@ -168,11 +168,10 @@ $interview = $conn->query("SELECT
                     <li><img src="icons/WorkingMode.svg">
                       <?php echo $row['WorkingFormat']; ?>
                     </li>
-                    <li class="job-posting"><img src="icons/PeopleGroup.svg"><a href="pagenotfound.html"> View candidates applied</a></li>
                   </ul>
                 </div>
               </div>
-              <button class="sp-product-btn"><a href="reinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">See this job posting details</a></button>
+              <button class="sp-product-btn"><a href="reinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">Set interview details</a></button>
             </div>
           </li>
         <?php } ?>
@@ -251,7 +250,7 @@ $interview = $conn->query("SELECT
                   </ul>
                 </div>
               </div>
-              <button class="sp-product-btn"><a href="reinterviewset.php?JobID=<?php echo $row['JobID']; ?>">See interview details</a></button>
+              <button class="sp-product-btn"><a href="reinterviewset.php?JobID=<?php echo $row['JobID']; ?>">View interview details</a></button>
             </div>
           </li>
         <?php } ?>

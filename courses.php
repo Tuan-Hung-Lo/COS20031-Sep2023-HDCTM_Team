@@ -6,18 +6,18 @@
 
   $UserAuthenticationID = $_SESSION['job_seeker_ID'];
   $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-  
+
   $js_job = $job_seeker->fetch_assoc();
   $JSJobTitle = $js_job['JSJobTitle'];
 
   if (stripos($JSJobTitle, 'Bar') !== false) {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B' LIMIT 5;");
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'F&B';");
   } elseif (stripos($JSJobTitle, 'ist') !== false) {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Beauty & Spa' LIMIT 5;");
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Beauty & Spa';");
   } elseif (stripos($JSJobTitle, 'Tour') !== false) {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Tourism & Hospitality' LIMIT 5;");
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseCategory = 'Tourism & Hospitality';");
   } else {
-    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course LIMIT 5;");
+    $sug_course = $conn->query("SELECT * FROM s104181721_db.Course;");
   }
 
   // Check if the filter form is submitted
@@ -33,6 +33,7 @@
 
     // Query to fetch courses based on filter conditions
     $filter_course = $conn->query("SELECT * FROM s104181721_db.Course WHERE $whereClause;");
+    
   } else {
     $filter_course = $conn->query("SELECT * FROM s104181721_db.Course;");
   }
@@ -70,14 +71,14 @@
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
-      <a href="courses.php" class="btn_active" >Courses</a>
+      <a href="courses.php" class="btn_active">Courses</a>
       <a href="jobopportunities.php">Job Opportunities</a>
     </nav>
 
     <div class="icons">
       <ul>
         <?php if ($js_job) { ?>
-        <li><a href="jobseeker.php"><img src="<?php echo $js_job['JSImage']; ?>"></a></li>
+          <li><a href="jobseeker.php"><img src="<?php echo $js_job['JSImage']; ?>"></a></li>
         <?php } ?>
         <li><a href="login.php"><img src="icons/Logout.svg"></a></li>
       </ul>
@@ -91,45 +92,43 @@
       <h1>Courses</h1>
 
       <!-- First Course Group -->
-
       <div class="cp-box-container">
         <div class="header">
           <h5>Suggested for you</h5>
         </div>
         <hr>
 
-        <?php while ($row = mysqli_fetch_assoc($sug_course)) { ?>
         <ul class="autoWidth" class="cs-hidden">
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6>
-                    <?php echo $row['Title']; ?>
-                  </h6>
+          <?php while ($row = mysqli_fetch_assoc($sug_course)) { ?>
+            <!-- Card 1 -->
+            <li class="slide">
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
                 </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Time.svg">
-                      <?php echo $row['Length']; ?>
-                    </li>
-                    <li><img src="icons/Fee.svg">
-                      <?php echo $row['Price']; ?>
-                    </li>
-                  </ul>
+                <div class="sp-product-details">
+                  <div class="type">
+                    <h6>
+                      <?php echo $row['Title']; ?>
+                    </h6>
+                  </div>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Time.svg">
+                        <?php echo $row['Length']; ?>
+                      </li>
+                      <li><img src="icons/Fee.svg">
+                        <?php echo $row['Price']; ?>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+                <button class="sp-product-btn">Register for this course</button>
               </div>
-              <button class="sp-product-btn">Register for this course</button>
-            </div>
-          </li>
+            </li>
+          <?php } ?>
         </ul>
-        <?php } ?>
       </div>
-
 
       <!-- Second Course Group -->
 
@@ -161,40 +160,38 @@
           </div>
         </form>
 
-        <?php while ($row = mysqli_fetch_assoc($filter_course)) { ?>
         <ul class="autoWidth" class="cs-hidden">
-          <!-- Card 1 -->
-          <li class="slide">
-            <div class="sp-card">
-              <div class="sp-image-box">
-                <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
-              </div>
-              <div class="sp-product-details">
-                <div class="type">
-                  <h6>
-                    <?php echo $row['Title']; ?>
-                  </h6>
+          <?php while ($row = mysqli_fetch_assoc($filter_course)) { ?>
+            <!-- Card 1 -->
+            <li class="slide">
+              <div class="sp-card">
+                <div class="sp-image-box">
+                  <img src="<?php echo $row['CourseImage']; ?>" alt="product.png">
                 </div>
-                <div class="sp-product-require">
-                  <ul>
-                    <li><img src="icons/Time.svg">
-                      <?php echo $row['Length']; ?>
-                    </li>
-                    <li><img src="icons/Fee.svg">
-                      <?php echo $row['Price']; ?>
-                    </li>
-                  </ul>
+                <div class="sp-product-details">
+                  <div class="type">
+                    <h6>
+                      <?php echo $row['Title']; ?>
+                    </h6>
+                  </div>
+                  <div class="sp-product-require">
+                    <ul>
+                      <li><img src="icons/Time.svg">
+                        <?php echo $row['Length']; ?>
+                      </li>
+                      <li><img src="icons/Fee.svg">
+                        <?php echo $row['Price']; ?>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+                <button class="sp-product-btn">Register for this course</button>
               </div>
-              <button class="sp-product-btn">Register for this course</button>
-            </div>
-          </li>
+            </li>
+          <?php } ?>
         </ul>
-        <?php } ?>
       </div>
-
     </section>
-
   </main>
 
   <!--Back to top button-->

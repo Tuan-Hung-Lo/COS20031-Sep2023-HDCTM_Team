@@ -430,7 +430,7 @@
                     </ul>
                   </div>
                 </div>
-                <button class="sp-product-btn">See job details</button>
+                <button class="sp-product-btn"><a href="jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">Book interview time</a></button>
               </div>
             </li>
           <?php } ?>
@@ -466,12 +466,12 @@
                         <?php echo $row['InterviewDate']; ?>
                       </li>
                       <li><img src="icons/Time.svg">
-                        <?php echo $row['InterviewTime']; ?>
+                        <?php echo date('H:i', strtotime($row['InterviewTime'])); ?>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <button class="sp-product-btn"><a href="jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">Book interview time</a></button>
+                <button class="sp-product-btn"><a href="jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">View interview time</a></button>
               </div>
             </li>
           <?php } ?>

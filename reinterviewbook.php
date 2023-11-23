@@ -1,6 +1,4 @@
 <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
   session_start();
 
   // Include settings and database connection
@@ -14,7 +12,6 @@
   if ($check->num_rows > 0) {
     // Redirect to another page after form submission
     header("Location: reinterviewset.php?JobID=$JobID");
-    exit();
   } else {
     $UserAuthenticationID = $_SESSION['recruiter_ID'];
     $recruiter = $conn->query("SELECT * FROM s104181721_db.Recruiter WHERE UserAuthenticationID = '$UserAuthenticationID';");
@@ -34,8 +31,8 @@
       $LinkMeeting = $_POST['link'];
   
       // Execute the query
-      $conn->query("INSERT INTO RecruiterInterview (JobID, DateStart, DateEnd, TimeStart, TimeEnd, LinkMeeting)
-      VALUES ('$ID', '$DateStart', '$DateEnd', '$TimeStart', '$TimeEnd', '$LinkMeeting');");
+      $conn->query("INSERT INTO s104181721_db.RecruiterInterview (JobID, DateStart, DateEnd, TimeStart, TimeEnd, LinkMeeting)
+        VALUES ('$ID', '$DateStart', '$DateEnd', '$TimeStart', '$TimeEnd', '$LinkMeeting');");
 
       // Redirect to the appropriate page
       header("Location: ./recruiter.php");
