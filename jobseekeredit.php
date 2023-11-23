@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Construct the SQL statement for skills
         $conn->query("UPDATE s104181721_db.Skill 
           SET SkillName = '$skillName' 
-          WHERE SkillID = '$skillID';");
+        WHERE SkillID = '$skillID';");
       }
     } else {
       // Check if SkillName is not empty
@@ -147,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             WJobRole = '$wJobRole', 
             WTimeRange = '$wTimeRange', 
             WDescription = '$wDescription'
-        WHERE WExperienceID = '$wExperienceID';");
+          WHERE WExperienceID = '$wExperienceID';");
       }
     } else {
       // Check if company name is not empty
@@ -414,21 +414,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class="jsep-addmore-wexp-np">
 
                 <div class="jsep-addmore-wexp-npcol">
-                  <input name="jsep-company-name" type="text" class="jsep-input-np" placeholder="Company name" value="<?php echo $row['WCompanyName']; ?>">
+                  <input name="jsep-company-name[]" type="text" class="jsep-input-np" placeholder="Company name" value="<?php echo $row['WCompanyName']; ?>">
                 </div>
 
                 <div class="jsep-addmore-wexp-npcol">
-                  <input name="jsep-wperiod" type="text" class="jsep-input-np" placeholder="Working period" value="<?php echo $row['WTimeRange']; ?>">
+                  <input name="jsep-wperiod[]" type="text" class="jsep-input-np" placeholder="Working period" value="<?php echo $row['WTimeRange']; ?>">
                 </div>
 
               </div>
 
               <div>
-                <input name="jsep-wposition" type="text" class="jsep-input-wea" placeholder="Position" value="<?php echo $row['WJobRole']; ?>">
+                <input name="jsep-wposition[]" type="text" class="jsep-input-wea" placeholder="Position" value="<?php echo $row['WJobRole']; ?>">
               </div>
 
               <div>
-                <textarea name="jsep-wdesc" type="text" class="jsep-desc" placeholder="Description"><?php echo $row['WDescription']; ?></textarea>
+                <textarea name="jsep-wdesc[]" type="text" class="jsep-desc" placeholder="Description"><?php echo $row['WDescription']; ?></textarea>
               </div>
 
             <?php } ?>

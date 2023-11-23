@@ -10,10 +10,14 @@
   $js_job = $job_seeker->fetch_assoc();
   $JSJobTitle = $js_job['JSJobTitle'];
   
-  if (strpos($JSJobTitle, 'bar') !== false) {
-    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'F&B';");
+  if (stripos($JSJobTitle, 'bar') !== false) {
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'F&B'; LIMIT 5");
+  } elseif (stripos($JSJobTitle, 'ist') !== false) {
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'Beauty & Spa' LIMIT 5;");
+  } elseif (stripos($JSJobTitle, 'Tour') !== false) {
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobSpecialization = 'Tourism & Hospitality' LIMIT 5;");
   } else {
-    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job;");
+    $sug_job = $conn->query("SELECT * FROM s104181721_db.Job LIMIT 5;");
   }
 
   // Initialize the WHERE clause for filtering
