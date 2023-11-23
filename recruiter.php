@@ -31,8 +31,7 @@
       s104181721_db.Job
       JOIN s104181721_db.RecruiterInterview ON RecruiterInterview.JobID = Job.JobID
     WHERE 
-      Job.RecruiterID = '$RecruiterID';
-  ");
+      Job.RecruiterID = '$RecruiterID';");
 ?>
 
 <!DOCTYPE html>
@@ -59,16 +58,12 @@
 
 <body>
   <header>
-
     <!-- Navigation Bar -->
-
     <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
-
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
     </nav>
-
     <div class="icons">
       <ul>
         <?php if ($recruiter_data) { ?>
@@ -77,38 +72,29 @@
         <li><a href="login.php"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
-
   </header>
 
   <!-- MAIN CONTENT -->
   <main>
-
     <h1 class="rpp-heading">
       Profile
     </h1>
-
     <!-- HEADING -->
-
     <div class="rpp-intro">
       <?php if ($recruiter_data) { ?>
         <!-- INFORMATION -->
         <div class="rpp-intro-info">
-
           <div class="rpp-title">
-
             <h2>
               <?php echo $recruiter_data['CompanyName'] ?>
             </h2>
-
             <a class="profilelink" href="recruiteredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
-
           </div>
           <br>
           <hr>
           <br>
-
           <p>
             <img src="icons/Comsize.svg" />
             Company size:
@@ -116,7 +102,6 @@
               <?php echo $recruiter_data['Size'] ?>
             </span>
           </p>
-
           <p>
             <img src="icons/Phone.svg" />
             Phone number:
@@ -124,7 +109,6 @@
               <?php echo $recruiter_data['CompanyPhone'] ?>
             </span>
           </p>
-
           <p>
             <img src="icons/Message.svg" />
             Email:
@@ -132,18 +116,14 @@
               <?php echo $recruiter_data['CompanyEmail'] ?>
             </span>
           </p>
-
           <p>
             <img src="icons/Home.svg" />
             Introduction:
           </p>
-
           <p class="rpp-intro-para">
             <?php echo $recruiter_data['Introduction'] ?>
           </p>
-
         </div>
-
         <!-- IMAGE -->
         <div class="rpp-intro-img">
           <img src="<?php echo $recruiter_data['CompanyImage']; ?>" alt="Company's image">
@@ -152,7 +132,6 @@
     </div>
 
     <!-- JOB POSTING -->
-
     <div class="rpp-box-container">
       <div class="header">
         <h5>Job posting</h5>
@@ -198,12 +177,9 @@
           </li>
         <?php } ?>
       </ul>
-
     </div>
 
-
     <!-- CANDIDATES APPLIED -->
-
     <div class="rpp-box-container">
       <div class="header">
         <h5>Candidates applied</h5>
@@ -217,16 +193,12 @@
           <!-- Card 1 -->
           <li class="slide">
             <div class="sp-card">
-
               <div class="sp-image-box">
-
                 <img src="<?php echo $row['JSImage']; ?>" alt="product.png">
                 <h4>
                   <?php echo $row['FirstName'] . ' ' . $row['LastName']; ?>
                 </h4>
-
               </div>
-
               <div class="sp-product-details">
                 <div class="sp-product-require">
                   <ul>
@@ -238,22 +210,14 @@
                   </ul>
                 </div>
               </div>
-
-              <br>
-
               <button class="ca-product-btn">View job seeker profile</button>
-
             </div>
           </li>
-
         <?php } ?>
-
       </ul>
-
     </div>
 
     <!-- INTERVIEW SCHEDULE -->
-
     <div class="rpp-box-container">
       <div class="header">
         <h5>Interview schedule</h5>
@@ -288,15 +252,11 @@
                 </div>
               </div>
               <a class="sp-product-btn">See interview details</a>
-
             </div>
           </li>
         <?php } ?>
-
       </ul>
-
     </div>
-
   </main>
 
   <!--Back to top button-->
@@ -350,7 +310,6 @@
     </div>
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
   <script>
@@ -374,7 +333,6 @@
 
     AOS.init();
   </script>
-
 
 </body>
 

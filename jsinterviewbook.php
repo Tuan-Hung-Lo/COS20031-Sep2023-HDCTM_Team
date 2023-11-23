@@ -19,18 +19,19 @@
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
+    $ID = $_POST['ID'];
     $InterviewDate = $_POST['date'];
     $InterviewTime = $_POST['time'];
     
     $sql = "UPDATE s104181721_db.JobSeekerInterview 
       SET InterviewDate = '$InterviewDate', 
         InterviewTime = '$InterviewTime' 
-      WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$JobID';";
+      WHERE JobSeekerID = '$JobSeekerID' AND JobID = '$ID';";
 
     // Execute the query
     if ($conn->query($sql) === TRUE) {
         // Redirect to another page after form submission
-        header("Location: jsinterviewset.php?JobID=$JobID");
+        header("Location: jsinterviewset.php?JobID=$ID");
         exit();
     }
   }
@@ -124,6 +125,7 @@
             <div class="bwp-interview-available">
               <h5>Available time</h5>
               <?php while ($row = mysqli_fetch_assoc($re_interview)) { ?>
+              <input name="ID" value="<?php echo $row['JobID']; ?>" hidden>
                 <h2><?php echo $row['TimeStart'] . '-' . $row['TimeEnd'] . ' (' . $row['DateStart'] . ' ' . $row['DateEnd'] . ')'; ?></h2>
               <?php } ?>
               <ul>Notes:

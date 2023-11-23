@@ -1,49 +1,49 @@
 <?php
-session_start();
+  session_start();
 
-// Include settings and database connection
-require_once("./settings.php");
+  // Include settings and database connection
+  require_once("./settings.php");
 
-$UserAuthenticationID = $_SESSION['job_seeker_ID'];
-$user_email = $_SESSION['js_email'];
+  $UserAuthenticationID = $_SESSION['job_seeker_ID'];
+  $user_email = $_SESSION['js_email'];
 
-$job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
-$job_seeker_data = mysqli_fetch_assoc($job_seeker);
-$JobSeekerID = $job_seeker_data['JobSeekerID'];
+  $job_seeker = $conn->query("SELECT * FROM s104181721_db.JobSeeker WHERE UserAuthenticationID = '$UserAuthenticationID';");
+  $job_seeker_data = mysqli_fetch_assoc($job_seeker);
+  $JobSeekerID = $job_seeker_data['JobSeekerID'];
 
-$education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
-$skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
-$working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
-$extracurriculum_activity = $conn->query("SELECT * FROM s104181721_db.ExtracurriculumActivity WHERE JobSeekerID = '$JobSeekerID';");
+  $education = $conn->query("SELECT * FROM s104181721_db.Education WHERE JobSeekerID = '$JobSeekerID';");
+  $skill = $conn->query("SELECT * FROM s104181721_db.Skill WHERE JobSeekerID = '$JobSeekerID';");
+  $working_experience = $conn->query("SELECT * FROM s104181721_db.WorkingExperience WHERE JobSeekerID = '$JobSeekerID';");
+  $extracurriculum_activity = $conn->query("SELECT * FROM s104181721_db.ExtracurriculumActivity WHERE JobSeekerID = '$JobSeekerID';");
 
-$CourseRegistration = $conn->query("SELECT * FROM s104181721_db.CourseRegistration WHERE JobSeekerID = '$JobSeekerID';");
+  $CourseRegistration = $conn->query("SELECT * FROM s104181721_db.CourseRegistration WHERE JobSeekerID = '$JobSeekerID';");
 
-// Fetch all CourseIDs
-$courseIDs = [];
-while ($courseIDRow = $CourseRegistration->fetch_assoc()) {
-  $courseIDs[] = $courseIDRow['CourseID'];
-}
-$courseIDsString = implode("','", $courseIDs);
-$course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseID IN ('$courseIDsString');");
+  // Fetch all CourseIDs
+  $courseIDs = [];
+  while ($courseIDRow = $CourseRegistration->fetch_assoc()) {
+    $courseIDs[] = $courseIDRow['CourseID'];
+  }
+  $courseIDsString = implode("','", $courseIDs);
+  $course = $conn->query("SELECT * FROM s104181721_db.Course WHERE CourseID IN ('$courseIDsString');");
 
-$application = $conn->query("SELECT * FROM s104181721_db.Application WHERE JobSeekerID = '$JobSeekerID';");
+  $application = $conn->query("SELECT * FROM s104181721_db.Application WHERE JobSeekerID = '$JobSeekerID';");
 
-// Fetch all JobIDs
-$jobIDs = [];
-while ($jobIDRow = $application->fetch_assoc()) {
-  $jobIDs[] = $jobIDRow['JobID'];
-}
-$jobIDsString = implode("','", $jobIDs);
-$job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID IN ('$jobIDsString');");
+  // Fetch all JobIDs
+  $jobIDs = [];
+  while ($jobIDRow = $application->fetch_assoc()) {
+    $jobIDs[] = $jobIDRow['JobID'];
+  }
+  $jobIDsString = implode("','", $jobIDs);
+  $job = $conn->query("SELECT * FROM s104181721_db.Job WHERE JobID IN ('$jobIDsString');");
 
-$js_interview = $conn->query("SELECT 
-    JobSeekerInterview.*, 
-    Job.* 
-  FROM 
-    s104181721_db.JobSeekerInterview
-    JOIN s104181721_db.Job ON JobSeekerInterview.JobID = Job.JobID
-  WHERE 
-    JobSeekerInterview.JobSeekerID = '$JobSeekerID';");
+  $js_interview = $conn->query("SELECT 
+      JobSeekerInterview.*, 
+      Job.* 
+    FROM 
+      s104181721_db.JobSeekerInterview
+      JOIN s104181721_db.Job ON JobSeekerInterview.JobID = Job.JobID
+    WHERE 
+      JobSeekerInterview.JobSeekerID = '$JobSeekerID';");
 ?>
 
 <!DOCTYPE html>
@@ -70,18 +70,14 @@ $js_interview = $conn->query("SELECT
 
 <body>
   <header>
-
     <!-- Navigation Bar -->
-
     <a href="pagenotfound.html"><img alt="Logo" src="images/Logo.png" class="logo"></a>
-
     <nav class="navbar">
       <a href="pagenotfound.html">Home</a>
       <a href="pagenotfound.html">About</a>
       <a href="courses.php">Courses</a>
       <a href="jobopportunities.php">Job Opportunities</a>
     </nav>
-
     <div class="icons">
       <ul>
         <?php if ($job_seeker_data) { ?>
@@ -90,30 +86,23 @@ $js_interview = $conn->query("SELECT
         <li><a href="login.php"><img src="icons/Logout.svg"></a></li>
       </ul>
     </div>
-
   </header>
 
   <!-- MAIN CONTENT -->
   <main>
-
     <h1 class="cpp-heading">
       Profile
     </h1>
-
     <div class="cpp-bie-container">
       <!-- BASIC INFORMATION -->
       <div class="cpp-bi-container">
-
         <!-- HEADLINE -->
         <div class="cpp-bi-headline-container">
-
           <?php if ($job_seeker_data) { ?>
-
             <!-- PROFILE PICTURE -->
             <div class="cpp-bi-headline-profileimg">
               <img src="<?php echo $job_seeker_data['JSImage'] ?>" alt="Candidate Profile's Picture">
             </div>
-
             <!-- HEADLINE INFORMATION -->
             <div class="cpp-bi-headline-headline">
               <h2>
@@ -135,23 +124,21 @@ $js_interview = $conn->query("SELECT
                 </span>
               </p>
             </div>
-
           <?php } ?>
         </div>
+
+        <br>
+        <hr>
         <br>
 
         <!-- PERSONAL INFORMATION -->
         <div class="cpp-bi-personalinfo-container">
-
           <!-- TITLE -->
           <div class="cpp-title">
-
             <h3>Personal information</h3>
-
             <a class="profilelink" href="jobseekeredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
-
           </div>
 
           <br>
@@ -160,7 +147,6 @@ $js_interview = $conn->query("SELECT
 
           <!-- CONTENT -->
           <div class="cpp-bi-personalinfo-content">
-
             <?php if ($job_seeker_data) { ?>
               <p>
                 <img src="icons/Gender.svg" />
@@ -198,23 +184,20 @@ $js_interview = $conn->query("SELECT
                 </span>
               </p>
             <?php } ?>
-
           </div>
         </div>
+        <br>
+        <hr>
         <br>
 
         <!-- EDUCATION BACKGROUND -->
         <div class="cpp-bi-edubg-container">
-
           <!-- TITLE -->
           <div class="cpp-title">
-
             <h3>Education background</h3>
-
             <a class="profilelink" href="jobseekeredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
-
           </div>
           <br>
           <hr>
@@ -222,7 +205,6 @@ $js_interview = $conn->query("SELECT
 
           <!-- CONTENT -->
           <div class="cpp-bi-careerintro-content">
-
             <p>
               <span class="cpp-span">
                 <div class="cpp-bi-personalinfo-content-edubg">
@@ -246,19 +228,14 @@ $js_interview = $conn->query("SELECT
 
       <!-- EXPERIENCE -->
       <div class="cpp-e-container">
-
         <!-- SKILLS -->
         <div class="cpp-e-skills-container">
-
           <!-- TITLE -->
           <div class="cpp-title">
-
             <h3>Skills</h3>
-
             <a class="profilelink" href="jobseekeredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
-
           </div>
           <br>
           <hr>
@@ -272,7 +249,6 @@ $js_interview = $conn->query("SELECT
               </p>
             <?php } ?>
           </div>
-
         </div>
 
         <br>
@@ -280,16 +256,12 @@ $js_interview = $conn->query("SELECT
 
         <!-- WOKRING EXPERIENCE -->
         <div class="cpp-e-wokringexp-container">
-
           <!-- TITLE -->
           <div class="cpp-title">
-
             <h3>Working experience</h3>
-
             <a class="profilelink" href="jobseekeredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
-
           </div>
 
           <br>
@@ -299,30 +271,22 @@ $js_interview = $conn->query("SELECT
           <!-- CONTENT -->
           <div class="cpp-e-workingexp-content">
             <?php while ($row = mysqli_fetch_assoc($working_experience)) { ?>
-
               <!-- WORKING EXPERIENCE 1 -->
               <div class="cpp-e-workingexp-work">
-
                 <!-- Company -->
                 <h4>
                   <?php echo $row['WCompanyName']; ?>
                 </h4>
-
                 <br>
-
                 <h4>
                   <?php echo $row['WTimeRange']; ?> weeks
                 </h4>
-
                 <br>
-
                 <!-- Position -->
                 <h5>
                   <?php echo $row['WJobRole']; ?>
                 </h5>
-
                 <br>
-
                 <!-- Description & Achievement -->
                 <div class="cpp-e-workingexp-work-desc">
                   <ul>
@@ -332,10 +296,8 @@ $js_interview = $conn->query("SELECT
                   </ul>
                 </div>
               </div>
-
               <br>
               <br>
-
             <?php } ?>
           </div>
 
@@ -344,13 +306,10 @@ $js_interview = $conn->query("SELECT
 
           <!-- TITLE -->
           <div class="cpp-title">
-
             <h3>Extracurriculum Activity </h3>
-
             <a class="profilelink" href="jobseekeredit.php">
               <img src="icons/Edit.svg" />Edit
             </a>
-
           </div>
 
           <br>
@@ -360,30 +319,22 @@ $js_interview = $conn->query("SELECT
           <!-- CONTENT -->
           <div class="cpp-e-workingexp-content">
             <?php while ($row = mysqli_fetch_assoc($extracurriculum_activity)) { ?>
-
               <!-- WORKING EXPERIENCE 1 -->
               <div class="cpp-e-workingexp-work">
-
                 <!-- Company -->
                 <h4>
                   <?php echo $row['OrganizationName']; ?>
                 </h4>
-
                 <br>
-
                 <h4>
                   <?php echo $row['EATimeRange']; ?> weeks
                 </h4>
-
                 <br>
-
                 <!-- Position -->
                 <h5>
                   <?php echo $row['EAJobRole']; ?>
                 </h5>
-
                 <br>
-
                 <!-- Description & Achievement -->
                 <div class="cpp-e-workingexp-work-desc">
                   <ul>
@@ -393,10 +344,8 @@ $js_interview = $conn->query("SELECT
                   </ul>
                 </div>
               </div>
-
               <br>
               <br>
-
             <?php } ?>
           </div>
         </div>
@@ -411,10 +360,12 @@ $js_interview = $conn->query("SELECT
         <div class="header">
           <h5>Registered courses</h5>
         </div>
+        <br>
         <hr>
+        <br>
 
-        <?php while ($row = mysqli_fetch_assoc($course)) { ?>
-          <ul class="autoWidth" class="cs-hidden">
+        <ul class="autoWidth" class="cs-hidden">
+          <?php while ($row = mysqli_fetch_assoc($course)) { ?>
             <!-- Card 1 -->
             <li class="slide">
               <div class="sp-card">
@@ -441,8 +392,8 @@ $js_interview = $conn->query("SELECT
                 <button class="sp-product-btn">See course details</button>
               </div>
             </li>
-          </ul>
-        <?php } ?>
+          <?php } ?>
+        </ul>
       </div>
 
       <!-- JOB APPLICATIONS -->
@@ -450,10 +401,12 @@ $js_interview = $conn->query("SELECT
         <div class="header">
           <h5>Job applications</h5>
         </div>
+        <br>
         <hr>
+        <br>
 
-        <?php while ($row = mysqli_fetch_assoc($job)) { ?>
-          <ul class="autoWidth" class="cs-hidden">
+        <ul class="autoWidth" class="cs-hidden">
+          <?php while ($row = mysqli_fetch_assoc($job)) { ?>
             <!-- Card 1 -->
             <li class="slide">
               <div class="sp-card">
@@ -486,8 +439,8 @@ $js_interview = $conn->query("SELECT
                 <button class="sp-product-btn">See job details</button>
               </div>
             </li>
-          </ul>
-        <?php } ?>
+          <?php } ?>
+        </ul>
       </div>
 
       <!-- INTERVIEW SCHEDULE -->
@@ -495,10 +448,12 @@ $js_interview = $conn->query("SELECT
         <div class="header">
           <h5>Interview schedule</h5>
         </div>
+        <br>
         <hr>
+        <br>
 
-        <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
-          <ul class="autoWidth" class="cs-hidden">
+        <ul class="autoWidth" class="cs-hidden">
+          <?php while ($row = mysqli_fetch_assoc($js_interview)) { ?>
             <!-- Card 1 -->
             <li class="slide">
               <div class="sp-card">
@@ -525,8 +480,8 @@ $js_interview = $conn->query("SELECT
                 <a class="sp-product-btn" onclick="location.href='jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>'">Book interview time</a>
               </div>
             </li>
-          </ul>
-        <?php } ?>
+          <?php } ?>
+        </ul>
       </div>
     </div>
   </main>
@@ -607,7 +562,6 @@ $js_interview = $conn->query("SELECT
 
     AOS.init();
   </script>
-
 
 </body>
 
