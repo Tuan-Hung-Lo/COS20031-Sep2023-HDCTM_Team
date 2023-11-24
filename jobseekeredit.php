@@ -250,6 +250,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1 class="jsep-heading">
       Profile
     </h1>
+    <h3 class="jsep-note">Notes: Please fill all information when add a new details</h3>
 
     <form method="post" action="jobseekeredit.php" class="jsep-form">
 
