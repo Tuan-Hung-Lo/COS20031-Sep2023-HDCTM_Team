@@ -901,6 +901,10 @@ hr {
 }
 
 /* JOB SEEKER EDIT PAGE */
+.jsep-note {
+    text-align: center;
+}
+
 .jsep-container img {
     width: 50%;
 }
