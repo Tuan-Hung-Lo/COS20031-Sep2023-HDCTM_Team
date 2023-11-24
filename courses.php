@@ -115,10 +115,10 @@
                   <div class="sp-product-require">
                     <ul>
                       <li><img src="icons/Time.svg">
-                        <?php echo $row['Length']; ?>
+                        <?php echo $row['Length']; ?> weeks
                       </li>
                       <li><img src="icons/Fee.svg">
-                        <?php echo $row['Price']; ?>
+                        <?php echo $row['Price']; ?> AUD$
                       </li>
                     </ul>
                   </div>
@@ -177,10 +177,10 @@
                   <div class="sp-product-require">
                     <ul>
                       <li><img src="icons/Time.svg">
-                        <?php echo $row['Length']; ?>
+                        <?php echo $row['Length']; ?> weeks
                       </li>
                       <li><img src="icons/Fee.svg">
-                        <?php echo $row['Price']; ?>
+                        <?php echo $row['Price']; ?> AUD$
                       </li>
                     </ul>
                   </div>

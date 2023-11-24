@@ -430,7 +430,7 @@
                     </ul>
                   </div>
                 </div>
-                <button class="sp-product-btn"><a href="jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">Book interview time</a></button>
+                <button class="sp-product-btn" onclick="location.href='jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>'">Book interview time</button>
               </div>
             </li>
           <?php } ?>
@@ -471,7 +471,7 @@
                     </ul>
                   </div>
                 </div>
-                <button class="sp-product-btn"><a href="jsinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">View interview time</a></button>
+                <button class="sp-product-btn" onclick="location.href='jsinterviewset.php?JobID=<?php echo $row['JobID']; ?>'">View interview time</button>
               </div>
             </li>
           <?php } ?>

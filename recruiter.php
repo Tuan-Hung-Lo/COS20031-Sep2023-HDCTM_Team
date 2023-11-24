@@ -171,7 +171,7 @@ $interview = $conn->query("SELECT
                   </ul>
                 </div>
               </div>
-              <button class="sp-product-btn"><a href="reinterviewbook.php?JobID=<?php echo $row['JobID']; ?>">Set interview details</a></button>
+              <button class="sp-product-btn" onclick="location.href='reinterviewbook.php?JobID=<?php echo $row['JobID']; ?>'">Set interview details</button>
             </div>
           </li>
         <?php } ?>
@@ -209,13 +209,13 @@ $interview = $conn->query("SELECT
                   </ul>
                 </div>
               </div>
-              <button class="ca-product-btn"><a href="jobseekerrpov.php?JobSeekerID=<?php echo $row['JobSeekerID']; ?>">View job seeker profile</a></button>
+              <button class="ca-product-btn" onclick="location.href='jobseekerrpov.php?JobSeekerID=<?php echo $row['JobSeekerID']; ?>'">View job seeker profile</button>
             </div>
           </li>
         <?php } ?>
       </ul>
     </div>
-
+    
     <!-- INTERVIEW SCHEDULE -->
     <div class="rpp-box-container">
       <div class="header">
@@ -250,7 +250,7 @@ $interview = $conn->query("SELECT
                   </ul>
                 </div>
               </div>
-              <button class="sp-product-btn"><a href="reinterviewset.php?JobID=<?php echo $row['JobID']; ?>">View interview details</a></button>
+              <button class="sp-product-btn" onclick="location.href='reinterviewset.php?JobID=<?php echo $row['JobID']; ?>'">View interview details</button>
             </div>
           </li>
         <?php } ?>
