@@ -383,7 +383,7 @@
                     </ul>
                   </div>
                 </div>
-                <button class="sp-product-btn">See course details</button>
+                <button class="sp-product-btn" onclick="location.href='pagenotfound.html'">See course details</button>
               </div>
             </li>
           <?php } ?>
