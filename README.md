@@ -7,10 +7,12 @@
 <p align="center"><strong>Semester</strong>: Fall 2023</p>
 
 <p align="center">
-  <a href="#team-members">Team Members</a> •
+  <a href="#team-members">Team members</a> •
   <a href="#about-us">About us</a> •
   <a href="#project-description">Project description</a> •
   <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#running-instructions">Running instructions</a>
 </p>
 
 # Table of Contents
@@ -18,7 +20,7 @@
 1. [My first title](#my-first-title)
 2. [My second title](#my-second-title)
 
-## Team Members
+## Team members
 
 - Lo Tuan Hung
 - Luong Chi Duc
@@ -59,6 +61,7 @@ Base on Cisco Packet Tracer (host: feenix-mariadb.swin.edu.au)
 - Open XAMPP Control Panel, start 'Apache' and 'MySQL'.
 - Connect to VPN: **vpn.swin.edu.au/mfa** and sign in Swinburne's account.
 - Open your web browser and access via this link: "http://localhost/SUT/Greeliving-Learning-Hub/login.php".
-- If you want to connect to the database by any other platform, please change the information in [setting](settings.php) file.
+- If you want to connect to the database by any other platform, please change the information in [setting](settings.php) file. *(You should not change the database name!)*
+- Our present iteration employs the [phpMyAdmin](https://feenix-mariadb-web.swin.edu.au/) platform, imposing constraints on the volume of records that can be uploaded. Consequently, data testing is currently limited to approximately 1000-2000 records per table. In addition, we have created simulated datasets containing 1 million records per table, and you can access both sets of data [here](https://drive.google.com/drive/folders/19dOzXQKob0b6v8B8YSMt3m5iF1WtpLzy?usp=sharing).
 
 ![image](https://user-images.githubusercontent.com/114485224/209611403-fdc415c7-a877-42d1-b050-72b0bcbf7491.png)
