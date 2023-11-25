@@ -123,7 +123,7 @@
                     </ul>
                   </div>
                 </div>
-                <button class="sp-product-btn">Register for this course</button>
+                <button class="sp-product-btn" onclick="location.href='pagenotfound.html'">Register for this course</button>
               </div>
             </li>
           <?php } ?>
@@ -185,7 +185,7 @@
                     </ul>
                   </div>
                 </div>
-                <button class="sp-product-btn">Register for this course</button>
+                <button class="sp-product-btn" onclick="location.href='pagenotfound.html'">Register for this course</button>
               </div>
             </li>
           <?php } ?>

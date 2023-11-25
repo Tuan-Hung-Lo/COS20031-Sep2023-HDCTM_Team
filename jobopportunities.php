@@ -147,7 +147,7 @@
                     </ul>
                   </div>
                 </div>
-                <button class="sp-product-btn">Apply for this job</button>
+                <button class="sp-product-btn" onclick="location.href='pagenotfound.html'">Apply for this job</button>
               </div>
             </li>
           <?php } ?>
@@ -271,7 +271,7 @@
                       </ul>
                     </div>
                   </div>
-                  <button class="sp-product-btn">Apply for this job</button>
+                  <button class="sp-product-btn" onclick="location.href='pagenotfound.html'">Apply for this job</button>
                 </div>
               </li>
             <?php } ?>
