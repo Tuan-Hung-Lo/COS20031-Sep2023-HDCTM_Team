@@ -1,9 +1,15 @@
-p# Welcome!
+# Welcome!
 ![image](images/LongLogo.png)
 
 <p align="center"><strong>Subject</strong>: COS20031</p>
 
 <p align="center"><strong>Semester</strong>: Fall 2023</p>
+
+<p align="center">
+  <a href="#teammember">Team Members</a> •
+  <a href="#updating">Updating</a> •
+  <a href="#features">Features</a> •
+</p>
 
 ## Team Members
 
