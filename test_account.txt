@@ -1,9 +1,0 @@
-UserAuthenticationID: 1
-UserEmail: Jane@gmail.com
-Password: 123456
-UserRole: Recruiter
-
-UserAuthenticationID: 500001
-UserEmail: James@gmail.com
-Password: 123456
-UserRole: JobSeeker

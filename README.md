@@ -35,7 +35,27 @@
 
 ## Features
 
+1. **Role-Based Access Control (RBAC)**
+   - Upon user login, the system verifies their role and directs them to the appropriate profile page view, distinguishing between job seekers and recruiters.
 
+2. **Job/Course Suggestions**
+   - When a job seeker navigates to the Course/Job Opportunity page, the initial section displays a curated list of suggested courses/jobs based on their job title.
+
+3. **Job/Course Filtering**
+   - *Courses:*
+     - F&B
+     - Beauty & Spa
+     - Tourism & Hospitality
+   - *Jobs:*
+     - Experience Level required
+     - Working Formats available
+     - Specialization
+
+4. **Interview Schedule Process**
+   - Recruiters can update the interview schedule for posted jobs. Upon successful update, the schedule information is presented for jobs that job seekers have applied to. Job seekers can provide their available time, and booked jobs are displayed in the interview schedule section, facilitating the tracking of interview appointments.
+
+5. **CRUD Operations (Create - Update - Delete)**
+   - Job seekers have the ability to update their profiles, delete information, and create new records as needed. This ensures flexibility and control over their account information.
 
 # Prototype: Greeliving Learning Hub
 
@@ -55,13 +75,14 @@ Base on Cisco Packet Tracer (host: feenix-mariadb.swin.edu.au)
 ## Running Instructions
 - Open XAMPP Control Panel, start 'Apache' and 'MySQL'.
 - Connect to VPN: **vpn.swin.edu.au/mfa** and sign in Swinburne's account.
+- Use the query in [database creation SQL file](dbcreation.sql) to generate the database.
 - Open your web browser and access via this link: "http://localhost/SUT/Greeliving-Learning-Hub/login.php".
 - Use the following accounts for a quick test:
 
 | UserAuthenticationID | UserEmail          | Password | UserRole   |
 |-----------------------|--------------------|----------|------------|
-| 1                     | <p>Jane@gmail.com</p>     | 123456   | Recruiter  |
-| 500001                | <p>James@gmail.com</p>    | 123456   | JobSeeker  |
+| 1                     | Jane@gmail.com     | 123456   | Recruiter  |
+| 500001                | James@gmail.com    | 123456   | JobSeeker  |
 
 - If you want to connect to the database by any other platform, please change the information in [setting](settings.php) file. *(You should not change the database name!)*
 - Our present iteration employs the [phpMyAdmin](https://feenix-mariadb-web.swin.edu.au/) platform, imposing constraints on the volume of records that can be uploaded. Consequently, data testing is currently limited to approximately 1000-2000 records per table. In addition, we have created simulated datasets containing 1 million records per table, and you can access both sets of data [here](https://drive.google.com/drive/folders/19dOzXQKob0b6v8B8YSMt3m5iF1WtpLzy?usp=sharing).
