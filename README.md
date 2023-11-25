@@ -1,13 +1,9 @@
 p# Welcome!
 ![image](images/LongLogo.png)
 
-<p align="center">
-Subject: COS20031
-Semester: Fall 2023
-</p>
-Subject: COS20031
+<p align="center"><strong>Subject</strong>: COS20031</p>
 
-Semester: Fall 2023
+<p align="center"><strong>Semester</strong>: Fall 2023</p>
 
 ## Team Members
 
