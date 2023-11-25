@@ -6,7 +6,7 @@
 <p align="center"><strong>Semester</strong>: Fall 2023</p>
 
 <p align="center">
-  <a href="#teammember">Team Members</a> •
+  <a href="#team-members">Team Members</a> •
   <a href="#updating">Updating</a> •
   <a href="#features">Features</a> •
 </p>
@@ -18,6 +18,11 @@
 - Nguyen Vu Duy Minh
 - Hau Linh Chi
 - Dao Khanh Nga Thi
+
+## About us
+<p align="justify">We are a dynamic team comprised of five Computer Science students hailing from Swinburne University, proudly representing Group 1.3 in the COS20031 class during the vibrant Semester 3 of 2023.</p>
+
+<p align="justify">Our mission centers on mastering IT project management and crafting digital solutions, including websites and web apps. As we advance, we aim to attain significant achievements and accolades while continually expanding our knowledge and capabilities.</p>
 
 ## Project Description
 
