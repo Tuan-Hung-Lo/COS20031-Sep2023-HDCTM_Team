@@ -59,6 +59,6 @@ Base on Cisco Packet Tracer (host: feenix-mariadb.swin.edu.au)
 - Open XAMPP Control Panel, start 'Apache' and 'MySQL'.
 - Connect to VPN: **vpn.swin.edu.au/mfa** and sign in Swinburne's account.
 - Open your web browser and access via this link: "http://localhost/SUT/Greeliving-Learning-Hub/login.php".
-- If you want to connect to the database by any other platform, please change the information in ![](settings.php) file.
+- If you want to connect to the database by any other platform, please change the information in [setting](settings.php) file.
 
 ![image](https://user-images.githubusercontent.com/114485224/209611403-fdc415c7-a877-42d1-b050-72b0bcbf7491.png)
