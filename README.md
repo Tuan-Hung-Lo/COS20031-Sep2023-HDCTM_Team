@@ -35,6 +35,28 @@
 
 ## Features
 
+1. Role base access control (RBAC)
+#### When users login to the system, it will check for their role and direct them to the right profile page view (job seeker/ recruiter).
+2. Job/Course suggestion
+#### When the job seeker enters to Course/Job Opportunity page, the first section appear is the list of suggested courses/jobs, which based on their job title.
+3. Job/Course filtering
+#### Job Seeker can filter by:
+
+#### - Courses:
+
+##### + F&B
+##### + Beauty & Spa
+##### + Tourism & Hospitality
+
+#### - Jobs:
+
+##### + Experience Level required
+##### + Working Formats available
+##### + Specialization
+
+4. Interview Schedule Process
+
+#### <p align="justify">After Recruiters post a new job, they can update the interview schedule for the job. Upon successful update, the schedule information will be displayed for jobs that job seekers have applied to. Then Job Seekers provide information about their available time, and booked jobs will be shown in the interview schedule section, allowing them to track their interview appointments.</p>
 
 
 # Prototype: Greeliving Learning Hub
@@ -60,8 +82,8 @@ Base on Cisco Packet Tracer (host: feenix-mariadb.swin.edu.au)
 
 | UserAuthenticationID | UserEmail          | Password | UserRole   |
 |-----------------------|--------------------|----------|------------|
-| 1                     | <p>Jane@gmail.com</p>     | 123456   | Recruiter  |
-| 500001                | <p>James@gmail.com</p>    | 123456   | JobSeeker  |
+| 1                     | Jane@gmail.com     | 123456   | Recruiter  |
+| 500001                | James@gmail.com    | 123456   | JobSeeker  |
 
 - If you want to connect to the database by any other platform, please change the information in [setting](settings.php) file. *(You should not change the database name!)*
 - Our present iteration employs the [phpMyAdmin](https://feenix-mariadb-web.swin.edu.au/) platform, imposing constraints on the volume of records that can be uploaded. Consequently, data testing is currently limited to approximately 1000-2000 records per table. In addition, we have created simulated datasets containing 1 million records per table, and you can access both sets of data [here](https://drive.google.com/drive/folders/19dOzXQKob0b6v8B8YSMt3m5iF1WtpLzy?usp=sharing).
