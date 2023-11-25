@@ -35,29 +35,27 @@
 
 ## Features
 
-1. Role base access control (RBAC)
-#### When users login to the system, it will check for their role and direct them to the right profile page view (job seeker/ recruiter).
-2. Job/Course suggestion
-#### When the job seeker enters to Course/Job Opportunity page, the first section appear is the list of suggested courses/jobs, which based on their job title.
-3. Job/Course filtering
-#### Job Seeker can filter by:
+1. **Role-Based Access Control (RBAC)**
+   - Upon user login, the system verifies their role and directs them to the appropriate profile page view, distinguishing between job seekers and recruiters.
 
-#### - Courses:
+2. **Job/Course Suggestions**
+   - When a job seeker navigates to the Course/Job Opportunity page, the initial section displays a curated list of suggested courses/jobs based on their job title.
 
-##### + F&B
-##### + Beauty & Spa
-##### + Tourism & Hospitality
+3. **Job/Course Filtering**
+   - *Courses:*
+     - F&B
+     - Beauty & Spa
+     - Tourism & Hospitality
+   - *Jobs:*
+     - Experience Level required
+     - Working Formats available
+     - Specialization
 
-#### - Jobs:
+4. **Interview Schedule Process**
+   - Recruiters can update the interview schedule for posted jobs. Upon successful update, the schedule information is presented for jobs that job seekers have applied to. Job seekers can provide their available time, and booked jobs are displayed in the interview schedule section, facilitating the tracking of interview appointments.
 
-##### + Experience Level required
-##### + Working Formats available
-##### + Specialization
-
-4. Interview Schedule Process
-
-#### <p align="justify">After Recruiters post a new job, they can update the interview schedule for the job. Upon successful update, the schedule information will be displayed for jobs that job seekers have applied to. Then Job Seekers provide information about their available time, and booked jobs will be shown in the interview schedule section, allowing them to track their interview appointments.</p>
-
+5. **CRUD Operations (Create - Update - Delete)**
+   - Job seekers have the ability to update their profiles, delete information, and create new records as needed. This ensures flexibility and control over their account information.
 
 # Prototype: Greeliving Learning Hub
 
