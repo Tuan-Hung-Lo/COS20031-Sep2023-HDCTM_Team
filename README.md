@@ -75,6 +75,7 @@ Base on Cisco Packet Tracer (host: feenix-mariadb.swin.edu.au)
 ## Running Instructions
 - Open XAMPP Control Panel, start 'Apache' and 'MySQL'.
 - Connect to VPN: **vpn.swin.edu.au/mfa** and sign in Swinburne's account.
+- Use the query in [database creation SQL file](dbcreation.sql) to generate the database.
 - Open your web browser and access via this link: "http://localhost/SUT/Greeliving-Learning-Hub/login.php".
 - Use the following accounts for a quick test:
 
