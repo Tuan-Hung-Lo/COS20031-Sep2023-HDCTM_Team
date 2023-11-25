@@ -250,7 +250,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1 class="jsep-heading">
       Profile
     </h1>
-    <h3 class="jsep-note">Notes: Please fill all information when add a new details</h3>
+    <p class="jsep-note">Notes: Please fill all information when add a new details</p>
 
     <form method="post" action="jobseekeredit.php" class="jsep-form">
 
@@ -317,7 +317,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- DOB -->
             <label class="jsep-label">
               <img src="icons/Calendar_B.svg">
-              <input name="jsep-dob" type="text" class="jsep-input" placeholder="DOB (dd/mm/yyyy)" value="<?php echo $existingJobSeeker['DOB']; ?>">
+              <input name="jsep-dob" type="text" class="jsep-input" placeholder="DOB (yyyy-mm-dd)" value="<?php echo $existingJobSeeker['DOB']; ?>">
             </label>
 
             <!-- PHONE NUMBER -->

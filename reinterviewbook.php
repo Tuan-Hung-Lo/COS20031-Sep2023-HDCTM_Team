@@ -133,12 +133,12 @@
               <div class="bgp-interview-button">
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
-                  <input name="date_start" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
+                  <input name="date_start" type="text" class="bwp-input" placeholder="yyyy-mm-dd" required>
                 </div>
                 <span class="bgp-link-point"> - </span>
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
-                  <input name="date_end" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
+                  <input name="date_end" type="text" class="bwp-input" placeholder="yyyy-mm-dd" required>
                 </div>
               </div>
 
@@ -146,12 +146,12 @@
               <div class="bgp-interview-button">
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
-                  <input name="time_start" type="text" class="bwp-input" placeholder="00:00 AM" required>
+                  <input name="time_start" type="text" class="bwp-input" placeholder="00:00" required>
                 </div>
                 <span class="bgp-link-point"> - </span>
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
-                  <input name="time_end" type="text" class="bwp-input" placeholder="00:00 AM" required>
+                  <input name="time_end" type="text" class="bwp-input" placeholder="00:00" required>
                 </div>
               </div>
 

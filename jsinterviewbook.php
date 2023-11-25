@@ -144,11 +144,11 @@
               <div class="bwp-interview-button">
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeDate.svg"></span>
-                  <input name="date" type="text" class="bwp-input" placeholder="dd/mm/yy" required>
+                  <input name="date" type="text" class="bwp-input" placeholder="yyyy-mm-dd" required>
                 </div>
                 <div class="bwp-interview-picked">
                   <span class="bwp-interview-icon"><img src="icons/TimeClock.svg"></span>
-                  <input name="time" type="text" class="bwp-input" placeholder="00:00 AM" required>
+                  <input name="time" type="text" class="bwp-input" placeholder="00:00" required>
                 </div>
               </div>
               <div class="bwp-submit-box">

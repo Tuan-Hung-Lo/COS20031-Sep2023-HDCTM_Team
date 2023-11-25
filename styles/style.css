@@ -20,6 +20,11 @@ main {
     margin-top: 6rem;
 }
 
+a:visited 
+{
+    text-decoration: none;
+}
+
 /* HEADER */
 
 header {
@@ -91,6 +96,7 @@ header .icons a {
 
 header .icons img {
     width: 28px;
+    height: 28px;
     border-radius: 100%;
     cursor: pointer;
 }
@@ -597,6 +603,8 @@ textarea {
 .sp-product-details h6 {
     padding-top: 1rem;
     font-size: 1em;
+    height: 2.25em;
+    overflow: hidden;
 }
 
 .sp-product-require ul {
@@ -868,41 +876,11 @@ hr {
     cursor: pointer;
 }
 
-.accordion .contentBx .label {
-    margin-bottom: 0.75rem;
-}
-
-.accordion .contentBx .label::before {
-    content: 'Expand';
-    position: absolute;
-    right: 5rem;
-    border-bottom: #060606 2px solid;
-    padding-bottom: 0.15rem;
-    cursor: pointer;
-}
-
-.accordion .contentBx.active {
-    margin-bottom: 2rem;
-}
-
-.accordion .contentBx.active .label::before {
-    content: 'Collapse';
-}
-
-.accordion .contentBx .content {
-    position: relative;
-    height: 0;
-    overflow: hidden;
-    overflow-y: auto;
-}
-
-.accordion .contentBx.active .content {
-    height: 100%;
-}
-
 /* JOB SEEKER EDIT PAGE */
 .jsep-note {
     text-align: center;
+    font-style: italic;
+    color: #d74d0d;
 }
 
 .jsep-container img {
@@ -1437,10 +1415,4 @@ textarea {
 
 .collapsible.active:after {
     content: "Collapse";
-}
-
-.jop-filter-content {
-    display: none;
-    overflow: hidden;
-    background-color: #fff;
 }
