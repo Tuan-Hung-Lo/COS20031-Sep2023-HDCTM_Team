@@ -1,11 +1,16 @@
-# Welcome!
+p# Welcome!
 ![image](images/LongLogo.png)
 
+<p align="center">
+Subject: COS20031
+Semester: Fall 2023
+</p>
 Subject: COS20031
 
 Semester: Fall 2023
 
 ## Team Members
+
 - Lo Tuan Hung
 - Luong Chi Duc
 - Nguyen Vu Duy Minh
@@ -13,7 +18,9 @@ Semester: Fall 2023
 - Dao Khanh Nga Thi
 
 ## Project Description
+
 ### Prototype: Greeliving Learning Hub
+
 Base on Cisco Packet Tracer
 
 ## Installation
@@ -26,6 +33,5 @@ Base on Cisco Packet Tracer
 - Unzip the code inside that folder
 - Open XAMPP Control Panel, Start Apache
 - Go to your browser, type "localhost/akathon01-23" (replace akathon01-23 by the folder contains the files if necessary)
-
 
 ![image](https://user-images.githubusercontent.com/114485224/209611403-fdc415c7-a877-42d1-b050-72b0bcbf7491.png)
